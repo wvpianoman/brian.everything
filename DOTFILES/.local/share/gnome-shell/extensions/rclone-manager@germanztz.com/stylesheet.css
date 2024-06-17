@@ -1,0 +1,45 @@
+.rclone-manager-icon.private-mode {
+    color: rgba(255,255,255,0.3);
+}
+
+.ci-notification-label {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgba(10,10,10,0.7);
+    border-radius: 6px;
+    font-size:2em;
+    padding:.5em;
+    width:400px;
+}
+
+.popup-menu-item .ci-action-btn StIcon {
+    icon-size:16px;
+}
+
+.ci-history-menu-section {
+    max-height:450px;
+}
+
+/* .popup-menu-item{
+    color:green;
+} */
+
+.menuitem-menu-box {
+	/* margin: 3px; */
+	margin-left: 10px;
+}
+/* 
+.settings-main{
+    margin_top: 10;
+    margin_bottom: 10;
+    margin_start: 10;
+    margin_end: 10;
+    row_spacing: 12;
+    column_spacing: 18;
+    column_homogeneous: true;
+    row_homogeneous: false;
+} */
+
+.dialog-backup{
+    padding: 15px;
+}
