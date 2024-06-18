@@ -18,22 +18,37 @@
 
     echo "Installing the packages..."
 
-sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog dolphin-plugins duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer ffmpegthumbs
+# sudo eopkh install -y gstreamer-1.0-libav gstreamer-1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engine-murrine intel-media-driver libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 
 
-sudo eopkg install -y rtl8852bu flatpak git gnupg noto-sans-ttf grep grub-customizer gstreamer-1.0-libav gstreamer-1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engine-murrine gum ibus intel-media-driver iptables jq kate kdegraphics-thumbnailers kdepim-addons
+sudo eopkg install -y acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git 
 
-sudo eopkg install -y libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 lsd make meld libglu merkuro mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server
+sudo eopkg install -y gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire pkg-config 
 
-sudo eopkg install -y openssh ostree p7zip packagekit pandoc pip pipewire kpipewire pkg-config plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
+sudo eopkg install -y plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tlp thermald tumbler ufw gufw 
 
-sudo eopkg install -y tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety vim virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
+sudo eopkg install -y un{zip,rar} variety virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
 
 echo "Package installation completed."
     sleep 3
 
-echo "Installiong Software Packages"
+# echo "KDE Package Installation"
 
-sudo eopkg install -y  blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam ghostwriter flameshot neochat rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc yakuake
+# sudo eopkg install -y akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers kdepim-addons merkuro 
+
+# echo "Package installation completed."
+#    sleep 3
+
+echo "Installing Gnome Packages"
+
+ sudo dnf5 install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection gnome-commander spacefm xfce4-terminal
+
+echo "Package installation completed."
+     sleep 3
+# read -n 1 -r -s -p $'Press enter to continue...\n'
+
+echo "Installing Software Packages"
+
+sudo eopkg install -y  blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc yakuake
 
 echo "Package installation completed."
     sleep 3
