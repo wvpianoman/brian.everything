@@ -218,8 +218,8 @@ flatpak_apps=(
 #    "org.videolan.VLC"
 #    "com.wps.Office"
 ### To Make Gnome more user friendly ###
-    "org.kde.neochat"
-    "com.mattjakeman.ExtensionManager"
+#    "org.kde.neochat"
+#    "com.mattjakeman.ExtensionManager"
 )
 
 # Install applications
