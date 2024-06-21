@@ -80,20 +80,24 @@ sleep 3
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
-echo "Installiong Software Packages"
+echo "Installing Software Packages"
 
-sudo dnf5 install -y acl aria2 attr autoconf automake bash-completion bc binutils btop busybox blender boomaga btrfs-assistant ca-certificates cifs-utils cjson cowsay crontabs curl dbus-glib dconf-editor dialog digikam direnv dnf-plugins-core  dnfdragora dnf5 dnf5-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnupg2 grep digikam flameshot ghostwriter gimp gimp-help gimp-data-extras gparted inkscape jq kernel-modules-extra krita lsd make mbedtls meld mozilla-ublock-origin mpg123 nano neofetch p7zip p7zip-gui p7zip-plugins PackageKit pandoc pdfarranger pkg-config plocate powertop qrencode ripgrep rsync rygel rclone rclone-browser scribus simplescreenrecorder sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw ugrep un{zip,rar} unrar-free variety virt-manager wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd syncthing uget vlc zsh zsh-autosuggestions zsh-syntax-highlighting zsh-lovers screen socat # grub-customizer
+sudo dnf5 install -y acl aria2 attr autoconf automake bash-completion bc binutils btop busybox btrfs-assistant ca-certificates cifs-utils cjson cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf-plugins-core dnfdragora dnf5 dnf5-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fortune-mod git gnupg2 grep jq kernel-modules-extra krita lsd make mbedtls meld mozilla-ublock-origin mpg123 nano p7zip p7zip-gui p7zip-plugins PackageKit pandoc pkg-config plocate powertop qrencode ripgrep rsync rygel sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw ugrep un{zip,rar} unrar-free virt-manager wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd syncthing uget vlc zsh zsh-autosuggestions zsh-syntax-highlighting zsh-lovers screen socat # grub-customizer
 
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sleep 3
 
-# echo "Installing PLASMA Packages"
+sudo dnf5 install -y digikam flameshot ghostwriter gimp gimp-help gimp-data-extras gparted inkscape blender boomaga pdfarranger rclone rclone-browser scribus simplescreenrecorder variety discord
+echo "Installing PLASMA Packages"
 
-# sudo dnf5 install -y kdepim-addons kate kate-plugins dolphin-plugins merkuro plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake neochat akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid}
+sudo dnf5 install -y kdepim-addons kate kate-plugins dolphin-plugins merkuro plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake neochat akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs
 
-echo "Installing Gnome Packages"
- sudo dnf5 install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection gnome-commander spacefm xfce4-terminal
+sleep 3
+
+# echo "Installing Gnome Packages"
+
+# sudo dnf5 install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection gnome-commander spacefm xfce4-terminal
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
