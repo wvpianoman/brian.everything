@@ -12,22 +12,22 @@
 # https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=Nix-Pkgs
 
 nix-env -iA nixpkgs.cowsay
-nix-env -iA nixpkgs.direnv
+# nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.fanctl
 nix-env -iA nixpkgs.figlet
 nix-env -iA nixpkgs.fortune
 nix-env -iA nixpkgs.gum
-nix-env -iA nixpkgs.haveged
-nix-env -iA nixpkgs.codec2
-nix-env -iA nixpkgs.uim
-nix-env -iA nixpkgs.gtk-engine-murrine
-nix-env -iA nixpkgs.mbpfan
-nix-env -iA nixpkgs.p7zip
-nix-env -iA nixpkgs.cron
-nix-env -iA nixpkgs.cronutils
-nix-env -iA nixpkgs.cifs-utils
-nix-env -iA nixpkgs.gnome.dconf-editor
-nix-env -iA nixpkgs.dnsutils
+# nix-env -iA nixpkgs.haveged
+# nix-env -iA nixpkgs.codec2
+# nix-env -iA nixpkgs.uim
+# nix-env -iA nixpkgs.gtk-engine-murrine
+# nix-env -iA nixpkgs.mbpfan
+# nix-env -iA nixpkgs.p7zip
+# nix-env -iA nixpkgs.cron
+# nix-env -iA nixpkgs.cronutils
+# nix-env -iA nixpkgs.cifs-utils
+# nix-env -iA nixpkgs.gnome.dconf-editor
+# nix-env -iA nixpkgs.dnsutils
 #nix-env -iA nixpkgs.ugrep
 #nix-env -iA nixpkgs.nettools
 #nix-env -iA nixpkgs.profile-sync-daemon

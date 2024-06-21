@@ -26,7 +26,7 @@ sudo eopkg install -y gnupg noto-sans-ttf grep gum ibus iptables jq lsd make mel
 
 sudo eopkg install -y plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tlp thermald tumbler ufw gufw 
 
-sudo eopkg install -y un{zip,rar} variety virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
+sudo eopkg install -y un{zip,rar} variety virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd fan2go
 
 echo "Package installation completed."
     sleep 3

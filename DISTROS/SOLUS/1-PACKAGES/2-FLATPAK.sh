@@ -201,6 +201,7 @@ flatpak_apps=(
 #    "org.inkscape.Inkscape"
 #    "org.kde.krita"
 #    "org.libreoffice.LibreOffice"
+    "nz.mega.MEGAsync"
     "io.missioncenter.MissionCenter"
     "io.github.amit9838.mousam"
     "com.obsproject.Studio"
@@ -214,6 +215,7 @@ flatpak_apps=(
     "org.telegram.desktop"
     "org.telegram.desktop.webview"
 #    "org.videolan.VLC"
+    "com.vscodium.codium"
     "com.wps.Office"
 ### To Make Gnome more user friendly ###
     "org.kde.neochat"
