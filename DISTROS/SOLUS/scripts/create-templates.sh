@@ -11,40 +11,40 @@ TEMPLATE_DIR="$HOME/Templates"
 mkdir -p "$TEMPLATE_DIR"
 
 # Create blank text document
-touch "$TEMPLATE_DIR/Blank-Document.txt"
+# touch "$TEMPLATE_DIR/Document.txt"
 
 # Create blank Word document
-touch "$TEMPLATE_DIR/Blank-Document.docx"
+# touch "$TEMPLATE_DIR/Document.docx"
 
 # Create blank Excel spreadsheet
-touch "$TEMPLATE_DIR/Blank-Spreadsheet.xlsx"
+# touch "$TEMPLATE_DIR/Spreadsheet.xlsx"
 
 # Create blank configuration file
-touch "$TEMPLATE_DIR/Blank-Config.conf"
+touch "$TEMPLATE_DIR/Config.conf"
 
 # Create blank markdown file
-touch "$TEMPLATE_DIR/Blank-Document.md"
+touch "$TEMPLATE_DIR/Document.md"
 
 # Create blank shell script
-touch "$TEMPLATE_DIR/Blank-Script.sh"
+touch "$TEMPLATE_DIR/Script.sh"
 
 # Create blank Python script
-touch "$TEMPLATE_DIR/Blank-Script.py"
+touch "$TEMPLATE_DIR/Script.py"
 
 # Create blank JSON file
-touch "$TEMPLATE_DIR/Blank-Document.json"
+touch "$TEMPLATE_DIR/Document.json"
 
 # Create blank YAML file
-touch "$TEMPLATE_DIR/Blank-Document.yaml"
+touch "$TEMPLATE_DIR/Document.yaml"
 
 # Create blank HTML file
-touch "$TEMPLATE_DIR/Blank-Document.html"
+touch "$TEMPLATE_DIR/Document.html"
 
 # Create blank CSS file
-touch "$TEMPLATE_DIR/Blank-Document.css"
+touch "$TEMPLATE_DIR/Document.css"
 
 # Create blank JavaScript file
-touch "$TEMPLATE_DIR/Blank-Document.js"
+touch "$TEMPLATE_DIR/Document.js"
 
 # Print a message indicating completion
 echo "Template documents created in $TEMPLATE_DIR"

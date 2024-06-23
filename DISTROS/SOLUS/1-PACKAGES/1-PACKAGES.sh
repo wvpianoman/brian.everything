@@ -20,20 +20,18 @@
 
 # sudo eopkh install -y gstreamer-1.0-libav gstreamer-1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engine-murrine intel-media-driver libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 
 
-sudo eopkg install -y acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git 
+sudo eopkg install -y acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go
 
-sudo eopkg install -y gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire pkg-config 
+sudo eopkg install -y gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults
 
-sudo eopkg install -y plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tlp thermald tumbler ufw gufw 
-
-sudo eopkg install -y un{zip,rar} variety virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd fan2go
+sudo eopkg install -y plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager 
 
 echo "Package installation completed."
     sleep 3
 
 # echo "KDE Package Installation"
 
-# sudo eopkg install -y akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers kdepim-addons merkuro 
+# sudo eopkg install -y akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers kdepim-addons merkuro yakuake
 
 # echo "Package installation completed."
 #    sleep 3
@@ -48,7 +46,7 @@ echo "Package installation completed."
 
 echo "Installing Software Packages"
 
-sudo eopkg install -y  blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc yakuake
+sudo eopkg install -y  blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc thunar thunar-volman thunar-archive-plugin thunar-shares-plugin thunar-docs megacmd github-cli
 
 echo "Package installation completed."
     sleep 3
@@ -63,7 +61,7 @@ echo "Installation completed."
 
 echo "Installing ZSH / FISH shells and Plug-ins"
 
-	sudo eopkg install -y zsh zsh-dbginfo zsh-autosuggestions zsh-syntax-highlighting antibody powerlevel10k powerline powerline-dbginfo rcm fish
+	sudo eopkg install -y zsh zsh-dbginfo zsh-autosuggestions zsh-syntax-highlighting antidote powerlevel10k powerline powerline-dbginfo rcm fish
 
 echo "Installation completed."
     sleep 3

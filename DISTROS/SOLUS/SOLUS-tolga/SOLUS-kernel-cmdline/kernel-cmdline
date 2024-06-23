@@ -1,2 +1,0 @@
-quiet loglevel=3 splash zswap.enabled=1
-zswap.enabled=1
