@@ -12,7 +12,7 @@
 # https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=Nix-Pkgs
 
 nix-env -iA nixpkgs.cowsay
-# nix-env -iA nixpkgs.direnv
+nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.fanctl
 nix-env -iA nixpkgs.figlet
 nix-env -iA nixpkgs.fortune
