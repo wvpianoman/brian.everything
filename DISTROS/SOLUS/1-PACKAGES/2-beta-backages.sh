@@ -75,14 +75,13 @@ gnome_packages=(
     gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance 
     gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list 
     gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection 
-    gnome-commander spacefm xfce4-terminal
+    gnome-commander spacefm xfce4-terminal thunar thunar-volman thunar-archive-plugin thunar-shares-plugin thunar-docs
 )
 
 # software packages
 software_packages=(
-    lender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus 
-    scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc thunar thunar-volman thunar-archive-plugin 
-    thunar-shares-plugin thunar-docs megacmd github-cli discord darktable
+    lender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox scribus
+    scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc megacmd github-cli discord darktable
 )
 
 # utilities for file system access
@@ -107,8 +106,8 @@ install_packages "Installing Essential Software Packages" "${essential_packages[
 
 # Install DE packages
 # Pick either KDE or Gnome
-# install_packages "Installing KDE Packages" "${kde_packages[@]}"
-install_packages "Installing gnome Packages""${gnome_packages[@]}"
+install_packages "Installing KDE Packages" "${kde_packages[@]}"
+# install_packages "Installing gnome Packages""${gnome_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
