@@ -59,7 +59,7 @@ NC='\033[0m'
     noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server 
     openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults 
     plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar 
-    terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager 
+    terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager
 )
 
 # kde packages
@@ -82,7 +82,7 @@ gnome_packages=(
 software_packages=(
     lender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus 
     scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc thunar thunar-volman thunar-archive-plugin 
-    thunar-shares-plugin thunar-docs megacmd github-cli
+    thunar-shares-plugin thunar-docs megacmd github-cli discord darktable
 )
 
 # utilities for file system access

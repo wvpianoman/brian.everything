@@ -218,7 +218,6 @@ flatpak_apps=(
     "com.vscodium.codium"
     "com.wps.Office"
 ### To Make Gnome more user friendly ###
-    "org.kde.neochat"
     "com.mattjakeman.ExtensionManager"
 )
 
