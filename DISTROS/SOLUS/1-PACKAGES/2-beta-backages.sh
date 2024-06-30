@@ -75,14 +75,14 @@ gnome_packages=(
     gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance 
     gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list 
     gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection 
-    gnome-commander spacefm xfce4-terminal
+    gnome-commander spacefm xfce4-terminal element
 )
 
 # software packages
 software_packages=(
     lender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus 
     scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc thunar thunar-volman thunar-archive-plugin 
-    thunar-shares-plugin thunar-docs megacmd github-cli discord darktable
+    thunar-shares-plugin thunar-docs megacmd github-cli discord 
 )
 
 # utilities for file system access
