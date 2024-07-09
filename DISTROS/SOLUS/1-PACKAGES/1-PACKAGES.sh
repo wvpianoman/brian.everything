@@ -24,7 +24,7 @@ sudo eopkg install -y acl aria2 attr autoconf automake bash-completion bc binuti
 
 sudo eopkg install -y gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults
 
-sudo eopkg install -y plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager 
+sudo eopkg install -y plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager zed
 
 echo "Package installation completed."
     sleep 3

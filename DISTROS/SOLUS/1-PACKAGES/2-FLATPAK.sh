@@ -215,6 +215,7 @@ flatpak_apps=(
     "org.telegram.desktop"
     "org.telegram.desktop.webview"
 #    "org.videolan.VLC"
+    "com.vivaldi.Vivaldi"
     "com.vscodium.codium"
     "com.wps.Office"
 ### To Make Gnome more user friendly ###
