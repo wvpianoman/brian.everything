@@ -7,13 +7,19 @@ how this configuration is applied.
 
 Use 'systemd-analyze cat-config sysctl.d' to display the effective config.
 
- System Reload Command
- --------------------------------------------------------------------------------------------------------------------------------------
- Command to reload system configurations
- sudo sysctl -p
+# Command to reload system configurations:
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# System Reload Command
+#  sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system
 
- About These Settings
- -------------------------------------------------------------------------------------------------------------------------------------
- These configurations aim to optimize various aspects of the Linux system, including network performance, file systems, and kernel behavior. The tweaks are inspired by configurations from RHEL, Fedora, Solus, Mint, and Windows Server. Adjustments have been made based on personal experimentation and preferences.  Keep in mind that before applying these tweaks, it's recommended to test in a controlled environment and monitor system behavior.
+# alias sysctl-reload="sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system"
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- Tolga Erok
+# About These Settings
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# These configurations aim to optimize various aspects of the Linux system, including network performance, file systems, and kernel behavior.
+# The tweaks are inspired by configurations from RHEL, Fedora, Solus, Mint, Cachy, Ultramarine and Windows Server. Adjustments have been made
+# based on personal experimentation and preferences.  Keep in mind that before applying these tweaks, it's recommended to test in a controlled
+# environment and monitor system behavior.
+#
+# Tolga Erok

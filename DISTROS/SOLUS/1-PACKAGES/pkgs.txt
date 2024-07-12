@@ -1,0 +1,1383 @@
+aa-lsm-hook                                   - AppArmor system integration
+aalib                                         - AAlib is an portable ascii art GFX library
+abseil-cpp                                    - Abseil Common Libraries
+accountsservice                               - D-Bus service for accessing user accounts and information
+acl                                           - Access control list shared library
+adw-gtk3-theme                                - An unofficial GTK3 port of libadwaita
+adwaita-icon-theme                            - The Adwaita Icon Theme package contains an assortment of non-scalable icons of different sizes and themes.
+adwaita-icon-theme-legacy                     - A fullcolor icon theme providing fallback for legacy apps
+alembic                                       - Framework for storing and sharing scene data
+alsa-firmware                                 - ALSA Firmware for certain sound cards
+alsa-lib                                      - The ALSA Sound Interface
+alsa-plugins                                  - Plugins for various sound servers
+alsa-utils                                    - Various utilities which are useful for controlling your sound card
+antidote                                      - Antidote is a Zsh plugin manager made from the ground up thinking about performance.
+aom                                           - AV1 codec
+apparmor                                      - AppArmor LSM user-space component
+appstream                                     - Tools and libraries to work with AppStream metadata
+appstream-data                                - AppStream data for Solus
+appstream-glib                                - This library provides objects and helper methods to help reading and writing AppStream metadata.
+appstream-qt6                                 - Tools and libraries to work with AppStream metadata. - Qt6 bindings
+aqbanking                                     - AqBanking is a library for online banking and financial applications
+argon2                                        - The password hash Argon2, winner of PHC
+aria2                                         - aria2 is a lightweight multi-protocol & multi-source command-line download utility.
+assimp                                        - Open Asset Import Library
+at-spi2                                       - Accessibility toolkit
+at-spi2-devel                                 - Development files for at-spi2
+atkmm                                         - C++ bindings to atk
+attica                                        - Open Collaboration Service client library.
+attr                                          - Extended attribute shared library
+audit                                         - audit daemon and libraries
+autoconf                                      - Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+automake                                      - Automake is a tool for automatically generating `Makefile.in' files compliant with the GNU Coding Standards
+avahi                                         - mDNS/DNS-SD service discovery
+babl                                          - babl is a dynamic, any to any, pixel format translation library
+baobab                                        - Check folder sizes and available disk space
+baselayout                                    - Filesystem baselayout
+bash                                          - bash (sh-compatible shell)
+bash-completion                               - Programmable Completion for Bash
+bc                                            - The GNU bc arbitrary precision calculator language
+bdwgc                                         - Boehm-Demers-Weiser Garbage Collector
+bind-utils                                    - Client side programs nslookup, dig and host.
+binutils                                      - Binutils contains a linker, an assembler, and other tools for handling object files
+binutils-libs                                 - Runtime libraries for binutils
+blender                                       - A fully integrated 3D graphics creation suite
+blosc                                         - A blocking, shuffling and loss-less compression library that can be faster than `memcpy()`
+bluez                                         - Official Linux Bluetooth protocol stack.
+bolt                                          - Thunderbolt device manager
+boomaga                                       - Boomaga (BOOklet MAnager) is a virtual printer for viewing a document before printing it out using the physical printer
+botan2                                        - Crypto and TLS library for C++11
+breeze                                        - Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
+breeze-cursor-theme                           - Breeze cursor theme
+breeze-icons                                  - Breeze icon theme
+brotli                                        - Brotli compression format
+brotli-devel                                  - Development files for brotli
+btop                                          - btop is a monitor of system resources.
+btrbk                                         - Tool for creating snapshots and remote backups of btrfs subvolumes
+btrfs-progs                                   - Utilities for managing btrfs filesystems
+btrfs-progs-libbtrfs                          - Library for managing btrfs filesystems
+bubblewrap                                    - Unprivileged sandboxing tool
+busybox                                       - Statically linked binary providing simplified versions of system commands
+bzip2                                         - High-quality block-sorting file compressor - utilities
+bzip2-devel                                   - Development files for bzip2
+c-ares                                        - C library that performs DNS requests and name resolves asynchronously
+ca-certs                                      - Certificate Authority Files
+cairomm                                       - C++ bindings to Cairo
+cairomm-1.16                                  - C++ bindings to cairo.
+calf                                          - LV2 plug-in suite and standalone JACK host
+canon-ufriilt-common                          - Canon UFRII LT Printer Driver for Linux
+capstone                                      - Disassembly/disassembler framework
+cargo-c                                       - Build and install C-compatible libraries
+celluloid                                     - A simple GTK+ frontend for MPV
+celt                                          - CELT is a very low delay audio codec designed for high-quality communications.
+ceres-solver                                  - A nonlinear least squares minimizer
+chromaprint                                   - Audio source fingerprint extraction library
+cjson                                         - Ultralightweight JSON parser in ANSI C
+clr-boot-manager                              - Kernel & Boot Loader Management
+cmake                                         - CMake is a cross-platform, open-source build system.
+coinmp                                        - A lightweight API for CLP, CBC, and CGL
+colord                                        - Color Daemon
+comar                                         - Manages system configuration
+comar-api                                     - Utility functions for Comar scripts
+conky                                         - Lightweight system monitor for X
+conky-manager                                 - Conky Manager 2 - a newer conky config manager
+coreutils                                     - GNU core utilities
+cpio                                          - A program to manage archives of files
+cracklib                                      - A ProActive Password Sanity Library
+cryptopp                                      - Crypto++ Library is a free C++ class library of cryptographic algorithms and schemes
+cryptsetup                                    - Utility to setup disk encryption using DMCrypt
+cups                                          - The Common Unix Printing System
+cups-browsed                                  - Daemon for local auto-installation of remote printers
+cups-filters                                  - OpenPrinting CUPS Filters
+cups-pk-helper                                - cups PolicyKit helper
+curl                                          - Get a file from an HTTP, HTTPS or FTP server
+curl-gnutls                                   - GnuTLS version of curl
+cyrus-sasl                                    - Cyrus Simple Authentication Service Layer (SASL) Library
+darktable                                     - darktable is an open source photography workflow application and RAW developer
+dav1d                                         - AV1 decoder targeted to be small and fast
+db5                                           - Berkeley Database v5
+dbus                                          - System Message Daemon
+dbus-broker                                   - Linux D-Bus Message Broker
+dbus-devel                                    - Development files for dbus
+dbus-glib                                     - D-Bus GLib Bindings
+dbus-launch                                   - X11 dbus-launch helper
+dconf                                         - GNOME Configuration Database
+deepfilternet                                 - Low Complexity Speech Enhancement Framework
+dejavu-fonts-ttf                              - Font family based on the Bitstream Vera Fonts with a wider range of characters
+desktop-file-utils                            - Utilities required for working with Desktop entries
+dialog                                        - Script-driven curses widgets
+digikam                                       - Advanced digital photo management application
+discord                                       - All-in-one voice and text chat for gamers
+disktype                                      - Detect the content format of a disk or disk image
+djvulibre                                     - A web-centric format and software platform for distributing documents and images
+dmidecode                                     - Dmidecode reports information about your system's hardware as described in your system BIOS
+dnsmasq                                       - DNS cache and forwarder
+docbook-xml                                   - XML data files for DocBook
+doflicky                                      - Solus Driver Management
+dosfstools                                    - dosfstools (Tools for making and checking MS-DOS Fat filesystems)
+dotconf                                       - Dot file config parser
+double-conversion                             - Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles.
+duf                                           - duf Disk Usage/Free Utility is a better df alternative.
+duktape                                       - Embeddable JavaScript engine with a focus on portability and compact footprint
+e2fsprogs                                     - e2fsprogs (Filesystem utilities for ext2/3/4 filesystems)
+easyeffects                                   - Audio effects for PipeWire applications
+ebook-tools                                   - Tools for accessing various ebook file formats
+edk2-ovmf                                     - UEFI support for Virtual Machines
+efibootmgr                                    - a Linux user-space application to modify the Intel Extensible Firmware Interface (EFI) Boot Manager
+efivar                                        - Tools and libraries to manipulate EFI variables
+element                                       - A glossy Matrix collaboration client for desktop.
+embree                                        - High Performance Ray Tracing Kernels
+enchant                                       - Spell check library wrapper program
+enchant16                                     - enchant16 is the 1.6 series of the spell check library wrapper program
+eog                                           - The Eye of GNOME image viewer is the official image viewer for the GNOME Desktop environment. With it, you can view single image files, as well as large image collections.
+eopkg                                         - The Solus package manager (python3 eopkg.bin nuitka-compiled version)
+espeak-ng                                     - Text-to-speech engine
+evince                                        - Document viewer for popular document formats
+evolution-data-server                         - Centralized access to appointments and contacts
+exfatprogs                                    - exFAT filesystem userspace utilities
+exiv2                                         - exif and iptc metadata manipulation library and tools
+exo                                           - Application library for the Xfce desktop environment.
+expat                                         - XML Parsing Library
+expat-devel                                   - Development files for expat
+f2fs-tools                                    - Userland tools for the f2fs filesystem
+faad                                          - Open source MPEG-2 and MPEG-4 AAC decoder
+fan2go                                        - Simple daemon providing dynamic fan speed control based on temperature sensors
+fastfetch                                     - Like neofetch, but much faster because written in C
+fd                                            - A simple, fast and user-friendly alternative to find
+fdk-aac                                       - Fraunhofer FDK AAC codec library
+ffmpeg                                        - A complete, cross-platform solution to record, convert and stream audio and video
+ffmpeg-4.4                                    - A complete, cross-platform solution to record, convert and stream audio and video
+ffmpegthumbnailer                             - Lightweight video thumbnailer that can be used by file managers
+fftw                                          - FFTW Fourier transform library
+file                                          - file (file type guesser)
+file-roller                                   - Archive manager for the GNOME desktop environment
+findutils                                     - findutils (basic directory searching utilities)
+firefox                                       - Firefox web browser
+fish                                          - A full-blown user-friendly command line shell
+flameshot                                     - Powerful yet simple to use screenshot software
+flatpak                                       - Universal application support
+fluidsynth                                    - Software synthesizer based on the SoundFont 2 specifications
+fmt                                           - Small, safe and fast formatting C++ library
+font-adobe-100dpi                             - X.Org fonts: font-adobe-100dpi
+font-awesome-ttf                              - Font Awesome Free
+font-droid-ttf                                - Droid fonts. Includes Fallback and Japanese support.
+font-fira-ttf                                 - Mozilla's new typeface, used in Firefox OS
+font-firacode-ttf                             - Monospaced font with programming ligatures
+font-hack-ttf                                 - A typeface designed for source code
+font-manager                                  - A simple font management application
+font-terminus-console                         - Monospaced font designed for long (8+ hours per day) work with computers.
+font-tlwg-ttf                                 - Fonts-TLWG is a collection of Thai scalable fonts available under free licenses.
+fontconfig                                    - Font configuration utilities
+fontconfig-devel                              - Development files for fontconfig
+foomatic-db                                   - The collected knowledge about printers, drivers, and driver options in XML files
+foomatic-db-engine                            - Foomatic database engine
+frameworkintegration                          - Integration of Qt application with KDE workspaces
+freeglut                                      - OpenSource GLUT library
+freeimage                                     - Library to support graphics image formats.
+freerdp                                       - FreeRDP is a free remote desktop protocol client
+freetype2                                     - Font rendering library
+freetype2-devel                               - Development files for freetype2
+frei0r                                        - A large collection of free and portable video plugins
+fribidi                                       - Implementation of the Unicode Bidirectional Algorithm
+fribidi-devel                                 - Development files for fribidi
+fuse                                          - File Systems in User Space
+fuse-common                                   - File Systems in User Space
+fuse2                                         - File Systems in User Space
+g++                                           - GNU Compiler Collection
+gavl                                          - A library for handling uncompressed audio and video data.
+gawk                                          - gawk - GNU Awk (Data extraction and reporting tool)
+gcab                                          - A GObject library to create cabinet files
+gcc                                           - GNU Compiler Collection
+gconf                                         - GNOME Configuration Database
+gcr                                           - The Gcr package contains libraries used for displaying certificates and accessing key stores. It also provides the viewer for crypto files on the GNOME Desktop.
+gcr-4                                         - The Gcr package contains libraries used for displaying certificates and accessing key stores. It also provides the viewer for crypto files on the GNOME Desktop.
+gd                                            - GD Graphics Library
+gdbm                                          - Standard GNU database libraries
+gdk-pixbuf                                    - GNOME toolkit for image loading and pixel buffer manipulation
+gdk-pixbuf-devel                              - Development files for gdk-pixbuf
+gdm                                           - GNOME Graphical Display Manager
+gedit                                         - gedit is an easy-to-use and general-purpose text editor.
+gegl                                          - GEGL (Generic Graphics Library) is a graph based image processing framework
+geoclue                                       - GeoInformation service
+gettext                                       - Localisation support for programs
+gexiv2                                        - GObject wrapper around libexiv2
+gflags                                        - C++ library that implements commandline flags processing
+ghostscript                                   - PostScript language and PDF interpreter
+giflib                                        - GIFLIB is a package of portable tools and library routines for working with GIF images
+gimp                                          - GNU Image Manipulation Program
+gimp-docs                                     - Documentation for gimp
+gimp-help                                     - English (US) help files for GIMP
+git                                           - fast, scalable, distributed revision control system
+github-cli                                    - GitHub?s official command line tool
+gitkraken                                     - The downright luxurious Git client, for Windows, Mac and Linux
+gjs                                           - GNOME JavaScript
+glew                                          - OpenGL Extension Wrangler Library
+glib-networking                               - The GLib Networking package contains Network related gio modules for GLib.
+glib2                                         - Low level C library containing data structure handling and interfaces
+glib2-devel                                   - Development files for glib2
+glibc                                         - This package contains the GNU C libraries and header files
+glibc-32bit                                   - 32-bit libraries for glibc
+glibc-devel                                   - Development files for glibc
+glibmm                                        - C++ bindings to GLib
+glibmm-2.68                                   - C++ bindings to GLib (2.68 ABI)
+glog                                          - C++ implementation of the Google logging module
+gmic                                          - GREYC's Magic for Image Computing
+gmmlib                                        - Intel(R) Graphics Memory Management Library
+gmp                                           - The GMP package contains math libraries. These have useful functions for arbitrary precision arithmetic.
+gnome-autoar                                  - Automatic archive library
+gnome-bluetooth                               - The GNOME Bluetooth Subsystem
+gnome-bluetooth-1                             - The GNOME Bluetooth Subsystem providing gnome-bluetooth-1.0
+gnome-bluetooth-1-common                      - Common BlueTooth components between gnome-bluetooth versions
+gnome-browser-connector                       - Native browser connector for integration with extensions.gnome.org
+gnome-calculator                              - Perform arithmetic, scientific or financial calculations
+gnome-calendar                                - Manage your schedule
+gnome-color-manager                           - GNOME Color Manager
+gnome-control-center                          - Utility to configure the GNOME desktop
+gnome-desktop-branding                        - Defaults for the GNOME Desktop
+gnome-disk-utility                            - Disk management utility for GNOME
+gnome-keyring                                 - GNOME Keyring is a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications.
+gnome-online-accounts                         - The GNOME Online Accounts package contains a framework used to access the user's online accounts
+gnome-remote-desktop                          - Remote desktop daemon for GNOME using pipewire
+gnome-screenshot                              - GNOME Screenshot Utility
+gnome-session                                 - Provides GNOME session core
+gnome-session-shell                           - Runtime support for GNOME Shell Session.
+gnome-settings-daemon                         - Daemon handling the GNOME session settings
+gnome-shell                                   - GNOME Desktop Shell
+gnome-shell-extension-appindicator            - AppIndicator/KStatusNotifierItem/Legacy icons support for GNOME Shell
+gnome-shell-extension-apps-menu               - Manage your GNOME Extensions
+gnome-shell-extension-auto-move-windows       - Manage your GNOME Extensions
+gnome-shell-extension-native-window-placement - Manage your GNOME Extensions
+gnome-shell-extension-screenshot-window-sizer - Manage your GNOME Extensions
+gnome-shell-extension-speedinator             - Control the speed of gnome-shell animations
+gnome-shell-extension-user-theme              - Manage your GNOME Extensions
+gnome-shell-extension-window-list             - Manage your GNOME Extensions
+gnome-shell-extensions                        - Manage your GNOME Extensions
+gnome-system-monitor                          - View and manage system resources
+gnome-terminal                                - GNOME Terminal Emulator
+gnome-themes-extra                            - The Standard GNOME3 Themes Package
+gnome-tweaks                                  - A tool to customize advanced GNOME 3 options
+gnome-user-docs                               - GNOME core documentation
+gnucash                                       - GnuCash is personal and small-business financial-accounting software
+gnupg                                         - Complete and free implementation of OpenPGP
+gobject-introspection                         - Generate interface introspection data for GObject libraries
+gpart                                         - Gpart is a small tool which tries to guess what partitions are there on a drive.
+gparted                                       - GParted is a free graphical disk partition editor
+gpgme                                         - language library in C for cryptography support
+gpm                                           - gpm (General Purpose Mouse daemon)
+gptfdisk                                      - GPT fdisk-like utility
+graphene                                      - A thin layer of types for graphic libraries
+graphicsmagick                                - GraphicsMagick provides a set of commandline tools and programming APIs for manipulating, editing, and converting raster and vector images.
+graphite2                                     - Rendering engine for graphite fonts
+graphite2-devel                               - Development files for graphite2
+graphviz                                      - Graphviz is open source graph visualization software
+grep                                          - grep (pattern searching tool)
+grilo                                         - Media discovery framework
+groff                                         - groff (Typesetting package to read formatted files)
+grub2                                         - GRUB Boot Loader
+gsettings-desktop-schemas                     - A collection of GSettings schemas for settings shared by various components of a GNOME Desktop.
+gsl                                           - Numerical library for C and C++
+gsm                                           - GSM lossy speech compression library
+gsound                                        - GSound is a small library for playing system sounds.
+gspell                                        - GTK+ Spell Checker Library
+gssdp                                         - A GObject-based API for handling resource discovery and announcement over SSDP.
+gstreamer-1.0                                 - Streaming media framework
+gstreamer-1.0-devel                           - Development files for gstreamer-1.0
+gstreamer-1.0-libav                           - GStreamer libav based plugin
+gstreamer-1.0-plugins-bad                     - Additional GStreamer plugins
+gstreamer-1.0-plugins-base                    - GStreamer base plug-ins and elements
+gstreamer-1.0-plugins-base-devel              - Development files for gstreamer-1.0-plugins-base
+gstreamer-1.0-plugins-good                    - GStreamer Good Plugins, a framework for streaming media
+gstreamer-1.0-plugins-ugly                    - GStreamer Ugly Plugins is a collection of plug-ins which have licenses that are not fully compatible with the LGPL.
+gstreamer-editing-services                    - Library for creating audio/video editors
+gtest                                         - Google's C++ test framework
+gtk-engines                                   - gtk-engines provides a central location for commonly used GTK+ engines.
+gtk-vnc                                       - GTK VNC viewer widget
+gts                                           - GTS stands for the GNU Triangulated Surface Library
+gufw                                          - GUFW GUI interface for UFW Firewall
+guile                                         - GNU Ubiquitous Intelligent Language for Extensions
+gum                                           - A tool for glamorous shell scripts
+gupnp                                         - GUPnP is an object-oriented open source framework for creating UPnP devices and control points.
+gupnp-av                                      - GUPnP A/V package to handle UPnP A/V profiles.
+gupnp-dlna                                    - GUPnP DLNA utility for DLNA-related tasks.
+gupnp-igd                                     - A library to handle UPnP IGD port mapping
+gutenprint                                    - Many printer drivers
+gvfs                                          - Userspace virtual filesystem
+gvfs-goa                                      - GNOME Online Accounts support in gvfs
+gwenhywfar                                    - A multi-platform helper library for networking, security applications and libraries
+gzip                                          - gzip (Compression utility)
+harfbuzz                                      - HarfBuzz is a text shaping library
+harfbuzz-devel                                - Development files for harfbuzz
+hdf5                                          - HDF5 is a data model, library, and file format for storing and managing data
+hicolor-icon-theme                            - Default fallback icon theme
+highway                                       - SIMD/vector intrinsics library
+hplip-drivers                                 - HP printer + scanner drivers from the hplip packages
+hsakmt                                        - libhsakmt (HSA thunk) libraries for AMD KFD
+httpie                                        - Command line HTTP client, a user-friendly curl alternative with an intuitive UI, JSON support, syntax highlighting, wget-like downloads, extensions, etc.
+hunspell-en                                   - English hunspell dictionaries
+hwdata                                        - Hardware identification and configuration data
+hyphen                                        - hyphenation library to use converted TeX hyphenation patterns
+ibus                                          - Intelligent Input Bus
+iio-sensor-proxy                              - IIO sensors (ambient light, compass, orientation) to D-Bus proxy
+imagemagick                                   - ImageMagick? suite to create, edit, compose, or convert bitmap images
+imath                                         - Imath is a library of 2D and 3D vector, matrix, and math operations for computer graphics
+imlib2                                        - Fast graphics manipulation library
+inetutils                                     - A collection of common network programs
+inih                                          - inih (INI Not Invented Here) is a simple .INI file parser written in C
+inkscape                                      - Inkscape is an open-source vector graphics editor similar to Adobe Illustrator, Corel Draw, Freehand, or Xara X
+inkscape-docs                                 - Documentation for inkscape
+inotify-tools                                 - inotify-tools is a C library and a set of command-line programs for Linux providing a simple interface to inotify.
+intel-media-driver                            - VA-API driver for Intel Gen graphics
+intel-microcode                               - The microcode data file contains the latest Linux microcode definitions for all Intel? Processors
+intel-tbb                                     - High level abstract threading library
+inxi                                          - Command line system information tool
+iproute2                                      - Utilities for controlling TCP / IP networking
+iptables                                      - Netfilter firewall
+iputils                                       - A set of small useful utilities for Linux networking.
+isl                                           - Integer Set Library
+iso-codes                                     - Central database of ISO codes
+jack-audio-connection-kit                     - JACK2 low-latency audio server for multi-core machines.
+jansson                                       - Jansson is a C library for encoding, decoding and manipulating JSON data.
+jasper                                        - JasPer Image Processing/Coding Tool Kit
+jbig2dec                                      - A decoder implementation of the JBIG2 image compression format
+jemalloc                                      - jemalloc is a general purpose malloc(3) implementation that emphasizes fragmentation avoidance and scalable concurrency support.
+jq                                            - jq is a lightweight and flexible command-line JSON processor
+json-c                                        - JSON implementation in C
+jxrlib                                        - Open source implementation of jpegxr
+karchive                                      - Reading, creating, and manipulating file archives.
+kauth                                         - Execute actions as privileged user.
+kbd                                           - Linux keyboard tools
+kbookmarks                                    - Bookmarks management library.
+kcalendarcore                                 - Provides access to and handling of calendar data
+kcodecs                                       - String encoding library.
+kcompletion                                   - Powerful completion framework, including completion-enabled lineedit and combobox.
+kconfig                                       - Persistent platform-independent application settings.
+kconfigwidgets                                - Widgets for configuration dialogs
+kcoreaddons                                   - Qt addon library with a collection of non-GUI utilities.
+kcrash                                        - Graceful handling of application crashes.
+kdbusaddons                                   - Convenience classes for DBus.
+kdecoration                                   - Plugin based library to create window decorations
+kded                                          - Central daemon of KDE work spaces
+kdoctools                                     - Create documentation from DocBook.
+kerberos                                      - Kerberos 5 network authentication protocol
+kernel-glue                                   - Kernel integration for Solus
+keybinder                                     - Keybinder for GTK-based applications
+keyutils                                      - In-kernel key management utilities
+kf6-attica                                    - Open Collaboration Service client library.
+kf6-frameworkintegration                      - Integration of Qt application with KDE workspaces
+kf6-karchive                                  - Reading, creating, and manipulating file archives.
+kf6-kauth                                     - Execute actions as privileged user.
+kf6-kbookmarks                                - Bookmarks management library.
+kf6-kcmutils                                  - Utilities for interacting with KCModules
+kf6-kcodecs                                   - String encoding library.
+kf6-kcolorscheme                              - Classes to read and interact with KColorScheme
+kf6-kcompletion                               - Powerful completion framework, including completion-enabled lineedit and combobox.
+kf6-kconfig                                   - Persistent platform-independent application settings.
+kf6-kconfigwidgets                            - Widgets for configuration dialogs
+kf6-kcoreaddons                               - Qt addon library with a collection of non-GUI utilities.
+kf6-kcrash                                    - Graceful handling of application crashes.
+kf6-kdbusaddons                               - Convenience classes for DBus.
+kf6-kded                                      - Central daemon of KDE work spaces
+kf6-kdoctools                                 - Create documentation from DocBook.
+kf6-kglobalaccel                              - Global desktop keyboard shortcuts
+kf6-kguiaddons                                - Utilities for graphical user interfaces.
+kf6-ki18n                                     - KDE Gettext-based UI text internationalization.
+kf6-kiconthemes                               - Icon GUI utilities.
+kf6-kio                                       - Network transparent access to files and data.
+kf6-kirigami                                  - QtQuick components for mobile and desktop UI development.
+kf6-kitemviews                                - Set of item views extending the Qt model-view framework.
+kf6-kjobwidgets                               - Widgets for showing progress of asynchronous jobs.
+kf6-knewstuff                                 - Framework for downloading and sharing additional application data.
+kf6-knotifications                            - Desktop notifications.
+kf6-kpackage                                  - Installation and loading of additional content as packages
+kf6-kservice                                  - Plugin framework for desktop services.
+kf6-ktextwidgets                              - Text editing widgets.
+kf6-kwallet                                   - Safe desktop-wide storage for passwords
+kf6-kwidgetsaddons                            - Large set of desktop widgets.
+kf6-kwindowsystem                             - Access to the windowing system.
+kf6-kxmlgui                                   - Framework for managing menu and toolbar actions.
+kf6-solid                                     - Desktop hardware abstraction.
+kf6-sonnet                                    - Multi-language spell checker
+kf6-syndication                               - An RSS/Atom parser library
+kfilemetadata                                 - Simple library for extracting the text and metadata
+kglobalaccel                                  - Global desktop keyboard shortcuts
+kguiaddons                                    - Utilities for graphical user interfaces.
+ki18n                                         - KDE Gettext-based UI text internationalization.
+kiconthemes                                   - Icon GUI utilities.
+kio                                           - Network transparent access to files and data.
+kirigami2                                     - QtQuick components for mobile and desktop UI development.
+kitemviews                                    - Set of item views extending the Qt model-view framework.
+kitty                                         - A fast and featureful GPU-based terminal emulator
+kjobwidgets                                   - Widgets for showing progress of asynchronous jobs.
+kmod                                          - Linux kernel module management utilities
+knewstuff                                     - Framework for downloading and sharing additional application data.
+knotifications                                - Desktop notifications.
+knotifyconfig                                 - Configuration dialog for desktop notifications.
+kpackage                                      - Installation and loading of additional content as packages
+kpipewire                                     - Components relating to pipewire use in Plasma
+krita                                         - Free and open source digital painting application
+ksanecore                                     - Library providing logic to interface scanners
+kseexpr                                       - An embeddable expression evaluation engine
+kservice                                      - Plugin framework for desktop services.
+ktextwidgets                                  - Text editing widgets.
+kwallet                                       - Safe desktop-wide storage for passwords
+kwidgetsaddons                                - Large set of desktop widgets.
+kwindowsystem                                 - Access to the windowing system.
+kxmlgui                                       - Framework for managing menu and toolbar actions.
+ladspa                                        - Linux Audio Developer's Simple Plugin API
+lame                                          - High quality MPEG Audio Layer III (MP3) encoder.
+lame-devel                                    - Development files for lame
+lapack                                        - Basic Linear Algebra Subprograms
+lash                                          - Session management system for GNU/Linux audio applications
+ldb                                           - ldb is a LDAP-like embedded database
+ldns                                          - ldns library for DNS programming
+lensfun                                       - Library to correct optical lens defects and lens database
+less                                          - less (file pager)
+lib2geom                                      - Easy to use 2D geometry library in C++
+liba52dec                                     - Library for decoding ATSC A/52 (also known as AC-3) streams
+libabw                                        - Library for parsing abiword documents
+libadwaita                                    - Building blocks for modern adaptive GNOME applications.
+libaio                                        - Linux kernel AIO access library
+libao                                         - Libao is a cross-platform audio library that allows programs to output audio
+libarchive                                    - Library for reading and writing streaming archives
+libass                                        - Portable subtitle renderer
+libass-devel                                  - Development files for libass
+libassuan                                     - IPC library used by some GnuPG related software
+libatasmart                                   - Disk reporting library
+libavc1394                                    - Programming interface to the AV/C specification from the 1394 Trade Assocation.
+libavif                                       - Library for encoding and decoding .avif files
+libayatana-appindicator                       - Application Indicator Library. Spiritual successor of libappindicator
+libayatana-ido                                - Custom GTK menu widgets for Ayatana System Indicators
+libayatana-indicator                          - Common components of the libayatana project
+libb2                                         - BLAKE2 library implementation
+libblockdev                                   - A library for manipulating block devices
+libbluray                                     - Library for Blu-Ray disc playback
+libboost                                      - Useful C++ source libraries
+libbpf                                        - Library for loading eBPF programs
+libbs2b                                       - Bauer stereophonic-to-binaural DSP effect library
+libbytesize                                   - A tiny library providing a C "class" for working with arbitrary big sizes in bytes
+libcaca                                       - libcaca is a graphics library
+libcacard                                     - library providing emulation of smart cards
+libcairo                                      - cairo (2D graphics library)
+libcairo-devel                                - Development files for libcairo
+libcanberra                                   - XDG Sound Theme and Name implementation
+libcap-ng                                     - Libcap-ng is a library that makes using posix capabilities easier
+libcap2                                       - User-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels
+libcap2-devel                                 - Development files for libcap2
+libcbor                                       - CBOR protocol implementation for C
+libcddb                                       - A library for accessing a CDDB server
+libcdio                                       - A library to encapsulate CD-ROM reading and control
+libcdio-paranoia                              - CD paranoia libraries from libcdi
+libcdr                                        - library and tools for reading and converting Corel DRAW files
+libcloudproviders                             - libcloudproviders is a DBus API that allows cloud storage sync clients to expose their services.
+libcmis                                       - C/C++ client library for the CMIS protocol
+libcolord-gtk                                 - GTK+ convenience library for interacting with colord
+libcue                                        - Cue sheet parser library
+libcupsfilters                                - OpenPrinting CUPS Filters
+libdaemon                                     - The libdaemon package is a lightweight C library that eases the writing of UNIX daemons.
+libdbi                                        - libdbi implements a database-independent abstraction layer in C, similar to the DBI/DBD layer in Perl
+libdbusmenu                                   - D-BUS Menu Library
+libdbusmenu-qt                                - Provides a Qt implementation of the DBusMenu protocol
+libdc1394                                     - Capture and control API for IIDC compliant cameras
+libde265                                      - An open h.265 video codec implementation
+libdecor                                      - Client-side decorations library for Wayland clients
+libdisplay-info                               - EDID and DisplayID library.
+libdovi                                       - Library to read & write Dolby Vision metadata
+libdrm                                        - Direct Rendering Manager API + Library
+libdrm-devel                                  - Development files for libdrm
+libdv                                         - Quasar DV codec, common for digital camcorders
+libdvbpsi                                     - A library designed for decoding and generation of MPEG TS and DVB
+libdvdcss                                     - DVD decryption library
+libdvdnav                                     - DVD navigation library
+libdvdread                                    - DVD reading library
+libdw                                         - Utilities and library for manipulating ELF files
+libdw-devel                                   - Utilities and library for manipulating ELF files
+libe-book                                     - Library and tools for reading and converting e-book formats
+libebml                                       - A C++ libary to parse EBML files
+libebur128                                    - libebur128 is a library that implements the EBU R 128 standard for loudness normalisation.
+libeconf                                      - Enhanced config file parser
+libeconf-devel                                - Development files for libeconf
+libedit                                       - An autotool- and libtoolized port of the NetBSD Editline library
+libei                                         - libei is a library for Emulated Input, primarily aimed at the Wayland stack.
+libelf                                        - Utilities and library for manipulating ELF files
+libelf-devel                                  - Utilities and library for manipulating ELF files
+libepoxy                                      - A library for handling OpenGL function pointer management for you
+libepoxy-devel                                - Development files for libepoxy
+libetonyek                                    - Library and a set of tools for reading and converting Apple iWork documents
+libevdev                                      - Wrapper library for evdev devices
+libevent                                      - event notification library
+libexempi                                     - Exempi is an implementation of XMP (Adobe's Extensible Metadata Platform)
+libexif                                       - EXIF tag parsing library
+libexttextcat                                 - Text Categorization library for language guessing
+libfdt                                        - Device Tree Compiler
+libffcall                                     - GNU libffcall is a library which can be used to build foreign function call interfaces in embedded interpreters.
+libffi                                        - Foreign Function Interface library
+libffi-devel                                  - Development files for libffi
+libfido2                                      - Library functionality for FIDO 2.0
+libflac                                       - Encoder/decoder for the Free Lossless Audio Codec
+libfontenc                                    - X font encoding library
+libfreeaptx                                   - Open Source implementation of Audio Processing Technology codec (aptX) forked from libopenaptx 0.2.0
+libfreehand                                   - Library for parsing the FreeHand file format structure
+libgcc                                        - GNU Compiler Collection
+libgcrypt                                     - GNU's basic cryptographic library
+libgcrypt-devel                               - Development files for libgcrypt
+libgdata                                      - GData Protocol support
+libgedit-amtk                                 - Actions, Menus and Toolbars Kit for GTK applications.
+libgedit-gfls                                 - A module dedicated to file loading and saving.
+libgedit-gtksourceview                        - libgedit-gtksourceview is a library that extends GtkTextView, the standard GTK widget for multiline text editing.
+libgedit-tepl                                 - Tepl is a library that eases the development of GtkSourceView-based text editors and IDEs.
+libgee                                        - The libgee package is a collection library providing GObject based interfaces and classes for commonly used data structures.
+libgeocode-glib-common                        - Shared component for libgeocode-glib 1 and 2
+libgeocode-glib2                              - Geocoding library
+libgfortran                                   - GNU Compiler Collection
+libglade                                      - Glade Programming Library
+libglu                                        - Mesa OpenGL Utility Library
+libglvnd                                      - The GL Vendor-Neutral Dispatch library
+libglvnd-devel                                - Development files for libglvnd
+libgnome-desktop                              - GNOME utility runtime library
+libgnome-keyring                              - The libgnome-keyring is used by applications to integrate with the GNOME Keyring system.
+libgnome-menus                                - GNOME library to access and manipulate menus
+libgnomekbd                                   - XKB Hooks used by the GNOME Desktop
+libgnutls                                     - The GnuTLS package contains libraries and userspace tools which provide a secure layer over a reliable transport layer
+libgnutls-utils                               - Command line applications for GnuTLS
+libgomp                                       - GNU Compiler Collection
+libgpg-error                                  - library with error codes for GnuPG related software
+libgpg-error-devel                            - Development files for libgpg-error
+libgphoto2                                    - Digital Camera access library
+libgpod                                       - libgpod is a shared library to access the contents of an iPod
+libgsf                                        - Library providing I/O for structured file formats
+libgtk-2                                      - The GTK+ 2 package contains the libraries used for creating graphical user interfaces for applications
+libgtk-3                                      - The GTK+ 3 package contains the libraries used for creating graphical user interfaces for applications
+libgtk-3-devel                                - Development files for libgtk-3
+libgtk-4                                      - libgtk-4 contains the libraries used for creating graphical user interfaces and applications.
+libgtkmm-3                                    - C++ bindings to GTK+
+libgtkmm-4                                    - C++ bindings to GTK+
+libgtksourceview4                             - Syntax highlighting text editing C library
+libgtksourceview5                             - A text widget adding syntax highlighting and more to GNOME
+libgtop                                       - GNOME top libraries
+libgudev                                      - GObject bindings for libudev
+libgudev-devel                                - Development files for libgudev
+libgusb                                       - GObject wrapper for libusb
+libgweather                                   - The libgweather package is a library used to access weather information from online services for numerous locations
+libgxps                                       - libgxps is a GObject based library for handling and rendering XPS documents
+libhandy                                      - Library full of GTK+ widgets for mobile phones
+libharu                                       - Free PDF library
+libheif                                       - libheif is an ISO/IEC 23008-12:2017 HEIF and AVIF (AV1 Image File Format) file format decoder and encoder
+libhogweed                                    - Low level cryptographic library
+libhunspell                                   - Hunspell spelling checker
+libical                                       - An implementation of the iCalendar protocols and data formats
+libice                                        - Inter-Client Exchange Library
+libicu                                        - International Components for Unicode
+libicu-devel                                  - Development files for libicu
+libid3tag                                     - Fork of the libid3tag library for reading ID3 metadata tags from MP3 files
+libidn                                        - Internationalized domain name support library
+libidn2                                       - Internationalized domain name support library
+libieee1284                                   - ieee1284 parallel port library
+libimobiledevice                              - A library to communicate with services of Apple iOS devices using native protocols.
+libinput                                      - Generic input library
+libinstpatch                                  - libInstPatch stands for lib-Instrument-Patch and is a library for processing digital sample based MIDI instrument "patch" files.
+libiptcdata                                   - libiptcdata is a library for manipulating IPTC metadata
+libixion                                      - General purpose formula parser & interpreter
+libjpeg-turbo                                 - libjpeg-turbo is a a fork of the original IJG libjpeg, offering faster compression and decompression.
+libjpeg-turbo-devel                           - Development files for libjpeg-turbo
+libjson-glib                                  - JSON GLib Package
+libjxl                                        - JPEG XL reference implementation
+libkate                                       - Overlay codec for Ogg
+libkdcraw                                     - C++ interface to LibRaw
+libksane                                      - SANE Library interface for KDE
+libksba                                       - Library to work with X.509 certificates
+liblangtag                                    - An interface library to access tags for identifying languages
+liblc3                                        - Low Complexity Communication Codec library and tools
+liblcms2                                      - Small-footprint color management engine
+libldac                                       - LDAC Bluetooth encoder library
+libltc                                        - libLTC provides functionality to encode and decode LTC audio from/to SMPTE or EBU timecode, including SMPTE date support.
+libmatroska                                   - The extensible, open source, open standard Multimedia container
+libmaxminddb                                  - C library for the MaxMind DB file format
+libmbim                                       - Library for talking to WWAN modems
+libmediaart                                   - Media Art library
+libmediainfo                                  - A convenient unified display of the most relevant technical and tag data for video and audio files.
+libmfx                                        - Legacy API for hardware video acceleration on Intel GPUs (Broadwell to Rocket Lake)
+libmms                                        - libmms is a library for downloading (streaming) media files using the mmst and mmsh protocols.
+libmnl                                        - libmnl is a minimalistic user-space library oriented to Netlink developers
+libmodplug                                    - Library for playing MOD-like music files
+libmpeg2                                      - A free MPEG-2 video stream decoder
+libmspub                                      - library and tools for reading and converting MS Publisher files
+libmtp                                        - Library implementation of the Media Transfer Protocol
+libmwaw                                       - Import library for legacy Mac documents
+libmypaint                                    - A library for making brushstrokes
+libndp                                        - Neighbor Discovery library
+libnettle                                     - Low level cryptographic library
+libnfnetlink                                  - libnfnetlink is the low-level library for netfilter related kernel/userspace communication.
+libnfs                                        - A client library for accessing NFS shares over a network
+libnftnl                                      - Netfilter library providing interface to the nf_tables subsystem
+libnice                                       - The GLib ICE implementation
+libnl                                         - a collection of libraries providing APIs to netlink protocol based Linux kernel interfaces.
+libnma                                        - Library for network-manager-applet
+libnotify                                     - Desktop notifications library
+libnspr                                       - Netscape Portable Runtime
+libnss                                        - Network Security Services
+libnumbertext                                 - Number to number name and money text conversion libraries
+libnvme                                       - C Library for NVM Express
+liboauth                                      - Library implementing OAuth Core RFC 5849 standard
+libodfgen                                     - Library for generating documents in ODF
+libofx                                        - An API designed to allow applications to very easily support OFX command responses
+libogg                                        - Ogg format library
+libogg-devel                                  - Development files for libogg
+libopenmpt                                    - OpenMPT-based module player library
+liborcus                                      - Standalone file processing filters
+libosinfo                                     - The Operating System information database
+libp11-kit                                    - The p11-kit package Provides a way to load and enumerate PKCS#11 (a Cryptographic Token Interface Standard) modules
+libpagemaker                                  - Library and tools to use with Adobe PageMaker documents
+libpaper                                      - Paper size library
+libparted                                     - Disk partitioning and partition resizing tool - shared libraries
+libpcap                                       - A system-independent interface for user-level packet capture
+libpciaccess                                  - Generic PCI access library for X
+libpciaccess-devel                            - Development files for libpciaccess
+libpcre                                       - Perl Compatible Regular Expressions
+libpeas                                       - libpeas provides a plugin framework for GLib applications
+libphonenumber                                - library for working with international phone numbers
+libpipeline                                   - pipeline manipulation library
+libplacebo                                    - Reusable library for GPU-accelerated image/video processing primitives and shaders, as well a batteries-included, extensible, high-quality rendering pipeline (similar to mpv's vo_gpu). Supports Vulkan and OpenGL.
+libplist                                      - A small portable C library to handle Apple Property List files in binary or XML.
+libpng                                        - libpng (Official PNG reference library)
+libpng-devel                                  - Development files for libpng
+libpng12                                      - libpng12 (Binary Compatibility Library)
+libportal                                     - libportal provides GIO-style async APIs for most Flatpak portals.
+libppd                                        - OpenPrinting support for PPD files
+libproxy                                      - libproxy is a library that provides automatic proxy configuration management
+libpsl                                        - C library to handle the Public Suffix List
+libpwquality                                  - Library for password quality checking and generating random passwords
+libqmi                                        - WWAN modem (QMI) protocol library
+libqrtr-glib                                  - libqrtr-glib is a glib-based library to use and manage the QRTR (Qualcomm IPC Router) bus.
+libqxp                                        - Library for processing QuarkXPress documents
+libraw                                        - LibRaw is a library for reading RAW files from digital cameras
+libraw1394                                    - Library providing raw IEE1394 support to userspace
+libreoffice-calc                              - LibreOffice Office Suite
+libreoffice-common                            - LibreOffice Office Suite
+libreoffice-draw                              - LibreOffice Office Suite
+libreoffice-impress                           - LibreOffice Office Suite
+libreoffice-writer                            - LibreOffice Office Suite
+librest                                       - RESTful API library
+librevenge                                    - Library for writing document import filters
+librsvg                                       - Library to render SVG files using Cairo
+libsamplerate                                 - libsamplerate is a Sample Rate Converter for audio.
+libsass                                       - LibSass is a C/C++ port of the Sass CSS precompiler
+libseccomp                                    - High level interface to the Linux Kernel's seccomp filter
+libsecret                                     - The libsecret package contains a GObject based library for accessing the Secret Service API.
+libselinux                                    - SELinux runtime library
+libshout                                      - Library which can be used to write a source client like ices
+libsigc++                                     - The libsigc++ package implements a typesafe callback system for standard C++.
+libsigc++30                                   - The libsigc++30 package implements the libsigc++ 3.x ABI for its typesafe callback system for standard C++.
+libsigsegv                                    - GNU libsigsegv is a library for handling page faults in user mode.
+libslirp                                      - User-mode networking for unprivileged network namespaces
+libsm                                         - X Session Management Library
+libsndfile                                    - Read/write file library containing sampled sound
+libsodium                                     - Sodium is a new, easy-to-use software library for encryption, decryption, signatures, password hashing and more.
+libsoup                                       - GNOME HTTP client/server library
+libsoup3                                      - GNOME HTTP client/server library
+libsoxr                                       - High quality, one-dimensional sample-rate conversion library
+libspectre                                    - libspectre is a small library for rendering Postscript documents
+libspeex                                      - Audio compression format designed for speech and its converter application
+libspeex-devel                                - Development files for libspeex
+libssh                                        - SSH library
+libssh2                                       - libssh2 is a client-side C library implementing the SSH2 protocol
+libstartup-notification                       - Startup Notification libraries
+libstdc++                                     - GNU Compiler Collection
+libstemmer                                    - Snowball compiler and stemming algorithms
+libtasn1                                      - C Library that encodes and decodes DER/BER data following an ASN.1 schema
+libtelepathy-glib                             - Telepathy is a D-Bus framework for unifying real time communication
+libtheora                                     - Open source video format
+libtheora-devel                               - Development files for libtheora
+libtiff                                       - Library for accessing TIFF files
+libtiff-devel                                 - Development files for libtiff
+libtirpc                                      - Transport Independent RPC library (SunRPC replacement)
+libtool                                       - Generic library support script
+libtool-devel                                 - Development files for libtool
+libtpms                                       - Library providing Trusted Platform Module (TPM) functionality
+libunibreak                                   - Unibreak Library
+libunibreak-devel                             - Development files for libunibreak
+libunistring                                  - Library for manipulating Unicode strings
+libunwind                                     - Open-source implementation of the libunwind API
+libunwind-devel                               - Development files for libunwind
+libupnp                                       - Portable Open Source UPnP Development Kit
+liburcu                                       - Userspace RCU Implementation
+liburing                                      - Library for interacting with the io_uring Linux kernel functionality
+libusb                                        - libusb (USB library)
+libusbmuxd                                    - A client library to multiplex connections from and to iOS devices by connecting to a socket provided by a usbmuxd daemon.
+libuv                                         - A multi-platform support library with a focus on asynchronous I/O
+libva                                         - Libva is an implementation for VA-API (Video Acceleration API)
+libva-devel                                   - Development files for libva
+libva-intel-driver                            - Intel HD graphics VA-API implementation
+libvdpau                                      - Video Decode and Presentation API for Unix
+libvirt                                       - Library providing a simple virtualization API
+libvirt-glib                                  - libvirt is a C toolkit to interact with the virtualization capabilities of recent versions of Linux
+libvirt-python                                - The libvirt virtualization API python binding
+libvisio                                      - Library and a set of tools for reading and converting MS Visio diagrams
+libvncserver                                  - VNC Server Library
+libvoikko                                     - Libvoikko provides spell checking, hyphenation, grammar checking and morphological analysis for Finnish language
+libvorbis                                     - Open source audio format
+libvorbis-devel                               - Development files for libvorbis
+libvpl                                        - Intel Video Processing Library (libVPL) dispatcher
+libvpx                                        - Reference implementation of the VP8 & VP9 codec
+libvpx-devel                                  - Development files for libvpx
+libvte                                        - The VTE package contains a termcap file implementation for terminal emulators.
+libwacom                                      - A library used to identify wacom tablets and their model-specific features
+libwebkit-gtk                                 - Web rendering engine
+libwebkit-gtk41                               - Web rendering engine
+libwebkit-gtk6                                - Web rendering engine
+libwebp                                       - A new image format for the web
+libwpd                                        - Library for import of WordPerfect documents
+libwpg                                        - A library for import of WordPerfect Graphics images
+libwps                                        - Microsoft Works file format import filter
+libwww-perl                                   - WWW Perl Modules
+libx11                                        - Core X11 protocol client library
+libx11-devel                                  - Development files for libx11
+libxau                                        - X Authorization Protocol library
+libxau-devel                                  - Development files for libxau
+libxaw                                        - X11 Athena Widget library
+libxcb                                        - X C Binding
+libxcb-devel                                  - Development files for libxcb
+libxcomposite                                 - client library for the Composite extension to the X11 protocol
+libxcomposite-devel                           - Development files for libxcomposite
+libxcrypt                                     - Extended crypt library for descrypt, md5crypt, bcrypt, and others
+libxcursor                                    - X Cursor management library
+libxcursor-devel                              - Development files for libxcursor
+libxcvt                                       - VESA CVT standard timing modelines generator.
+libxdamage                                    - X11 damaged region extension library
+libxdamage-devel                              - Development files for libxdamage
+libxdmcp                                      - X Display Manager Control Protocol library
+libxdmcp-devel                                - Development files for libxdmcp
+libxext                                       - X11 common extensions base
+libxext-devel                                 - Development files for libxext
+libxfce4ui                                    - Widgets library for the Xfce desktop environment.
+libxfce4util                                  - Extension library for Xfce
+libxfixes                                     - X11 miscellaneous 'fixes' extension library
+libxfixes-devel                               - Development files for libxfixes
+libxfont2                                     - libXfont provides the core of the legacy X11 font system, handling the index files (fonts.dir, fonts.alias, fonts.scale), the various font file formats, and rasterizing them.
+libxft                                        - FreeType-based font drawing library for X
+libxft-devel                                  - Development files for libxft
+libxi                                         - X Input Extension Library
+libxi-devel                                   - Development files for libxi
+libxinerama                                   - X Xinerama extension library
+libxinerama-devel                             - Development files for libxinerama
+libxkbcommon                                  - xkbcommon is a library to handle keyboard description
+libxkbcommon-devel                            - Development files for libxkbcommon
+libxkbfile                                    - X11 keyboard file manipulation library
+libxklavier                                   - The libxklavier package contains a utility library for X keyboard.
+libxml++26                                    - C++ bindings to libxml2
+libxml2                                       - GNOME XML Library
+libxml2-devel                                 - Development files for libxml2
+libxmlb                                       - A library to help create and query binary XML blobs
+libxmu                                        - X11 miscellaneous utility library
+libxpm                                        - X Pixmap (XPM) image file format library
+libxpresent                                   - X11 presentation library
+libxrandr                                     - X11 RandR extension library
+libxrandr-devel                               - Development files for libxrandr
+libxrender                                    - X Rendering Extension client library
+libxrender-devel                              - Development files for libxrender
+libxscrnsaver                                 - X11 Screen Saver extension client library
+libxshmfence                                  - X Linux futex event API
+libxslt                                       - GNOME XSLT Library
+libxt                                         - X Toolkit Intrinsics library
+libxtst                                       - X11 Testing -- Record extension library
+libxtst-devel                                 - Development files for libxtst
+libxv                                         - X11 Video extension library
+libxvmc                                       - X11 Video extension library - MotionCompensation
+libxxf86dga                                   - X11 Direct Graphics Access extension library
+libxxf86vm                                    - X11 XFree86 video mode extension library
+libzen                                        - Small C++ derivate classes to have an easier life
+libzip                                        - libzip is a C library for reading, creating, and modifying zip archives
+libzmf                                        - Library for import of Zoner document formats
+lilv                                          - A library to make the use of LV2 plugins as simple as possible
+linux-current                                 - Linux kernel image and modules (current)
+linux-driver-management                       - Linux Driver Management
+linux-driver-management-gdm-integration       - LDM Integration for GDM
+linux-firmware                                - Firmware required for many devices
+linux-headers                                 - Kernel's libc headers
+linux-lts                                     - Linux kernel image and modules (LTS)
+linux-tools-cpupower                          - The cpupower program
+linux-tools-x86_energy_perf_policy            - Allows programs and admins to define the relative importance of performance and energy efficiency.
+llvm                                          - Low Level Virtual Machine (Reusable compiler and toolchains)
+llvm-clang                                    - Clang Compiler frontend to LLVM
+llvm-devel                                    - Development files for llvm
+lm_sensors                                    - User space hardware monitoring
+lsb-release                                   - LSB status script
+lsd                                           - The next generation ls command
+lsof                                          - lsof (for LiSt Open Files) displays information about files open to Unix processes
+lsp-plugins                                   - Linux Studio Plugins Project
+lua                                           - Lightweight programming language
+luajit                                        - Just-in-time compiler and drop-in replacement for Lua 5.1
+lvm2                                          - The LVM2 package is a package that manages logical partitions.
+lyx                                           - LyX document processor
+lz4                                           - LZ4 commmand line tools
+lzip                                          - Lossless data compressor
+lzo                                           - LZO compression library
+m4                                            - GNU M4 is an implementation of the traditional Unix macro processor
+make                                          - Tool to compile sources trees
+man-db                                        - Application to read Linux man pages
+marble-libs                                   - Virtual Globe and World Atlas
+mariadb-libs                                  - MariaDB client libraries
+md4c                                          - C Markdown parser and library
+mda-lv2                                       - MDA-LV2 is an LV2 port of the MDA plugins by Paul Kellett.
+mdadm                                         - MDADM - Software Raid Management
+media-player-info                             - Media Player Capability Library
+megacmd                                       - Command Line Interactive and Scriptable Application to access MEGA
+meld                                          - Meld is a visual diff and merge tool targeted at developers.
+mesa-demos                                    - Demonstrations of the Mesa3D Library
+mesalib                                       - Mesa is an OpenGL compatible 3D graphics library.
+mesalib-devel                                 - Development files for mesalib
+meson                                         - A high performance build system
+metis                                         - Serial Graph Partitioning and Fill-reducing Matrix Ordering
+microdns                                      - Minimal mDNS resolver (and announcer) library
+minizip-ng                                    - Fork of the zlib zip library
+mlt                                           - Multimedia framework designed for television broadcasting.
+mobile-broadband-provider-info                - Mobile Broadband Provider Info
+modem-manager                                 - GNOME Modem Manager
+movit                                         - High-performance, high-quality video filters for the GPU
+mozjs                                         - JS is Mozilla's JavaScript engine written in C/C++
+mpc                                           - The MPC package contains a library for the arithmetic of complex numbers with arbitrarily high precision and correct rounding of the result.
+mpfr                                          - The MPFR package contains functions for multiple precision math.
+mpg123                                        - Console based mp3 decoder
+mpv-libs                                      - mpv is a fork of mplayer2 and MPlayer. It shares some features with the former projects while introducing many more
+msgraph                                       - GLib-based library for accessing online service APIs using MS Graph protocol.
+mtdev                                         - Multitouch Protocol Translation Library
+mtools                                        - A collection of utilities to access MS-DOS disks without mounting them
+mutagen                                       - Python module for handling audio metadata
+mutter                                        - Gnome Shell Window Manager
+mutter-common                                 - Gnome Shell Window Manager
+mypaint-brushes1                              - Brushes to be used with the MyPaint library
+mythes                                        - Simple thesaurus library
+nano                                          - Small, friendly text editor inspired by Pico
+nanorc                                        - Improved Nano Syntax Highlighting Files
+nasm                                          - Netwide Assembler
+nautilus                                      - Access and organize files
+nautilus-extension                            - Access and organize files
+nautilus-python                               - Nautilus-python enables Python extentions in Nautilus
+ncurses                                       - The ncurses library routines are a terminal-independent method of updating character screens with reasonable optimization.
+net-snmp                                      - Simple Network Management Protocol
+network-manager                               - Simple networking
+network-manager-livecd                        - Live ISO configuration
+networkmanager-openconnect                    - OpenConnect VPN plugin for NetworkManager
+networkmanager-openvpn                        - OpenVPN plugin for NetworkManager
+newt                                          - Newt is a programming library for color text mode, widget based user interfaces
+nftables                                      - nftables replaces the popular iptables/ebtables
+nghttp2                                       - HTTP/2 C Library
+nghttp3                                       - HTTP/3 C Library
+ninja                                         - A small build system with a focus on speed
+nodejs                                        - Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+noto-sans-ttf                                 - Noto Sans Fonts (Multi-lingual and Emoji)
+noto-serif-ttf                                - Noto Serif Fonts (Multi-lingual)
+npth                                          - Non-preemptive threads implementation (GNU pth)
+nss-mdns                                      - glibc plugin for .local name resolution
+nsxiv                                         - Neo (or New or Not) Simple (or Small or Suckless) X Image Viewer.
+ntfs-3g                                       - Open source, driver for Windows NTFS file system
+numactl                                       - Simple NUMA policy support for Linux.
+numactl-devel                                 - Development files for numactl
+numpy                                         - Array processing for numbers, strings, records, and objects in Python
+nvidia-470-glx-driver-modaliases              - These files are used by the Software Center for hardware detection
+nvidia-glx-driver-modaliases                  - These files are used by the Software Center for hardware detection
+ocl-icd                                       - Vendor Neutral OpenCL Implementation
+onboard                                       - On-screen keyboard
+oniguruma                                     - Oniguruma is a modern and flexible regular expressions library
+openal-soft                                   - Open Source OpenAL implementation
+openblas                                      - OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version
+opencollada                                   - COLLADA (COLLAborative Design Activity) is an interchange file format for interactive 3D applications.
+opencolorio                                   - A color management framework for visual effects and animation
+openconnect                                   - Open client for Cisco AnyConnect VPN
+opencv                                        - OpenCV is an open source computer vision and machine learning software library
+openexr                                       - A high dynamic-range image file format library
+openimagedenoise                              - High-Performance Denoising Library for Ray Tracing
+openimageio                                   - OpenImageIO
+openjpeg                                      - An open-source JPEG 2000 codec written in C
+openldap                                      - An open source implementation of the Lightweight Directory Access Protocol.
+openshadinglanguage                           - Advanced shading language for production GI renderers
+opensp                                        - A library and a set of tools for validating, parsing and manipulating SGML and XML documents
+openssh                                       - OpenSSH (OpenBSD Secure Shell)
+openssh-server                                - OpenSSH Daemon
+openssl                                       - Cryptographic tools required by many packages
+openssl-11                                    - Legacy cryptographic tools required by many packages
+opensubdiv                                    - An Open-Source subdivision surface library
+openvdb                                       - Sparse volume data structure and tools
+openvpn                                       - OpenVPN Client
+opus                                          - Opus is a totally open, royalty-free, highly versatile audio codec.
+opus-devel                                    - Development files for opus
+orc                                           - The Oil Runtime Compiler
+orc-devel                                     - Development files for orc
+orca                                          - Orca Screen Reader
+os-prober                                     - Detects OSes available on the system
+osinfo-db                                     - OS database for libosinfo
+osm-gps-map                                   - A Gtk+ Widget for Displaying OpenStreetMap tiles
+ostree                                        - Git-like filesystem management
+p7zip                                         - p7zip is a port of 7za for POSIX systems like Unix
+packagekit                                    - A D-BUS abstraction layer that allows the user to manage packages in a secure way using a cross-distro, cross-architecture API. (NOT SUPPORTED)
+packagekit-qt-qt6                             - Qt bindings for PackageKit - Qt6 bindings
+pam                                           - Pluggable Authentication Modules library
+pandoc                                        - Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library
+pango                                         - pango (Library for laying out and rendering text)
+pango-devel                                   - Development files for pango
+pangomm                                       - C++ bindings to pango
+pangomm-2.48                                  - C++ bindings to pango
+papirus-icon-theme                            - A free and open source SVG icon theme for Linux systems
+parted                                        - Disk partitioning and partition resizing tool
+partio                                        - A library for particle IO and manipulation
+patch                                         - patch (patches source files)
+pcaudiolib                                    - Portable C Audio Library
+pciutils                                      - Utilities to deal with PCI bus
+pcre2                                         - PCRE2 - Perl-Compatible Regular Expressions
+pcre2-devel                                   - Development files for pcre2
+pcsc-lite                                     - PC/SC Architecture smartcard middleware library
+perl                                          - Perl
+perl-archive-zip                              - Perl Archive::Zip module
+perl-authen-sasl                              - Authen::SASL - SASL Authentication framework
+perl-b-hooks-endofscope                       - B::Hooks::EndOfScope - Execute code after a scope finished compilation
+perl-clone                                    - Perl Clone()
+perl-common-sense                             - common::sense - save a tree AND a kitten, use common::sense!
+perl-data-dump                                - Pretty printing of data structures
+perl-devel-globaldestruction                  - Devel::GlobalDestruction - Provides function returning the equivalent of `${^GLOBAL_PHASE} eq 'DESTRUCT'` for older perls
+perl-digest-hmac                              - Digest::HMAC - Keyed-Hashing for Message Authentication
+perl-digest-sha1                              - Perl interface to the SHA-1 algorithm
+perl-dist-checkconflicts                      - Dist::CheckConflicts - declare version conflicts for your dist
+perl-encode-locale                            - Determine the locale encoding
+perl-error                                    - Perl error module
+perl-file-copy-recursive                      - File::Copy::Recursive - Perl extension for recursively copying files and directories
+perl-file-homedir                             - Find your home and other directories on any platform
+perl-file-listing                             - File::Listing - Parse directory listing
+perl-file-which                               - File::Which - Perl implementation of the which utility as an API
+perl-html-parser                              - HTML::Parser - HTML parser class
+perl-http-cookies                             - HTTP::Cookies - HTTP cookie jars
+perl-http-daemon                              - HTTP::Daemon - a simple http server class
+perl-http-date                                - Perl HTTP date functions
+perl-http-message                             - HTTP::Message - HTTP style message (base class)
+perl-http-negotiate                           - HTTP::Negotiate - choose a variant to serve
+perl-image-exiftool                           - Reader and rewriter of EXIF informations that supports raw files
+perl-io-html                                  - IO::HTML - Open an HTML file with automatic charset detection
+perl-io-socket-ssl                            - IO::Socket::SSL -- Nearly transparent SSL encapsulation for IO::Socket::INET
+perl-ipc-run3                                 - IPC::Run3 - run a subprocess in batch mode (a la system) on Unix
+perl-ipc-system-simple                        - Run commands simply, with detailed diagnostics
+perl-json-xs                                  - json_xs - JSON::XS commandline utility
+perl-libnet                                   - Perl clients for various network protocols
+perl-log-dispatch                             - Dispatches messages to one or more outputs
+perl-lwp-mediatypes                           - LWP::MediaTypes - guess media type for a file or a URL
+perl-lwp-protocol-https                       - LWP::Protocol::https - Provide https support for LWP::UserAgent
+perl-module-implementation                    - This module abstracts out the process of choosing one of several underlying implementations for a module
+perl-module-runtime                           - Module::Runtime - runtime module handling
+perl-mozilla-ca                               - Mozilla::CA - Mozilla's CA cert bundle in PEM format
+perl-namespace-autoclean                      - namespace::autoclean - Keep imports out of your namespace
+perl-namespace-clean                          - Keep imports and functions out of your namespace
+perl-net-dbus                                 - Net::DBus - Perl extension for the DBus message system
+perl-net-http                                 - Net::HTTP - Low-level HTTP connection (client)
+perl-net-ssleay                               - Net::SSLeay - Perl extension for using OpenSSL
+perl-ntlm                                     - This module implements the NTLM authentication mechanism.
+perl-package-stash                            - Package::Stash - Routines for manipulating stashes
+perl-params-validate                          - Params::Validate - Validate method/function parameters
+perl-posix-strptime                           - POSIX::strptime - Perl extension to the POSIX date parsing strptime(3) function
+perl-scalar-list-utils                        - Scalar::Util, List::Util and Sub::Util perl modules
+perl-sub-exporter-progressive                 - Sub Exporter Wrapper
+perl-sub-identify                             - Sub::Identify allows you to retrieve the real name of code references.
+perl-try-tiny                                 - Try::Tiny - Minimal try/catch with proper preservation of $@
+perl-types-serialiser                         - Types::Serialiser - simple data types for common serialisation formats
+perl-uri                                      - URI - Uniform Resource Identifiers (absolute and relative)
+perl-variable-magic                           - Variable::Magic - Associate user-defined magic to variables from Perl
+perl-www-robotrules                           - WWW::RobotRules - database of robots.txt-derived permissions
+perl-x11-protocol                             - Perl module for the X Window System Protocol, version 11
+perl-xml-twig                                 - Perl XML module
+perl-xmlparser                                - XML Parsing Module for Perl
+perl-yaml-tiny                                - YAML::Tiny - Read/Write YAML files with as little code as possible
+phodav                                        - Minimal WebDAV server implementation
+phonon-qt5                                    - Qt-style interface for audio and video. - Qt5 bindings
+piksemel                                      - Python XML API based on the iksemel library
+pinentry                                      - Pin or pass-phrase entry dialog
+pip                                           - The PyPA recommended tool for installing Python packages
+pipewire                                      - Multimedia processing graphs
+pipewire-lib                                  - Multimedia processing graphs
+pisi                                          - PISI
+pixman                                        - pixman (software library for pixel manipulation)
+pixman-devel                                  - Development files for pixman
+pkcs11-helper                                 - Library for interacting with PKCS#11 providers
+plocate                                       - plocate, a much faster locate
+podofo                                        - PoDoFo is a library to work with the PDF file format
+polkit                                        - Application-level authorization toolkit
+polkit-qt-1-qt5                               - Qt wrapper around polkit-1 - Qt5 bindings
+polkit-qt-1-qt6                               - Qt wrapper around polkit-1 - Qt6 bindings
+poppler                                       - PDF Rendering Library
+poppler-data                                  - encoding data for the poppler PDF rendering library
+poppler-qt5                                   - PDF Rendering Library
+poppler-utils                                 - PDF Rendering Library
+popt                                          - popt
+portaudio                                     - PortAudio is a free, cross-platform, open-source, audio I/O library
+portmidi                                      - PortMidi is a library for  real-time input and output of MIDI data using a system-independent interface.
+postgresql-libpq                              - PostgreSQL C client library
+potrace                                       - Potrace is a tool for tracing a bitmap, which means, transforming a bitmap into a smooth, scalable image
+power-profiles-daemon                         - Makes power profiles handling available over D-Bus.
+powerlevel10k                                 - Powerlevel10k is a theme for Zsh.
+powerline                                     - Powerline vim plugin and shell prompts
+powerline-dbginfo                             - Debug symbols for powerline
+powerline-fonts                               - Powerline Font Pack
+powertop                                      - PowerTOP is a Linux tool to diagnose issues with power consumption and power management.
+ppp                                           - an open source package which implements the Point-to-Point Protocol (PPP) on Linux and Solaris systems
+procps-ng                                     - /proc file system utilities
+protobuf                                      - Protocol Buffers - Google's data interchange format
+psmisc                                        - PSMisc
+psutils                                       - Utilities for manipulating PostScript documents
+ptex                                          - Per-Face Texture Mapping for Production Rendering
+pugixml                                       - pugixml is a C++ XML processing library
+pulseaudio                                    - Advanced sound system
+pyatspi2                                      - A python client library for the AT-SPI D-Bus accessibility infrastructure.
+pycups                                        - Python bindings for cups
+pygments                                      - Pygments is a syntax highlighting package written in Python
+pyparsing                                     - Python library for creating PEG parsers
+python                                        - Python 2.7
+python-bcrypt                                 - Modern password hashing for your software and your servers
+python-beautifulsoup4                         - Beautiful Soup is a Python library designed for quick turnaround projects like screen-scraping (also known as BS4)
+python-cairo                                  - Python Cairo Bindings
+python-certifi                                - Python package for providing Mozilla's CA Bundle
+python-cffi                                   - Foreign Function Interface for Python calling C code
+python-chardet                                - Python character encoding detector
+python-charset-normalizer                     - Truly universal encoding detector in pure Python
+python-colorama                               - Cross-platform colored terminal text
+python-configobj                              - Config file reading, writing, and validation
+python-cparser                                - pycparser is a complete parser of the C language
+python-cryptography                           - A package designed to expose cryptographic recipes and primitives to Python developers
+python-cssselect                              - cssselect parses CSS3 Selectors and translates them to XPath 1.0
+python-dateutil                               - Python date module
+python-dbus                                   - D-Bus module for Python
+python-decorator                              - Better living through Python with decorators
+python-defusedxml                             - Defuses XML bombs and other exploits
+python-gobject                                - Python GObject bindings
+python-gobject2                               - PyGTK for GTK2 libraries
+python-gtk2                                   - GTK+2 bindings for Python
+python-httplib2                               - Small, fast HTTP client library for Python
+python-idna                                   - A python library to support the Internationalised Domain Names in Applications
+python-inotify                                - An adapter to Linux kernel support for inotify directory-watching
+python-libevdev                               - A Python wrapper around libevdev
+python-lxml                                   - XML and HTML with Python
+python-magic                                  - Python interface for libmagic
+python-markdown-it-py                         - Markdown parser done right
+python-mdurl                                  - Markdown URL utilities
+python-multidict                              - The multidict implementation
+python-notify2                                - notify2 is a replacement for pynotify
+python-openssl                                - Python interface to the OpenSSL library
+python-packaging                              - Core utilities for Python packages
+python-pillow                                 - The friendly PIL fork (Python Imaging Library)
+python-psutil                                 - Cross-platform lib for process and system monitoring in Python
+python-pycurl                                 - Curl module for python
+python-pyliblzma                              - Python bindings for lzma
+python-pyqt5-sip                              - The sip module support for PyQt5
+python-pysmbc                                 - Python bindings for libsmbclient from the Samba project
+python-pysocks                                - A Python SOCKS client module
+python-pyte                                   - Simple VTXXX-compatible linux terminal emulator
+python-requests                               - Python HTTP for Humans
+python-requests-toolbelt                      - A toolbelt of useful classes and functions to be used with python-requests
+python-rich                                   - Rich is a Python library for rich text and beautiful formatting in the terminal
+python-setproctitle                           - A Python module to customize the process title
+python-setuptools                             - Easily download, build, install, upgrade, and uninstall Python packages
+python-six                                    - Six is a Python 2 and 3 compatibility library
+python-soupsieve                              - A modern CSS selector implementation for BeautifulSoup
+python-urllib3                                - Python HTTP library with thread-safe connection pooling, file post, and more
+python-wcwidth                                - MMeasures the displayed width of unicode strings in a terminal
+python-websockets                             - An implementation of the WebSocket Protocol (RFC 6455 & 7692)
+python2-cffi                                  - Foreign Function Interface for Python calling C code
+python2-cparser                               - pycparser is a complete parser of the C language
+python2-gobject                               - Python2 GObject bindings (legacy)
+python2-ordered-set                           - A MutableSet that remembers its order, so that every entry has an index.
+python2-xattr                                 - Python wrapper for extended filesystem attributes
+python3                                       - Python development environment - 3.11
+python3-cairo                                 - Python3 Cairo Bindings
+python3-dbus                                  - D-Bus module for Python
+python3-pycryptodome                          - Cryptographic library for Python
+python3-pyudev                                - pyudev is a LGPL licensed, pure Python binding for libudev
+python3-qt5                                   - python3-qt5 are the python3 bindings for Qt5
+qadwaitadecorations                           - Qt decoration plugin implementing Adwaita-like client-side decorations
+qca-qt6                                       - Cryptographic library with an easy API - Qt6 bindings
+qemu                                          - QEMU is a generic and open source machine emulator and virtualizer.
+qemu-guest-agent                              - Guest agent for KVM guests
+qol-assist                                    - QoL Assistance
+qpdf                                          - PDF manipulation library
+qrencode                                      - Libqrencode is a C library for encoding data in a QR Code symbol
+qt5-base                                      - Cross platform application and UI framework
+qt5-connectivity                              - Qt5 Connectivity components
+qt5-declarative                               - Qt 5 Declarative Library
+qt5-graphicaleffects                          - Qt5 Graphical Effects Module
+qt5-location                                  - Qt5 Location and Mapping Components
+qt5-multimedia                                - Qt5 Multimedia Components
+qt5-networkauth                               - Qt5 NetworkAuth components
+qt5-quickcontrols                             - Qt5 Quick Controls Module
+qt5-quickcontrols2                            - Qt5 Quick Controls 2 Module
+qt5-sensors                                   - Qt5 Sensors Module
+qt5-serialport                                - Qt5 Serial Port Module
+qt5-speech                                    - Qt Text-To-Speech library
+qt5-svg                                       - Qt5 SVG Module
+qt5-tools                                     - Qt5 QtTools Module
+qt5-wayland                                   - Qt 5 Wayland Library
+qt5-webchannel                                - Qt5 Webchannel Module
+qt5-webengine                                 - QtWebEngine integrates chromium's fast moving web capabilities into Qt
+qt5-webkit                                    - Qt5 support for Webkit
+qt5-websockets                                - Qt5 Websockets Module
+qt5-x11extras                                 - Qt5 X11 Extra Components
+qt5-xmlpatterns                               - Qt5 XML Patterns
+qt6-5compat                                   - Qt 5 compatibility library for Qt 6
+qt6-base                                      - Cross platform application and UI framework
+qt6-declarative                               - Classes for QML and JavaScript languages
+qt6-multimedia                                - Qt6 Multimedia Components
+qt6-quick3d                                   - Qt6 Quick 3D module
+qt6-quicktimeline                             - Enables keyframe-based animations and parameterization for Qt6
+qt6-shadertools                               - Qt Shader Tools module
+qt6-speech                                    - Qt6 Speech Components
+qt6-svg                                       - Qt6 SVG Module
+qt6-wayland                                   - Qt6 Wayland Library
+qtstyleplugins                                - Provides GTK2 style integration for Qt applications
+quazip-qt5                                    - Qt/C++ wrapper over minizip - Qt5 bindings
+raqm                                          - A library for complex text layout
+rav1e                                         - The fastest and safest AV1 encoder
+rclone                                        - Sync files to and from Google Drive, S3, Swift, Cloudfiles, etc.
+rclone-browser                                - Simple GUI for rclone
+rcm                                           - RC (dot-file) management
+readline                                      - Another cute console display library
+reiserfsprogs                                 - The tools to maintain a ReiserFS (Reiser v3) filesystem
+rhythmbox                                     - Music playing application
+rhythmbox-alternative-toolbar                 - Enhanced play controls and interface for Rhythmbox
+ripgrep                                       - ripgrep combines the usability of The Silver Searcher with the raw speed of grep
+ripgrep-all                                   - ripgrep-all (rga) allows you to search PDFs, e-books, Office documents, archive formats and more
+rnnoise                                       - Recurrent neural network for audio noise reduction
+rocm-clr                                      - AMD Common Language Runtime for HIP and OpenCL
+rocm-compilersupport                          - The AMD Code Object Manager (Comgr)
+rocm-compilersupport-devel                    - Development files for rocm-compilersupport
+rocm-device-libs                              - ROCm Device Libraries
+rocm-device-libs-devel                        - Development files for rocm-device-libs
+rocm-hip                                      - AMD Common Language Runtime for HIP and OpenCL
+rocm-info                                     - ROCm Application for Reporting System Info
+rocm-llvm                                     - ROCm's patched LLVM
+rocm-runtime                                  - ROCm Runtime Library
+rocm-runtime-devel                            - Development files for rocm-runtime
+rocm-smi                                      - ROCm System Management Interface Library
+rocm-smi-devel                                - Development files for rocm-smi
+rsync                                         - rsync (remote file sync)
+rtkit                                         - Realtime Policy and Watchdog Daemon
+rtl8852bu                                     - Realtek RTL8832BU/RTL8852BU Driver
+rtl8852bu-common                              - Common components for rtl8852bu drivers
+rtmpdump                                      - RTMP Dump
+rubberband                                    - A high quality software library for audio time-stretching and pitch-shifting.
+rust                                          - A fast and secure system programming language
+rygel                                         - Rygel uPnP Media Server
+samba                                         - Provides file and print services to SMB/CIFS clients and Windows networking to Linux clients
+sane-backends                                 - Scanner Access Now Easy
+sassc                                         - Wrapper around libsass to compile CSS stylesheet
+sbc                                           - Bluetooth Subband Codec Library
+scour                                         - Python tool for SVG optimization.
+screen                                        - Full-screen window manager that multiplexes a physical terminal
+scribus                                       - Desktop publishing software
+scribus-docs                                  - Documentation for scribus
+sdl1                                          - Simple DirectMedia Layer 1.x
+sdl1-image                                    - SDL_image is an image file loading library.
+sdl2                                          - Simple DirectMedia Layer
+sdl2-image                                    - SDL_image is an image file loading library.
+sdl2-ttf                                      - A sample library which allows you to use TrueType fonts in SDL applications.
+seahorse                                      - GNOME encryption key and password manager
+sed                                           - sed (Stream Editor)
+serd                                          - Lightweight RDF parsing library
+setxkbmap                                     - X11 client to change the keymaps in the X server for a specified keyboard
+sg3_utils                                     - Generic SCSI utilities
+shaderc                                       - A collection of tools, libraries, and tests for Vulkan shader compilation
+shadow                                        - login and password tools
+shared-mime-info                              - Shared Mime Info Database
+sharutils                                     - Creates "shell archives" (or shar files) which are in text format and can be mailed.
+shim-signed                                   - Initial UEFI bootloader that handles chaining to a trusted full bootloader under secure boot environments. This package contains the version signed by the UEFI signing service.
+shotwell                                      - A digital photo organizer designed for the GNOME desktop environment
+simplescreenrecorder                          - A screen recorder for Linux
+slang                                         - Programmers library allowing interactive applications
+smartmontools                                 - Check S.M.A.R.T information on hard and solid-state disks
+snapd                                         - The snapd and snap tools enable systems to work with .snap files
+snappy                                        - Snappy is a compression/decompression library.
+socat                                         - Bidirectional data transfer relay
+sof-firmware                                  - Sound Open Firmware
+solid                                         - Desktop hardware abstraction.
+solus-artwork                                 - Official Solus artwork
+solus-hardware-config                         - Solus Hardware configuration support
+solus-sc                                      - Solus Software Center
+solus-sc-icons                                - Icons required for the Solus Software Center
+sonnet                                        - Multi-language spell checker
+sord                                          - Lightweight library for storing RDF data in memory
+sound-theme-freedesktop                       - Freedesktop reference sound theme
+soundtouch                                    - Audio processing library.
+speech-dispatcher                             - Common high-level interface to speech synthesis
+spice                                         - SPICE (Simple Protocol for Independent Computing Environments)
+spice-gtk                                     - Gtk client and libraries for SPICE remote desktop servers (gtk3 version)
+spice-vdagent                                 - Spice agent for Linux guests
+spirv-tools                                   - The SPIR-V Tools project provides an API and commands for processing SPIR-V modules
+sqlcipher                                     - SQLCipher is an SQLite extension that provides transparent 256-bit AES encryption of database files.
+sqlite3                                       - Self contained SQL package
+squashfs-tools                                - Set of tools which creates squashfs filesystem
+sratom                                        - A library for serialising LV2 atoms to or from RDF
+srt                                           - Secure, Reliable, Transport
+sshpass                                       - SSHPass is a tiny utility, which allows you to provide the ssh password without using the prompt.
+stoken                                        - stoken is a tokencode generator compatible with RSA SecurID 128-bit (AES) tokens
+sublime-text                                  - Sublime Text is a sophisticated text editor for code, markup and prose.
+sudo                                          - Run commands as a privileged user
+suitesparse                                   - A suite of Sparse matrix packages
+svt-av1                                       - Scalable Video Technology for AV1 (SVT-AV1 Encoder)
+switcheroo-control                            - D-Bus service to check the availability of dual-GPU
+swtpm                                         - TPM Emulator
+syncthing                                     - Syncthing is an open-source file synchronization client/server application
+syncthing-gtk                                 - GTK3 & Python based GUI and notification area icon for Syncthing
+syndication                                   - An RSS/Atom parser library
+system-config-printer                         - Graphical user interface for CUPS administration
+systemd                                       - System and Service Manager
+systemd-devel                                 - Development files for systemd
+t1utils                                       - Utilities for manupulating Adobe Type 1 font software
+taglib                                        - Library to read metadata from a variety of multimedia formats
+talloc                                        - Talloc is a hierarchical, reference counted memory pool system with destructors
+tar                                           - tar (Create and extract archives)
+tcl                                           - tcl (Tool Command Language)
+tdb                                           - Transactional database
+teamviewer                                    - TeamViewer
+teckit                                        - A Text Encoding Conversion toolkit
+tecla                                         - Keyboard layout viewer
+telepathy-logger                              - Telepathy logging service
+terminator                                    - Store and run multiple GNOME terminals in one window
+tevent                                        - Tevent is an event system based on the talloc memory management library
+texlive                                       - TeX Live (TeX document production system)
+texlive-synctex                               - TeX Live (TeX document production system)
+thefuck                                       - Magnificent app which corrects your previous console command
+thermald                                      - Thermal daemon for IA
+threadweaver                                  - Helper for multithreaded programming
+thunar                                        - Modern, fast and easy-to-use file manager for Xfce.
+thunar-archive-plugin                         - Adds archive operations to the Thunar file context menus.
+thunar-docs                                   - Documentation for thunar
+thunar-shares-plugin                          - Thunar plugin to quickly share a folder using Samba without requiring root access.
+thunar-volman                                 - Automatic management of removable drives and media for Thunar.
+time                                          - time (Measure CPU/Memory resource other programs use)
+tinyxml2                                      - TinyXML-2 is a simple, small, efficient, C++ XML parser that can be easily integrated into other programs
+tk                                            - Tk (GUI toolkit standard for Tcl)
+tlp                                           - Linux Advanced Power Management
+totem-pl-parser                               - Totem playlist parser
+tpm2-tss                                      - OSS implementation of the TCG TPM2 Software Stack (TSS2)
+tracker                                       - Semantic data storage
+tracker-miners                                - Collection of data extractors for Tracker
+tree                                          - list contents of directories in a tree-like format.
+tslib                                         - C library for filtering touchscreen events
+tumbler                                       - D-Bus service for applications to request thumbnails
+twolame                                       - TwoLAME is an optimized MPEG Audio Layer 2 (MP2) encoder.
+tzdata                                        - Timezone data files
+uchardet                                      - An encoding detector library, which takes a sequence of bytes in an unknown character encoding without any additional information, and attempts to determine the encoding of the text
+udftools                                      - Linux UDF Filesystem userspace utilities
+udisks                                        - Daemon, tools and libraries to access disks and storage devices
+ufw                                           - Uncomplicated Firewall
+uget                                          - url-get download manager
+unicode-character-database                    - The Unicode Character Database (UCD)
+unixodbc                                      - ODBC is an open specification for providing application developers with a predictable API with which to access Data Sources
+unrar                                         - RAR decompression program
+unzip                                         - Info-ZIP unzip program
+upower                                        - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
+usb-modeswitch                                - Switch between USB modes
+usbmuxd                                       - A socket daemon to multiplex connections from and to iOS devices.
+usbredir                                      - USB redirection protocol
+usbutils                                      - usbutils (USB Utilities)
+usysconf                                      - System configuration component
+usysconf-epoch                                - Temporary package for hosting the epoch script
+util-linux                                    - util-linux (Essential Linux utilties)
+util-linux-devel                              - Development files for util-linux
+v4l-utils                                     - Linux V4L2 and DVB API utilities and v4l libraries
+vamp-plugin-sdk                               - The Vamp audio analysis plug-in system
+vapoursynth                                   - A video processing framework with simplicity in mind
+variety                                       - Variety changes the wallpaper on a regular interval using user-specified or automatically downloaded images
+vid.stab                                      - Video stabilization library
+virglrenderer                                 - Allows KVM guests to render OpenGL 3D calls on the host GPU via mesa
+virt-manager                                  - Manage virtual machines with virt-manager
+virtiofsd                                     - Vhost-user virtio-fs device backend
+virtualbox                                    - VirtualBox host modules for the linux-lts kernel
+virtualbox-common                             - Common components for VirtualBox host packages
+virtualbox-current                            - VirtualBox host modules for the linux-current kernel
+vlc                                           - Open source multimedia player
+vlc-core                                      - Core VLC components and media support
+vo-aacenc                                     - Audio codecs extracted from Android Open Source Project
+volume_key                                    - An utility for manipulating storage encryption keys and passphrases
+vpnc                                          - client for cisco vpn concentrator
+vulkan                                        - Vulkan ICD desktop loader (vulkan-loader)
+wavpack                                       - WavPack audio compression tools
+wayland                                       - Wayland is intended as a simpler replacement for X, easier to develop and maintain.
+wayland-devel                                 - Development files for wayland
+webp-pixbuf-loader                            - WebP GDK Pixbuf Loader library
+webrtc-audio-processing                       - AudioProcessing module from the WebRTC project
+wget                                          - retrieves files from the web
+which                                         - Find program in path
+wireless-regdb                                - This package contains the wireless regulatory database used by all cfg80211 based Linux wireless drivers.
+wireless-tools                                - Tools to configure wireless lan cards
+wireplumber                                   - Session / policy manager implementation for PipeWire
+woff-tools                                    - Convert/Unconvert TrueType/OpenType fonts to WOFF format
+woff2                                         - Woff utilities for compression and decompression
+wpa_supplicant                                - WiFi authentication client and server
+wsdd                                          - A Web Service Discovery host daemon for Samba
+x264                                          - A library for encoding video streams into the H.264/MPEG-4 AVC format.
+x264-devel                                    - Development files for x264
+x265                                          - x265 is an open source HEVC encoder
+xauth                                         - X.Org Applications - xauth
+xcb-util                                      - Additional extensions to the XCB library
+xcb-util-cursor                               - XCB util-cursor module provides a port of libxcursor.
+xcb-util-image                                - xcb-util extension - image
+xcb-util-keysyms                              - Utility libraries for XC Binding - Standard X key constants and conversion to/from keycodes
+xcb-util-renderutil                           - xcb-util extensions - render
+xcb-util-wm                                   - libraries which provide client and window-manager helpers for EWMH and ICCCM.
+xclip                                         - xclip is a command line interface to the X11 clipboard.
+xdg-dbus-proxy                                - Filtering proxy for D-Bus connections.
+xdg-desktop-portal                            - Desktop integration portal
+xdg-desktop-portal-gnome                      - A backend implementation for xdg-desktop-portal for the GNOME desktop environment.
+xdg-desktop-portal-gtk                        - GTK+ backend for XDG Portal
+xdg-user-dirs                                 - Tool to manage well known user directories
+xdg-user-dirs-gtk                             - Creates user dirs and asks to relocalize them
+xdg-utils                                     - Tools to assist with desktop integration tasks
+xdpyinfo                                      - Display information utility for X
+xfconf                                        - Xfce configuration storage system
+xfsdump                                       - xfsdump backs up files and their attributes in a filesystem. The files are dumped to storage media, a regular file, or standard output.
+xfsprogs                                      - XFS User Tools
+xhost                                         - X.Org Applications - xhost
+xinit                                         - The xinit package contains a usable script to start the xserver.
+xkbcomp                                       - X.Org Applications - xkbcomp
+xkeyboard-config                              - Keyboard configuration database
+xmlsec1                                       - Library providing support for "XML Signature" and "XML Encryption" standards
+xmodmap                                       - Edit and display the keyboard modifier map and keymap table
+xorg-driver-input-libinput                    - X11 libinput based input driver
+xorg-driver-input-wacom                       - Input driver for Wacom/Wacom-like tablets
+xorg-driver-video-amdgpu                      - Support for AMDGPU devices
+xorg-driver-video-fbdev                       - Framebuffer Video Driver
+xorg-driver-video-intel                       - Intel Video Driver
+xorg-driver-video-nouveau                     - Alternative video driver for NVIDIA graphics cards
+xorg-driver-video-qxl                         - QXL Virtual GPU for Spice Virtualisation
+xorg-driver-video-radeon                      - Open source Radeon Video Driver
+xorg-driver-video-vesa                        - Generic VESA video driver
+xorg-driver-video-vmware                      - VMWare Video Driver
+xorg-server                                   - The Xorg Server is the core of the X Window system
+xorg-server-xvfb                              - The Xorg Server is the core of the X Window system
+xorg-xwayland                                 - X server intended for Xorg only clients to run under Wayland for backwards compatability.
+xorgproto                                     - X Window System Core Protocol
+xprop                                         - Displays window and font properties of an X server
+xrandr                                        - Command line interface to X11 Resize, Rotate, and Reflect (RandR) extension
+xset                                          - X.Org Applications - xset
+xvidcore                                      - Xvid MPEG-4 video codec
+xxhash                                        - Extremely fast hash algorithm
+xz                                            - xz (Data compression software)
+xz-devel                                      - Development files for xz
+yajl                                          - A fast streaming JSON parsing library in C.
+yaml                                          - LibYAML
+yaml-cpp                                      - yaml-cpp is a YAML parser and emitter in C++ matching the YAML 1.2 spec
+yelp                                          - GNOME Help Browser
+yelp-xsl                                      - Yelp XSL Stylesheets
+yt-dlp                                        - yt-dlp is a small command-line program for downloading videos from YouTube and other platforms
+zam-plugins                                   - Collection of LADSPA/LV2/VST/JACK audio plugins for high-quality processing
+zbar                                          - ZBar is an open source software suite for reading bar codes from various sources, such as video streams, image files and raw intensity sensors
+zed                                           - Code at the speed of thought
+zenity                                        - A tool that allows you to display GTK dialog boxes in commandline and shell scripts
+zimg                                          - Project zimg is a light image storage and processing system.
+zip                                           - Archiver for .zip files
+zita-convolver                                - A fast, partitioned convolution engine library
+zix                                           - Zix is a lightweight C library of portability wrappers and data structures.
+zlib                                          - zlib (Compression library)
+zlib-devel                                    - Development files for zlib
+zram-generator                                - Systemd unit generator for zram devices
+zram-generator-defaults                       - Default configuration files for zram-generator
+zsh                                           - The Z Shell
+zsh-autosuggestions                           - Fish-like autosuggestions for zsh
+zsh-dbginfo                                   - Debug symbols for zsh
+zsh-syntax-highlighting                       - Fish shell like syntax highlighting for ZSH
+zstd                                          - Zstd command line tools
+zstd-devel                                    - Development files for zstd
+zxing-cpp                                     - ZXing-C++ ("zebra crossing") is an open-source, multi-format linear/matrix barcode image processing library implemented in C++
+zziplib                                       - Lightweight library for extracting data zip files

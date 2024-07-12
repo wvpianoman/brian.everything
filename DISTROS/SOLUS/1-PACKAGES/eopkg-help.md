@@ -1,4 +1,4 @@
-eopkg(1) -- Solus package manager
+eopkg -- Solus package manager
 =================================
 
 
