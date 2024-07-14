@@ -24,6 +24,7 @@ import Gio from 'gi://Gio';
 import GdkPixbuf from 'gi://GdkPixbuf';
 import Meta from 'gi://Meta';
 import Clutter from 'gi://Clutter';
+import GLib from 'gi://GLib';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import * as Calendar from 'resource:///org/gnome/shell/ui/calendar.js';
@@ -33,6 +34,8 @@ import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/ex
 import * as Quantize from './quantize.js';
 import * as AutoThemes from './autothemes.js';
 import * as StyleSheets from './stylesheets.js';
+
+Gio._promisify(Gio.File.prototype, "copy_async", "copy_finish");
 
 // ConnectManager class to manage connections for events to trigger Openbar style updates
 // This class is modified from Floating Panel extension (Thanks Aylur!)
@@ -271,9 +274,9 @@ export default class Openbar extends Extension {
 
     unloadStylesheet() {
         const theme = St.ThemeContext.get_for_stage(global.stage).get_theme();
-        const stylesheetFile = this.dir.get_child('stylesheet.css');
+        this.stylesheet = this.obarRunDir.get_child('stylesheet.css');
         try { 
-            theme.unload_stylesheet(stylesheetFile); 
+            theme.unload_stylesheet(this.stylesheet); 
             delete this.stylesheet;
         } catch (e) {
             console.log('Openbar: Error unloading stylesheet: ');
@@ -283,10 +286,9 @@ export default class Openbar extends Extension {
 
     loadStylesheet() {
         const theme = St.ThemeContext.get_for_stage(global.stage).get_theme();
-        const stylesheetFile = this.dir.get_child('stylesheet.css');
+        this.stylesheet = this.obarRunDir.get_child('stylesheet.css');
         try {
-            theme.load_stylesheet(stylesheetFile);
-            this.stylesheet = stylesheetFile;
+            theme.load_stylesheet(this.stylesheet);
         } catch (e) {
             console.log('Openbar: Error loading stylesheet: ');
             throw e;
@@ -589,8 +591,8 @@ export default class Openbar extends Extension {
             this.onWindowMaxBar();
             return;
         }
-        if(key == 'cust-margin-wmax') {
-            this.setWindowMaxBar('cust-margin-wmax');
+        if(key == 'cust-margin-wmax' || key == 'margin-wmax') {
+            this.setPanelBoxPosWindowMax(this.wmax, key);
             return;
         }
 
@@ -602,6 +604,7 @@ export default class Openbar extends Extension {
 
         if(callbk_param == 'color-scheme') {
             this.gtkCSS = true;
+            StyleSheets.saveGtkCss(this, 'enable');
             AutoThemes.onModeChange(this);
             return;
         }
@@ -611,13 +614,25 @@ export default class Openbar extends Extension {
             return;
         }
 
-        // Reload stylesheet on session-mode-updated (only needed for unlock-dialog)
-        if(callbk_param == 'session-mode-updated' || callbk_param == 'high-contrast') {
+        // Reload stylesheet to pick up high contrast icons
+        if(callbk_param == 'high-contrast') {
             StyleSheets.reloadStyle(this, this);
             return;
         }
 
         let bartype = this._settings.get_string('bartype');
+        // Set bgalpha as per bartype        
+        if(key == 'bartype') {
+            if(bartype == 'Trilands' || bartype == 'Islands') {                
+                this._settings.set_double('bgalpha', 0);
+            }
+            else {
+                this._settings.set_double('bgalpha', this.bgalpha);
+            }
+        }
+        if(bartype == 'Mainland' || bartype == 'Floating') {
+            this.bgalpha = this._settings.get_double('bgalpha');
+        }
         // Update triland classes if actor (panel button) removed in triland mode else return
         if(key == this.removedSignal && bartype != 'Trilands')
             return;
@@ -664,9 +679,9 @@ export default class Openbar extends Extension {
         }
 
         // GTK Apps styles
-        if(key == 'apply-gtk' || key == 'headerbar-hint' || key == 'sidebar-hint' || key == 'card-hint'
-        || key == 'winbcolor' || key == 'winbalpha' || key == 'winbwidth' || key == 'traffic-light' || key == 'menu-radius'
-        || key == 'sidebar-transparency' || key == 'gtk-popover' || key == 'mscolor' || key == 'msalpha') {
+        let gtkKeys = ['apply-gtk', 'headerbar-hint', 'sidebar-hint', 'card-hint', 'winbradius', 'corner-radius', 'winbcolor', 
+            'winbalpha', 'winbwidth', 'traffic-light', 'menu-radius', 'sidebar-transparency', 'gtk-popover', 'mscolor', 'msalpha'];
+        if(gtkKeys.includes(key)) {
             // console.log('Call saveGtkCss from extension for key: ', key);
             this.gtkCSS = true;
             if(key != 'mscolor' && key != 'msalpha') {
@@ -750,7 +765,9 @@ export default class Openbar extends Extension {
         panel.add_style_class_name('openbar');
 
         if(position == 'Bottom' || key == 'position' || key == 'monitors-changed') {
-            this.setPanelBoxPosition(position, height, margin, borderWidth, bartype);
+            // If WMax is On then ignore 'margin' changes (do not set position) else set position
+            if(!(this.wmax && key == 'margin'))
+                this.setPanelBoxPosition(position, height, margin, borderWidth, bartype);
         }
 
         if(key == 'monitors-changed')
@@ -826,14 +843,14 @@ export default class Openbar extends Extension {
     setPanelBoxPosWindowMax(wmax, signal) {
         const position = this._settings.get_string('position');
         if(position == 'Bottom') {
-            if(this.position == position && this.wmax == wmax && signal != 'cust-margin-wmax')
+            if(this.position == position && this.wmax == wmax && !(signal == 'cust-margin-wmax' || signal == 'margin-wmax'))
                 return;
             const bartype = this._settings.get_string('bartype');
             const borderWidth = this._settings.get_double('bwidth');
             const custMarginWmax = this._settings.get_boolean('cust-margin-wmax');
             const marginWMax = this._settings.get_double('margin-wmax');
             let margin = this._settings.get_double('margin');
-            let height = this._settings.get_double('height');            
+            const height = this._settings.get_double('height');            
             if(wmax) {
                 margin = custMarginWmax? marginWMax: margin;
             }
@@ -992,32 +1009,34 @@ export default class Openbar extends Extension {
         }
         this.updatingBguri = true;
         this.updatingBguriId = setTimeout(() => {this.updatingBguri = false;}, 5000);
-        // console.log('Going ahead with bguri======');
+        // console.log('==== Going ahead with bguri ====');
         let colorScheme = this._intSettings.get_string('color-scheme');
         if(colorScheme != this.colorScheme) {
             this.colorScheme = colorScheme;
             return;
         }
         
-        let bguriDark = this._bgSettings.get_string('picture-uri-dark');
-        let bguriLight = this._bgSettings.get_string('picture-uri');
-        this._settings.set_string('dark-bguri', bguriDark);
-        this._settings.set_string('light-bguri', bguriLight);
+        this.updateBguriId = setTimeout(() => {
+            let bguriDark = this._bgSettings.get_string('picture-uri-dark');
+            let bguriLight = this._bgSettings.get_string('picture-uri');
+            this._settings.set_string('dark-bguri', bguriDark);
+            this._settings.set_string('light-bguri', bguriLight);
 
-        let bguriOld = this._settings.get_string('bguri');
-        let bguriNew;
-        if(colorScheme == 'prefer-dark')
-            bguriNew = bguriDark;
-        else
-            bguriNew = bguriLight;        
-        this._settings.set_string('bguri', bguriNew);
-        
-        // Gnome45+: if bgnd changed with right click on image file, 
-        // filepath (bguri) remains same, so manually call updatePanelStyle
-        if(bguriOld == bguriNew) {
-            // console.log('bguriOld == bguriNew - calling updatePanelStyle for bguri');
-            this.updatePanelStyle(this._settings, 'bguri');
-        }
+            let bguriOld = this._settings.get_string('bguri');
+            let bguriNew;
+            if(colorScheme == 'prefer-dark')
+                bguriNew = bguriDark;
+            else
+                bguriNew = bguriLight;        
+            this._settings.set_string('bguri', bguriNew);
+            
+            // Gnome45+: if bgnd changed with right click on image file, 
+            // filepath (bguri) remains same, so manually call updatePanelStyle
+            if(bguriOld == bguriNew) {
+                // console.log('bguriOld == bguriNew - calling updatePanelStyle for bguri');
+                this.updatePanelStyle(this._settings, 'bguri');
+            }
+        }, 200);
     }
 
     // Connect multiple signals to ensure detecting background-change in all Gnome versions
@@ -1055,6 +1074,7 @@ export default class Openbar extends Extension {
         this.styleUnloaded = false;
         this.updatingBguri = false;
         this.updatingBguriId = null;
+        this.updateBguriId = null;
         this.notifyVisible = false;
         this.notifyVisibleId = null;
 
@@ -1066,6 +1086,9 @@ export default class Openbar extends Extension {
         this.colorScheme = this._intSettings.get_string('color-scheme');
 
         this._settings = this.getSettings(); 
+        this.bgalpha = this._settings.get_double('bgalpha');
+        this._settings.set_boolean('import-export', false);
+        this._settings.set_boolean('pause-reload', false);
         // Connect to the settings changes
         this._settings.connect('changed', (settings, key) => {
             this.updatePanelStyle(settings, key);
@@ -1074,14 +1097,12 @@ export default class Openbar extends Extension {
         let connections = [
             [ Main.overview, 'hiding', this.updatePanelStyle.bind(this) ],
             [ Main.overview, 'showing', this.updatePanelStyle.bind(this) ],
-            [ Main.sessionMode, 'updated', this.updatePanelStyle.bind(this) ],
             [ Main.layoutManager, 'monitors-changed', this.updatePanelStyle.bind(this) ],
             [ Main.messageTray._bannerBin, this.addedSignal, this.updatePanelStyle.bind(this), 'message-banner' ],
             [ global.display, 'in-fullscreen-changed', this.onFullScreen.bind(this), 100 ],
             [ global.display, 'window-entered-monitor', this.setWindowMaxBar.bind(this), 'window-entered-monitor' ],
             [ global.display, 'window-left-monitor', this.setWindowMaxBar.bind(this), 'window-left-monitor' ],
-            [ Main.sessionMode, 'updated', this.updatePanelStyle.bind(this), 'session-mode-updated' ],
-            // [ this._hcSettings, 'changed::high-contrast', this.updatePanelStyle.bind(this), 'high-contrast' ],
+            // [ Main.sessionMode, 'updated', this.updatePanelStyle.bind(this), 'session-mode-updated' ],
         ];
         // Connections for actor-added/removed OR child-added/removed as per Gnome version
         const panelBoxes = [panel._leftBox, panel._centerBox, panel._rightBox];
@@ -1153,6 +1174,28 @@ export default class Openbar extends Extension {
         let menustyle = this._settings.get_boolean('menustyle');
         this.applyMenuStyles(panel, menustyle);
 
+        // OpenBar runtime directory
+        const userRunDir = GLib.get_user_runtime_dir();
+        this.obarRunDir = Gio.File.new_for_path(`${userRunDir}/io.github.neuromorph.openbar`);
+        this.obarAssetsDir = Gio.File.new_for_path(`${this.obarRunDir.get_path()}/assets`);
+        // Create dirs if missing
+        if(!this.obarAssetsDir.query_exists(null)) {
+            try {
+                this.obarAssetsDir.make_directory_with_parents(null);
+            }
+            catch(e) {
+                console.error('Error creating OpenBar runtime/assets directory: ' + e);
+            }
+        }
+        // Copy static assets (SVGs) to runtime dir
+        const assetsSrcDir = Gio.File.new_for_path(`${this.path}/media/assets`);
+        const iter = assetsSrcDir.enumerate_children('standard::name', Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+        for(const fileInfo of iter) {
+            let srcFile = Gio.File.new_for_path(`${assetsSrcDir.get_path()}/${fileInfo.get_name()}`);
+            let dstFile = Gio.File.new_for_path(`${this.obarAssetsDir.get_path()}/${fileInfo.get_name()}`);
+            srcFile.copy_async(dstFile, Gio.FileCopyFlags.OVERWRITE | Gio.FileCopyFlags.TARGET_DEFAULT_PERMS, GLib.PRIORITY_DEFAULT, null, null);
+        }
+        
         // Cause stylesheet to save and reload on Enable (also creates gtk css)
         StyleSheets.reloadStyle(this, this);
         // Add Open Bar Flatpak Overrides
@@ -1181,6 +1224,10 @@ export default class Openbar extends Extension {
         if(this.updatingBguriId) {
             clearTimeout(this.updatingBguriId);
             this.updatingBguriId = null;
+        }
+        if(this.updateBguriId) {
+            clearTimeout(this.updateBguriId);
+            this.updateBguriId = null;
         }
         if(this.notifyVisibleId) {
             clearTimeout(this.notifyVisibleId);
@@ -1213,9 +1260,14 @@ export default class Openbar extends Extension {
         // Reset the style for Panel and Menus
         this.resetPanelStyle(panel);
         this.applyMenuStyles(panel, false);
+
+        // Unload stylesheet
+        this.unloadStylesheet();
+
         // Reset panel and banner position to Top
         this.setPanelBoxPosition('Top');
         Main.messageTray._bannerBin.y_align = Clutter.ActorAlign.START;
+        
         // Clear/Restore Gtk css and Flatpak override
         StyleSheets.saveGtkCss(this, 'disable');
         StyleSheets.saveFlatpakOverrides(this, 'disable');

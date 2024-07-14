@@ -24,8 +24,19 @@ import Gtk from 'gi://Gtk';
 import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
-
 import {ExtensionPreferences, gettext as _, pgettext} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+
+// Retain compatibility with GLib < 2.80, which lacks GioUnix (from GSConnect extension)
+let GioUnix;
+try {
+    GioUnix = (await import('gi://GioUnix?version=2.0')).default;
+} catch (e) {
+    GioUnix = {
+        InputStream: Gio.UnixInputStream,
+        OutputStream: Gio.UnixOutputStream,
+    };
+}
+
 const SCHEMA_PATH = '/org/gnome/shell/extensions/openbar/';
 
 //-----------------------------------------------
@@ -68,7 +79,7 @@ class OpenbarPrefs {
         this.timeoutId = setTimeout(() => {
             this.triggerStyleReload();
             this.timeoutId = null;
-        }, 300);
+        }, 400);
     }
 
     createComboboxWidget(options, gsetting=null) {
@@ -220,7 +231,9 @@ class OpenbarPrefs {
             'value',
             Gio.SettingsBindFlags.DEFAULT
         );
-        scale.connect('change-value', () => {this.setTimeoutStyleReload();});
+        const gtkScales = ['headerbar-hint', 'sidebar-hint', 'card-hint', 'winbalpha', 'winbradius', 'winbwidth'];
+        if(!gtkScales.includes(gsetting))
+            scale.connect('change-value', () => {this.setTimeoutStyleReload();});
         return scale;
     }
 
@@ -569,7 +582,7 @@ class OpenbarPrefs {
         });
 
         let autoThemeNotesLabel = new Gtk.Label({
-            label: `<span  allow_breaks="true">\n•  Auto-themes will use the <b>colors</b> derived from the background image.\n•  Other settings will be set as selected, by the user, in the other tabs.\n•  Styles will apply to the Top Bar, Menus and optionally to the shell.\n•  Select desired Type of bar before applying a theme.\n•  If you change the bar type, apply the theme again.
+            label: `<span  allow_breaks="true">\n•  Auto-themes will use the <b>colors</b> derived from the background image.\n•  Other settings will be set as selected, by the user, in the other tabs.\n•  Styles will apply to the Top Bar, Menus and optionally to the shell.\n•  You may further tweak the styles after applying auto-theme.
         
         <b><tt>True Color  </tt></b>   :  Palette colors as-is (biased towards dark). 
         <b><tt>Pastel Theme</tt></b>   :  Colors are pastelified (biased towards light).
@@ -878,7 +891,7 @@ class OpenbarPrefs {
         });
         bargrid.attach(heightLabel, 1, rowbar, 1, 1);
 
-        let height = this.createScaleWidget(0, 100, 1, 0, 'height');
+        let height = this.createScaleWidget(10, 100, 1, 0, 'height');
         bargrid.attach(height, 2, rowbar, 1, 1);
 
         rowbar += 1;
@@ -986,7 +999,7 @@ class OpenbarPrefs {
 
         // Add a WMax BG Alpha scale
         let wmaxAlphaLabel = new Gtk.Label({
-            label: 'BG Alpha (WMax)',
+            label: 'Bar BG Alpha (WMax)',
             halign: Gtk.Align.START,
         });
         bargridwmax.attach(wmaxAlphaLabel, 1, rowbar, 1, 1);
@@ -1171,7 +1184,7 @@ class OpenbarPrefs {
         // Add a Bar BG Note label
         let barBGNoteLabel = new Gtk.Label({
             use_markup: true,
-            label: `<span allow_breaks="true">Transparent Bar:\n•  Set Box/Margins Alpha to '0' and also BG Alpha to '0'.\n•  Turn Off Panel Blur in 'Blur My Shell', if applied.\n</span>`,
+            label: `<span allow_breaks="true">Transparent Bar:\n•  Set Box/Margins Alpha to '0' and also Bar BG Alpha to '0'.\n•  Turn Off Panel Blur in 'Blur My Shell', if applied.\n</span>`,
             halign: Gtk.Align.START,
             wrap: true,
             width_chars: 55,
@@ -1219,7 +1232,7 @@ class OpenbarPrefs {
 
         // Add a bar background alpha scale
         let bgAlphaLbl = new Gtk.Label({
-            label: 'BG Alpha',
+            label: 'Bar BG Alpha',
             halign: Gtk.Align.START,
         });
         bggrid.attach(bgAlphaLbl, 1, rowbar, 1, 1);
@@ -1360,7 +1373,7 @@ class OpenbarPrefs {
         });
         bggrid.attach(shadowLabel, 1, rowbar, 1, 1);
 
-        let shadowSwitch = this.createSwitchWidget('shadow');
+        let shadowSwitch = this.createSwitchWidget('shadow', 'Not applicable to Mainland/Floating bar if "neon glow" is On (under Bar Border)');
         bggrid.attach(shadowSwitch, 2, rowbar, 1, 1);
 
         rowbar += 1;
@@ -2253,6 +2266,30 @@ class OpenbarPrefs {
         let winBWidthScale = this.createScaleWidget(0, 10, 0.1, 1, 'winbwidth', 'Window Border Width');
         appgrid.attach(winBWidthScale, 2, rowbar, 1, 1);
 
+        rowbar += 1;
+
+        // Add a window corner radius switch
+        let winBRadSwitchLbl = new Gtk.Label({
+            label: `Apply Corner Radius`,
+            halign: Gtk.Align.START,
+        });
+        appgrid.attach(winBRadSwitchLbl, 1, rowbar, 1, 1);
+
+        let winBRadiusSwitch = this.createSwitchWidget('corner-radius', 'Enable custom Window Corner Radius as selected below');
+        appgrid.attach(winBRadiusSwitch, 2, rowbar, 1, 1);
+
+        rowbar += 1;
+
+        // Add a window corner radius scale
+        let winBRadiusLbl = new Gtk.Label({
+            label: `Corner Radius`,
+            halign: Gtk.Align.START,
+        });
+        appgrid.attach(winBRadiusLbl, 1, rowbar, 1, 1);
+
+        let winBRadiusScale = this.createScaleWidget(0, 25, 1, 0, 'winbradius', 'Window Corner Radius - may not work well for legacy/non-Gtk apps');
+        appgrid.attach(winBRadiusScale, 2, rowbar, 1, 1);
+
         rowbar += 2;
         
         // Add a transparency switch
@@ -2541,15 +2578,15 @@ class OpenbarPrefs {
                 let file = Gio.File.new_for_path(filePath);
 
                 let [success_, pid_, stdin, stdout, stderr] =
-                GLib.spawn_async_with_pipes(
-                    null,
-                    ['dconf', 'load', SCHEMA_PATH],
-                    null,
-                    GLib.SpawnFlags.SEARCH_PATH | GLib.SpawnFlags.DO_NOT_REAP_CHILD,
-                    null
-                );
+                    GLib.spawn_async_with_pipes(
+                        null,
+                        ['dconf', 'load', SCHEMA_PATH],
+                        null,
+                        GLib.SpawnFlags.SEARCH_PATH | GLib.SpawnFlags.DO_NOT_REAP_CHILD,
+                        null
+                    );
 
-                stdin = new Gio.UnixOutputStream({fd: stdin, close_fd: true});
+                stdin = new GioUnix.OutputStream({fd: stdin, close_fd: true});
                 GLib.close(stdout);
                 GLib.close(stderr);
 
@@ -2567,7 +2604,7 @@ class OpenbarPrefs {
                    
                     // Trigger stylesheet reload to apply new settings
                     this.triggerStyleReload();                   
-                }, 2000);
+                }, 3000);
                 
             }
           }

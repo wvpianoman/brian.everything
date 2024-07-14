@@ -24,6 +24,12 @@ import Pango from 'gi://Pango';
 import GLib from 'gi://GLib';
 import * as Utils from './utils.js';
 
+Gio._promisify(Gio.File.prototype, 'load_contents_async', 'load_contents_finish');
+Gio._promisify(Gio.File.prototype, 'move_async', 'move_finish');
+Gio._promisify(Gio.File.prototype, 'delete_async', 'delete_finish');
+Gio._promisify(Gio.File.prototype, 'replace_async', 'replace_finish');
+Gio._promisify(Gio.OutputStream.prototype, 'write_bytes_async', 'write_bytes_finish');
+
 const colorMix = Utils.colorMix;
 const colorBlend = Utils.colorBlend;
 const colorShade = Utils.colorShade;
@@ -43,7 +49,7 @@ function saveCalEventSVG(obar, Me) {
     marker-end:none;paint-order:normal;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" cx="16" cy="28" r="2"/>
     </svg>
     `;
-    svgpath = Me.path + '/media/calendar-today.svg';
+    svgpath = obar.obarRunDir.get_path() + '/assets/calendar-today.svg';
     svgcolor = obar.smfgHex;
     
     svg = svg.replace(`#REPLACE`, svgcolor);
@@ -51,14 +57,17 @@ function saveCalEventSVG(obar, Me) {
     let file = Gio.File.new_for_path(svgpath);
     let bytearray = new TextEncoder().encode(svg);
 
-    if (bytearray.length) {
-        let output = file.replace(null, false, Gio.FileCreateFlags.NONE, null);
-        let outputStream = Gio.BufferedOutputStream.new_sized(output, 4096);
-        outputStream.write_all(bytearray, null);
-        outputStream.close(null);
+    try {
+        file.replace_async(null, false, Gio.FileCreateFlags.NONE, GLib.PRIORITY_DEFAULT, null, (obj, res) => {
+            let stream = obj.replace_finish(res);        
+            stream.write_bytes_async(bytearray, GLib.PRIORITY_DEFAULT, null, (w_obj, w_res) => {        
+                w_obj.write_bytes_finish(w_res);        
+                stream.close(null);        
+            });        
+        });
     }
-    else {
-      console.log("Failed to write calendar-today.svg file: " + svgpath);
+    catch(e) {
+      console.log("Failed to write calendar-today.svg file: " + svgpath, e);
     }
 
 }
@@ -77,9 +86,9 @@ function saveToggleSVG(type, obar, Me) {
 
     svgFill = obar.msHex;
     svg = svg.replace(`#SVGFILL`, svgFill);
-    svgpath = Me.path + '/media/toggle-on.svg';
+    svgpath = obar.obarRunDir.get_path() + '/assets/toggle-on.svg';
     if(type == 'on-hc') {
-        svgpath = Me.path + '/media/toggle-on-hc.svg';
+        svgpath = obar.obarRunDir.get_path() + '/assets/toggle-on-hc.svg';
         hc = `<path style="fill:#f8f7f7;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:round;stroke-dashoffset:2" d="M16 8v10h-2V8Z"/>`;
     }
     svg = svg.replace(`#HIGHCONTRAST`, hc);
@@ -87,14 +96,17 @@ function saveToggleSVG(type, obar, Me) {
     let file = Gio.File.new_for_path(svgpath);
     let bytearray = new TextEncoder().encode(svg);
 
-    if (bytearray.length) {
-        let output = file.replace(null, false, Gio.FileCreateFlags.NONE, null);
-        let outputStream = Gio.BufferedOutputStream.new_sized(output, 4096);
-        outputStream.write_all(bytearray, null);
-        outputStream.close(null);
+    try {
+        file.replace_async(null, false, Gio.FileCreateFlags.NONE, GLib.PRIORITY_DEFAULT, null, (obj, res) => {
+            let stream = obj.replace_finish(res);        
+            stream.write_bytes_async(bytearray, GLib.PRIORITY_DEFAULT, null, (w_obj, w_res) => {        
+                w_obj.write_bytes_finish(w_res);        
+                stream.close(null);
+            });        
+        });
     }
-    else {
-      console.log("Failed to write toggle-on.svg file: " + svgpath);
+    catch(e) {
+      console.log("Failed to write toggle-on.svg file: " + svgpath, e);
     }
 
 }
@@ -110,7 +122,7 @@ function saveCheckboxSVG(type, obar, Me) {
         </svg>
         `;
 
-        svgpath = Me.path + '/media/checkbox-on.svg';
+        svgpath = obar.obarRunDir.get_path() + '/assets/checkbox-on.svg';
         svgFill = obar.msHex;
         svgStroke = obar.msHex;
     }
@@ -122,7 +134,7 @@ function saveCheckboxSVG(type, obar, Me) {
         </svg>
         `;
 
-        svgpath = Me.path + '/media/checkbox-on-focused.svg';
+        svgpath = obar.obarRunDir.get_path() + '/assets/checkbox-on-focused.svg';
         svgFill = obar.msHex;
         svgStroke = obar.mhHex;
     }
@@ -133,7 +145,7 @@ function saveCheckboxSVG(type, obar, Me) {
         </svg>
         `;
 
-        svgpath = Me.path + '/media/checkbox-off-focused.svg';
+        svgpath = obar.obarRunDir.get_path() + '/assets/checkbox-off-focused.svg';
         svgFill = '#aaa';
         svgStroke = obar.mhHex;
     }
@@ -144,20 +156,23 @@ function saveCheckboxSVG(type, obar, Me) {
     let file = Gio.File.new_for_path(svgpath);
     let bytearray = new TextEncoder().encode(svg);
 
-    if (bytearray.length) {
-        let output = file.replace(null, false, Gio.FileCreateFlags.NONE, null);
-        let outputStream = Gio.BufferedOutputStream.new_sized(output, 4096);
-        outputStream.write_all(bytearray, null);
-        outputStream.close(null);
+    try {
+        file.replace_async(null, false, Gio.FileCreateFlags.NONE, GLib.PRIORITY_DEFAULT, null, (obj, res) => {
+            let stream = obj.replace_finish(res);        
+            stream.write_bytes_async(bytearray, GLib.PRIORITY_DEFAULT, null, (w_obj, w_res) => {        
+                w_obj.write_bytes_finish(w_res);        
+                stream.close(null);        
+            });        
+        });
     }
-    else {
-      console.log("Failed to write checkbox-on/off.svg file: " + svgpath);
+    catch(e) {
+      console.log("Failed to write checkbox-on/off.svg file: " + svgpath, e);
     }
 
 }
 
 // Create Gtk Stylesheet string
-function createGtkCss(obar) {
+function createGtkCss(obar, gtk4) {
     // Add hint of Accent color to Headerbar and Sidebar
     let hBarHint = obar._settings.get_int('headerbar-hint')/100;
     let sBarHint = obar._settings.get_int('sidebar-hint')/100;
@@ -170,6 +185,8 @@ function createGtkCss(obar) {
     let popoverMenu = obar._settings.get_boolean('gtk-popover');
     let winBAlpha = obar._settings.get_double('winbalpha');
     let winBWidth = obar._settings.get_double('winbwidth');
+    let winBRadius = obar._settings.get_double('winbradius');
+    let cornerRadius = obar._settings.get_boolean('corner-radius');
     let winBColor = obar._settings.get_strv('winbcolor');
     const winBRed = parseInt(parseFloat(winBColor[0]) * 255);
     const winBGreen = parseInt(parseFloat(winBColor[1]) * 255);
@@ -318,30 +335,123 @@ function createGtkCss(obar) {
         margin: -2px -3px -2px 0px;
     }
 
-    /* Window Border */
-    window,
-    decoration,
-    decoration-overlay {
+    /* Window Border and Corner Radius */
+    window.csd, dialog.csd,
+    window.csd > decoration,
+    window.csd > decoration-overlay {
         border: ${winBWidth}px solid rgba(${winBRed}, ${winBGreen}, ${winBBlue}, ${winBAlpha});
     }
-    window:backdrop,
-    decoration:backdrop,
-    decoration-overlay:backdrop {
+    window.csd:backdrop, dialog:backdrop.csd,
+    window.csd:backdrop > decoration,
+    window.csd:backdrop > decoration-overlay {
         border: ${winBWidth}px solid rgba(${winBRedBd}, ${winBGreenBd}, ${winBBlueBd}, ${winBAlpha});
     }
-    window.maximized,
-    window.maximized > decoration,
-    window.maximized > decoration-overlay,
+    window.csd.maximized, window.csd.maximized > decoration, window.csd.maximized > decoration-overlay,
+    window.csd.maximized > headerbar, window.csd.maximized > .top-bar, window.csd.maximized > .titlebar,
+    window.csd.fullscreen, window.csd.fullscreen > decoration, window.csd.fullscreen > decoration-overlay,
+    window.csd.fullscreen > headerbar, window.csd.fullscreen > .top-bar, window.csd.fullscreen > .titlebar,
     tooltip > decoration, tooltip > decoration-overlay {    
         border: none;
-        /*border-radius: 0px;*/
+        border-radius: 0px;
     }
-    /*window, 
-    decoration,
-    decoration-overlay {
-        border-radius: 20px;
-    }*/
+    window.csd.tiled, window.csd.tiled-top, window.csd.tiled-right, window.csd.tiled-bottom, window.csd.tiled-left,
+    window.csd.tiled > decoration, window.csd.tiled > decoration-overlay,
+    window.csd.tiled > headerbar, window.csd.tiled > .top-bar, window.csd.tiled > .titlebar {
+        border-radius: 0px;
+    }
+    window.csd .tiled-top .tiled-right .tiled-bottom .tiled-left {
+      border: none;
+    }
     `;
+
+    if(gtk4) { // gtk4
+        if(cornerRadius) {
+            gtkstring += `
+            window.csd, dialog.csd,
+            window.csd > decoration,
+            window.csd > decoration-overlay {
+                border-radius: ${winBRadius}px;
+            }
+            `;
+        }
+    }
+    else { // gtk3
+        if(cornerRadius) {
+            gtkstring += `
+            window.csd, dialog.csd,
+            decoration, decoration-overlay {
+                border-bottom-left-radius: ${winBRadius}px;
+                border-bottom-right-radius: ${winBRadius}px;
+            }
+            decoration, decoration-overlay,
+            headerbar, .top-bar, .titlebar {
+                border-top-left-radius: ${winBRadius}px;
+                border-top-right-radius: ${winBRadius}px;
+            }
+            window.unified {
+                border-radius: ${winBRadius}px;
+            }
+            /* Terminal Preferences */
+            window > box > box > frame > scrolledwindow > viewport > list, window > box > box > frame > border { 
+                border-bottom-left-radius: ${winBRadius}px;
+            }
+            /* dconf */
+            .keys-list {
+                border-bottom-left-radius: ${winBRadius}px;
+                border-bottom-right-radius: ${winBRadius}px;
+            }
+            /* Videos */
+            window > stack > box > scrolledwindow ,
+            window > stack > box > scrolledwindow > iconview {
+                border-bottom-left-radius: ${winBRadius}px;
+                border-bottom-right-radius: ${winBRadius}px;
+            }
+            `;
+        }
+        
+        gtkstring += `
+        window.csd {
+            border: none;
+        }        
+        window.popup > decoration {
+            border: none;
+            border-radius: 6px;
+        }
+        
+        /* Gnome Terminal */
+        terminal-window > decoration, terminal-window:backdrop > decoration {
+            border: none;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        terminal-window > box > notebook > stack > terminal-screen-container > box {      
+            border: ${winBWidth}px solid rgba(${winBRed}, ${winBGreen}, ${winBBlue}, ${winBAlpha});
+            border-top: none;
+        }
+        terminal-window > headerbar {
+            border: ${winBWidth}px solid rgba(${winBRed}, ${winBGreen}, ${winBBlue}, ${winBAlpha});
+            border-bottom: none;
+        }
+        terminal-window:backdrop > box > notebook > stack > terminal-screen-container > box {      
+            border: ${winBWidth}px solid rgba(${winBRedBd}, ${winBGreenBd}, ${winBBlueBd}, ${winBAlpha});
+            border-top: none;
+        }
+        terminal-window:backdrop > headerbar {
+            border: ${winBWidth}px solid rgba(${winBRedBd}, ${winBGreenBd}, ${winBBlueBd}, ${winBAlpha});
+            border-bottom: none;
+        }
+        terminal-window > box > notebook > stack > terminal-screen-container > box > box > scrollbar > contents > trough > slider {
+            background-color: rgba(${accRed}, ${accGreen}, ${accBlue}, 0.5);
+        }
+        terminal-window.maximized > box > notebook > stack > terminal-screen-container > box, terminal-window.maximized > headerbar {
+            border: none;
+            border-radius: 0px;
+        }
+        terminal-window.tiled > decoration, terminal-window.tiled > headerbar {
+            border-radius: 0px;
+        }        
+        `;        
+    }
     
     if(hBarHint) {
         gtkstring += `
@@ -352,6 +462,7 @@ function createGtkCss(obar) {
         headerbar, 
         .top-bar,
         .titlebar { 
+            color: @headerbar_fg_color;
             background-color: @headerbar_bg_color;
             background-image:none;
         } 
@@ -360,56 +471,71 @@ function createGtkCss(obar) {
         .titlebar:backdrop { 
             background-color: @headerbar_backdrop_color;
         }
-
         headerbar > label, headerbar > box > label {
             color: @headerbar_fg_color;
-        }        
-        headerbar > button,
-        headerbar > box > button, headerbar > box > box > button,
-        headerbar > entry,
-        headerbar > box > entry {
-            background-image: image(rgb(${hbbgRed}, ${hbbgGreen}, ${hbbgBlue}));
-            color: @headerbar_fg_color;
-            border-color: alpha(@headerbar_fg_color, 0.2);
         }
-        headerbar:backdrop > button,
-        headerbar:backdrop > box > button, headerbar:backdrop > box > box > button,
-        headerbar:backdrop > entry,
-        headerbar:backdrop > box > entry {
-            background-image: image(rgb(${hbbdRed}, ${hbbdGreen}, ${hbbdBlue}));
-            color: rgba(${hfgRed}, ${hfgGreen}, ${hfgBlue}, 0.65);
-        }
-        headerbar > button:disabled,
-        headerbar > box > button:disabled, headerbar > box > box > button:disabled,
-        headerbar > entry:disabled,
-        headerbar > box > entry:disabled {
-            background-image: image(rgba(0,0,0,0));
-            color: alpha(@headerbar_fg_color, 0.5);
-        }
-        headerbar > button:hover,
-        headerbar > box > button:hover, headerbar > box > box > button:hover,
-        headerbar > entry:hover,
-        headerbar > box > entry:hover {
-            background-image: image(rgb(${hbhRed}, ${hbhGreen}, ${hbhBlue}));
-            border-color: alpha(@headerbar_fg_color, 0.3);
-        }
-        headerbar > button:checked,
-        headerbar > box > button:checked, headerbar > box > box > button:checked {
-            background-image: image(rgb(${hbcbgRed}, ${hbcbgGreen}, ${hbcbgBlue}));
-            border-color: alpha(@headerbar_fg_color, 0.3);
-        }
-        headerbar > button.suggested-action,
-        headerbar > box > button.suggested-action, headerbar > box > box > button.suggested-action {
-            background-image: image(@accent_bg_color);
-            color: @accent_fg_color;
-        }
-        headerbar > button.suggested-action:hover,
-        headerbar > box > button.suggested-action:hover, headerbar > box > box > button.suggested-action:hover {
-            background-image: image(rgba(${acchRed}, ${acchGreen}, ${acchBlue}, 0.85));
-            color: rgba(${afgRed}, ${afgGreen}, ${afgBlue}, 0.95);
-        }
-        
         `;
+        
+        // Headerbar Buttons (gtk3)
+        if(!gtk4) {
+            gtkstring += `      
+            headerbar > button,
+            headerbar > box > button, 
+            headerbar > box > box > button,
+            headerbar > stack > button, 
+            headerbar > stack > box > button {
+                background-image: image(rgb(${hbbgRed}, ${hbbgGreen}, ${hbbgBlue}));
+                color: @headerbar_fg_color;
+                border-color: alpha(@headerbar_fg_color, 0.2);
+            }
+            headerbar > entry,
+            headerbar > box > entry {
+                background-image: image(rgb(${hbbdRed}, ${hbbdGreen}, ${hbbdBlue}));
+                color: @headerbar_fg_color;
+                border-color: alpha(@headerbar_fg_color, 0.2);
+            }
+            headerbar:backdrop > button,
+            headerbar:backdrop > box > button, headerbar:backdrop > box > box > button,
+            headerbar:backdrop > stack > button, headerbar:backdrop > stack > box > button,
+            headerbar:backdrop > entry, headerbar:backdrop > box > entry {
+                background-image: image(rgb(${hbbdRed}, ${hbbdGreen}, ${hbbdBlue}));
+                color: rgba(${hfgRed}, ${hfgGreen}, ${hfgBlue}, 0.65);
+            }
+            headerbar > button:disabled,
+            headerbar > box > button:disabled, headerbar > box > box > button:disabled,
+            headerbar > stack > button:disabled, headerbar > stack > box > button:disabled,
+            headerbar > entry:disabled, headerbar > box > entry:disabled {
+                background-image: image(rgba(0,0,0,0));
+                background-color: rgba(0,0,0,0);
+                color: alpha(@headerbar_fg_color, 0.5);
+            }
+            headerbar > button:hover,
+            headerbar > box > button:hover, headerbar > box > box > button:hover,
+            headerbar > stack > button:hover, headerbar > stack > box > button:hover,
+            headerbar > entry:hover, headerbar > box > entry:hover {
+                background-image: image(rgb(${hbhRed}, ${hbhGreen}, ${hbhBlue}));
+                border-color: alpha(@headerbar_fg_color, 0.3);
+            }
+            headerbar > button:checked,
+            headerbar > box > button:checked, headerbar > box > box > button:checked,
+            headerbar > stack > button:checked, headerbar > stack > box > button:checked {
+                background-image: image(rgb(${hbcbgRed}, ${hbcbgGreen}, ${hbcbgBlue}));
+                border-color: alpha(@headerbar_fg_color, 0.3);
+            }
+            headerbar > button.suggested-action,
+            headerbar > box > button.suggested-action, headerbar > box > box > button.suggested-action,
+            headerbar > stack > button.suggested-action, headerbar > stack > box > button.suggested-action {
+                background-image: image(@accent_bg_color);
+                color: @accent_fg_color;
+            }
+            headerbar > button.suggested-action:hover,
+            headerbar > box > button.suggested-action:hover, headerbar > box > box > button.suggested-action:hover,
+            headerbar > stack > button.suggested-action:hover, headerbar > stack > box > button.suggested-action:hover {
+                background-image: image(rgba(${acchRed}, ${acchGreen}, ${acchBlue}, 0.85));
+                color: rgba(${afgRed}, ${afgGreen}, ${afgBlue}, 0.95);
+            }        
+            `;
+        }
     }
     
     if(sBarHint) {
@@ -575,7 +701,7 @@ export function saveGtkCss(obar, caller) {
     const configDir = GLib.get_user_config_dir();
     const gtk3Dir = Gio.File.new_for_path(`${configDir}/gtk-3.0`);
     const gtk4Dir = Gio.File.new_for_path(`${configDir}/gtk-4.0`);
-    [gtk3Dir, gtk4Dir].forEach(dir => {
+    [gtk3Dir, gtk4Dir].forEach(async (dir, idx) => {
         // console.log(dir.get_path() +'\n' + gtkstring);
 
         // Create dir if missing
@@ -595,8 +721,8 @@ export function saveGtkCss(obar, caller) {
         let isGtkOpenBar = false;
         if(isGtk) {
             try {
-                const [ok, contents, etag] = file.load_contents(null);
-                if(ok) {
+                const [contents] = await file.load_contents_async(null);
+                if(contents) {
                     const decoder = new TextDecoder('utf-8');
                     const contentsString = decoder.decode(contents);
                     const contentsHeader = contentsString.split('\n')[1];
@@ -613,7 +739,7 @@ export function saveGtkCss(obar, caller) {
         if(caller == 'disable' || !applyGtk) {
             if(isGtkOpenBar && isBackupOpenBar) {
                 try { // Restore backup
-                    backup.move(file, Gio.FileCopyFlags.OVERWRITE, null, null);
+                    backup.move_async(file, Gio.FileCopyFlags.OVERWRITE, null, null, null, null);
                 } 
                 catch (e) {
                     console.error('Error restoring gtk.css from backup: ' + e);
@@ -621,7 +747,7 @@ export function saveGtkCss(obar, caller) {
             }
             else if(isGtkOpenBar) {
                 try {
-                    file.delete(null);
+                    file.delete_async(null, null, null);
                 }
                 catch (e) {
                     console.error('Error deleting OpenBar gtk.css: ' + e);
@@ -632,7 +758,7 @@ export function saveGtkCss(obar, caller) {
         else if(applyGtk) {
             if(isGtk && !isGtkOpenBar) {
                 try {
-                    file.move(backup, Gio.FileCopyFlags.OVERWRITE, null, null);
+                    await file.move_async(backup, Gio.FileCopyFlags.OVERWRITE, null, null, null, null);
                 }
                 catch (e) {
                     console.error('Error backing up gtk.css: ' + e);
@@ -640,14 +766,16 @@ export function saveGtkCss(obar, caller) {
             }
 
             // Create stylesheet string and save to css file
-            let gtkstring = createGtkCss(obar);
+            let gtkstring = createGtkCss(obar, idx);
             let bytearray = new TextEncoder().encode(gtkstring);
             try {
-                let output = file.replace(null, false, Gio.FileCreateFlags.NONE, null);
-                let outputStream = Gio.BufferedOutputStream.new_sized(output, 4096);
-                outputStream.write_all(bytearray, null);
-                outputStream.close(null);
-                // console.log('Saved gtk.css at: ' + dir.get_path());
+                file.replace_async(null, false, Gio.FileCreateFlags.NONE, GLib.PRIORITY_DEFAULT, null, (obj, res) => {
+                    let stream = obj.replace_finish(res);        
+                    stream.write_bytes_async(bytearray, GLib.PRIORITY_DEFAULT, null, (w_obj, w_res) => {        
+                        w_obj.write_bytes_finish(w_res);
+                        stream.close(null);        
+                    });        
+                });
             }
             catch (e) {
                 console.log("Failed to write gtk.css file: " + dir.get_path() + e);
@@ -671,12 +799,12 @@ export function saveFlatpakOverrides(obar, caller) {
     }
 
     let keyfile = GLib.KeyFile.new();
-    let global = Gio.File.new_for_path(overrideDir.get_path() + '/global');
-    if(!global.query_exists(null)) {
+    let globalFile = Gio.File.new_for_path(overrideDir.get_path() + '/global');
+    if(!globalFile.query_exists(null)) {
         try {
-            global.create(Gio.FileCreateFlags.NONE, null);
+            globalFile.create(Gio.FileCreateFlags.NONE, null);
             keyfile.set_string('Context', 'filesystems', '');
-            keyfile.save_to_file(global.get_path());
+            keyfile.save_to_file(globalFile.get_path());
         }
         catch (e) {
             console.error('Error creating flatpak override global file: ' + e);
@@ -684,7 +812,7 @@ export function saveFlatpakOverrides(obar, caller) {
     }
 
     try {
-        keyfile.load_from_file(global.get_path(), GLib.KeyFileFlags.NONE);
+        keyfile.load_from_file(globalFile.get_path(), GLib.KeyFileFlags.NONE);
     }
     catch (e) {
         console.error('Error loading flatpak override global file: ' + e);
@@ -695,7 +823,7 @@ export function saveFlatpakOverrides(obar, caller) {
             if(!obar.fsystemBackup) 
                 obar.fsystemBackup = '';
             keyfile.set_string('Context', 'filesystems', obar.fsystemBackup);
-            keyfile.save_to_file(global.get_path());
+            keyfile.save_to_file(globalFile.get_path());
         }
         else if(applyFlatpak) {
             obar.fsystemBackup = keyfile.get_string('Context', 'filesystems');
@@ -703,7 +831,7 @@ export function saveFlatpakOverrides(obar, caller) {
                 obar.fsystemBackup = '';
             let fsystem = obar.fsystemBackup + ';xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;';
             keyfile.set_string('Context', 'filesystems', fsystem);
-            keyfile.save_to_file(global.get_path());
+            keyfile.save_to_file(globalFile.get_path());
         }
     }
     catch (e) {
@@ -863,8 +991,6 @@ function saveStylesheet(obar, Me) {
     const mhred = parseInt(parseFloat(mhColor[0]) * 255);
     const mhgreen = parseInt(parseFloat(mhColor[1]) * 255);
     const mhblue = parseInt(parseFloat(mhColor[2]) * 255);
-    // Save menu highlight hex for use in focused svg
-    obar.mhHex = rgbToHex(mhred, mhgreen, mhblue);
 
     const mshred = parseInt(parseFloat(mshColor[0]) * 255);
     const mshgreen = parseInt(parseFloat(mshColor[1]) * 255);
@@ -910,14 +1036,17 @@ function saveStylesheet(obar, Me) {
     
     function getAutoHgColor(bgColor) { 
         let bgHsp = getHSP(bgColor);
+        let bgSat = Utils.getColorfulness(bgColor);
+        let grayFactor = (255 - bgSat)/255;
+        let rgb;
         if(bgHsp <= bgLightThresh) {
-            let rgb = bgHsp + 75;
-            hgColor = [rgb, rgb, rgb];
+            rgb = bgHsp + 50 + 50*grayFactor;
         }
         else {
-            let rgb = bgHsp - 75;
-            hgColor = [rgb, rgb, rgb];
+            rgb = bgHsp - 50 - 50*grayFactor;
         }
+        rgb = rgb<0? 0 : rgb>255? 255 : rgb;
+        hgColor = [rgb, rgb, rgb];
         // log('getAutoHgColor: hgColor, bgColor, bgHsp ', hgColor, bgColor, bgHsp);
         return hgColor;
     }
@@ -929,10 +1058,10 @@ function saveStylesheet(obar, Me) {
     if(autohgBar)
         hgColor = getAutoHgColor(bgColor);
     
-    let hbgred = bgred*(1-hAlpha) + hgColor[0]*hAlpha;
-    let hbggreen = bggreen*(1-hAlpha) + hgColor[1]*hAlpha;
-    let hbgblue = bgblue*(1-hAlpha) + hgColor[2]*hAlpha;
-    let phbg = `rgba(${hbgred},${hbggreen},${hbgblue},${bgalpha})`;
+    let hbgred = hgColor[0];
+    let hbggreen = hgColor[1];
+    let hbgblue = hgColor[2];
+    let phbg = `rgba(${hbgred},${hbggreen},${hbgblue},${hAlpha})`;
 
     // Island Auto Highlight
     hgColor = [hred, hgreen, hblue];
@@ -956,6 +1085,8 @@ function saveStylesheet(obar, Me) {
     let mhbggreen = mbggreen*(1-mhAlpha) + hgColor[1]*mhAlpha;
     let mhbgblue = mbgblue*(1-mhAlpha) + hgColor[2]*mhAlpha;
     let mhbg = `rgba(${mhbgred},${mhbggreen},${mhbgblue},${mbgAlpha})`;
+    // Save menu highlight hex for use in focused svg
+    obar.mhHex = rgbToHex(mhbgred, mhbggreen, mhbgblue);
     
     // Sub Menu Auto Highlight
     hgColor = [mhred, mhgreen, mhblue];
@@ -1387,7 +1518,7 @@ function saveStylesheet(obar, Me) {
     if(mbgGradient) { // Light Gradient
         let mGradientStyle = 
         `   box-shadow: none !important;
-            background-image: url(media/menu.svg);
+            background-image: url(assets/menu.svg);
             background-repeat: no-repeat;
             background-size: cover; `;
         menuContentStyle += mGradientStyle;
@@ -1414,7 +1545,23 @@ function saveStylesheet(obar, Me) {
         -barlevel-overdrive-color: rgba(${destructRed}, ${destructGreen}, ${destructBlue}, 1) !important;
          `;
 
+    // Apply-All-Shell: Menu styles applied to shell allover
+    let applyAllShell = obar._settings.get_boolean('apply-all-shell');
+
     // Define Overview style (reset) if Disabled in Overview
+    // If applyALlShell then FG = sub-menu FG and BG = sub-menu-BG
+    // else FG = white and BG = Default Dark
+    let oFgColor, oHFgColor, oHBgColor;
+    if(applyAllShell) {
+        oFgColor = `rgba(${smfgred},${smfggreen},${smfgblue},1.0)`;
+        oHFgColor = `rgba(${smhfgred},${smhfggreen},${smhfgblue},1.0)`;
+        oHBgColor = `rgba(${smhbgred},${smhbggreen},${smhbgblue},${mbgAlpha})`;
+    }
+    else {
+        oFgColor = `rgba(230, 230, 230, 1.0)`;
+        oHFgColor = `rgba(255, 255, 255, 1.0)`;
+        oHBgColor = `rgba(180, 180, 180, ${hAlpha})`;
+    }
     let setOverview = obar._settings.get_boolean('set-overview');
     let overviewStyle, barFgOverview, barHFgOverview, barHBgOverview, dotOverview;
     if(!setOverview) {
@@ -1422,15 +1569,15 @@ function saveStylesheet(obar, Me) {
         `   background-color: transparent !important; 
             border-color: transparent !important; 
             box-shadow: none !important; 
-            color: rgba(${smfgred},${smfggreen},${smfgblue},1.0) !important; `;
+            color: ${oFgColor} !important; `;
         barFgOverview = 
-        `   color: rgba(${smfgred},${smfggreen},${smfgblue},1.0) !important;`;
+        `   color: ${oFgColor} !important;`;
         barHFgOverview = 
-        `   color: rgba(${smhfgred},${smhfggreen},${smhfgblue},1.0) !important;`;
+        `   color: ${oHFgColor} !important;`;
         barHBgOverview = 
-        `   background-color: rgba(${smhbgred},${smhbggreen},${smhbgblue},${mbgAlpha}) !important;`;
+        `   background-color: ${oHBgColor} !important;`;
         dotOverview = 
-        `   background-color: rgba(${smfgred},${smfggreen},${smfgblue},1.0) !important;`;
+        `   background-color: ${oFgColor} !important;`;
     }
     else {
         overviewStyle = ``;
@@ -1462,11 +1609,8 @@ function saveStylesheet(obar, Me) {
         if(autohgBar)
             hgColor = getAutoHgColor(bgColor);
         // WMax Highlight BG  
-        let wmhred = bgColor[0]*(1-hAlpha) + hgColor[0]*hAlpha;
-        let wmhgreen = bgColor[1]*(1-hAlpha) + hgColor[1]*hAlpha;
-        let wmhblue = bgColor[2]*(1-hAlpha) + hgColor[2]*hAlpha;
         wmaxHoverStyle = 
-        `background-color: rgba(${wmhred},${wmhgreen},${wmhblue},${hAlpha}) !important;
+        `background-color: rgba(${hgColor[0]},${hgColor[1]},${hgColor[2]},${hAlpha}) !important;
         transition-duration: 100ms;`;
     }
     else {
@@ -1501,7 +1645,6 @@ function saveStylesheet(obar, Me) {
         toggleOffSVG = 'toggle-off-hc.svg';
     }
 
-    let applyAllShell = obar._settings.get_boolean('apply-all-shell');
     // Add/Remove .openmenu class to Restrict/Extend menu styles to the shell
     let openmenuClass = (applyMenuShell || applyAllShell) ? '' : '.openmenu';
     // Placeholder for .openbar class
@@ -2023,24 +2166,24 @@ function saveStylesheet(obar, Me) {
             box-shadow: none;
         }        
         ${openmenuClass} .toggle-switch {
-            background-image: url(media/${toggleOffSVG});
+            background-image: url(assets/${toggleOffSVG});
             background-color: transparent !important;
         }
         ${openmenuClass} .toggle-switch:checked {
-            background-image: url(media/${toggleOnSVG});
+            background-image: url(assets/${toggleOnSVG});
             background-color: transparent !important;
         }
         ${openmenuClass} .check-box StBin {
-            background-image: url(media/checkbox-off.svg);
+            background-image: url(assets/checkbox-off.svg);
         }
         ${openmenuClass} .check-box:checked StBin {
-            background-image: url(media/checkbox-on.svg);
+            background-image: url(assets/checkbox-on.svg);
         }
         ${openmenuClass} .check-box:focus StBin {
-            background-image: url(media/checkbox-off-focused.svg);
+            background-image: url(assets/checkbox-off-focused.svg);
         }  
         ${openmenuClass} .check-box:focus:checked StBin {
-            background-image: url(media/checkbox-on-focused.svg);
+            background-image: url(assets/checkbox-on-focused.svg);
         }
 
         ${openmenuClass}.message-list-clear-button {
@@ -2139,7 +2282,7 @@ function saveStylesheet(obar, Me) {
             box-shadow: inset 0 0 0 2px rgba(${msred},${msgreen},${msblue},${0.5}) !important;
         }
         ${openmenuClass}.calendar .calendar-today .calendar-day-with-events, ${openmenuClass}.calendar .calendar-day-with-events {
-            background-image: url("media/calendar-today.svg");
+            background-image: url("assets/calendar-today.svg");
             background-size: contain;
         }
         ${openmenuClass}.calendar-week-number {
@@ -2447,24 +2590,24 @@ function saveStylesheet(obar, Me) {
             ${sliderStyle}
         }
         .toggle-switch {
-            background-image: url(media/${toggleOffSVG});
+            background-image: url(assets/${toggleOffSVG});
             background-color: transparent !important;
         }
         .toggle-switch:checked {
-            background-image: url(media/${toggleOnSVG});
+            background-image: url(assets/${toggleOnSVG});
             background-color: transparent !important;
         }
         .check-box StBin {
-            background-image: url(media/checkbox-off.svg);
+            background-image: url(assets/checkbox-off.svg);
         }
         .check-box:checked StBin {
-            background-image: url(media/checkbox-on.svg);
+            background-image: url(assets/checkbox-on.svg);
         }
         .check-box:focus StBin {
-            background-image: url(media/checkbox-off-focused.svg);
+            background-image: url(assets/checkbox-off-focused.svg);
         }  
         .check-box:focus:checked StBin {
-            background-image: url(media/checkbox-on-focused.svg);
+            background-image: url(assets/checkbox-on-focused.svg);
         } `;
     }
 
@@ -2501,9 +2644,6 @@ function saveStylesheet(obar, Me) {
     /* app-grid */
     if(applyAccentShell) {
         stylesheet += `
-        .overview-tile {
-            background-color: transparent;
-        }
         .overview-tile:active, .overview-tile:checked,
         .app-well-app:active .overview-icon, .app-well-app:checked .overview-icon 
         .show-apps:active .overview-icon, .show-apps:checked .overview-icon, 
@@ -2519,6 +2659,9 @@ function saveStylesheet(obar, Me) {
 
     if(applyAllShell) {
         stylesheet += `
+        .overview-tile {
+            background-color: transparent;
+        }
         .overview-tile, .app-well-app .overview-icon, .show-apps .overview-icon, .grid-search-result .overview-icon {
             color: rgba(${smhfgred},${smhfggreen},${smhfgblue},1) ;
             border-radius: ${menuRadius}px;
@@ -2575,7 +2718,14 @@ function saveStylesheet(obar, Me) {
             background-color: rgba(${smfgred},${smfggreen},${smfgblue},${mfgAlpha}) !important;
             border: 2px solid rgba(${smfgred},${smfggreen},${smfgblue},${mfgAlpha}) !important;
         }
-        
+        .page-navigation-arrow {
+            background-color: ${smbg} !important;
+            color: rgba(${smfgred},${smfggreen},${smfgblue},1) !important;
+        }
+        .page-navigation-arrow:hover, .page-navigation-arrow:focus {
+            background-color: ${smhbg} !important;
+            color: rgba(${smhfgred},${smhfggreen},${smhfgblue},1) !important;
+        }
         .page-indicator .page-indicator-icon {
             color: transparent;
             background-color: rgba(${smfgred},${smfggreen},${smfgblue},1) !important;
@@ -2863,6 +3013,12 @@ function saveStylesheet(obar, Me) {
             color: rgba(${smfgred},${smfggreen},${smfgblue},1.0) !important;
             background-color: ${smbg} !important;
             border: 2px solid transparent;
+        }
+        .modal-dialog-linked-button:first-child {
+            border-radius: 0 0 0 ${menuRadius>20? 20: menuRadius}px !important;
+        }
+        .modal-dialog-linked-button:last-child {
+            border-radius: 0 0 ${menuRadius>20? 20: menuRadius}px 0 !important;
         }
         .modal-dialog-linked-button:hover {
             color: rgba(${smhfgred},${smhfggreen},${smhfgblue},1.0) !important;
@@ -3156,21 +3312,41 @@ function saveStylesheet(obar, Me) {
             color: rgba(${smhfgred},${smhfggreen},${smhfgblue},1.0) !important;
             background-color: ${smhbg} !important;
         }
+        .screenshot-ui-type-button:insensitive {
+            color: rgba(${smfgred},${smfggreen},${smfgblue},0.5) !important;
+            background-color: rgba(${smbgred},${smbggreen},${smbgblue},${0.5*mbgAlpha}) !important;
+        }
+        .screenshot-ui-close-button {
+            border: none;
+            box-shadow: 0 2px 0 0 rgba(${mshred},${mshgreen},${mshblue}, 0.2) !important;
+        }
         .screenshot-ui-show-pointer-button {
             color: rgba(${mfgred},${mfggreen},${mfgblue},1.0) !important;
-            background-color: transparent;
-        }   
+            background-color: rgba(${mfgred},${mfggreen},${mfgblue},0.15) !important;
+        }
+        .screenshot-ui-capture-button .screenshot-ui-capture-button-circle {
+            background-color: rgba(${mfgred},${mfggreen},${mfgblue},0.6) !important;
+        } 
+        .screenshot-ui-capture-button:hover .screenshot-ui-capture-button-circle, .screenshot-ui-capture-button:focus .screenshot-ui-capture-button-circle {
+            background-color: rgba(${mfgred},${mfggreen},${mfgblue},0.7) !important;
+        } 
+        .screenshot-ui-capture-button {
+            border-color: rgba(${mfgred},${mfggreen},${mfgblue},0.6) !important;
+        }
         .screenshot-ui-capture-button:hover, .screenshot-ui-capture-button:focus {
             border-color: ${msc} !important;
         }
         .screenshot-ui-capture-button:cast .screenshot-ui-capture-button-circle {
             background-color: rgba(${destructRed},${destructGreen},${destructBlue},1.0) !important;
         }
+        .screenshot-ui-shot-cast-container {
+            background-color: rgba(${mfgred},${mfggreen},${mfgblue},0.15) !important;
+        }
         .screenshot-ui-show-pointer-button:hover, .screenshot-ui-show-pointer-button:focus,
         .screenshot-ui-shot-cast-button:hover, .screenshot-ui-shot-cast-button:focus {
             color: rgba(${mhfgred},${mhfggreen},${mhfgblue},1.0) !important;
             background-color: ${mhbg} !important;
-        }        
+        }     
         .screenshot-ui-tooltip {
             box-shadow: 0 2px 0 0 rgba(${mshred},${mshgreen},${mshblue}, 0.25) !important; /* menu shadow */
             background-color: rgba(${tooltipBgRed},${tooltipBgGreen},${tooltipBgBlue}, 0.85); /* menu bg */
@@ -3193,21 +3369,25 @@ function saveStylesheet(obar, Me) {
         //     width: 24px;
         //     height: 24px; }
     }
-    
-    let stylepath = Me.path + '/stylesheet.css';
+    return stylesheet;
+}
+
+async function writeStylesheet(obar, stylesheet) {
+    let stylepath = obar.obarRunDir.get_path() + '/stylesheet.css';
     let file = Gio.File.new_for_path(stylepath);
     let bytearray = new TextEncoder().encode(stylesheet);
 
-    if (bytearray.length) {
-        let output = file.replace(null, false, Gio.FileCreateFlags.NONE, null);
-        let outputStream = Gio.BufferedOutputStream.new_sized(output, 4096);
-        outputStream.write_all(bytearray, null);
-        outputStream.close(null);
+    try {
+        let stream = await file.replace_async(null, false, Gio.FileCreateFlags.NONE, GLib.PRIORITY_DEFAULT, null);
+        await stream.write_bytes_async(bytearray, GLib.PRIORITY_DEFAULT, null);
+        stream.close(null);       
     }
-    else {
-      console.log("Failed to write stylsheet file: " + stylepath);
+    catch(e) {
+      console.log("Failed to write stylsheet file: " + stylepath, e);
     }
+}
 
+async function writeSVGs(obar, Me) {
     if(obar.msSVG) { // Accent color is changed
         saveToggleSVG('on', obar, Me); 
         saveToggleSVG('on-hc', obar, Me); 
@@ -3226,23 +3406,30 @@ function saveStylesheet(obar, Me) {
         saveCalEventSVG(obar, Me);
         obar.smfgSVG = false;
     }
+}
 
+async function writeGtkCss(obar) {
     if(obar.gtkCSS) { // accent or Gtk/Flatpak settings changed
         saveGtkCss(obar, 'enable');
         obar.gtkCSS = false;
     }
-
 }
 
-export function reloadStyle(obar, Me) { 
+export async function reloadStyle(obar, Me) { 
     const importExport = obar._settings.get_boolean('import-export');
     const pauseStyleReload = obar._settings.get_boolean('pause-reload');
     if(importExport || pauseStyleReload)
         return;
     // console.log('reloadStyle called with ImportExport false, Pause false');
     // Save stylesheet from string to css file
-    saveStylesheet(obar, Me);
-
+    let stylesheet = saveStylesheet(obar, Me);    
+    try {
+        await Promise.all([writeStylesheet(obar, stylesheet), writeSVGs(obar, Me), writeGtkCss(obar)]);
+    }
+    catch(e) {
+        console.log("Failed to reload stylesheet: ", e);
+    }
+    
     // Cause stylesheet to reload by toggling 'reloadstyle'
     let reloadstyle = obar._settings.get_boolean('reloadstyle');
     if(reloadstyle)

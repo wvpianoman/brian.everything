@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="org.gnome.gedit.desktop" score="1468.375" last-seen="1720745876"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="37.5" last-seen="1720576051"/>
+    <application id="xdg-desktop-portal-gnome.desktop" score="0.5" last-seen="1720839409"/>
+    <application id="solus-sc.desktop" score="58.25" last-seen="1720905001"/>
+    <application id="libreoffice-startcenter.desktop" score="0" last-seen="1720319269"/>
+    <application id="org.gnome.Terminal.desktop" score="3024" last-seen="1720777637"/>
+    <application id="conky-manager2.desktop" score="8" last-seen="1720577868"/>
+    <application id="org.xfce.Thunar.desktop" score="609.5" last-seen="1720909130"/>
+    <application id="org.gnome.Evince.desktop" score="62.25" last-seen="1720745856"/>
+    <application id="libreoffice-writer.desktop" score="2929" last-seen="1720363344"/>
+    <application id="org.gnome.DiskUtility.desktop" score="0.5" last-seen="1720745614"/>
+    <application id="org.gnome.Settings.desktop" score="12.5" last-seen="1720150809"/>
+    <application id="org.gnome.Nautilus.desktop" score="404.375" last-seen="1720746555"/>
+    <application id="kitty.desktop" score="1432.375" last-seen="1720905011"/>
+    <application id="com.microsoft.EdgeDev.desktop" score="195.75" last-seen="1720656189"/>
+    <application id="discord.desktop" score="2472.5" last-seen="1720476423"/>
+    <application id="lyx.desktop" score="5.5" last-seen="1720697316"/>
+    <application id="virt-manager.desktop" score="9495.5" last-seen="1720904977"/>
+    <application id="gitkraken.desktop" score="6.5" last-seen="1720742508"/>
+    <application id="org.telegram.desktop.desktop" score="10" last-seen="1720746455"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="14.125" last-seen="1720573969"/>
+    <application id="firefox.desktop" score="7203.5" last-seen="1720906046"/>
+    <application id="it.mijorus.gearlever.desktop" score="2" last-seen="1720317655"/>
+    <application id="com.vivaldi.Vivaldi.desktop" score="19" last-seen="1720097563"/>
+    <application id="org.gnome.FileRoller.desktop" score="8.5" last-seen="1720909154"/>
+    <application id="gearlever_beeper_d79f39.desktop" score="15316.125" last-seen="1720904983"/>
+    <application id="org.gnome.seahorse.Application.desktop" score="4.5" last-seen="1720149497"/>
+    <application id="org.gnome.Extensions.desktop" score="10" last-seen="1720818557"/>
+    <application id="dev.zed.Zed.desktop" score="1.5" last-seen="1720109328"/>
+    <application id="Element.desktop" score="1697.75" last-seen="1720905016"/>
+    <application id="uget-gtk.desktop" score="796.125" last-seen="1720906042"/>
+    <application id="org.gnome.eog.desktop" score="14.25" last-seen="1720906294"/>
+    <application id="eu.betterbird.Betterbird.desktop" score="294.25" last-seen="1720839895"/>
+    <application id="org.gnome.Screenshot.desktop" score="11" last-seen="1720841505"/>
+    <application id="virtualbox.desktop" score="8091.75" last-seen="1720903377"/>
+    <application id="org.kde.ghostwriter.desktop" score="18.5" last-seen="1720697482"/>
+    <application id="gcr-prompter.desktop" score="0.5" last-seen="1720150746"/>
+    <application id="variety.desktop" score="0.5" last-seen="1720480903"/>
+    <application id="org.onlyoffice.desktopeditors.desktop" score="3.5" last-seen="1720314674"/>
+    <application id="sublime_text.desktop" score="3" last-seen="1720663284"/>
+  </context>
+</application-state>
