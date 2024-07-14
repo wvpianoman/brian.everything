@@ -58,7 +58,6 @@ const DesktopManager = class {
 
         // Init and import Scripts and classes
         this.DesktopIconsUtil = Utils.DesktopIconsUtil;
-        this.PromiseUtils = Utils.PromiseUtils;
         this.FileUtils = Utils.FileUtils;
         this.Enums = Data.Enums;
         this.DBusUtils = Utils.DBusUtils;
@@ -1474,6 +1473,12 @@ const DesktopManager = class {
         });
         this.mainApp.add_action(menuKeyPressed);
         this.mainApp.set_accels_for_action('app.menuKeyPressed', ['Menu']);
+
+        let displayShellBackgroundMenu = Gio.SimpleAction.new('displayShellBackgroundMenu', null);
+        displayShellBackgroundMenu.connect('activate', () => {
+            this.DBusUtils.RemoteExtensionControl.showShellBackgroundMenu();
+        });
+        this.mainApp.add_action(displayShellBackgroundMenu);
     }
 
     textEntryAccelsTurnOn() {
@@ -1557,16 +1562,18 @@ const DesktopManager = class {
 
         this.desktopBackgroundGioMenu.append_section(null, this.desktopTerminalMenu);
 
-        this.backgroundMenu = Gio.Menu.new();
-        this.backgroundMenu.append(_('Change Background…'), 'app.changeBackGround');
-
-        this.desktopBackgroundGioMenu.append_section(null, this.backgroundMenu);
-
         this.settingsMenu = Gio.Menu.new();
         this.settingsMenu.append(_('Desktop Icon Settings'), 'app.changeDesktopIconSettings');
-        this.settingsMenu.append(_('Display Settings'), 'app.changeDisplaySettings');
 
         this.desktopBackgroundGioMenu.append_section(null, this.settingsMenu);
+
+        this.backgroundMenu = Gio.Menu.new();
+        this.backgroundMenu.append(_('Shell Menu…'), 'app.displayShellBackgroundMenu');
+        // Following deprectiated, Shell Menu has these options anyway
+        // this.backgroundMenu.append(_('Change Background…'), 'app.changeBackGround');
+        // this.backgroundMenu.append(_('Display Settings'), 'app.changeDisplaySettings');
+
+        this.desktopBackgroundGioMenu.append_section(null, this.backgroundMenu);
     }
 
     _selectAll() {
@@ -1929,10 +1936,8 @@ const DesktopManager = class {
 
             const extraFoldersItems = this.DesktopIconsUtil.getExtraFolders().map(async ([newFolder, extras]) => {
                 try {
-                    if (imports.system.version < 17200) {
-                        this.PromiseUtils._promisify({},
-                            newFolder.constructor.prototype, 'query_info_async');
-                    }
+                    if (imports.system.version < 17200)
+                        Gio._promisify(newFolder.constructor.prototype, 'query_info_async');
                     const newFolderInfo = await newFolder.query_info_async(
                         this.Enums.DEFAULT_ATTRIBUTES, Gio.FileQueryInfoFlags.NONE,
                         GLib.PRIORITY_DEFAULT, cancellable);
@@ -1981,10 +1986,8 @@ const DesktopManager = class {
 
             const mountsItems = this.DesktopIconsUtil.getMounts(this._volumeMonitor).map(async ([newFolder, extras, volume]) => {
                 try {
-                    if (imports.system.version < 17200) {
-                        this.PromiseUtils._promisify({},
-                            newFolder.constructor.prototype, 'query_info_async');
-                    }
+                    if (imports.system.version < 17200)
+                        Gio._promisify(newFolder.constructor.prototype, 'query_info_async');
                     const newFolderInfo = await newFolder.query_info_async(
                         this.Enums.DEFAULT_ATTRIBUTES, Gio.FileQueryInfoFlags.NONE,
                         GLib.PRIORITY_DEFAULT, cancellable);
