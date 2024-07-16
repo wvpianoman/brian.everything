@@ -52,14 +52,21 @@ echo -e "doing stuff..."
 ORANGE='\033[0;33m'
 NC='\033[0m'
 
- essantial software pckages
- essential_packages=(
+sudo eopkg install -y  blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc thunar thunar-volman thunar-archive-plugin thunar-shares-plugin thunar-docs megacmd github-cli lyx
+
+# essantial software pckages
+essential_packages=(
     acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
     dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg 
     noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server 
     openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults 
-    plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar 
-    terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager
+    plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
+    tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed
+)
+# kde packages
+kde_packages=(
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers 
+    kdepim-addons merkuro yakuake
 )
 
 # kde packages
@@ -67,7 +74,6 @@ kde_packages=(
     akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers 
     kdepim-addons merkuro yakuake
 )
-
 # gnome packages
 gnome_packages=(
     breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman 
@@ -78,6 +84,15 @@ gnome_packages=(
     gnome-commander spacefm xfce4-terminal thunar thunar-volman thunar-archive-plugin thunar-shares-plugin thunar-docs
 )
 
+# gnome packages
+gnome_packages=(
+    breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin thunar thunar-volman
+    numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu 
+    gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance 
+    gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list 
+    gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection 
+    gnome-commander spacefm xfce4-terminal thunar-shares-plugin thunar-docs
+)
 # software packages
 software_packages=(
     lender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox scribus
