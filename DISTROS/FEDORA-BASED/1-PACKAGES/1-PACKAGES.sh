@@ -88,16 +88,17 @@ sudo dnf5 install -y acl aria2 attr autoconf automake bash-completion bc binutil
 
 sleep 3
 
-sudo dnf5 install -y digikam flameshot ghostwriter gimp gimp-help gimp-data-extras gparted inkscape blender boomaga pdfarranger rclone rclone-browser scribus simplescreenrecorder variety discord
+sudo dnf5 install -y digikam ghostwriter gimp gimp-help gimp-data-extras gparted inkscape blender boomaga pdfarranger rclone rclone-browser scribus simplescreenrecorder variety discord
+
 echo "Installing PLASMA Packages"
 
-sudo dnf5 install -y kdepim-addons kate kate-plugins dolphin-plugins merkuro plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake neochat akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs
+sudo dnf5 install -y kdepim-addons kate kate-plugins dolphin-plugins merkuro plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake neochat akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot
 
 sleep 3
 
 # echo "Installing Gnome Packages"
 
-# sudo dnf5 install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection gnome-commander spacefm xfce4-terminal
+# sudo dnf5 install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection gnome-commander spacefm soundconverter
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 

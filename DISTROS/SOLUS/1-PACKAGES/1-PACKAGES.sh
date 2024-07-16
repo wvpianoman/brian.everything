@@ -1,90 +1,122 @@
-#!/bin/bash
-### #!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Brian Francisco
 # Personal use case packages
-# Feb 9 2024
+# 08 May 2024
 
 #   《˘ ͜ʖ ˘》
 #
-#  ███████╗ ██████╗ ██╗     ██╗   ██╗███████╗    ██████╗ ██╗  ██╗ ██████╗ ███████╗
-#  ██╔════╝██╔═══██╗██║     ██║   ██║██╔════╝    ██╔══██╗██║ ██╔╝██╔════╝ ██╔════╝
-#  ███████╗██║   ██║██║     ██║   ██║███████╗    ██████╔╝█████╔╝ ██║  ███╗███████╗
-#  ╚════██║██║   ██║██║     ██║   ██║╚════██║    ██╔═══╝ ██╔═██╗ ██║   ██║╚════██║
-#  ███████║╚██████╔╝███████╗╚██████╔╝███████║    ██║     ██║  ██╗╚██████╔╝███████║
-#  ╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+#  ███████╗ ██████╗ ███████╗████████╗██╗    ██╗ █████╗ ██████╗ ███████╗    ██████╗ ██╗  ██╗ ██████╗ ███████╗
+#  ██╔════╝██╔═══██╗██╔════╝╚══██╔══╝██║    ██║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗██║ ██╔╝██╔════╝ ██╔════╝
+#  ███████╗██║   ██║█████╗     ██║   ██║ █╗ ██║███████║██████╔╝█████╗      ██████╔╝█████╔╝ ██║  ███╗███████╗
+#  ╚════██║██║   ██║██╔══╝     ██║   ██║███╗██║██╔══██║██╔══██╗██╔══╝      ██╔═══╝ ██╔═██╗ ██║   ██║╚════██║
+#  ███████║╚██████╔╝██║        ██║   ╚███╔███╔╝██║  ██║██║  ██║███████╗    ██║     ██║  ██╗╚██████╔╝███████║
+#  ╚══════╝ ╚═════╝ ╚═╝        ╚═╝    ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
 #
-# https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=Solus%20Pkgs
+# https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=Software%20Pkgs
 
-    echo "Installing the packages..."
+# Tolga Erok
+# for
+# Brian
+# 19/4/2024
 
-# sudo eopkh install -y gstreamer-1.0-libav gstreamer-1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engine-murrine intel-media-driver libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 
+# Assign a color variable based on the RANDOM number
+RED='\e[1;31m'
+GREEN='\e[1;32m'
+YELLOW='\e[1;33m'
+BLUE='\e[1;34m'
+CYAN='\e[1;36m'
+WHITE='\e[1;37m'
+ORANGE='\e[1;93m'
+NC='\e[0m'
 
-sudo eopkg install -y acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go
+# Cache sudo credentials to avoid repeated password prompts
+sudo -v
 
-sudo eopkg install -y gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults
+# Function to handle errors
+handle_error() {
+    echo -e "${RED}Error occurred: $1${NC}"
+}
 
-sudo eopkg install -y plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager zed
+# execute a command with error handling
+execute_command() {
+    "$@" || handle_error "Failed to execute: $*"
+}
 
-echo "Package installation completed."
-    sleep 3
+# Continue with the rest of the script
+echo -e "doing stuff..."
 
-# echo "KDE Package Installation"
-
-# sudo eopkg install -y akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers kdepim-addons merkuro yakuake
-
-# echo "Package installation completed."
-#    sleep 3
-
-echo "Installing Gnome Packages"
-
- sudo dnf5 install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection gnome-commander spacefm xfce4-terminal element
-
-echo "Package installation completed."
-     sleep 3
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
-echo "Installing Software Packages"
+# Define colors
+ORANGE='\033[0;33m'
+NC='\033[0m'
 
-sudo eopkg install -y  blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc thunar thunar-volman thunar-archive-plugin thunar-shares-plugin thunar-docs megacmd github-cli lyx
+ essantial software pckages
+ essential_packages=(
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
+    dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg 
+    noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server 
+    openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults 
+    plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv tar 
+    terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager
+)
 
-echo "Package installation completed."
-    sleep 3
+# kde packages
+kde_packages=(
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers 
+    kdepim-addons merkuro yakuake
+)
 
-echo "Installing utilites for different file system access"
-# Support for additional file systems:
+# gnome packages
+gnome_packages=(
+    breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman 
+    numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu 
+    gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance 
+    gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list 
+    gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection 
+    gnome-commander spacefm xfce4-terminal thunar thunar-volman thunar-archive-plugin thunar-shares-plugin thunar-docs
+)
 
-    sudo eopkg install -y  btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype
+# software packages
+software_packages=(
+    lender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox scribus
+    scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc megacmd github-cli discord darktable lyx soundconverter
+)
 
-echo "Installation completed."
-    sleep 3
+# utilities for file system access
+filesystem_utilities=(
+    btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype
+)
 
-echo "Installing ZSH / FISH shells and Plug-ins"
+# utilities for file system access
+shells=(
+    zsh zsh-dbginfo zsh-autosuggestions zsh-syntax-highlighting antidote powerlevel10k powerline powerline-dbginfo rcm fish
+)
 
-	sudo eopkg install -y zsh zsh-dbginfo zsh-autosuggestions zsh-syntax-highlighting antidote powerlevel10k powerline powerline-dbginfo rcm fish
+# Install packages
+install_packages() {
+    echo -e "${ORANGE}$1${NC}"
+    sudo eopkg it -y "${@:2}" || handle_error "Failed to install: $1"
+    echo "Package installation completed."
+}
 
-echo "Installation completed."
-    sleep 3
+# Install essential packages
+install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
 
-sudo systemctl start thermald.service
-sudo systemctl status thermald.service
+# Install DE packages
+# Pick either KDE or Gnome
+install_packages "Installing KDE Packages" "${kde_packages[@]}"
+# install_packages "Installing gnome Packages""${gnome_packages[@]}"
 
+# Install Software Packages
+install_packages "Installing Software Packages""${software_packages[@]}"
 
-	# Audio
-	[ -f /usr/bin/easyeffects ] && [ -f $HOME/.config/easyeffects/output/default.json ] && easyeffects -l default
-	[ -f /usr/bin/pulseeffects ] && [ -f $HOME/.config/PulseEffects/output/default.json ] && pulseeffects -l default
+# Install filesystem utilities
+install_packages "Installing utilities for different file system access" "${shells[@]}"
 
-
-
-	# Execute rygel to start DLNA sharing
-	/usr/bin/rygel-preferences
-
-#	# Install profile-sync: it to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD)
-#	sudo dnf install profile-sync-daemon
-#	/usr/bin/profile-sync-daemon preview
-#	# sudo dnf remove profile-sync-daemon
-#	# psd profile located in $HOME/.config/psd/psd.conf
-
+# Install Software Packages
+install_packages "Installing ZSH / FISH shells and Plug-ins""${software_packages[@]}"
 
 	# Install some fonts
 sudo eopkg install -y font-fira-ttf font-firacode-ttf
@@ -136,15 +168,15 @@ rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
 		gum spin --spinner dot --title "Stand-by..." -- sleep 2
 	fi
 
+sudo systemctl start thermald.service
+sudo systemctl status thermald.service
 
-	sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tolgaerok/tolga-scripts/main/Fedora39/San-Francisco-family/San-Francisco-family.sh)"
+	# Audio
+	[ -f /usr/bin/easyeffects ] && [ -f $HOME/.config/easyeffects/output/default.json ] && easyeffects -l default
+	[ -f /usr/bin/pulseeffects ] && [ -f $HOME/.config/PulseEffects/output/default.json ] && pulseeffects -l default
 
-
-
-	display_message "[${GREEN}✔${NC}]  Trimming all mount points on SSD"
-	sudo fstrim -av
-
-
+	# Execute rygel to start DLNA sharing
+	/usr/bin/rygel-preferences
 
 speed-up-shutdown() {
 	display_message "${YELLOW}[*]${NC} Configure shutdown of units and services to 10s .."
@@ -223,8 +255,9 @@ sudo fstrim -av
 
 echo -e "\n\n----------------------------------------------"
 echo -e "|                                            |"
-echo -e "|        Setup Complete! Enjoy Solus!       |"
-echo -e "|       Please run ___________.sh            |"
-echo -e "|    to back up your APT packages and more   |"
+echo -e "|               Setup Complete!              |"
 echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
+
+exit 0
+
