@@ -17,6 +17,8 @@ nix-env -iA nixpkgs.fanctl
 nix-env -iA nixpkgs.figlet
 nix-env -iA nixpkgs.fortune
 nix-env -iA nixpkgs.gum
+nix-env -iA nixpkgs.megasync
+
 # nix-env -iA nixpkgs.haveged
 # nix-env -iA nixpkgs.codec2
 # nix-env -iA nixpkgs.uim
@@ -28,13 +30,14 @@ nix-env -iA nixpkgs.gum
 # nix-env -iA nixpkgs.cifs-utils
 # nix-env -iA nixpkgs.gnome.dconf-editor
 # nix-env -iA nixpkgs.dnsutils
-#nix-env -iA nixpkgs.ugrep
-#nix-env -iA nixpkgs.nettools
-#nix-env -iA nixpkgs.profile-sync-daemon
-#nix-env -iA nixpkgs.exfat
-#nix-env -iA nixpkgs.apfs-fuse
-#nix-env -iA nixpkgs.hfsprogs
-#nix-env -iA nixpkgs.jfsutils
-#nix-env -iA nixpkgs.nilfs-utils
-#nix-env -iA nixpkgs.reiser4progs
-#nix-env -iA nixpkgs.apfsprogs
+# nix-env -iA nixpkgs.ugrep
+# nix-env -iA nixpkgs.nettools
+# nix-env -iA nixpkgs.profile-sync-daemon
+# nix-env -iA nixpkgs.exfat
+# nix-env -iA nixpkgs.apfs-fuse
+# nix-env -iA nixpkgs.hfsprogs
+# nix-env -iA nixpkgs.jfsutils
+# nix-env -iA nixpkgs.nilfs-utils
+# nix-env -iA nixpkgs.reiser4progs
+# nix-env -iA nixpkgs.apfsprogs
+
