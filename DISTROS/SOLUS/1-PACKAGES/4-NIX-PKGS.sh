@@ -17,7 +17,7 @@ nix-env -iA nixpkgs.fanctl
 nix-env -iA nixpkgs.figlet
 nix-env -iA nixpkgs.fortune
 nix-env -iA nixpkgs.gum
-nix-env -iA nixpkgs.megasync
+#nix-env -iA nixpkgs.megasync
 
 # nix-env -iA nixpkgs.haveged
 # nix-env -iA nixpkgs.codec2

@@ -52,8 +52,6 @@ echo -e "doing stuff..."
 ORANGE='\033[0;33m'
 NC='\033[0m'
 
-sudo eopkg install -y  blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam  rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc thunar thunar-volman thunar-archive-plugin thunar-shares-plugin thunar-docs megacmd github-cli lyx
-
 # essantial software pckages
 essential_packages=(
     acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
@@ -69,34 +67,21 @@ kde_packages=(
     kdepim-addons merkuro yakuake
 )
 
-# kde packages
-kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers 
-    kdepim-addons merkuro yakuake
-)
 # gnome packages
 gnome_packages=(
-    breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman 
+    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs
     numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu 
     gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance 
     gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list 
     gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection 
-    gnome-commander spacefm xfce4-terminal thunar thunar-volman thunar-archive-plugin thunar-shares-plugin thunar-docs
+    gnome-commander spacefm xfce4-terminal thunar-archive-plugin thunar-shares-plugin
 )
 
-# gnome packages
-gnome_packages=(
-    breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin thunar thunar-volman
-    numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu 
-    gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance 
-    gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list 
-    gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection 
-    gnome-commander spacefm xfce4-terminal thunar-shares-plugin thunar-docs
-)
 # software packages
 software_packages=(
     lender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox scribus
-    scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc megacmd github-cli discord darktable lyx soundconverter
+    scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc megacmd github-cli discord darktable lyx telegram
+    soundconverter
 )
 
 # utilities for file system access
@@ -121,8 +106,8 @@ install_packages "Installing Essential Software Packages" "${essential_packages[
 
 # Install DE packages
 # Pick either KDE or Gnome
-install_packages "Installing KDE Packages" "${kde_packages[@]}"
-# install_packages "Installing gnome Packages""${gnome_packages[@]}"
+# install_packages "Installing KDE Packages" "${kde_packages[@]}"
+install_packages "Installing gnome Packages""${gnome_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
