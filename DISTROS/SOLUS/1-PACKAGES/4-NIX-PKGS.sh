@@ -11,14 +11,16 @@
 #
 # https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=Nix-Pkgs
 
+export NIXPKGS_ALLOW_UNFREE=1
+
 nix-env -iA nixpkgs.cowsay
 nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.fanctl
 nix-env -iA nixpkgs.figlet
-nix-env -iA nixpkgs.fortune
-nix-env -iA nixpkgs.gum
-#nix-env -iA nixpkgs.megasync
+export NIXPKGS_ALLOW_UNFREE=1 && nix-env -iA nixpkgs.megasync
 
+# nix-env -iA nixpkgs.fortune
+# nix-env -iA nixpkgs.gum
 # nix-env -iA nixpkgs.haveged
 # nix-env -iA nixpkgs.codec2
 # nix-env -iA nixpkgs.uim

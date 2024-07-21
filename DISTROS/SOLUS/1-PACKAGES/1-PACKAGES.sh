@@ -52,6 +52,8 @@ echo -e "doing stuff..."
 ORANGE='\033[0;33m'
 NC='\033[0m'
 
+sudo eopkg it dialog zenity -y
+
 # essantial software pckages
 essential_packages=(
     acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
@@ -59,29 +61,30 @@ essential_packages=(
     noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server 
     openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults 
     plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
-    tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed
+    tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed lolcat fortune-mod
+    gum fan2go fan2go-dbginfo
 )
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs ghostwriter flameshot neochat kate kdegraphics-thumbnailers 
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers
     kdepim-addons merkuro yakuake
 )
 
 # gnome packages
 gnome_packages=(
-    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs
+    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin
     numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu 
     gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance 
     gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list 
     gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection 
-    gnome-commander spacefm xfce4-terminal thunar-archive-plugin thunar-shares-plugin
+    gnome-commander spacefm xfce4-terminal thunar-archive-plugin
 )
 
 # software packages
 software_packages=(
-    lender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox scribus
+    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox scribus
     scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc megacmd github-cli discord darktable lyx telegram
-    soundconverter
+    soundconverter ghostwriter element
 )
 
 # utilities for file system access
@@ -106,8 +109,8 @@ install_packages "Installing Essential Software Packages" "${essential_packages[
 
 # Install DE packages
 # Pick either KDE or Gnome
-# install_packages "Installing KDE Packages" "${kde_packages[@]}"
-install_packages "Installing gnome Packages""${gnome_packages[@]}"
+install_packages "Installing KDE Packages" "${kde_packages[@]}"
+# install_packages "Installing gnome Packages""${gnome_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"

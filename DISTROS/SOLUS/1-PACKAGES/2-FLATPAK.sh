@@ -211,22 +211,20 @@ flatpak_apps=(
 #    "io.github.shiftey.Desktop"
 #    "com.github.zocker_160.SyncThingy"
 #    "com.transmissionbt.Transmission"
-    "org.telegram.desktop"
-    "org.telegram.desktop.webview"
+#    "org.telegram.desktop"
+#    "org.telegram.desktop.webview"
 #    "org.videolan.VLC"
     "com.vivaldi.Vivaldi"
     "com.vscodium.codium"
     "com.wps.Office"
 ### To Make Gnome more user friendly ###
-    "com.mattjakeman.ExtensionManager"
+#    "com.mattjakeman.ExtensionManager"
 )
 
 # Install applications
 for app in "${flatpak_apps[@]}"; do
     flatpak install -y flathub "$app"
 done
-
-flatpak install flathub betterbird
 
 echo -e "\e[1;32m[✔]\e[0m Checking updates for installed flatpak programs...\n"
 flatpak update -y
