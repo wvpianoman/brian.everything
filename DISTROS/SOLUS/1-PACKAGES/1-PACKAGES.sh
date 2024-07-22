@@ -77,7 +77,7 @@ gnome_packages=(
     gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance 
     gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list 
     gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection 
-    gnome-commander spacefm xfce4-terminal thunar-archive-plugin
+    gnome-commander spacefm xfce4-terminal thunar-archive-plugin korla-icon-theme
 )
 
 # software packages
@@ -122,13 +122,12 @@ install_packages "Installing utilities for different file system access" "${shel
 install_packages "Installing ZSH / FISH shells and Plug-ins""${software_packages[@]}"
 
 	# Install some fonts
-sudo eopkg install -y font-fira-ttf font-firacode-ttf
-sudo eopkg install -y font-awesome-ttf noto-sans-ttf font-adobe-100dpi
+sudo eopkg install -y font-fira-ttf font-firacode-ttf font-awesome-ttf noto-sans-ttf
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
 sudo unzip FiraCode.zip -d /usr/share/fonts
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.zip
 sudo unzip Meslo.zip -d /usr/share/fonts
 
 wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip

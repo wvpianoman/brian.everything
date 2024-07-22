@@ -17,7 +17,7 @@ nix-env -iA nixpkgs.cowsay
 nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.fanctl
 nix-env -iA nixpkgs.figlet
-export NIXPKGS_ALLOW_UNFREE=1 && nix-env -iA nixpkgs.megasync
+# export NIXPKGS_ALLOW_UNFREE=1 && nix-env -iA nixpkgs.megasync
 
 # nix-env -iA nixpkgs.fortune
 # nix-env -iA nixpkgs.gum

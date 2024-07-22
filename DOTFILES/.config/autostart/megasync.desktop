@@ -11,7 +11,3 @@ Terminal=false
 Categories=Network;System;
 StartupNotify=false
 X-GNOME-Autostart-Delay=2
-
-# Location
-# $HOME/.local/share/applications/
-# $HOME/.config/autostart/
