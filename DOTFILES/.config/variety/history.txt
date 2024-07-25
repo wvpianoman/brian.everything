@@ -1,101 +1,101 @@
 0
-/home/brian/Pictures/Wallpaper/BigLinux/ambiance19.avif
-/home/brian/Pictures/Wallpaper/backgrounds/moonlight.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/penguin art7.avif
-/home/brian/Pictures/Wallpaper/backgrounds/nordwall2.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/animal cute6.avif
-/home/brian/Pictures/Wallpaper/Makulu/GTA-Car.jpeg
-/home/brian/Pictures/Wallpaper/BigLinux/robot14.avif
-/home/brian/Pictures/Wallpaper/BigLinux/statue23.avif
+/home/brian/Pictures/Wallpaper/backgrounds/Nirvana.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/lofoten-sundown.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/mountain-winter1.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/color-cubes.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/kath.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Deep-Space.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/Nano-Schematic-InfraOrange.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Toxic-girl.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/Excl_Lonely_Railway.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Dead-Redemption.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Sunset.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/keyboard-3648x2736.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Mix-Tiger.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/dragon.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/miracleOS_dark.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Planet-Core.jpg
+/home/brian/Pictures/Wallpaper/Makulu/ship-glassart.png
+/home/brian/Pictures/Wallpaper/BigLinux/sunset.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/Ice.jpg
 /home/brian/Pictures/Wallpaper/backgrounds/building_cyber.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/space-planet-gold-dark.avif
-/home/brian/Pictures/Wallpaper/Makulu/African-hunters.jpeg
-/home/brian/Pictures/Wallpaper/BigLinux/zz animal non sense10.avif
-/home/brian/Pictures/Wallpaper/BigLinux/pixel castle.avif
-/home/brian/Pictures/Wallpaper/BigLinux/abstract colors1.avif
-/home/brian/Pictures/Wallpaper/backgrounds/Electric-Reflection.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/cat-normal.avif
-/home/brian/Pictures/Wallpaper/BigLinux/music1.avif
-/home/brian/Pictures/Wallpaper/BigLinux/fluffy.avif
-/home/brian/Pictures/Wallpaper/Makulu/Flash-Orange_Reflections.jpg
-/home/brian/Pictures/Wallpaper/backgrounds/onestandsout.png
-/home/brian/Pictures/Wallpaper/BigLinux/animal-lion-baby.avif
-/home/brian/Pictures/Wallpaper/BigLinux/fire-moutain.avif
-/home/brian/Pictures/Wallpaper/BigLinux/nature8.avif
-/home/brian/Pictures/Wallpaper/Solus Wallpapers/a-colorful-chaos.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/ambiance clean dark7.avif
-/home/brian/Pictures/Wallpaper/BigLinux/ambiance clean dark6.avif
-/home/brian/Pictures/Wallpaper/BigLinux/beach5.jpg
-/home/brian/Pictures/Wallpaper/Makulu/Train-Tracks.png
-/home/brian/Pictures/Wallpaper/BigLinux/conceitual-multimedia3.avif
-/home/brian/Pictures/Wallpaper/backgrounds/Ubuntu-Mate-Warm-no-logo.png
-/home/brian/Pictures/Wallpaper/BigLinux/cat cute2.avif
-/home/brian/Pictures/Wallpaper/BigLinux/ambiance7.avif
-/home/brian/Pictures/Wallpaper/BigLinux/animal-clean-blue6.avif
-/home/brian/Pictures/Wallpaper/backgrounds/monastry_palampur1_31019190127_o.jpg
-/home/brian/Pictures/Wallpaper/cachyos/PurpleFeathers.png
-/home/brian/Pictures/Wallpaper/Makulu/Red-Sunset.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/ambiance-clean-dark10.avif
-/home/brian/Pictures/Wallpaper/BigLinux/animal clean brown1.avif
-/home/brian/Pictures/Wallpaper/BigLinux/z nonsense cute1.avif
-/home/brian/Pictures/Wallpaper/BigLinux/nature5.avif
-/home/brian/Pictures/Wallpaper/Makulu/dragon-bridge.png
-/home/brian/Pictures/Wallpaper/BigLinux/animal wolf2.avif
-/home/brian/Pictures/Wallpaper/BigLinux/animal pig1.avif
-/home/brian/Pictures/Wallpaper/backgrounds/northern-night.jpg
-/home/brian/Pictures/Wallpaper/Makulu/1b7nq4ekr7.png
-/home/brian/Pictures/Wallpaper/backgrounds/waves-slate.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/z non sense car3.avif
-/home/brian/Pictures/Wallpaper/Solus Wallpapers/Excl_Focal_Spring.jpg
-/home/brian/Pictures/Wallpaper/Solus Wallpapers/valley-midnight.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/space planet blue and purple.avif
-/home/brian/Pictures/Wallpaper/BigLinux/cat4.avif
-/home/brian/Pictures/Wallpaper/Makulu/Planetary-Lumens.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/clean yellow1.avif
-/home/brian/Pictures/Wallpaper/backgrounds/river-and-mountains.jpg
-/home/brian/Pictures/Wallpaper/Solus Wallpapers/Ubuntu-Mate-Cold-no-logo.png
-/home/brian/Pictures/Wallpaper/BigLinux/space-planet-blue-and-purple.avif
-/home/brian/Pictures/Wallpaper/BigLinux/art-paint28.avif
-/home/brian/Pictures/Wallpaper/BigLinux/art-face5.avif
-/home/brian/Pictures/Wallpaper/BigLinux/animal cute11.avif
-/home/brian/Pictures/Wallpaper/backgrounds/abstract-spiral.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/penguin color splash3.avif
-/home/brian/Pictures/Wallpaper/backgrounds/Lake_Sunset-190630_resized.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/animal clean brown7.avif
-/home/brian/Pictures/Wallpaper/BigLinux/neon hong kong.avif
-/home/brian/Pictures/Wallpaper/BigLinux/animal-dino1.avif
-/home/brian/Pictures/Wallpaper/BigLinux/clean yellow23.avif
-/home/brian/Pictures/Wallpaper/BigLinux/animal butterfly.avif
-/home/brian/Pictures/Wallpaper/backgrounds/candy-03.jpg
-/home/brian/Pictures/Wallpaper/Makulu/dragon-bridge.png
-/home/brian/Pictures/Wallpaper/BigLinux/animal-bird-clean1.avif
-/home/brian/Pictures/Wallpaper/BigLinux/metallic objects.avif
-/home/brian/Pictures/Wallpaper/Solus Wallpapers/PubSide.jpg
-/home/brian/Pictures/Distro Specific/nobara/nobara-mecha-penguins-3.jpg
-/home/brian/Pictures/Wallpaper/Makulu/Mix-Astronaut.jpg
-/home/brian/Pictures/Wallpaper/backgrounds/coding.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/castle2.avif
-/home/brian/Pictures/Wallpaper/BigLinux/animal cute7.avif
-/home/brian/Pictures/Wallpaper/BigLinux/wood2.avif
+/home/brian/Pictures/Wallpaper/backgrounds/tron_legacy1.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/Ice.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/liquid1.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Caveman.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/path.png
+/home/brian/Pictures/Wallpaper/Makulu/galaxy.png
+/home/brian/Pictures/Wallpaper/Makulu/old-Galaxy.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/milkyway.png
+/home/brian/Pictures/Wallpaper/backgrounds/att-04.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/solaris-grapes.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Magical-Circle-In-Jungle.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Bear-Forest.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/tron_legacy5.jpg
+/home/brian/Pictures/Wallpaper/Solus Wallpapers/RainDrops.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Galaxy.jpg
+/home/brian/Pictures/Wallpaper/Solus Wallpapers/forest-street.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/YellowFlower.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/cyber.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Docks.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/natures-mountain-waters.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/calder-moore-aliencrack-01-copy.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/blackwhole.png
+/home/brian/Pictures/Wallpaper/backgrounds/darkesthour.png
+/home/brian/Pictures/Wallpaper/backgrounds/Sunrise_At_6.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Fantasy-Cat-Wallpaper-111174.jpg
 /home/brian/Pictures/Wallpaper/Makulu/Flash-Beautiful-Sunset.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/animal-clean-pink2.avif
-/home/brian/Pictures/Wallpaper/BigLinux/penguin art9.avif
-/home/brian/Pictures/Wallpaper/BigLinux/space globe2.avif
-/home/brian/Pictures/Wallpaper/Solus Wallpapers/ocean-waves.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/animal-clean1.avif
-/home/brian/Pictures/Wallpaper/backgrounds/lost-light.png
-/home/brian/Pictures/Wallpaper/BigLinux/conceitual multimedia3.avif
-/home/brian/Pictures/Wallpaper/BigLinux/cat food.avif
-/home/brian/Pictures/Wallpaper/BigLinux/dog4.avif
-/home/brian/Pictures/Wallpaper/BigLinux/cat steampunk4.avif
-/home/brian/Pictures/Wallpaper/backgrounds/nature.jpg
-/home/brian/Pictures/Wallpaper/backgrounds/wayfire-1.jpg
-/home/brian/Pictures/Wallpaper/Makulu/Jedit-Sith.png
-/home/brian/Pictures/Wallpaper/BigLinux/conceitual multimedia14.avif
-/home/brian/Pictures/Wallpaper/BigLinux/ambiance11.avif
-/home/brian/Pictures/Wallpaper/backgrounds/city_top_view.jpg
-/home/brian/Pictures/Wallpaper/backgrounds/rocky_land.jpg
-/home/brian/Pictures/Wallpaper/BigLinux/conceitual multimedia5.avif
-/home/brian/Pictures/Wallpaper/BigLinux/animal clean1.avif
+/home/brian/Pictures/Wallpaper/Makulu/Colourful_Circles.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Unity-Stalker.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Man-Of-Steel.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/liquid2.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/tron_legacy2.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Titanic.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/forest-street.jpg
 /home/brian/Pictures/Wallpaper/backgrounds/waves-of-blue.jpg
-/home/brian/Pictures/Wallpaper/Makulu/Japanese.png
+/home/brian/Pictures/Wallpaper/backgrounds/road-1920x1200.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/Far_In_Advance.jpg
+/home/brian/Pictures/Wallpaper/Solus Wallpapers/apollo-11-earth.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Tiger.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/att-04.jpg
+/home/brian/Pictures/Wallpaper/Solus Wallpapers/the-devils-bridge.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/quantum-1920x1200.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/Justify.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/umbrella-dark.png
+/home/brian/Pictures/Wallpaper/Makulu/Mixed-Sunset-Tree.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/building_cyber.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/Excl_Lonely_Railway.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/northern-night.jpg
+/home/brian/Pictures/Wallpaper/Makulu/ancient-humans.png
+/home/brian/Pictures/Wallpaper/Makulu/Canvased-sunset.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/nordwall3.jpg
+/home/brian/Pictures/Wallpaper/Makulu/frog.jpeg
+/home/brian/Pictures/Wallpaper/backgrounds/natures-mountain-waters.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/moment-1920.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Outer-Space.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/highlands-grid.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/Machine-Slave-Lapis.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/escape_velocity.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/music-3072x2048.jpg
+/home/brian/Pictures/Wallpaper/BigLinux/BigBrasil.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/kath.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/IMG_9656.png
+/home/brian/Pictures/Wallpaper/Makulu/Forest.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/lofoten-sundown.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/casa-mila.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/stripes.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/milkyway.png
+/home/brian/Pictures/Wallpaper/backgrounds/aesthetic_deer.jpg
+/home/brian/Pictures/Wallpaper/Makulu/goat.jpeg
+/home/brian/Pictures/Wallpaper/Solus Wallpapers/Excl_Lazy_Summer_Leaf.jpg
+/home/brian/Pictures/Wallpaper/Solus Wallpapers/ufo-galaxy.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/wallhaven4.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/city-from-above.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/muscle-car-ice-road-red-moon.jpg
+/home/brian/Pictures/Wallpaper/Makulu/subway.png
+/home/brian/Pictures/Wallpaper/backgrounds/leh_10_52208836058_o.jpg
+/home/brian/Pictures/Wallpaper/BigLinux/sunset.jpg
+/home/brian/Pictures/Wallpaper/Makulu/Fairy-In-forest.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/wallhaven1.jpg
+/home/brian/Pictures/Wallpaper/backgrounds/foresty-skies-d.png
+/home/brian/Pictures/Wallpaper/backgrounds/wallhaven-6k93rq.jpg
