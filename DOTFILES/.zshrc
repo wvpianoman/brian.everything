@@ -1,25 +1,128 @@
-#
-# ~/.bashrc
-#
+###
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+# Path to your oh-my-zsh installation.
+#installation via script from github
+#export ZSH="/home/$USER/.oh-my-zsh"
+#installation via paru -S oh-my-zsh-git
+export ZSH=/usr/share/oh-my-zsh/
 
-### EXPORT ###
-export EDITOR='nano'
-export VISUAL='nano'
-export HISTCONTROL=ignoreboth:erasedups
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
+ZSH_THEME="random"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# ZSH_THEME_RANDOM_IGNORED=(pygmalion tjkirch_mod)
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+if [ -f $ZSH/oh-my-zsh.sh ]; then
+  source $ZSH/oh-my-zsh.sh
+fi
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+
+####   ARCOLINUX SETTINGS   ####
 export PAGER='most'
 
-#Ibus settings if you need them
-#type ibus-setup in terminal to change settings and start the daemon
-#delete the hashtags of the next lines and restart
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=dbus
-#export QT_IM_MODULE=ibus
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+setopt GLOB_DOTS
+#share commands between terminal instances or not
+unsetopt SHARE_HISTORY
+#setopt SHARE_HISTORY
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+export HISTCONTROL=ignoreboth:erasedups
+
+# Make nano the default editor
+
+export EDITOR='nano'
+export VISUAL='nano'
+
+#PS1='[\u@\h \W]\$ '
 
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
@@ -28,9 +131,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
-
-#ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
 
 ### ALIASES ###
 
@@ -61,12 +161,12 @@ alias depends='function_depends'
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw='pwd'
-alias udpate='sudo pacman -Syyu && yay && flatpak update'
-alias upate='sudo pacman -Syyu && yay && flatpak update'
-alias updte='sudo pacman -Syyu && yay && flatpak update'
-alias updqte='sudo pacman -Syyu && yay && flatpak update'
-alias upqll='paru -Syu --noconfirm && yay && flatpak update'
-alias upal='paru -Syu --noconfirm && yay && flatpak update'
+alias udpate='sudo pacman -Syyu'
+alias upate='sudo pacman -Syyu'
+alias updte='sudo pacman -Syyu'
+alias updqte='sudo pacman -Syyu'
+alias upqll='paru -Syu --noconfirm'
+alias upal='paru -Syu --noconfirm'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -107,15 +207,15 @@ alias userlist="cut -d: -f1 /etc/passwd | sort"
 alias merge="xrdb -merge ~/.Xresources"
 
 # Aliases for software managment
-# pacman or pm
-alias pacman='sudo pacman --color auto'
-alias update='sudo pacman -Syyu && yay && flatpak update'
-alias upd='sudo pacman -Syyu && yay && flatpak update'
+# pacman
+alias pacman="sudo pacman --color auto"
+alias update="sudo pacman -Syyu"
+alias upd="sudo pacman -Syyu"
 
 # paru as aur helper - updates everything
-alias pksyua="paru -Syu --noconfirm && yay && flatpak update"
-alias upall="paru -Syu --noconfirm && yay && flatpak update"
-alias upa="paru -Syu --noconfirm && yay && flatpak update"
+alias pksyua="paru -Syu --noconfirm"
+alias upall="paru -Syu --noconfirm"
+alias upa="paru -Syu --noconfirm"
 
 #ps
 alias psa="ps auxf"
@@ -137,8 +237,8 @@ alias update-fc='sudo fc-cache -fv'
 alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 #copy shell configs
-alias cb='cp /etc/skel/.bashrc ~/.bashrc && exec bash'
-alias cz='cp /etc/skel/.zshrc ~/.zshrc && echo "Copied."'
+alias cb='cp /etc/skel/.bashrc ~/.bashrc && echo "Copied."'
+alias cz='cp /etc/skel/.zshrc ~/.zshrc && exec zsh'
 alias cf='cp /etc/skel/.config/fish/config.fish ~/.config/fish/config.fish && echo "Copied."'
 
 #switch between bash and zsh
@@ -149,6 +249,7 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 #switch between displaymanager or bootsystem
 alias toboot="sudo /usr/local/bin/arcolinux-toboot"
 alias togrub="sudo /usr/local/bin/arcolinux-togrub"
+alias torefind="sudo /usr/local/bin/arcolinux-torefind"
 alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
 alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
 alias toly="sudo pacman -S ly --noconfirm --needed ; sudo systemctl enable ly.service -f ; echo 'Ly is active - reboot now'"
@@ -166,6 +267,9 @@ alias kpi='killall picom'
 #hardware info --short
 alias hw="hwinfo --short"
 
+#fastfetch --short
+alias ff="fastfetch"
+
 #audio check pulseaudio or pipewire
 alias audio="pactl info | grep 'Server Name'"
 
@@ -176,6 +280,9 @@ alias trizenskip='trizen -S --skipinteg'
 
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
+
+#approximation of how old your hardware is
+alias howold="sudo lshw | grep -B 3 -A 8 BIOS"
 
 #check cpu
 alias cpu="cpuid -i | grep uarch | head -n 1"
@@ -200,12 +307,12 @@ alias vmware-start="sudo systemctl enable --now vmtoolsd.service"
 alias sv="sudo systemctl enable --now vmtoolsd.service"
 
 #shopt
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
+#shopt -s autocd # change to named directory
+#shopt -s cdspell # autocorrects cd misspellings
+#shopt -s cmdhist # save multi-line commands in history as single line
+#shopt -s dotglob
+#shopt -s histappend # do not overwrite history
+#shopt -s expand_aliases # expand aliases
 
 #youtube download
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
@@ -269,17 +376,28 @@ alias nb="$EDITOR ~/.bashrc"
 alias nz="$EDITOR ~/.zshrc"
 alias nf="$EDITOR ~/.config/fish/config.fish"
 alias nneofetch="$EDITOR ~/.config/neofetch/config.conf"
+alias nfastfetch="$EDITOR ~/.config/fastfetch/config.jsonc"
 alias nplymouth="sudo $EDITOR /etc/plymouth/plymouthd.conf"
 alias nvconsole="sudo $EDITOR /etc/vconsole.conf"
 alias nenvironment="sudo $EDITOR /etc/environment"
 alias nloader="sudo $EDITOR /boot/efi/loader/loader.conf"
+alias nrefind="sudo $EDITOR /boot/refind_linux.conf"
+alias nalacritty="nano /home/$USER/.config/alacritty/alacritty.toml"
 
+#removing packages
+alias rvariety="arcolinux-remove-variety"
+alias rkmix="arcolinux-remove-kmix"
+alias rconky="arcolinux-remove-conky"
 
 #reading logs with bat
 alias lcalamares="bat /var/log/Calamares.log"
 alias lpacman="bat /var/log/pacman.log"
 alias lxorg="bat /var/log/Xorg.0.log"
 alias lxorgo="bat /var/log/Xorg.0.log.old"
+
+#reading logs with sublime-text-4
+alias scal="subl /var/log/Calamares.log"
+alias spac="subl /etc/pacman.conf"
 
 #gpg
 #verify signature for isos
@@ -299,10 +417,12 @@ alias fixkey="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
 alias fixkeys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
 alias fix-key="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
 alias fix-keys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+#fix-sddm-config is no longer an alias but an application - part of ATT
+#alias fix-sddm-config="/usr/local/bin/arcolinux-fix-sddm-config"
 alias fix-pacman-conf="/usr/local/bin/arcolinux-fix-pacman-conf"
 alias fix-pacman-keyserver="/usr/local/bin/arcolinux-fix-pacman-gpg-conf"
-alias fix-grub="/usr/local/bin/arcolinux-fix-grub"
-alias fixgrub="/usr/local/bin/arcolinux-fix-grub"
+alias fix-grub="sudo /usr/local/bin/arcolinux-fix-grub"
+alias fixgrub="sudo /usr/local/bin/arcolinux-fix-grub"
 
 #maintenance
 alias big="expac -H M '%m\t%n' | sort -h | nl"
@@ -331,8 +451,8 @@ alias xdw="ls /usr/share/wayland-sessions"
 alias kernel="ls /usr/lib/modules"
 alias kernels="ls /usr/lib/modules"
 
-#am I on grub or systemd-boot
-alias boot="sudo bootctl status | grep Product"
+#am I on grub,systemd-boot or refind
+alias boot="sudo /usr/local/bin/arcolinux-boot"
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
@@ -406,12 +526,13 @@ alias pamac-unlock="sudo rm /var/tmp/pamac/dbs/db.lock"
 #moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'
 
-#create a file called .bashrc-personal and put all your personal aliases
+#create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
-[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+[[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
 # reporting tools - install when not installed
+#fastfetch
 #neofetch
 #screenfetch
 #alsi
@@ -427,180 +548,3 @@ alias personal='cp -Rf /personal/* ~'
 #cpufetch
 #colorscript random
 #hyfetch
-fastfetch
-
-###################################
-###--- Tolga/Brian ALIASES -----###
-###################################
-
-# source ~/.bashrc
-
-# echo "" && fortune && echo ""
-
-alias alert='notify-send --urgency=low "$(history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//")"'
-# alias tolga='sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tolgaerok/scripts/main/Fedora39/TolgaFedora39.sh)"'
-
-
-alias systcl="sudo /home/brian/scripts/systcl.sh"
-
-###---------- my tools ----------###
-alias htos="sudo ~/.config/MY-TOOLS/assets/scripts/Zysnc-Options/ZYSNC-HOME-TO-SERVER.sh"
-alias mount="sudo ~/.config/MY-TOOLS/assets/scripts/Mounting-Options/MOUNT-ALL.sh"
-alias mse="sudo ~/scripts/MYTOOLS/mse.sh"
-alias stoh="sudo ~/.config/MY-TOOLS/assets/scripts/Zysnc-Options/ZYSNC-SERVER-TO-HOME.sh"
-alias umount="sudo ~/.config/MY-TOOLS/assets/scripts/Mounting-Options/UMOUNT-ALL.sh"
-
-###---------- fun stuff ----------###
-alias pics="sxiv -t $HOME/Pictures/CUSTOM-WALLPAPERS/"
-alias wp="sxiv -t $HOME/Pictures/Wallpaper/"
-
-###---------- navigate files and directories ----------###
-alias ..="cd .."
-alias cl="clear"
-alias copy="rsync -P"
-alias la="lsd -a"
-alias ll="lsd -l"
-alias Ls="lsd"
-alias ls="ls --color=auto"
-alias dir="dir --color=auto"
-alias lsla="lsd -la"
-
-# alias chmod commands
-alias 000='sudo chmod -R 000'
-alias 644='sudo chmod -R 644'
-alias 666='sudo chmod -R 666'
-alias 755='sudo chmod -R 755'
-alias 777='sudo chmod -R 777'
-alias mx='sudo chmod a+x'
-
-# Search command line history
-alias h="history | grep "
-
-# Search running processes
-alias p="ps aux | grep "
-alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
-
-# Search files in the current folder
-alias f="find . | grep "
-
-# Alias's for safe and forced reboots
-alias rebootsafe='sudo shutdown -r now'
-alias rebootforce='sudo shutdown -r -n now'
-
-###---------- Tools ----------###
-alias rc="source ~/.bashrc"
-alias bashrc='kwrite  ~/.bashrc'
-alias tweak='sudo bash -c "echo westwood > /proc/sys/net/ipv4/tcp_congestion_control && echo mq-deadline | sudo tee /sys/block/sda/queue/scheduler"'
-alias cong="sysctl net.ipv4.tcp_congestion_control"
-alias fmem="echo && echo 'Current mem:' && free -h && sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches' && echo && echo 'After: ' && free -h"
-alias fmem2="echo && echo 'Current mem:' && free -h && sudo /bin/sh -c '/bin/sync && /sbin/sysctl -w vm.drop_caches=3' && echo && echo 'After: ' && free -h"
-alias fstab="sudo mount -a && sudo systemctl daemon-reload && echo && echo \"Reloading of fstab done\" && echo"
-alias grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg && sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg"
-alias io="cat /sys/block/sda/queue/scheduler"
-alias line="echo '## ------------------------------ ##'"
-alias nvidia="sudo systemctl enable --now akmods --force && sudo dracut --force && echo && echo \"Force akmods and Dracut on nvidia done\" && echo"
-alias pdfcompress='bash /home/tolga/scripts/pdf1.sh'
-alias samba='gum spin --spinner dot --title "Restarting Samba" -- sleep 2 && sudo systemctl enable smb.service nmb.service && sudo systemctl restart smb.service nmb.service'
-alias swapreload="cl && echo && echo 'Turning swap off:' && echo 'Turning swap on:' && line && sudo swapon --all && sudo swapon --show && echo && echo 'Reload Swap(s):' && line && sudo mount -a && sudo systemctl daemon-reload && sudo swapon --show && echo && echo 'Free memory:' && line && free -h && echo && duf && sys && fmem"
-alias sys="echo && io && echo && cong && echo && echo 'ZSWAP status: ( Y = ON )' && cat /sys/module/zswap/parameters/enabled && systemctl restart earlyoom && systemctl status earlyoom --no-pager"
-alias trim="sudo fstrim -av"
-alias up="sudo pacman -Syu && yay && flatpak update"
-
-# 2nd one is for arch based systems
-
-# alias sysctl-reload="sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system && sysctl -p"
-alias sysctl-reload="sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system"
-
-###---------- file access ----------###
-alias bconf="vim ~/.config/bash/.bashrc"
-alias cp="cp -riv"
-alias htos='sudo ~/.config/MY-TOOLS/assets/scripts/Zysnc-Options/ZYSNC-HOME-TO-SERVER.sh'
-alias mkdir="mkdir -vp"
-alias mount='sudo ~/.config/MY-TOOLS/assets/scripts/Mounting-Options/MOUNT-ALL.sh'
-alias mse='sudo ~/scripts/MYTOOLS/MAKE-SCRIPTS-EXECUTABLE.sh'
-alias mv="mv -iv"
-alias mynix='sudo ~/.config/MY-TOOLS/assets/scripts/COMMAN-NIX-COMMAND-SCRIPT/MyNixOS-commands.sh'
-alias samba='echo && line && echo "Restarting samba" && line && sleep 2 && sudo systemctl enable smb.service nmb.service && sudo systemctl restart smb.service nmb.service && sudo systemctl restart wsdd'
-alias stoh='sudo ~/.config/MY-TOOLS/assets/scripts/Zysnc-Options/ZYSNC-SERVER-TO-HOME.sh'
-alias trimgen='sudo ~/.config/MY-TOOLS/assets/scripts/GENERATION-TRIMMER/TrimmGenerations.sh'
-alias umount='sudo ~/.config/MY-TOOLS/assets/scripts/Mounting-Options/UMOUNT-ALL.sh'
-alias zconf="vim ~/.config/zsh/.zshrc"
-
-###---------- session ----------###
-alias sess='session=$XDG_SESSION_TYPE && echo "" && gum spin --spinner dot --title "Current XDG session is: [ $session ] """ -- sleep 2'
-
-alias batt='clear && echo "Battery: $(acpi -b | awk '\''{print $3}'\'')" && echo '' && echo "Battery Percentage: $(acpi -b | awk '\''{print $4}'\'')" && echo '' && echo "Remaining Time: $(acpi -b | awk '\''{print $5,$6,$7 == "until" ? "until fully charged" : $7}'\'')"'
-
-###---------- Konsole effects ----------###
-PS1="\[\e[1;m\]┌[\[\e[1;32m\]\u\[\e[1;34m\]@\h\[\e[1;m\]] \[\e[1;m\]::\[\e[1;36m\] \W \[\e[1;m\]::\n\[\e[1;m\]└\[\e[1;33m\]➤\[\e[0;m\]  "
-
-###---------- BTRFS TOOLS ----------######
-alias balance-home="sudo btrfs balance start /home && sudo btrfs balance status /home"
-alias balance-root="sudo btrfs balance start / && sudo btrfs balance status /"
-alias scrub-home="sudo btrfs scrub start /home && sudo btrfs scrub status /home"
-alias scrub-root="sudo btrfs scrub start / && sudo btrfs scrub status /"
-
-# Function to generate a random color code
-random_color() {
-  echo $((16 + RANDOM % 216))
-}
-
-# Function to generate a random color code
-random_color() {
-  echo $((16 + RANDOM % 216))
-}
-
-# Define colors
-YELLOW=226
-WHITE=231
-BRIGHT_BLUE=81
-
-# Function to display fortune with random colors
-fortune_with_random_colors() {
-  local color
-  color=$(random_color)
-  printf "\033[38;5;%dm%s\033[0m\n" "$color" "$1"
-}
-
-# Check if the system is Solus
-if [ -f "/usr/bin/eopkg" ]; then
-    # Solus system
-    export PATH="/home/brian/.nix-profile/bin:$PATH"
-    FORTUNE_COMMAND="/home/brian/.nix-profile/bin/fortune"
-else
-    # Other distro
-    FORTUNE_COMMAND="fortune"
-fi
-
-# Fetch the fortune message
-fortune_message="$($FORTUNE_COMMAND)"
-
-# Display the fortune message with random colors
-echo "" && fortune_with_random_colors "$fortune_message" && echo ""
-
-# nix-env -iA nixpkgs.fortune
-# export NIXPKGS_ALLOW_UNFREE=1 && nix-env -iA nixpkgs.megasync
-
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=5000
-HISTFILESIZE=10000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-XDG_DESKTOP_DIR="$HOME/"
-XDG_DOWNLOAD_DIR="$HOME/"
-XDG_DOCUMENTS_DIR="$HOME/"
-XDG_MUSIC_DIR="$HOME/"
-XDG_PICTURES_DIR="$HOME/"
-XDG_VIDEOS_DIR="$HOME/"
-XDG_TEMPLATES_DIR="$HOME/Templates"
-XDG_PUBLICSHARE_DIR="$HOME/Public"

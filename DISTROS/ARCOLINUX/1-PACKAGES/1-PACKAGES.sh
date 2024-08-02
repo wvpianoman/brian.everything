@@ -66,7 +66,7 @@ else
     execute_command chmod +x ./get-arcolinux-keys
     execute_command sudo ./get-arcolinux-keys
     execute_command sudo pacman -Syu --needed archlinux-tweak-tool-git
-    execute_command sudo pacman -Sy --needed  arcolinux-plasma-keybindings-git arcolinux-fish-git arcolinux-plasma-servicemenus-git arcolinux-meta-utilities arcolinux-meta-log arcolinux-meta-fun arcolinux-meta-samba arcolinux-teamviewer sofirem-git arcolinux-meta-wine || continue #arcolinux-meta-btrfs-snapper
+    execute_command sudo pacman -Sy --needed  arcolinux-plasma-keybindings-git arcolinux-plasma-servicemenus-git arcolinux-meta-utilities arcolinux-meta-log arcolinux-meta-fun arcolinux-meta-samba arcolinux-teamviewer sofirem-git arcolinux-meta-wine || continue #arcolinux-meta-btrfs-snapper
 fi
 
 # Continue with the rest of the script
@@ -80,12 +80,12 @@ read -n 1 -r -s -p $'Press enter to continue...\n'
 ORANGE='\033[0;33m'
 NC='\033[0m'
 
- essantial software pckages
+# essantial software pckages
  essential_packages=(
     ca-certificates ca-certificates-mozilla ca-certificates-utils cifs-utils cjson codec2 gstreamer-vaapi gstreamer
     gtk-engine-murrine gtk-engines intel-media-driver iptables jq libffi libfreeaptx rabbitmq librist libsodium libtool
-    libva-intel-driver libvdpau libvdpau-va-gl libxext mpg123 net-snmp net-tools nftables nsxiv openssh ostree python
-    python-pip python-setproctitle qrencode sassc socat openssl sshpass sxiv yay-git
+    libva-intel-driver libvdpau libvdpau-va-gl libxext mpg123 net-snmp net-tools nftables nsxiv openssh python sxiv
+    python-pip python-setproctitle qrencode sassc socat openssl sshpass yay-git
     #grub-customizer pamac-aur
 )
 
@@ -96,12 +96,11 @@ optional_packages=(
     dolphin-plugins duf earlyoom easyeffects espeak-ng fancontrol-gui-git fastfetch fd ffmpeg ffmpegthumbnailer ffmpegthumbs 
     figlet flatpak fortune-mod git github-cli grsync gnupg gparted grep debtap digikam discord etcher-bin find-the-command-git
     flameshot-git ghostwriter gimp gimp-help-en gitkraken gparted gum haveged htop imagewriter inkscape kate kcalc wps-office
-    kdegraphics-thumbnailers kdepim-addons krita libreoffice-fresh megasync-bin lsd make mbedtls meld firefox-ublock-origin p7zip 
-    packagekit pkgconf plasma-firewall mlocate powertop make mbedtls meld firefox-ublock-origin mpg123 nano neofetch neovim uget
+    kdegraphics-thumbnailers kdepim-addons krita libreoffice-fresh megasync-bin lsd make mbedtls meld p7zip xournalpp font-manager
+    packagekit pkgconf plasma-firewall mlocate powertop make mbedtls meld  mpg123 nano neofetch neovim uget vscodium yt-dlp zstd
     neovim-qt merkuro neochat octopi onlyoffice-bin pdfarranger rclone rhythmbox ripgrep ripgrep-all rsync rygel scribus shotwell 
     simplescreenrecorder sublime-text-4 screen tar terminator thermald tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety 
-    ventoy-bin xclip nano-syntax-highlighting yakuake zip zram-generator zstd syncthing telegram-desktop the_platinum_searcher vlc 
-    vscodium yt-dlp xournalpp font-manager
+    ventoy-bin xclip nano-syntax-highlighting yakuake zip zram-generator syncthing telegram-desktop the_platinum_searcher vlc
 )
 
 # yay packages
@@ -119,7 +118,7 @@ filesystem_utilities=(
 terminal_shells=(
     zsh zsh-autosuggestions-git zsh-completions zsh-fast-syntax-highlighting zsh-history-substring-search-git
     zsh-syntax-highlighting-git zsh-theme-powerlevel10k-git oh-my-zsh-git oh-my-zsh-powerline-theme-git bash
-    bash-completion bash-complete-alias oh-my-posh-bin fish
+    bash-completion fish arcolinux-fish-git #bash-complete-alias oh-my-posh-bin
 )
 
 # Install packages
