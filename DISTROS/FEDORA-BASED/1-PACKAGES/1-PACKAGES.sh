@@ -88,25 +88,27 @@ sudo dnf5 install -y acl aria2 attr autoconf automake bash-completion bc binutil
 
 sleep 3
 
-sudo dnf5 install -y digikam ghostwriter gimp gimp-help gimp-data-extras gparted inkscape blender boomaga pdfarranger rclone rclone-browser scribus simplescreenrecorder variety discord
+sudo dnf5 install -y digikam ghostwriter gimp gimp-help gimp-data-extras gparted inkscape blender boomaga pdfarranger rclone rclone-browser scribus simplescreenrecorder variety discord zed fish virt-manager lolcat fortune-mod telegram-desktop fonts-tweak-tool
 
-echo "Installing PLASMA Packages"
 
-sudo dnf5 install -y kdepim-addons kate kate-plugins dolphin-plugins merkuro plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake neochat akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot
+# echo "Installing PLASMA Packages"
+
+# sudo dnf5 install -y kdepim-addons kate kate-plugins dolphin-plugins merkuro plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake neochat akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot
 
 sleep 3
 
-# echo "Installing Gnome Packages"
+echo "Installing Gnome Packages"
 
-# sudo dnf5 install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection gnome-commander spacefm soundconverter
+sudo dnf5 install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx gnome-extensions-app spectacle kitty gnome-shell-extension-appindicator gnome-shell-extension-apps-menu gnome-shell-extension-common gnome-shell-extension-gsconnect gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-pop-shell gnome-shell-extension-window-list gnome-shell-extension-windowsNavigator gnome-shell-extension-freon  gnome-shell-extension-just-perfection gnome-commander spacefm soundconverter xfce4-terminal thunar-archive-plugin korla-icon-theme
 
-# read -n 1 -r -s -p $'Press enter to continue...\n'
+echo "Installing BTRFS Packages"
+sudo dnf5 install -y  btrfs-assistant btrfs-progs buttermanager btrbk
 
 echo "Installing utilites for different file system access"
 
 sudo dnf5 install -y apfs-fuse btrfs-progs disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs
 
-wget https://mega.nz/linux/repo/Fedora_40/x86_64/megasync-Fedora_40.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_40.x86_64.rpm"
+# wget https://mega.nz/linux/repo/Fedora_40/x86_64/megasync-Fedora_40.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_40.x86_64.rpm"
 
 echo "Package installation completed."
 
