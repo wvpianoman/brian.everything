@@ -223,7 +223,7 @@ flatpak_apps=(
     "com.vivaldi.Vivaldi"
     "com.vscodium.codium"
 #    "com.wps.Office"
-    "com.mattjakeman.ExtensionManager"
+#    "com.mattjakeman.ExtensionManager"
 )
 
 # Install applications
