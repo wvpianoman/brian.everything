@@ -199,6 +199,7 @@ flatpak_apps=(
     "im.riot.Riot"
     "one.ablaze.floorp"
     "io.gitlab.adhami3310.Footage"
+    "com.mattjakeman.ExtensionManager"
     "it.mijorus.gearlever"
 #    "io.github.wereturtle.ghostwriter"
 #    "org.gimp.GIMP"
@@ -223,7 +224,7 @@ flatpak_apps=(
     "com.vivaldi.Vivaldi"
     "com.vscodium.codium"
 #    "com.wps.Office"
-    "com.mattjakeman.ExtensionManager"
+    "io.github.aandrew_me.ytdn"
 )
 
 # Install applications

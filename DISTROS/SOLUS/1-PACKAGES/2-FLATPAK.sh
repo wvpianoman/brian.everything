@@ -195,10 +195,12 @@ flatpak_apps=(
     "com.jgraph.drawio.desktop"
     "com.microsoft.EdgeDev"
     "one.ablaze.floorp"
+    "im.riot.Riot"
     "io.gitlab.adhami3310.Footage"
     "it.mijorus.gearlever"
 #    "io.github.wereturtle.ghostwriter"
 #    "org.gimp.GIMP"
+    "com.mattjakeman.ExtensionManager"
     "io.gitlab.adhami3310.Impression"
 #    "org.inkscape.Inkscape"
 #    "org.kde.krita"
@@ -220,8 +222,7 @@ flatpak_apps=(
     "com.vivaldi.Vivaldi"
     "com.vscodium.codium"
     "com.wps.Office"
-### To Make Gnome more user friendly ###
-#    "com.mattjakeman.ExtensionManager"
+    "io.github.aandrew_me.ytdn"
 )
 
 # Install applications
