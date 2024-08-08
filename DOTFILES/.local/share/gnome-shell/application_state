@@ -1,26 +1,42 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="gparted.desktop" score="1.5" last-seen="1721947955"/>
-    <application id="gitkraken.desktop" score="24.125" last-seen="1721948716"/>
-    <application id="kitty.desktop" score="1081.84375" last-seen="1722254958"/>
-    <application id="org.gnome.FileRoller.desktop" score="6.375" last-seen="1722128987"/>
-    <application id="org.gnome.Shell.Extensions.GSConnect.desktop" score="0" last-seen="0"/>
-    <application id="uget-gtk.desktop" score="821.28125" last-seen="1722254574"/>
-    <application id="virt-manager.desktop" score="5423.375" last-seen="1722130295"/>
-    <application id="org.gnome.SystemMonitor.desktop" score="0.5" last-seen="1721783740"/>
-    <application id="io.missioncenter.MissionCenter.desktop" score="37.75" last-seen="1721783722"/>
-    <application id="org.gnome.DejaDup.desktop" score="546.5" last-seen="1721907403"/>
-    <application id="org.xfce.Thunar.desktop" score="14943.625" last-seen="1722293117"/>
-    <application id="org.gnome.gedit.desktop" score="550.84375" last-seen="1722254222"/>
-    <application id="com.mattjakeman.ExtensionManager.desktop" score="7" last-seen="1722255367"/>
-    <application id="org.gnome.Nautilus.desktop" score="5487.59375" last-seen="1722255243"/>
-    <application id="xdg-desktop-portal-gnome.desktop" score="0.125" last-seen="1722128884"/>
-    <application id="eu.betterbird.Betterbird.desktop" score="1949.8125" last-seen="1722255080"/>
-    <application id="org.gnome.Terminal.desktop" score="812" last-seen="1722128377"/>
-    <application id="firefox.desktop" score="12114.625" last-seen="1722292083"/>
-    <application id="virtualbox.desktop" score="2091.1875" last-seen="1721974946"/>
-    <application id="megasync.desktop" score="24" last-seen="1722254749"/>
-    <application id="gearlever_beeper_d79f39.desktop" score="9202.28125" last-seen="1722255374"/>
+    <application id="org.bleachbit.BleachBit.desktop" score="308" last-seen="1723088963"/>
+    <application id="kitty.desktop" score="29" last-seen="1723086708"/>
+    <application id="org.gnome.TextEditor.desktop" score="637" last-seen="1722974840"/>
+    <application id="rygel-preferences.desktop" score="3" last-seen="1722734080"/>
+    <application id="btrfs-assistant.desktop" score="66" last-seen="1723020449"/>
+    <application id="sublime_text.desktop" score="146" last-seen="1723085782"/>
+    <application id="xdg-desktop-portal-gnome.desktop" score="1" last-seen="1722758081"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="24" last-seen="1722903542"/>
+    <application id="org.kde.ghostwriter.desktop" score="35" last-seen="1722759373"/>
+    <application id="org.gnome.tweaks.desktop" score="63" last-seen="1723082289"/>
+    <application id="variety.desktop" score="37" last-seen="1723080258"/>
+    <application id="org.gnome.Connections.desktop" score="1" last-seen="1722821948"/>
+    <application id="org.gnome.Shell.Extensions.GSConnect.Preferences.desktop" score="48" last-seen="1722822098"/>
+    <application id="discord.desktop" score="1" last-seen="1722822561"/>
+    <application id="org.gnome.DejaDup.desktop" score="1120" last-seen="1723080128"/>
+    <application id="gitkraken.desktop" score="2290" last-seen="1722991543"/>
+    <application id="uget-gtk.desktop" score="40" last-seen="1723085638"/>
+    <application id="org.gnome.Software.desktop" score="357" last-seen="1723088966"/>
+    <application id="firewall-config.desktop" score="9" last-seen="1723061165"/>
+    <application id="virt-manager.desktop" score="2869" last-seen="1723079971"/>
+    <application id="virtualbox.desktop" score="154" last-seen="1723085941"/>
+    <application id="thunar.desktop" score="7" last-seen="1722940289"/>
+    <application id="org.gnome.Settings.desktop" score="20" last-seen="1722896445"/>
+    <application id="org.gnome.Calculator.desktop" score="0" last-seen="1722896123"/>
+    <application id="org.gnome.Extensions.desktop" score="8" last-seen="1722929740"/>
+    <application id="org.gnome.Loupe.desktop" score="1" last-seen="1723062921"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="35" last-seen="1722903543"/>
+    <application id="org.gnome.Terminal.desktop" score="456" last-seen="1723089065"/>
+    <application id="it.mijorus.gearlever.desktop" score="18" last-seen="1722757350"/>
+    <application id="org.gnome.Nautilus.desktop" score="6808" last-seen="1723089166"/>
+    <application id="timeshift-gtk.desktop" score="35" last-seen="1722857197"/>
+    <application id="org.gnome.Evince.desktop" score="0" last-seen="1722759680"/>
+    <application id="beeper.desktop" score="7342" last-seen="1723085630"/>
+    <application id="org.mozilla.firefox.desktop" score="1535" last-seen="1723088972"/>
+    <application id="megasync.desktop" score="25" last-seen="1723063076"/>
+    <application id="im.riot.Riot.desktop" score="34" last-seen="1722822460"/>
+    <application id="eu.betterbird.Betterbird.desktop" score="310" last-seen="1723085977"/>
   </context>
 </application-state>
