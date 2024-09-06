@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+GenericName=File Synchronizer
+Name=MEGAsync
+Comment=automated syncing between your pc and your MEGA cloud drive.
+TryExec=megasync
+Exec=megasync
+Icon=mega
+Terminal=false
+Categories=Network;System;
+StartupNotify=false
+X-GNOME-Autostart-Delay=2
+
+# Location
+# $HOME/.local/share/applications/
+# $HOME/.config/autostart/
