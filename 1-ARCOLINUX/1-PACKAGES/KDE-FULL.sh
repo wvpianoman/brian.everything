@@ -151,7 +151,7 @@
 
 # Meta package for KDE office applications
   KDE_office=(
-      ghostwriter  # Aesthetic, distraction-free Markdown editor
+     # ghostwriter  # Aesthetic, distraction-free Markdown editor
   )
 
 # Meta package for KDE PIM applications
@@ -246,7 +246,7 @@
 # Iinstall packagess...
 install_packages() {
     echo -e "${ORANGE}$1${NC}"
-    sudo sudo pacman -Sy --needed  "${@:2}"
+    sudo sudo pacman -R  "${@:2}"
     echo "Package installation completed."
 }
 

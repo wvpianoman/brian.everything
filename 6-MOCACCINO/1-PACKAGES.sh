@@ -52,6 +52,8 @@ echo -e "doing stuff..."
 ORANGE='\033[0;33m'
 NC='\033[0m'
 
+sudo luet install repository/mocaccino-community-stable
+
 # essantial software pckages
 essential_packages=(
     aria2 autoconf automake bash-completion bash-completion-freebsd binutils btop busybox py311-certifi curl

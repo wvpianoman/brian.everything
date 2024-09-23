@@ -28,7 +28,7 @@ display_ascii_art() {
 install_packages() {
     local category="$1"
     echo -e "${ORANGE}Installing $category packages${NC}"
-    sudo pacman -Sy --needed "${KDE_PACKAGES[$category]}"
+    sudo pacman -R  "${KDE_PACKAGES[$category]}"
     if [ $? -eq 0 ]; then
         echo "Package installation for $category completed."
     else

@@ -66,7 +66,7 @@ else
     execute_command chmod +x ./get-arcolinux-keys
     execute_command sudo ./get-arcolinux-keys
     execute_command sudo pacman -Syu --needed archlinux-tweak-tool-git
-    execute_command sudo pacman -Sy --needed  arcolinux-plasma-keybindings-git arcolinux-plasma-servicemenus-git arcolinux-meta-utilities arcolinux-meta-log arcolinux-meta-fun arcolinux-meta-samba arcolinux-teamviewer sofirem-git arcolinux-meta-wine || continue #arcolinux-meta-btrfs-snapper
+    execute_command sudo pacman -Sy --needed  aarcolinux-meta-utilities arcolinux-meta-log arcolinux-meta-fun arcolinux-meta-samba arcolinux-teamviewer sofirem-git arcolinux-meta-wine || continue #arcolinux-meta-btrfs-snapper
 fi
 
 # Continue with the rest of the script
@@ -91,18 +91,26 @@ NC='\033[0m'
 
 # optional software packages
 optional_packages=(
-    acl acpi akonadi akonadi-calendar-tools akonadi-calendar akonadi-import-wizard aria2 attr autoconf automake bash-completion 
-    bc binutils btop busybox appimagelauncher baobab blender cowsay curl dbus-glib dconf-editor dialog direnv discover wget vim
-    dolphin-plugins duf earlyoom easyeffects espeak-ng fancontrol-gui-git fastfetch fd ffmpeg ffmpegthumbnailer ffmpegthumbs 
-    figlet flatpak fortune-mod git github-cli grsync gnupg gparted grep debtap digikam discord etcher-bin find-the-command-git
-    flameshot-git ghostwriter gimp gimp-help-en gitkraken gparted gum haveged htop imagewriter inkscape kate kcalc wps-office
-    kdegraphics-thumbnailers kdepim-addons krita libreoffice-fresh megasync-bin lsd make mbedtls meld p7zip xournalpp font-manager
-    packagekit pkgconf plasma-firewall mlocate powertop make mbedtls meld  mpg123 nano neofetch neovim uget vscodium yt-dlp zstd
-    neovim-qt merkuro neochat octopi onlyoffice-bin pdfarranger rclone rhythmbox ripgrep ripgrep-all rsync rygel scribus shotwell 
-    simplescreenrecorder sublime-text-4 screen tar terminator thermald tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety 
-    ventoy-bin xclip nano-syntax-highlighting yakuake zip zram-generator syncthing telegram-desktop the_platinum_searcher vlc
+    acl acpi aria2 attr autoconf automake bash-completion 
+    bc binutils btop busybox appimagelauncher baobab blender cowsay curl dbus-glib dconf-editor dialog direnv discover wget vim zip
+    dolphin-plugins duf earlyoom easyeffects espeak-ng fancontrol-gui-git fastfetch-git fd ffmpeg ffmpegthumbnailer ffmpegthumbs 
+    figlet flatpak fortune-mod git github-cli grsync gnupg gparted grep debtap digikam discord etcher-bin find-the-command-git vlc
+    ghostwriter gimp gimp-help-en gitkraken gparted gum haveged htop imagewriter inkscape wps-office telegram-desktop pdfarranger
+    krita libreoffice-fresh megasync-bin lsd make mbedtls meld p7zip xournalpp font-manager the_platinum_searcher vscodium yt-dlp
+    packagekit pkgconf mlocate powertop make mbedtls meld  mpg123 nano neovim uget zram-generator ventoy-bin zstd xclip scribus
+    neovim-qt merkuro neochat octopi onlyoffice-bin rclone rhythmbox ripgrep ripgrep-all rsync rygel shotwell nano-syntax-highlighting 
+    simplescreenrecorder-git sublime-text-4 screen tar terminator thermald tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety 
 )
 
+# KDE Plamsa Pkgs
+plasma_pkgs=(
+    arcolinux-plasma-keybindings-git arcolinux-plasma-servicemenus-git akonadi akonadi-calendar-tools akonadi-calendar 
+    akonadi-import-wizard kate kcalc kdegraphics-thumbnailers kdepim-addons flameshot-git plasma-firewall 
+)
+
+# Gnome Packages
+gnome_pkgs+(
+    )
 # yay packages
 yay_packages=(
     rclone-browser gimp-extras betterbird boomaga profile-sync-daemon

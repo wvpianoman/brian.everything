@@ -184,7 +184,7 @@ EOF
 # Define an array of Flatpak application IDs
 flatpak_apps=(
 #    "com.anydesk.Anydesk"
-    "eu.betterbird.Betterbird"
+#    "eu.betterbird.Betterbird"
 #    "org.blender.Blender"
 #    "com.sindresorhus.Caprine"
     "net.giuspen.cherrytree"
@@ -194,17 +194,17 @@ flatpak_apps=(
     "com.jgraph.drawio.desktop"
     "com.microsoft.EdgeDev"
     "im.riot.Riot"
-    "one.ablaze.floorp"
+#    "one.ablaze.floorp"
     "io.gitlab.adhami3310.Footage"
     "it.mijorus.gearlever"
 #    "io.github.wereturtle.ghostwriter"
 #    "org.gimp.GIMP"
 #    "com.axosoft.GitKraken"
-#    "com.mattjakeman.ExtensionManager"
+    "com.mattjakeman.ExtensionManager"
     "io.gitlab.adhami3310.Impression"
 #    "org.inkscape.Inkscape"
 #    "org.kde.krita"
-    "org.libreoffice.LibreOffice"
+#    "org.libreoffice.LibreOffice"
     "io.missioncenter.MissionCenter"
     "io.github.amit9838.mousam"
     "com.obsproject.Studio"
@@ -224,6 +224,7 @@ flatpak_apps=(
     "net.codelogistics.webapps"
 #    "com.wps.Office"
     "io.github.aandrew_me.ytdn"
+    "io.github.zen_browser.zen"
 )
 
 # Install applications

@@ -199,10 +199,14 @@ flatpak_apps=(
 #    "com.discordapp.Discord"
     "com.jgraph.drawio.desktop"
     "com.microsoft.EdgeDev"
-    "one.ablaze.floorp"
-#    "it.mijorus.gearlever"
+#    "im.riot.Riot"
+    "com.mattjakeman.ExtensionManager"
+#    "one.ablaze.floorp"
+    "io.gitlab.adhami3310.Footage"
+    "it.mijorus.gearlever"
 #    "io.github.wereturtle.ghostwriter"
 #    "org.gimp.GIMP"
+    "io.gitlab.adhami3310.Impression"
 #    "org.inkscape.Inkscape"
 #    "org.kde.krita"
 #    "org.libreoffice.LibreOffice"
@@ -212,6 +216,7 @@ flatpak_apps=(
 #    "org.onlyoffice.desktopeditors"
 #    "net.scribus.Scribus"
 #    "org.gnome.Shotwell"
+    "io.gitlab.adhami3310.Converter"
 #    "me.kozec.syncthingtk"
 #    "io.github.shiftey.Desktop"
 #    "com.github.zocker_160.SyncThingy"
@@ -221,9 +226,10 @@ flatpak_apps=(
 #    "org.videolan.VLC"
     "com.vivaldi.Vivaldi"
 #    "com.vscodium.codium"
+    "net.codelogistics.webapps"
 #    "com.wps.Office"
-### Gnome Specific ###
-#    "com.mattjakeman.ExtensionManager"
+    "io.github.aandrew_me.ytdn"
+    "io.github.zen_browser.zen"
 )
 
 # Install applications
@@ -231,7 +237,7 @@ for app in "${flatpak_apps[@]}"; do
     flatpak install -y flathub "$app"
 done
 
-# flatpak install flathub-beta thunderbird
+flatpak install flathub thunderbird
 
 echo -e "\e[1;32m[✔]\e[0m Checking updates for installed flatpak programs...\n"
 flatpak update -y

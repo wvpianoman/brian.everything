@@ -185,7 +185,7 @@ EOF
 # Define an array of Flatpak application IDs
 flatpak_apps=(
 #    "com.anydesk.Anydesk"
-    "eu.betterbird.Betterbird"
+#    "eu.betterbird.Betterbird"
 #    "org.blender.Blender"
 #    "com.sindresorhus.Caprine"
     "net.giuspen.cherrytree"
@@ -205,7 +205,7 @@ flatpak_apps=(
     "io.gitlab.adhami3310.Impression"
 #    "org.inkscape.Inkscape"
 #    "org.kde.krita"
-#    "org.libreoffice.LibreOffice"
+    "org.libreoffice.LibreOffice"
     "io.missioncenter.MissionCenter"
     "io.github.amit9838.mousam"
     "com.obsproject.Studio"
