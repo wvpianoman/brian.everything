@@ -13,7 +13,7 @@ RED='\033[0;31m'   # Red for error messages
 clear
 
 # Remote flatpak list (my personal collection)
-FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/tolgaerok/tolga-scripts/main/FEDORA-40/flatpaks | tr '\n' ' ')
+FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks | tr '\n' ' ')
 
 # Add Flathub remote repository if it doesn't already exist
 echo -e "${YELLOW}Adding Flathub repository if not present...${NC}"
@@ -21,7 +21,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 # Install or update the Flatpaks from my list
 echo -e "${YELLOW}****************************************************${NC}"
-echo -e "${RED}Installing or updating Flatpaks from Tolga's list...${NC}"
+echo -e "${RED}Installing or updating Flatpaks from Brian's list...${NC}"
 echo -e "${YELLOW}****************************************************${NC}\n"
 for app in $FLATPAK_LIST; do
     if [ -n "$app" ]; then
