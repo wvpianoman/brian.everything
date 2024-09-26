@@ -37,10 +37,13 @@ done
 
 # Check & Install Distrobox if not already installed
 if ! command -v distrobox &>/dev/null; then
+    echo -e "${YELLOW}Installing Docker...${NC}"
+    sudo eopkg it docker
     echo -e "${YELLOW}Installing Distrobox...${NC}"
-    curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
-    sudo dnf copr enable alciregi/distrobox
-    sudo dnf install -y distrobox
+    curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    echo 'xhost +si:localuser:$USER'>>$HOME/.bashrc
 else
     echo -e "${GREEN}Distrobox is already installed.${NC}\n"
 fi
