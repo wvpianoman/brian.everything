@@ -1,0 +1,4032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="robots" content="noindex,nofollow,noarchive" />
+	<meta name="googlebot" content="nosnippet" />
+
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="icon" href="favicon.png" type="image/png" />
+
+	<style>
+		html,body {
+			color: #FFFFFF;
+			background-color: #333333;
+			font-family:
+				"Fira Sans Medium",
+				"Tex Gyre Heros Regular",
+				"Liberation Sans",
+				"Ubuntu",
+				"PT Sans",
+				"Noto Sans",
+				"Open Sans",
+				"Droid Sans",
+				"Segoe UI",
+				"Verdana",
+				"Tahoma",
+				"Arial",
+				"Helvetica",
+				"Roboto",
+				"Helvetica Neue",
+				"Trebuchet MS",
+				"Geneva",
+				sans-serif;
+			font-size: 15px;
+		}
+		code, pre {
+			font-family:
+				"CasmataPro Nerd Font",
+				"IosevkaCustom Nerd Font",
+				"CaskaydiaCove Nerd Font",
+				"VictorMono Nerd Font",
+				"JetBrainsMono Nerd Font",
+				"Hack Nerd Font",
+				"Fira Code Nerd Font",
+				"FantasqueSansMono Nerd Font",
+				"Iosevka Nerd Font",
+				"Cascadia Code PL",
+				"Cascadia Mono PL",
+				"CaskaydiaCove",
+				"Victor Mono",
+				"JetBrains Mono",
+				"Hacked",
+				"Hack",
+				"Input",
+				"Input Mono",
+				"Fira Code",
+				"Fira Code Retina",
+				"Fira Mono",
+				"Iosevka",
+				"DejaVu Sans Mono",
+				"Source Code Pro",
+				"Inconsolata-g",
+				"Anonymous Pro",
+				"Ubuntu Mono",
+				"Monaco",
+				"Fantasque Sans Mono",
+				"mononoki",
+				"Anka Coder",
+				"Hasklig",
+				"PragmataPro",
+				"Meslo LG S",
+				"Cousine",
+				"PT Mono",
+				"IBM Plex Mono",
+				"Office Code Pro D",
+				"Liberation Mono",
+				"M+ 1m",
+				"Envy Code R",
+				"Akkurat-Mono",
+				"Andale Mono WT",
+				"Menlo",
+				"Bitstream Vera Sans Mono",
+				"Consolas",
+				"Courier New",
+				"Courier",
+				monospace;
+		}
+		pre {
+			color: #CCCCCC;
+			background-color: #2C2C2C;
+			font-size: 15px;
+			text-align: left;
+			width: 94%;
+			padding: 0.1em 0.5em 0.3em 0.7em;
+			border: 2px solid #555555;
+			border-left: 10px solid #555555;
+			margin: 1.0em 0 1.0em 0.3em;
+			white-space: pre-wrap !important;
+		}
+		blockquote {
+			border-left: 10px solid #f1c40f;
+			background: #282828;
+			width: 94%;
+			padding: 0.1em 0.5em 0.3em 0.7em;
+			margin: 2px 0;
+		}
+		h1 {
+			color: #FFFFFF;
+		}
+		h2 {
+			color: #FFFFD4;
+		}
+		h3 {
+			color: #00D4FF;
+		}
+		ul.nobullet {
+			list-style-type: none;
+			list-style: none;
+			padding-left: 2em;
+			text-indent: -0.5em;
+		}
+		li.nobullet {
+			list-style-type: none;
+		}
+		thead {
+			color: #00D4FF;
+			background-color: #181818;
+		}
+		tbody {
+			color: white;
+			background-color: #262626;
+		}
+		table {
+			border: solid 2px #404040;
+		}
+		th,td {
+			border: solid 1px #303030;
+		}
+		tr:hover {
+			background: #000 !important;
+		}
+		tr:hover td {
+			background: #303030 !important;
+		}
+		a:link {
+			color: #00AAFF;
+		}
+		a:visited {
+			color: #00AAFF;
+		}
+		a:hover {
+			color: #007FFF;
+		}
+		a:active {
+			color: #007FFF;
+		}
+		a.disabled {
+			/* text-decoration: line-through; */
+			color: #999999;
+		}
+	</style>
+</head>
+<body>
+<h1 id="extreme-ultimate-.bashrc-file"><a
+href="https://sourceforge.net/projects/ultimate-bashrc/files/">Extreme
+Ultimate <code>.bashrc</code> File</a></h1>
+<h3 id="do-you-want-a-more-robust-experience-from-your-bash-shell">Do
+you want a more robust experience from your bash shell?</h3>
+<p>As a Linux systems administrator, I’ve been working on this
+<code>.bashrc</code> file for well over a decade. Over the years, I have
+searched through scores of <code>.bashrc</code> and script files
+collecting and improving on new ideas and features.</p>
+<p>This portable drop in Bash configuration file can be used on any
+system anywhere you use a terminal and is designed for and safe for
+servers and desktop systems alike.</p>
+<p>It will detect most settings on most systems and make sure your
+environment has every feature available automatically without any
+additional effort or configuration. That was the original purpose and
+intention behind it.</p>
+<p>Want to learn shell scripting? It’s also an excellent learning tool.
+Or take parts of this file and make your own.</p>
+<blockquote>
+<p>Approximately 30% of this script’s lines are comments to help you
+understand how the script works. Actual code only takes up slightly more
+than half of the <code>.bashrc</code> code itself. Readability was a
+topmost priority during it’s development.</p>
+</blockquote>
+<p>Do you need a command line cheat sheet? Type <code>hlp</code> for
+full color help! Then press Q (or Escape) to quit. If you have a
+terminal web browser (for <code>README.html</code>) like <a
+href="https://www.geeksforgeeks.org/using-lynx-to-browse-the-web-from-the-linux-terminal/">lynx</a>,
+<a href="https://wiki.archlinux.org/title/ELinks">elinks</a>, <a
+href="https://w3m.sourceforge.net/">w3m</a>, <a
+href="http://www.aboutlinux.info/2007/02/links2-cross-platform-console-based-web.html">links2</a>,
+<a href="https://www.tecmint.com/command-line-web-browsers/">links</a>
+or <a href="https://github.com/charmbracelet/glow"><code>glow</code>
+(for README.md)</a> (for <code>README.md</code>) installed and the
+appropriate README file downloaded (in either your home directory or in
+<code>~/.config/bashrc/</code>), the <code>readme</code> command will
+display this page in the terminal. This can be helpful for command or
+configuration reference.</p>
+<p>And since there are so many new commands and aliases, the
+<code>a</code> command can be quite useful since you can search for text
+inside any alias name, alias code, or function name. For example, to
+find commands for services you could type <code>a service</code>.</p>
+<p>I think this is the most amazing and ultimate <code>.bashrc</code>
+file I have ever seen, and I wanted to share it.</p>
+<p>My original previous version was <a
+href="https://www.linuxquestions.org/questions/linux-general-1/ultimate-prompt-and-bashrc-file-4175518169/">released
+in 2014</a>. Others have contributed and made changes to it and even
+that older version of the <code>extract</code> function wound up in the
+default <code>.bashrc</code> for earlier versions of Manjaro. If you
+liked the older prompt from that earlier version (now with newly added
+Git support), download the optional <code>.bashrc_prompt</code> script
+file and place it in either your home directory or as the file
+<code>~/.config/bashrc/prompt</code>.</p>
+<blockquote>
+<p>If you can’t get your <code>.bashrc</code> file to load, add
+<code>[[ -f "${HOME}/.bashrc" ]] &amp;&amp; builtin source "${HOME}/.bashrc"</code>
+to your <code>~/.bash_profile</code> file.</p>
+</blockquote>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#to-install">Install</a></li>
+<li><a href="#overview-of-features">Overview of features</a></li>
+<li><a href="#some-of-the-new-helpful-commands-are">New commands</a>
+(also see <a href="#command-syntax">Command Syntax</a>)
+<ul>
+<li><a href="#bashrc">Bashrc</a></li>
+<li><a href="#information-and-utility">Information and utility</a></li>
+<li><a href="#quick-directories">Quick directories</a></li>
+<li><a href="#directory-and-file-management">Directory and file
+management</a></li>
+<li><a href="#searching">Searching</a></li>
+<li><a href="#editing-and-viewing">Editing and viewing</a></li>
+<li><a href="#scripting">Scripting</a></li>
+<li><a href="#file-operations">File operations</a></li>
+<li><a href="#clipboard">Clipboard</a></li>
+<li><a href="#time-and-date">Time and date</a></li>
+<li><a href="#trash">Trash</a></li>
+<li><a href="#graphics">Graphics</a></li>
+<li><a href="#multimedia-and-voice">Multimedia and voice</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#Memory-and-process-management">Memory and process
+management</a></li>
+<li><a href="#networking">Networking</a></li>
+<li><a href="#system">System</a></li>
+<li><a href="#services-if-systemd-is-present">Services</a></li>
+<li><a href="#server-utilities">Server utilities</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#file-system-maintenance">File system maintenance</a></li>
+<li><a href="#tmux-terminal-multiplexor-or-session-management">Tmux
+terminal multiplexor or session management</a></li>
+<li><a href="#distrobox-if-installed">Distrobox (if installed)</a></li>
+<li><a href="#package-management">Package management</a></li>
+<li><a href="#git-if-installed">Git (if installed)</a></li>
+</ul></li>
+<li><a href="#configuration">Configuration</a>
+<ul>
+<li><a href="#environment-variables-and-settings">Environment variables
+and settings</a></li>
+<li><a href="#using-your-own-or-replacing-aliases">Using your own or
+replacing aliases</a></li>
+<li><a href="#auto-load-and-source-script-files">Auto-load and source
+script files</a></li>
+<li><a href="#move-files-out-of-the-home-folder-optional">Move files out
+of the home folder (optional)</a></li>
+</ul></li>
+<li><a href="#path-locations-for-binary-files">Path locations for binary
+files</a></li>
+<li><a href="#auto-display-message-on-load">Auto-display message on
+load</a></li>
+<li><a href="#birthday-and-anniversary-reminder">Birthday and
+anniversary reminder</a></li>
+<li><a href="#auto-update">Auto-update</a></li>
+<li><a href="#extra-bash-app-recommendations">Extra: Bash App
+Recommendations</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h1 id="to-install">To install</h1>
+<p>It is recommended to back up or rename your original
+<code>.bashrc</code> file first. You can use
+<code>cp ~/.bashrc ~/.bashrc_backup</code> to make a back up copy.</p>
+<p>To install, simply execute the following two lines in a terminal:</p>
+<pre><code>curl -L https://sourceforge.net/projects/ultimate-bashrc/files/_bashrc/download --output ~/.bashrc
+curl -L https://sourceforge.net/projects/ultimate-bashrc/files/_bashrc_help/download --output ~/.bashrc_help</code></pre>
+<p>Or you can use wget instead:</p>
+<pre><code>wget -O ~/.bashrc https://sourceforge.net/projects/ultimate-bashrc/files/_bashrc/download
+wget -O ~/.bashrc_help https://sourceforge.net/projects/ultimate-bashrc/files/_bashrc_help/download</code></pre>
+<p>Or just download and manually copy the <code>.bashrc</code> and
+<code>.bashrc_help</code> files into your home folder (<em>the
+<code>~/.bashrc_help</code> file can also be relocated to
+<code>~/.config/bashrc/help</code> if you wish to remove it from your
+home directory</em>).</p>
+<p>To update once installed: type <a
+href="#bashrcupdate"><code>bashrcupdate</code></a> (or <a
+href="#bashrcupdateforce"><code>bashrcupdateforce</code></a>) in a
+terminal window to update.</p>
+<p>Once you restart bash, type <strong><code>hlp</code></strong> (or
+press <strong><code>CTRL-h</code></strong> if the _SKIP_HELP_KEYBIND
+option is disabled) for help and shortcuts.</p>
+<p><a href="#table-of-contents">Go to the top</a></p>
+<h1 id="overview-of-features">Overview of features</h1>
+<ul>
+<li>Portability and seemless compatibility on nearly any platform I use
+that uses Bash 4.0 or greater</li>
+<li><strong>Auto-load, auto-adapt, and automatically detect/use
+installed packages</strong> (like <a
+href="https://github.com/scop/bash-completion">bash completion</a>, <a
+href="https://github.com/lincheney/fzf-tab-completion">fzf-tab-completion</a>,
+<a href="https://github.com/Peltoche/lsd">lsd</a>, <a
+href="https://github.com/trapd00r/LS_COLORS">lscolors</a> or <a
+href="https://github.com/sharkdp/vivid">vivid</a>, <a
+href="https://www.gnu.org/software/src-highlite/">source-highlight</a>,
+<a href="https://github.com/zpm-zsh/mysql-colorize">mysql-colorize</a>,
+prompts, huds, custom aliases, motd, etc)</li>
+<li><strong>Full Color Help</strong> in the console with descriptions
+for new commands (type <strong><code>hlp</code></strong> or press
+<strong><code>CTRL-h</code></strong>)</li>
+<li>Supports nearly every distribution (even including Git-Bash, Cygwin,
+and WSL)</li>
+<li>Easy to add to any system even if there is no <code>root</code>
+access</li>
+<li>Provide much better and more sane Bash defaults</li>
+<li>Add color to as much output and as many commands as possible</li>
+<li>Add tons of new commands and usability</li>
+<li>Automatically find and easily edit configuration files for Apache,
+Nginx, MySQL, PHP, SSH, and more</li>
+<li>Easier to read color directory listings with full color columns, or
+optional automatic support for <a
+href="https://github.com/eza-community/eza">eza</a>/<a
+href="https://github.com/ogham/exa">exa</a> (which also supports Git),
+<a href="https://github.com/Peltoche/lsd">lsd</a>, and <a
+href="https://github.com/garabik/grc">grc</a> if installed</li>
+<li>Use most common aliases people are used to to diminish the learning
+curve</li>
+<li>A <code>chmod</code> calculator (<code>chmodcalc</code>) and ability
+to change permissions on just files (<code>chmodfiles</code>) or only
+directories (<code>chmoddirs</code>)</li>
+<li>Provide a default beautiful and lightening fast color prompt that
+supports Git and works on any platform</li>
+<li>Support for the <a
+href="https://www.linuxquestions.org/questions/linux-general-1/ultimate-prompt-and-bashrc-file-4175518169/">original
+old prompt</a> (with newly added Git support) from the previous version
+that automatically loads (sourced) if the optional
+<code>.bashrc_prompt</code> script file is downloaded into the home
+directory</li>
+<li>Additional installed prompts are auto-detected and supported like <a
+href="https://github.com/petobens/trueline">Trueline</a>, <a
+href="https://github.com/powerline/powerline">Powerline</a>, <a
+href="https://github.com/justjanne/powerline-go">Powerline-Go</a>, <a
+href="https://github.com/b-ryan/powerline-shell">Powerline-Shell</a>, <a
+href="https://github.com/chris-marsh/pureline">Pureline</a>, <a
+href="https://starship.rs">Starship</a>, <a
+href="https://github.com/arialdomartini/oh-my-git">Oh-My-Git</a>, <a
+href="https://github.com/magicmonty/bash-git-prompt">Bash Git
+Prompt</a>, <a
+href="https://github.com/riobard/bash-powerline">Bash-Powerline</a>, <a
+href="https://github.com/twolfson/sexy-bash-prompt">Sexy Bash
+Prompt</a>, and <a href="https://github.com/nojhan/liquidprompt">Liquid
+Prompt</a></li>
+<li>Auto detect and source the most popular scripts and apps for Bash
+including <a href="https://github.com/huyng/bashmarks">bashmarks</a>, <a
+href="https://github.com/akinomyoga/ble.sh">blesh</a>, <a
+href="https://github.com/shyiko/commacd">commacd</a>, <a
+href="https://github.com/dvorka/hstr">hstr</a>, <a
+href="https://github.com/pindexis/qfc">qfc</a>, and <a
+href="https://github.com/tmux/tmux/wiki">tmux</a> (many of these are in
+your software repositories)</li>
+<li>Huds supported are <a
+href="https://github.com/dylanaraps/neofetch">neofetch</a>, <a
+href="https://github.com/LinusDierheimer/fastfetch">fastfetch</a>, <a
+href="https://github.com/KittyKatt/screenFetch">screenFetch</a>, <a
+href="https://github.com/deater/linux_logo">linux_logo</a>, <a
+href="https://github.com/HorlogeSkynet/archey4">archey</a>, and <a
+href="https://github.com/dylanaraps/pfetch">pfetch</a> (which is a
+single Bash script file and good for systems without <code>root</code>
+access)</li>
+<li>Enhanced clipboard management in the terminal, allowing you to view,
+set, and clear clipboard content also supporting piping input and
+output. Additionally, the command seamlessly integrates with common
+shell commands like <code>pwd</code> and <code>which</code> to
+automatically copy results to the clipboard and Tmux buffer. One of the
+following clipboard utilities is required: <a
+href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a> (for
+Wayland), <a href="https://github.com/astrand/xclip">xclip</a> (for
+X11), <a href="https://github.com/kfish/xsel">xsel</a> (for X11) or <a
+href="https://ss64.com/osx/pbcopy.html">pbcopy</a> (for Mac).</li>
+<li>Support for sending file to the desktop trash bin using commands
+<code>trash</code>, <code>trashlist</code>, and <code>trashempty</code>
+(if <code>trash-put</code> is installed, will also have
+<code>trashrestore</code> command available)</li>
+<li>Full support for lightweight <code>sudo</code> alternatives like
+<code>doas</code> and <code>rdo</code> (environment variable
+<code>_SKIP_SUDO_ALTERNATIVE</code> must be set to <code>false</code> to
+enable)</li>
+<li>Easy to use aliases for Git including support for the very popular
+<a href="https://github.com/GitAlias/gitalias">Git Alias project on
+Github</a> and <a
+href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">Git
+auto-completion</a></li>
+<li>Birthday and anniversary reminder for your terminal (whenever bash
+loads or the <code>birthday</code> command is used) that uses a CSV file
+<code>~/.config/birthdays.csv</code> with the format of (year is
+optional and can be left blank): Month,Day,Year,“Message”</li>
+<li>Can be enabled to always show the number of updates on bash load
+(currently only Arch and Ubuntu)</li>
+<li>Full comments inside the <code>.bashrc</code> file with links so
+everything is easy to understand, find, and install</li>
+<li>Most popular package managers are auto-detected and supported with
+common aliases so you never feel lost installing or updating packages on
+any system:
+<ul>
+<li>Arch/Manjaro: <a href="https://archlinux.org/pacman/">pacman</a>, <a
+href="https://wiki.manjaro.org/index.php/Pamac">pamac</a>, <a
+href="https://github.com/Morganamilo/paru">paru</a>, <a
+href="https://github.com/Jguer/yay">yay</a></li>
+<li>Cygwin: <a
+href="http://stephenjungels.com/jungels.net/projects/apt-cyg/">apt-cyg</a></li>
+<li>Debian/Ubuntu/Mint/Raspbian: <a
+href="https://itsfoss.com/apt-command-guide/">apt</a>, <a
+href="https://help.ubuntu.com/community/AptGet/Howto">apt-get</a>, <a
+href="https://gitlab.com/volian/nala">nala</a></li>
+<li>Gentoo: <a
+href="https://www.linode.com/docs/guides/portage-package-manager/">emerge</a></li>
+<li>macOS: <a href="https://brew.sh/">brew</a></li>
+<li>Mandrake: <a href="https://wiki.mageia.org/en/URPMI">urpmi</a></li>
+<li>RedHat/Fedora: <a href="https://fedoraproject.org/wiki/DNF">dnf</a>,
+<a
+href="https://access.redhat.com/articles/yum-cheat-sheet">yum</a></li>
+<li>Slackware: <a
+href="https://www.linux.com/training-tutorials/intro-slackware-package-management/">slackpkg</a></li>
+<li>Solus: <a
+href="https://getsol.us/articles/package-management/basics/en/">eopkg</a></li>
+<li>SUSE: <a
+href="https://en.opensuse.org/SDB:Zypper_usage">zypper</a></li>
+</ul></li>
+<li>Completely free and open software using the lenient and permissive
+<a href="https://en.wikipedia.org/wiki/MIT_License">MIT license</a></li>
+</ul>
+<p><a href="#table-of-contents">Go to the top</a></p>
+<h1 id="some-of-the-new-helpful-commands-are">Some of the new helpful
+commands are:</h1>
+<blockquote>
+<p>Please note that certain commands and aliases will only exist if the
+required dependencies are met</p>
+</blockquote>
+<h2 id="bashrc">Bashrc</h2>
+<ul>
+<li><a href="#ebrc">ebrc</a> - Edit the <code>.bashrc</code> file (any
+parameters does a search in the ~/.bashrc file instead)</li>
+<li><a href="#bashrcupdate">bashrcupdate</a> - Automatically update the
+<code>.bashrc</code> file (and the help file) from SourceForge (if
+problems, use <a
+href="#bashrcupdateforce"><code>bashrcupdateforce</code></a>)</li>
+<li><a href="#bashrcprotect">bashrcprotect</a> - Make the
+<code>.bashrc</code> immutable/write protected (even from root) so that
+other scripts and applications can’t modify it</li>
+<li><a href="#bashrcunprotect">bashrcunprotect</a> - Remove the
+immutable/write protected flag from the <code>.bashrc</code> file</li>
+<li><a href="#bashrccheckprotect">bashrccheckprotect</a> - Check to see
+the <code>.bashrc</code> file has the immutable/write protected
+flag</li>
+</ul>
+<h2 id="information-and-utility">Information and utility</h2>
+<ul>
+<li><a href="#hlp">hlp</a> - Show full color help information</li>
+<li><a href="#a">a</a> - Show a list of all available aliases and
+functions (takes optional filter parameter that performs a text
+search)</li>
+<li><a href="#ver">ver</a> - Show the version of the OS and kernel</li>
+<li><a href="#check">check</a> - Show if a command is aliased, a file,
+or a built-in command</li>
+<li><a href="#repeat">repeat</a> - Repeat a command n times</li>
+<li><a href="#mostused">mostused</a> - See what command you are using
+the most</li>
+<li><a href="#windowinfo">windowinfo</a> - Select a window for
+information like geometry, class name, etc.</li>
+<li><a href="#cpuinfo">cpuinfo</a> - Show CPU information</li>
+<li><a href="#usb">usb</a> - Show the USB device tree</li>
+<li><a href="#pci">pci</a> - Show the PCI device tree</li>
+</ul>
+<h2 id="quick-directories">Quick directories</h2>
+<blockquote>
+<p>These aliases are case sensitive where lower case is the local user
+directory and upper case is the global system directory.</p>
+</blockquote>
+<ul>
+<li><a href="#home">home</a> - Go to your home folder</li>
+<li><code>autostart</code> - Change to the
+<code>~/.config/autostart</code> directory if present</li>
+<li><code>bashrc</code> - Change to the <code>~/.config/bashrc</code>
+directory if present (any parameters does a search in the ~/.bashrc file
+instead)</li>
+<li><code>bin</code> - Change to the <code>~/.local/bin</code> directory
+if present</li>
+<li><code>BIN</code> - Change to the <code>/usr/bin</code>
+directory</li>
+<li><code>cache</code> - Change to the <code>~/.cache</code> directory
+if present</li>
+<li><code>config</code> - Change to the <code>~/.config</code> directory
+if present</li>
+<li><code>CONFIG</code> - Change to the <code>/etc</code> directory</li>
+<li><code>desktop</code> - Change to the <code>~/Desktop</code>
+directory if present</li>
+<li><code>docs</code> - Change to the <code>~/Documents</code> directory
+if present</li>
+<li><code>DOCS</code> - Change to the man pages directory
+(<code>/usr/local/man</code>, <code>/usr/local/share/man</code>, or
+<code>/usr/share/man</code>)</li>
+<li><code>downloads</code> - Change to the <code>~/Downloads</code>
+directory if present</li>
+<li><code>fonts</code> - Change to the <code>~/.fonts</code> or
+<code>~/.local/share/fonts</code> directory if the previous does not
+exist</li>
+<li><code>FONTS</code> - Change to the <code>/usr/share/fonts</code>
+directory if present</li>
+<li><code>icons</code> - Change to the <code>~/.icons</code> or
+<code>~/.local/share/icons</code> directory if the previous does not
+exist</li>
+<li><code>ICONS</code> - Change to the <code>/usr/share/icons</code>
+directory if present</li>
+<li><code>music</code> - Change to the <code>~/Music</code> directory if
+present</li>
+<li><code>pics</code> or <code>pictures</code> - Change to the
+<code>~/Pictures</code> directory if present</li>
+<li><code>share</code> - Change to the <code>~/.local/share</code>
+directory if present</li>
+<li><code>SHARE</code> - Change to the <code>/usr/share</code> directory
+if present</li>
+<li><code>shortcuts</code> - Change to the
+<code>~/.local/share/applications</code> or <code>~/.gnome/apps</code>
+directory if the previous does not exist</li>
+<li><code>SHORTCUTS</code> - Change to the
+<code>/usr/share/applications</code> or
+<code>/usr/local/share/applications</code> directory if the previous
+does not exist</li>
+<li><code>themes</code> - Change to the
+<code>~/.local/share/themes</code> directory if present</li>
+<li><code>THEMES</code> - Change to the <code>/usr/share/themes</code>
+directory if present</li>
+<li><code>tmp</code> - Change to the <code>~/tmp</code> or
+<code>~/.cache/tmp</code> or <code>~/.cache</code> directory (whichever
+exists first)</li>
+<li><code>TMP</code> - Change to the global system temp directory which
+is usually <code>/tmp</code></li>
+<li><code>videos</code> - Change to the <code>~/Videos</code> directory
+if present</li>
+<li><code>wallpaper</code> - Change to the
+<code>~/.local/share/wallpapers</code> directory if present</li>
+<li><code>WALLPAPER</code> - Change to the
+<code>/usr/share/wallpapers</code> or
+<code>/usr/share/backgrounds</code> directory</li>
+<li><code>web</code> - Change into the one of these web directories:
+<code>/srv/http</code>, <code>/var/www/html</code>,
+<code>/usr/share/nginx/html</code>, <code>/opt/lampp/htdocs</code>,
+<code>/usr/local/apache2/htdocs</code>,
+<code>/usr/local/www/apache24/data</code></li>
+</ul>
+<h2 id="directory-and-file-management">Directory and file
+management</h2>
+<ul>
+<li><a href="#ll">ll</a> - Directory listing: long listing format with
+full column color</li>
+<li><a href="#lll">lll</a> - Show disk usage for local only using <a
+href="https://github.com/muesli/duf">duf</a>, <a
+href="https://github.com/bexxmodd/vizex">vizex</a>, or the default <a
+href="https://www.geeksforgeeks.org/df-command-linux-examples/">df</a>
+command</li>
+<li><a href="#labc">labc</a> - Directory listing: alphabetical sort</li>
+<li><a href="#lx">lx</a> - Directory listing: sort by extension</li>
+<li><a href="#lk">lk</a> - Directory listing: sort by size</li>
+<li><a href="#lt">lt</a> - Directory listing: sort by date</li>
+<li><a href="#lc">lc</a> - Directory listing: sort by change time</li>
+<li><a href="#lu">lu</a> - Directory listing: sort by access time</li>
+<li><a href="#lw">lw</a> - Directory listing: wide listing format</li>
+<li><a href="#lm">lm</a> - Directory listing: pipe through ‘more’</li>
+<li><a href="#lr">lr</a> - Directory listing: recursive ls</li>
+<li><a href="#l.">l.</a> - Directory listing: only show hidden
+files</li>
+<li><a href="#lfile">lfile</a> - Directory listing: files only</li>
+<li><a href="#ldir">ldir</a> - Directory listing: directories only</li>
+<li><a href="#ltree">ltree</a> - Directory listing: tree format</li>
+<li><a href="#new">new</a> - Directory listing: recently created/updated
+files</li>
+<li><a href="#llfs">llfs +10k</a> - List all files larger than a given
+size</li>
+<li><a href="#mc">mc</a> or <a href="#mcc">mcc</a> - Midnight Commander
+(if installed) with and without the subshell</li>
+<li><a href="#r">r</a> or <a href="#ranger">ranger</a> - Launches ranger
+(if installed) and exits into the last directory selected</li>
+<li><code>..</code> - Go back 1 folder</li>
+<li><code>...</code> - Go back 2 folders</li>
+<li><code>....</code> - Go back 3 folders</li>
+<li><code>.....</code> - Go back 4 folders</li>
+<li><code>..2</code> - Go back 2 folders</li>
+<li><code>..3</code> - Go back 3 folders</li>
+<li><code>..4</code> - Go back 4 folders</li>
+<li><code>..5</code> - Go back 5 folders</li>
+<li><a href="#up">up</a> - go up a specified number of folders</li>
+<li><a href="#pwd-">pwd-</a> - Show the previous directory</li>
+<li><a href="#pwdtail">pwdtail</a> - Returns the last 2 fields of the
+working directory</li>
+<li><a href="#rmd">rmd</a> - Remove a directory and all contents</li>
+<li><a href="#cpp">cpp</a> - Copy file with a progress bar</li>
+<li><a href="#cpg">cpg</a> - Copy and go to the directory</li>
+<li><a href="#mvg">mvg</a> - Move and go to the directory</li>
+<li><a href="#mkdirg">mkdirg</a> - Create and go to the directory</li>
+<li><a href="#fullpath">fullpath</a> - Shows full path of file or
+wildcard</li>
+<li><a href="#path">path</a> - List the PATH environment variable
+directories</li>
+<li><a href="#resolvesymlink">resolvesymlink</a> - Cross-platform
+realpath equivalent for resolving symlinks to an absolute path</li>
+<li><a href="#diskspace">diskspace</a> - Find out which directories are
+taking up the most space</li>
+<li><a href="#df">df</a> - Show disk usage using <a
+href="https://github.com/muesli/duf">duf</a> or the default <a
+href="https://www.geeksforgeeks.org/df-command-linux-examples/">df</a>
+command</li>
+<li><a href="#totalsize">totalsize</a> - Just show the size of the
+current or specified folder</li>
+<li><a href="#folders">folders</a> - List disk space of immediate
+folders one level deep</li>
+<li><a href="#countfiles">countfiles</a> - Count all files (recursively)
+in the current folder</li>
+<li><a href="#treed">treed</a> - Show a folder tree (uses
+<code>tree</code>)</li>
+<li><a href="#m">m</a> - Mount a file system</li>
+<li><a href="#um">um</a> - Unmount a file system</li>
+<li><a href="#p">p</a> - Quick alias for <code>pushd</code> that now has
+a deduped directory stack</li>
+<li><a href="#p-">p-</a> - Quick alias for <code>popd</code></li>
+<li><a href="#dirsclear">dirsclear</a> - Clears the directory stack from
+pushd</li>
+<li><a href="#dirsdedup">dirsdedup</a> - Removes duplicates from the
+directory stack</li>
+<li><a href="#pathappend">pathappend</a> - Add directories to the end of
+the path</li>
+<li><a href="#pathprepend">pathprepend</a> - Add directories to the
+beginning of the path</li>
+</ul>
+<h2 id="searching">Searching</h2>
+<ul>
+<li><a href="#h">h</a> - Search command line history (also
+<code>CTRL-S</code> and <code>CTRL-R</code>)</li>
+<li><a href="#f">f</a> or <a href="#f">findfile</a> - Search filenames
+in the current folder</li>
+<li><a href="#findtext">findtext</a> - Searches for text in all files in
+the current folder</li>
+<li><a href="#find24">find24</a> - Recursively find all files modified
+in the last 24 hours</li>
+<li><a href="#findalias">findalias</a> - List available aliases with
+optional filter parameter</li>
+<li><a href="#findapps">findapps</a> - Does a text search for installed
+graphical application in a desktop environment</li>
+<li><a href="#findbashrc">findbashrc</a> - Searches for text inside the
+~/.bashrc file</li>
+<li><a href="#findcode">findcode</a> - Searches for text in only source
+code files - supports 74 programming languages</li>
+<li><a href="#findfunction">findfunction</a> - List available functions
+with optional filter parameter</li>
+<li><a href="#findlinks">findlinks</a> - Find all the symlinks
+containing search text (i.e. <code>"/backup"</code>)</li>
+<li><a href="#findlog">findlog</a> - Shows a list of log files with
+previews and returns the log filename (requires <code>fzf</code>)</li>
+<li><a href="#preview">preview</a> - Shows all files in the current
+directory with previews to open for editing (requires
+<code>fzf</code>)</li>
+<li><a href="#ulocate">ulocate</a> - When using <code>mlocate</code>,
+update the database before locating a file</li>
+<li><a href="#locount">locount</a> - Display the number of matching
+entries</li>
+<li><a href="#regexformat">regexformat</a> - Format and escape text to
+make it safe for a regular expression search</li>
+</ul>
+<h2 id="editing-and-viewing">Editing and viewing</h2>
+<ul>
+<li><a href="#e-or-edit">e</a> or <a href="#e-or-edit">edit</a> -
+Advanced file editing that ensures maximum security with automatic sudo
+elevation, handles symlinks and immutable files, auto-finds and edits
+scripts in your $PATH, supports tab renaming with Tmux integration, and
+performs post-edit actions like prompting to restart services when
+modifying relevant configuration files—all using your default editor
+specified in $EDITOR (or auto-detected for you depending on what is
+installed)</li>
+<li><a href="#les">les</a> - View files with <code>less</code> without
+line numbers</li>
+<li><a href="#csvview">csvview</a> - View CSV files in the terminal</li>
+<li><a href="#json">json</a> - View JSON files in the terminal</li>
+<li><a href="#typefile">typefile</a> - Directly type text into a
+file</li>
+<li><a href="#swapindent">swapindent</a> - Swaps tab and spaces
+indentation in the provided file or in standard input</li>
+<li><a href="#convert2mdtag">convert2mdtag</a> - Converts a markdown
+title string into a markdown tag</li>
+</ul>
+<h2 id="scripting">Scripting</h2>
+<ul>
+<li><a href="#analyzecode">analyzecode</a> - Analyzes a code file to
+provide statistics</li>
+<li><a href="#showfunctions">showfunctions</a> - List and sort all
+function names with line numbers from source code files of most
+languages</li>
+<li><a href="#createmenu">createmenu</a> - Use parameters or pipe
+multiple lines to create a text picker menu</li>
+<li><a href="#hascommand">hascommand</a> - Check if a command or alias
+exists</li>
+<li><a href="#runwithfeedback">runwithfeedback</a> - automates the
+process of executing a command and providing visual feedback (displays
+an hourglass symbol next to the provided description while the command
+is running and upon successful execution, the hourglass is replaced with
+a green checkmark; If the command fails, a red cross symbol is displayed
+instead)</li>
+<li><a href="#trim">trim</a> - Trim characters from text</li>
+</ul>
+<h2 id="file-operations">File operations</h2>
+<ul>
+<li><a href="#open">open</a> - Open documents with default
+applications</li>
+<li><a href="#ui">ui</a> - Open the default file manager</li>
+<li><a href="#extract">extract</a> - Extract archives</li>
+<li><a href="#lines">lines</a> - Display specific lines or line ranges
+from a file</li>
+<li><a href="#diff">diff</a> - Aliases to use the best diff application
+between <a
+href="https://github.com/dandavison/delta"><code>delta</code></a>, <a
+href="https://github.com/jeffkaufman/icdiff"><code>Icdiff</code></a>, <a
+href="https://www.colordiff.org"><code>colordiff</code></a>, <a
+href="https://neovim.io"><code>neovim</code></a>, <a
+href="https://www.vim.org"><code>vim</code></a>, or the <a
+href="https://man7.org/linux/man-pages/man1/diff.1.html">built-in
+<code>diff</code> command</a> depending on what is installed (Use
+<code>\diff</code> to bypass)</li>
+<li><a href="#gdiff">gdiff</a> - If in a graphical environment, use <a
+href="https://meldmerge.org/">Meld</a>, <a
+href="https://apps.kde.org/kompare/">Kompare</a>, <a
+href="https://kdiff3.sourceforge.net/">KDiff3</a>, or <a
+href="http://furius.ca/xxdiff/">XXDiff</a> if installed</li>
+</ul>
+<h2 id="clipboard">Clipboard</h2>
+<ul>
+<li><a href="#clipboard">clipboard</a> - Improved terminal clipboard
+management for viewing, setting, and clearing content, with support for
+piping input and output</li>
+<li><a href="#file2cb">file2cb</a> and <a href="#cb2file">cb2file</a> -
+Load or save the contents of a file to/from the clipboard</li>
+<li><a href="#file2asc">file2asc</a> and <a
+href="#asc2file">asc2file</a> - Compress/extract any file to/from the
+clipboard as base64 text</li>
+<li><a href="#cbshow">cbshow</a> - Show the contents of the
+clipboard</li>
+<li><a href="#trimcb">trimcb</a> - Trim leading and trailing characters
+on the clipboard</li>
+</ul>
+<h2 id="time-and-date">Time and date</h2>
+<ul>
+<li><a href="#today">today</a> - Show the date only</li>
+<li><a href="#now">now</a> - Show the time</li>
+<li><a href="#stopwatch">stopwatch</a> - Stop watch</li>
+<li><a href="#timeelapsed">timeelapsed</a> - Show elapsed time since a
+given date</li>
+<li><a href="#filetimenow">filetimenow</a> - Change a file’s accessed
+and modified time to now</li>
+</ul>
+<h2 id="trash">Trash</h2>
+<ul>
+<li><a href="#trash">trash</a> - Send file(s) to the trash (works with
+most desktop environments)</li>
+<li><a href="#trashlist">trashlist</a> - Display the contents of the
+trash</li>
+<li><a href="#trashempty">trashempty</a> - Empty and permanently delete
+all the files in the trash</li>
+</ul>
+<h2 id="graphics">Graphics</h2>
+<ul>
+<li><a href="#colors">colors</a> - Print a list of colors with escape
+codes</li>
+<li><a href="#colors256">colors256</a> - Print a list of all 256 color
+codes</li>
+<li><a href="#colors24bit">colors24bit</a> - Test for 24 bit true color
+in the terminal</li>
+<li><a href="#download-dircolors">download-dircolors</a> - Download an
+extensive LS_COLORS file for color directory listings to the home
+directory</li>
+<li><a href="#compressimage">compressimage</a> - Convert an image to
+compressed jpg format if <a
+href="https://imagemagick.org/index.php">ImageMagick</a> is
+installed</li>
+<li><a href="#sparkbars">sparkbars</a> - Draw spark “EQ” type bars
+across the terminal</li>
+<li><a href="#sparkbars">sparkbars | lolcat</a> - Draw spark “EQ” type
+bars across the terminal in color</li>
+<li><a href="#toiletfont">toiletfont</a> and <a
+href="#toiletfontlist">toiletfontlist</a> - Shows <a
+href="https://www.linuxlinks.com/toilet/">TOIlet</a> fonts if TOIlet is
+installed</li>
+<li><a href="#grabvideo">grabvideo</a> - Video capture the Linux desktop
+(requires ffmpeg)</li>
+<li><a href="#whichdisplay">whichdisplay</a> - Shows the current display
+server (e.g. X11 or Wayland)</li>
+</ul>
+<h2 id="multimedia-and-voice">Multimedia and voice</h2>
+<ul>
+<li><a href="#say">say</a> - Text to speech</li>
+<li><a href="#sayclipboard">sayclipboard</a> or <a
+href="#sayclipboard">saycb</a> - Read the clipboard outloud</li>
+<li><a href="#yt">yt</a> - Play YouTube videos</li>
+</ul>
+<h2 id="permissions">Permissions</h2>
+<ul>
+<li><a href="#chmodcalc">chmodcalc</a> - Chmod calculator</li>
+<li><a href="#chmoddirs">chmoddirs</a> - Recursively change only folder
+permissions</li>
+<li><a href="#chmodfiles">chmodfiles</a> - Recursively change only file
+permissions</li>
+<li><a href="#chmodcopy">chmodcopy</a> - Copy permissions from one
+file/directory to another</li>
+<li><a href="#chfix">chfix</a> - Recursively set permissions for code
+files and directories</li>
+<li><a href="#fixuserhome">fixuserhome</a> - Repairs and sets proper
+permissions of the home directory (optionally specify a user)</li>
+<li><a
+href="#fixinvalidexecutepermissions">fixinvalidexecutepermissions</a> -
+Remove unneeded and invalid execute permissions from strictly
+non-executable file types recursively</li>
+<li><a href="#mx">mx</a> - make files executable</li>
+</ul>
+<h2 id="memory-and-process-management">Memory and process
+management</h2>
+<ul>
+<li><a href="#runfree">runfree</a> - Detach programs from terminal</li>
+<li><a href="#smash">smash</a> - Kill process by name</li>
+<li><a href="#top">top</a> - Runs top program with the most features (<a
+href="https://github.com/aristocratos/btop">btop</a>, <a
+href="https://github.com/aristocratos/bpytop">bpytop</a>, <a
+href="https://github.com/aristocratos/bashtop">bashtop</a>, <a
+href="http://nmon.sourceforge.net/pmwiki.php">nmon</a>, <a
+href="https://nicolargo.github.io/glances/">glances</a>, <a
+href="https://github.com/cjbassi/ytop">ytop</a>, <a
+href="https://github.com/aksakalli/gtop">gtop</a>, or <a
+href="https://htop.dev/">htop</a>)</li>
+<li><a href="#cpu">cpu</a> - Show the top 10 CPU processes</li>
+<li><a href="#gpu">gpu</a> - Task monitor for NVIDIA, AMD and Intel GPUs
+(requires <a href="https://github.com/Syllo/nvtop">NVTOP</a>)</li>
+<li><a href="#free">free</a> - Display amount of free and used memory in
+MB</li>
+<li><a href="#flushcache">flushcache</a> - Clear RAM memory cache,
+buffer and swap space</li>
+<li><a href="#activewinpid">activewinpid</a> - Get active X-window
+process ID (3 second delay)</li>
+</ul>
+<h2 id="networking">Networking</h2>
+<ul>
+<li><a href="#d-or-download">d</a> or <a
+href="#d-or-download">download</a> - Automatic enhanced downloads based
+on URL by dynamically choosing the appropriate command including from
+services like Youtube, Spotify, Tidal, and SoundCloud</li>
+<li><a href="#ytd">ytd</a> - Download a YouTube video with
+<code>yt-dlp</code> or <code>youtube-dl</code></li>
+<li><a href="#fastping">fastping</a> - Do not wait for ping interval 1
+second (go fast)</li>
+<li><a href="#netwatch">netwatch</a> - Watch real time network
+activity</li>
+<li><a href="#ports">ports</a> - Show open ports</li>
+<li><a href="#iplocal">iplocal</a> - Get local IP addresses</li>
+<li><a href="#ipexternal">ipexternal</a> - Get outside external IP
+addresses</li>
+<li><a href="#flushdns">flushdns</a> - Clear DNS cache to refresh domain
+name data</li>
+<li><a href="#hoststoggle">hoststoggle</a> - Toggle the hosts file off
+and back on</li>
+<li><a href="#alert">alert</a> - Network notify alert for long running
+commands</li>
+<li><a href="#sync2ssh">sync2ssh</a> - Synchronize files using rsync
+over SSH</li>
+</ul>
+<h2 id="system">System</h2>
+<ul>
+<li><a href="#rebootsafe">rebootsafe</a> - Safely reboot the system</li>
+<li><a href="#rebootforce">rebootforce</a> - Forcefully reboot the
+system</li>
+<li><a href="#rebootlater">rebootlater</a> - Schedule the computer to
+auto reboot</li>
+<li><a href="#logout">logout</a> - Log out the current user</li>
+<li><a href="#checkreboot">checkreboot</a> - Check to see if the system
+needs to be rebooted (for example after an update)</li>
+<li><a href="#createuser">createuser</a> - Interactively create,
+configure, and test a new user</li>
+<li><a href="#deleteuser">deleteuser</a> - Remove a user from the
+system</li>
+<li><a href="#wipeuser">wipeuser</a> - Remove a user and all traces
+(including their home directory) from the system</li>
+<li><a href="#fstab">fstab</a> - Edit filesystem table</li>
+<li><a href="#configcopy">configcopy</a> - Copy CLI config files</li>
+<li><a href="#firmwareupdate">firmwareupdate</a> - Update firmware</li>
+<li><a href="#whichtty">whichtty</a> - Alias to show the current TTY
+(CTRL-ALT-1 through 7)</li>
+<li><a href="#ttymouseon">ttymouseon</a> - Turns on mouse support in TTY
+terminals</li>
+<li><a href="#ttymouseoff">ttymouseoff</a> - Turns off mouse support in
+TTY terminals (may require reboot)</li>
+<li><a href="#ttymousestatus">ttymousestatus</a> - Determine if mouse
+support is activated in TTY terminals</li>
+</ul>
+<h2 id="services-if-systemd-is-present">Services (if systemd is
+present)</h2>
+<ul>
+<li><a href="#failed">failed</a> (or servicefailed) - Show any services
+that have failed</li>
+<li><a href="#services">services</a> - List all running or failed
+services</li>
+<li><a href="#servicesall">servicesall</a> - List all services</li>
+<li><a href="#servicestatus">servicestatus</a> - Show the status of a
+service</li>
+<li><a href="#serviceenable">serviceenable</a> - Start a service and
+enable automatic startup at boot</li>
+<li><a href="#servicedisable">servicedisable</a> - Start a service and
+enable automatic startup at boot</li>
+<li><a href="#servicestart">servicestart</a> - Start a service</li>
+<li><a href="#servicestop">servicestop</a> - Stop a service</li>
+<li><a href="#servicekill">servicekill</a> - Forcefully terminate a
+service</li>
+<li><a href="#servicerestart">servicerestart</a> - Stop and restart a
+service</li>
+<li><a href="#servicereload">servicereload</a> - Reload a service’s
+configuration (soft restart)</li>
+<li><a href="#cleansystemlogs-or-clearsystemlogs">cleansystemlogs</a> or
+<a href="#cleansystemlogs-or-clearsystemlogs">clearsystemlogs</a> -
+Clears log entries from the systemd journal</li>
+</ul>
+<h2 id="server-utilities">Server utilities</h2>
+<ul>
+<li><a href="#apacherestart">apacherestart</a> - Restart the Apache web
+server (requires Apache to be installed)</li>
+<li><a href="#apacheconfig">apacheconfig</a> - Edit Apache web server
+configuration</li>
+<li><a href="#ngrestart">ngrestart</a> - Restart the Nginx web server
+(requires Apache to be installed)</li>
+<li><a href="#ngconfig">ngconfig</a> - Edit Nginx web server
+configuration</li>
+<li><a href="#mysqlconfig">mysqlconfig</a> - Edit MySQL database
+configuration</li>
+<li><a href="#mysqldatadir">mysqldatadir</a> - Show MySQL’s data
+directory location</li>
+<li><a href="#phpconfig">phpconfig</a> - Edit the PHP configuration</li>
+<li><a href="#phpcheck">phpcheck</a> - Check the syntax of a PHP file
+for errors</li>
+<li><a href="#sshstatus">sshstatus</a> - Show if the SSH service is
+running or not</li>
+<li><a href="#sshstart">sshstart</a> - Start the SSH service</li>
+<li><a href="#sshstop">sshstop</a> - Stop the SSH service</li>
+<li><a href="#sshrestart">sshrestart</a> - Restart the SSH service</li>
+<li><a href="#scanscripts">scanscripts</a> - Show all scripts in a
+directory and show which shell it uses</li>
+<li><a href="#logview">logview</a> - Use sudo to view log files in real
+time</li>
+<li><a href="#logs">logs</a> - Show all logs in
+<code>/var/log</code></li>
+</ul>
+<h2 id="security">Security</h2>
+<ul>
+<li><a href="#genpw">genpw</a> - Generate passwords (takes an optional
+parameter for length and -s or +s for symbols)</li>
+<li><a href="#pwcheck">pwcheck</a> - Check password strength (requires
+<code>cracklib</code>)</li>
+<li><a href="#checkloginfailures">checkloginfailures</a> - Check failed
+login attempts (if supported by your system)</li>
+<li><a href="#encrypt">encrypt</a> - Encrypt files</li>
+<li><a href="#decrypt">decrypt</a> - Decrypt files</li>
+<li><a href="#rot13">rot13</a> - Rot13 conversion</li>
+<li><a href="#cleanmeta">cleanmeta</a> - Remove Exif metadata</li>
+<li><a href="#checksha256">checksha256</a> - Check the sha256 checksum
+of a file using a checksum file like sha256sum.txt</li>
+</ul>
+<h2 id="file-system-maintenance">File system maintenance</h2>
+<ul>
+<li><a href="#btrcheck">btrcheck</a> - Check status of raid drives</li>
+<li><a href="#btrstats">btrstats</a> - Show device statistics</li>
+<li><a href="#btrscrub">btrscrub</a> - Start a scrub</li>
+<li><a href="#btrpause">btrpause</a> - Cancel or pause a scrub</li>
+<li><a href="#btrresume">btrresume</a> - Resume a paused scrub</li>
+<li><a href="#btrstatus">btrstatus</a> - Show status of a scrub</li>
+<li><a href="#btrdefragfile">btrdefragfile</a> - Defrag a file</li>
+<li><a href="#btrdefragdir">btrdefragdir</a> - Defrag a directory</li>
+<li><a href="#ext3check">ext3check</a> - Check and repair Ext3
+filesystem</li>
+<li><a href="#ext3stats">ext3stats</a> - Show statistics for Ext3
+filesystem</li>
+<li><a href="#ext3trim">ext3trim</a> - Trim unused blocks on Ext3
+filesystem</li>
+<li><a href="#ext4check">ext4check</a> - Check and repair EXT4
+filesystem</li>
+<li><a href="#ext4stats">ext4stats</a> - Show statistics for EXT4
+filesystem</li>
+<li><a href="#ext4trim">ext4trim</a> - Trim unused blocks on EXT4
+filesystem</li>
+<li><a href="#f2fscheck">f2fscheck</a> - Check and repair F2FS
+filesystem</li>
+<li><a href="#f2fsstats">f2fsstats</a> - Show statistics for F2FS
+filesystem</li>
+<li><a href="#f2fstrim">f2fstrim</a> - Trim unused blocks on F2FS
+filesystem</li>
+<li><a href="#xfscheck">xfscheck</a> - Check and repair XFS
+filesystem</li>
+<li><a href="#xfsstats">xfsstats</a> - Show information about XFS
+filesystem</li>
+<li><a href="#xfstrim">xfstrim</a> - Trim unused blocks on XFS
+filesystem</li>
+<li><a href="#zfscheck">zfscheck</a> - Check and repair ZFS pool</li>
+<li><a href="#zfsstats">zfsstats</a> - Show ZFS pool statistics</li>
+<li><a href="#zfstrim">zfstrim</a> - Trim unused blocks on ZFS pool</li>
+<li><a href="#zfsstatus">zfsstatus</a> - Check status of ZFS pool</li>
+<li><a href="#zfsscrub">zfsscrub</a> - Start a scrub on ZFS pool</li>
+<li><a href="#zfspause">zfspause</a> - Pause a scrub on ZFS pool</li>
+<li><a href="#zfsresume">zfsresume</a> - Resume a paused scrub on ZFS
+pool</li>
+<li><a href="#zfsscrubstatus">zfsscrubstatus</a> - Show status of ZFS
+pool scrub</li>
+<li><a href="#zfsdefragfile">zfsdefragfile</a> - Defrag a file
+(snapshot-based)</li>
+<li><a href="#zfsdefragdir">zfsdefragdir</a> - Defrag a directory
+(snapshot-based)</li>
+<li><a href="#ntfscheck">ntfscheck</a> - Check and repair NTFS
+filesystem</li>
+<li><a href="#ntfsstats">ntfsstats</a> - Show information about NTFS
+filesystem</li>
+<li><a href="#fatcheck">fatcheck</a> - Check and repair FAT
+filesystem</li>
+<li><a href="#fatstats">fatstats</a> - Show information about FAT
+filesystem</li>
+</ul>
+<h2 id="tmux-terminal-multiplexor-or-session-management">Tmux terminal
+multiplexor or session management</h2>
+<ul>
+<li><a href="#tmd">tmd</a> - Detach from a Tmux session but leave the
+session running</li>
+<li><a href="#tmlist">tmlist</a> - List all Tmux sessions</li>
+<li><a href="#tmclients">tmclients</a> - List all Tmux clients</li>
+<li><a href="#tmlistkeys">tmlistkeys</a> - List all the Tmux key
+bindings</li>
+<li><a href="#tmnew">tmnew</a> - Create a new session</li>
+<li><a href="#tmsessiongroup">tmsessiongroup</a> - Create a new session
+group (good for multiple monitors)</li>
+<li><a href="#tmattach">tmattach</a> - Attach to an existing Tmux
+session (shows a menu)</li>
+<li><a href="#tmrename">tmrename</a> - Rename a Tmux session</li>
+<li><a href="#tmkill">tmkill</a> - Kill a Tmux session</li>
+<li><a href="#tmreset">tmreset</a> - Kill all Tmux sessions</li>
+<li><a href="#zj">zj</a> or <a href="#znew">znew</a> - Launch Zellij (if
+installed) and create a new session if needed</li>
+<li><a href="#zlist">zlist</a> - List all the Zellij sessions</li>
+<li><a href="#zattach">zattach</a> - Attach to an existing Zellij
+session (shows menu of sessions)</li>
+<li><a href="#zkill">zkill</a> - Kill a Zellij session</li>
+<li><a href="#zreset">zreset</a> - Kill all Zellij sessions</li>
+<li><a href="#aa">aa</a> - Start or connect to an abduco session (shows
+a menu)</li>
+<li><a href="#aaro">aaro</a> - Connect to an abduco session
+read-only</li>
+<li><a href="#aals">aals</a> - List any abduco sessions</li>
+<li><a href="#aareset">aareset</a> - Kill all abduco sessions</li>
+</ul>
+<h2 id="distrobox-if-installed">Distrobox (if installed)</h2>
+<ul>
+<li><a href="#db">db</a> - Easy and short Distrobox alias</li>
+<li><a href="#dbe">dbe</a> - Enter a Distrobox (if one isn’t specified
+then shows a menu picklist of installed containers to choose from)</li>
+<li><a href="#dbl">dbl</a> - List all Distrobox containers</li>
+<li><a href="#dbls">dbls</a> or <a
+href="#distrobox-list-simple">distrobox-list-simple</a> - List only the
+Distrobox container names (useful for scripts)</li>
+<li><a href="#dbs">dbs</a> - Stops a Distrobox container</li>
+<li><a href="#dbsa">dbsa</a> - Stops all Distrobox containers</li>
+<li><a href="#dbhe">dbhe</a> - Shortcut to run the
+<code>distrobox-host-exec</code> command</li>
+<li><a href="#dbup">dbup</a> - Upgrade a Distrobox container or all
+containers if one is not specified</li>
+<li><a href="#dbc">dbc</a> or <a
+href="#distrobox-check">distrobox-check</a> - Checks the status of
+Distrobox docker containers</li>
+<li><a href="#distrobox-pick">distrobox-pick</a> - Shows a menu to
+choose a Distrobox container (useful for scripts)</li>
+</ul>
+<h2 id="package-management">Package management</h2>
+<ul>
+<li><a href="#has">has</a> - Show if a package is installed and it’s
+information and version</li>
+<li><a href="#pkgupdateall">pkgupdateall</a> - Update the system and all
+packages</li>
+<li><a href="#pkgupdate">pkgupdate</a> - Updates an installed
+package</li>
+<li><a href="#pkginstall">pkginstall</a> - Installs a package</li>
+<li><a href="#pkgremove">pkgremove</a> - Removes a package</li>
+<li><a href="#pkgclean">pkgclean</a> - Removes orphans or unused
+packages</li>
+<li><a href="#pkgsearch">pkgsearch</a> - Searches for a package</li>
+<li><a href="#pkglist">pkglist</a> - List all installed packages</li>
+<li><a href="#pkgdependencies">pkgdependencies</a> - View package
+dependencies</li>
+<li><a href="#pkgwhatuses">pkgwhatuses</a> - Find the programs that
+require a dependent package (only supported by some package
+managers/distros)</li>
+</ul>
+<h3 id="arch-linux-only">Arch Linux only</h3>
+<ul>
+<li><a href="#pkg">pkg</a> - Launch <a
+href="https://github.com/moson-mo/pacseek">pacseek</a> if installed</li>
+<li><a href="#pkglistmore">pkglistmore</a> - List all packages
+explicitly installed and all dependent packages that are not explicitly
+installed</li>
+<li><a href="#pkgforceremove">pkgforceremove</a> - Force remove a
+package ignoring required dependencies</li>
+<li><a href="#pkgforcereinstall">pkgforcereinstall</a> - Force remove a
+package ignoring required dependencies and then reinstall</li>
+<li><a href="#pkginstallregex">pkginstallregex</a> - Install a list of
+packages with regex</li>
+<li><a href="#pkglocalpackagefiles">pkglocalpackagefiles</a> - List all
+the local files in an installed package</li>
+<li><a href="#pkgdependencies">pkgdependencies</a> - Add aliases to find
+dependencies (requires <code>pacman-contrib</code>)</li>
+<li><a href="#pkgwhatuses">pkgwhatuses</a> - Show what packages use a
+package (requires <code>pacman-contrib</code>)</li>
+<li><a href="#pkgmarkasexplicit">pkgmarkasexplicit</a> - Mark a package
+as explicitly installed or only a dependency</li>
+<li><a href="#pkgmarkasdependency">pkgmarkasdependency</a> - Mark a
+package as only a dependency</li>
+<li><a href="#pkgsearchcontainingfile">pkgsearchcontainingfile</a> -
+Search for a package containing a file</li>
+<li><a href="#pkgverifylocalpackage">pkgverifylocalpackage</a> - Verify
+the presence of the files installed by a package</li>
+<li><a href="#pkgverifyall">pkgverifyall</a> - Verify all packages</li>
+<li><a href="#pkgcheck">pkgcheck</a> - Check for updates without root
+access (requires <code>pacman-contrib</code>)</li>
+<li><a href="#pacmanfix">pacmanfix</a> - Fixes most pacman errors</li>
+<li><a href="#pacmanfixkeys">pacmanfixkeys</a> - Fix problematic pacman
+keys</li>
+<li><a href="#pacman-clean-cache">pacman-clean-cache</a> - Clean the
+pacman and helper package caches</li>
+<li><a href="#pacnew">pacnew</a> - Check for default configuration file
+backups</li>
+<li><a href="#archnews">archnews</a> - Show the latest Arch linux update
+news</li>
+</ul>
+<h3 id="debianubuntu-only">Debian/Ubuntu only</h3>
+<ul>
+<li><a href="#pkgdependencies">pkgdependencies</a> - Show a package’s
+dependencies</li>
+<li><a href="#pkgwhatuses">pkgwhatuses</a> - Show what packages use a
+package (requires <code>apt-rdepends</code>)</li>
+</ul>
+<h3 id="flatpak-if-installed">Flatpak (if installed)</h3>
+<ul>
+<li><a href="#flatpakhas">flatpakhas</a> - Show if a Flatpak package is
+installed and it’s information and version</li>
+<li><a href="#flatpakupdateall">flatpakupdateall</a> - Update all
+Flatpak packages</li>
+<li><a href="#flatpakupdate">flatpakupdate</a> - Update a Flatpak
+package</li>
+<li><a href="#flatpakinstall">flatpakinstall</a> - Install a Flatpak
+package</li>
+<li><a href="#flatpakremove">flatpakremove</a> - Remove a Flatpak
+package</li>
+<li><a href="#flatpakwipe">flatpakwipe</a> - Remove a Flatpak package
+and delete all it’s data</li>
+<li><a href="#flatpakclean">flatpakclean</a> - Removes orphans or unused
+Flatpak packages</li>
+<li><a href="#flatpaksearch">flatpaksearch</a> - Search for a Flatpak
+package</li>
+<li><a href="#flatpaklist">flatpaklist</a> - List all installed Flatpak
+packages</li>
+<li><a href="#flatpaksize">flatpaksize</a> - List all installed Flatpak
+packages and their disk space size</li>
+<li><a href="#flatpakmakeicons">flatpakmakeicons</a> - Make icons for
+all installed Flatpak packages</li>
+<li><a href="#flatpakremotes">flatpakremotes</a> - Show all Flatpak
+repos/remotes</li>
+</ul>
+<h3 id="snap-if-installed">Snap (if installed)</h3>
+<ul>
+<li><a href="#snaphas">snaphas</a> - Show if a Snap package is installed
+and it’s information and version</li>
+<li><a href="#snapupdateall">snapupdateall</a> - Update all Snap
+packages</li>
+<li><a href="#snapupdate">snapupdate</a> - Update a Snap package</li>
+<li><a href="#snapinstall">snapinstall</a> - Install a Snap package</li>
+<li><a href="#snapremove">snapremove</a> - Remove a Snap package</li>
+<li><a href="#snapclean">snapclean</a> - Removes orphans or unused Snap
+packages</li>
+<li><a href="#snapsearch">snapsearch</a> - Search for a Snap
+package</li>
+<li><a href="#snaplist">snaplist</a> - List all installed Snap
+packages</li>
+<li><a href="#snapsize">snapsize</a> - List all installed Snap packages
+and their disk space size</li>
+</ul>
+<h2 id="git-if-installed">Git (if installed)</h2>
+<ul>
+<li><a href="#gitfixsettings">gitfixsettings</a> - Set Git defaults like
+user name, email, pager, and diff</li>
+<li><a href="#gitbranch">gitbranch</a> - Interactive if no branch
+specified (can use pickers <a
+href="https://github.com/jhawthorn/fzy">fzy</a>, <a
+href="https://github.com/lotabout/skim">skim</a>, <a
+href="https://github.com/junegunn/fzf">fzf</a>, <a
+href="https://github.com/peco/peco">peco</a>, <a
+href="https://github.com/mooz/percol">percol</a>, <a
+href="https://thoughtbot.com/blog/announcing-pick">pick</a>, <a
+href="https://github.com/felipesere/icepick">icepick</a>, <a
+href="https://github.com/garybernhardt/selecta/">selecta</a>, <a
+href="https://github.com/rcmdnk/sentaku">sentaku</a>, or <a
+href="https://github.com/natecraddock/zf">zf</a>)</li>
+<li><a href="#gitresetbranch">gitresetbranch</a> - Forces Git to
+overwrite local files and resets the branch</li>
+<li><a href="#cg">cg</a> - Returns you to the Git project’s top
+level</li>
+<li><a href="#gitls">gitls</a> - List files and show each file status in
+Git</li>
+<li><a href="#gitmodifieddate">gitmodifieddate</a> - List Git files by
+last modified date</li>
+<li><a href="#gitrepos">gitrepos</a> - Find all Git repos in the current
+directory recursively</li>
+<li><a href="#gitupdaterepos">gitupdaterepos</a> - Update all Git
+repositories in the current directory one level deep (or level depth
+specified by an optional parameter)</li>
+<li><a href="#gitcommithelp">gitcommithelp</a> - Generate standardized
+<a
+href="https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716">semantic
+Git commit messages</a> automatically (with emoji icons) and copy them
+to the clipboard</li>
+<li><a href="#getbranchhelp">getbranchhelp</a> - Assist in generating <a
+href="https://mirocommunity.readthedocs.io/en/latest/internals/branching-model.html">structured
+branch names</a> with options for project codes and ticket numbers</li>
+<li><a href="#gitalias">gitalias</a> - Downloads or updates online <a
+href="https://github.com/GitAlias/gitalias">Git Alias</a>es that are a
+popular collection of git version control alias settings</li>
+<li><code>lg</code> - Runs <a
+href="https://github.com/jesseduffield/lazygit">LazyGit interface for
+Git</a> if installed</li>
+<li><code>ggu</code> - Runs <a
+href="https://github.com/extrawurst/gitui">gitui interface for Git</a>
+if installed</li>
+<li><code>gitc</code> - Runs <a
+href="https://github.com/golbin/git-commander">Git Commander interface
+for Git</a> if installed</li>
+<li><code>gitt</code> - Runs <a href="https://github.com/jonas/tig">Tig
+TUI interface for Git</a> if installed</li>
+<li><code>gitrv</code> - Runs <a
+href="https://github.com/rgburke/grv">GRV Git repository viewer</a> if
+installed</li>
+<li><code>gitundo</code> or <code>ggundo</code> - Runs <a
+href="https://github.com/Bhupesh-V/ugit">Ugit Git undo</a> if installed
+which can “undo” the last Git command</li>
+</ul>
+<h3 id="bash-aliases-for-common-git-commands">Bash Aliases for Common
+Git Commands</h3>
+<p>Most of these aliases start with <code>gg</code> to avoid alias
+conflicts and to make it easy to type.</p>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 45%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gg</code></td>
+<td><code>git</code></td>
+<td>Shows a Git status summary or if given arguments invokes Git</td>
+</tr>
+<tr>
+<td><code>ggg</code></td>
+<td><code>git status</code></td>
+<td>Shows the standard Git status</td>
+</tr>
+<tr>
+<td><code>ggs</code></td>
+<td><code>git status --short --branch</code></td>
+<td>Shows a short Git status with the branch</td>
+</tr>
+<tr>
+<td><code>ggp</code></td>
+<td><code>git pull</code></td>
+<td>Fetch and merge</td>
+</tr>
+<tr>
+<td><code>ggf</code></td>
+<td><code>git fetch</code></td>
+<td>Fetch</td>
+</tr>
+<tr>
+<td><code>ggm</code></td>
+<td><code>git merge</code></td>
+<td>Merge</td>
+</tr>
+<tr>
+<td><code>ggpu</code></td>
+<td><code>git push</code></td>
+<td>Push</td>
+</tr>
+<tr>
+<td><code>ggr</code></td>
+<td><code>git reset</code></td>
+<td>Reset (specify a file to un-add or no file to unstage all)</td>
+</tr>
+<tr>
+<td><code>gga</code></td>
+<td><code>git add</code></td>
+<td>Add</td>
+</tr>
+<tr>
+<td><code>ggaa</code></td>
+<td><code>git add -p</code></td>
+<td>Add interactively (choose hunks)</td>
+</tr>
+<tr>
+<td><code>ggac</code></td>
+<td><code>git add --all &amp;&amp; git commit --verbose -m "commit message"</code></td>
+<td>Add all and commit with message</td>
+</tr>
+<tr>
+<td><code>ggc</code></td>
+<td><code>git commit --verbose -m "commit message"</code></td>
+<td>Commit with message</td>
+</tr>
+<tr>
+<td><code>ggm</code></td>
+<td><code>git commit --amend --verbose</code></td>
+<td>Amend last commit</td>
+</tr>
+<tr>
+<td><code>ggl</code></td>
+<td><code>git log --oneline --graph --decorate --all</code></td>
+<td>Log with improved formatting</td>
+</tr>
+<tr>
+<td><code>ggll</code></td>
+<td><code>git log --graph --topo-order --date=iso8601-strict --no-abbrev-commit --decorate --all --boundary</code></td>
+<td>More detailed log</td>
+</tr>
+<tr>
+<td><code>ggls</code></td>
+<td><code>git ls-files</code></td>
+<td>List all files in repo</td>
+</tr>
+<tr>
+<td><code>ggd</code></td>
+<td><code>git diff</code></td>
+<td>Show changes between commits, commit and working tree, etc.</td>
+</tr>
+<tr>
+<td><code>ggds</code></td>
+<td><code>git diff --stat</code></td>
+<td>Show diff statistics</td>
+</tr>
+<tr>
+<td><code>ggdc</code></td>
+<td><code>git diff --cached</code></td>
+<td>Show diff of staged changes</td>
+</tr>
+<tr>
+<td><code>ggb</code></td>
+<td><code>git checkout</code></td>
+<td>Checkout a branch (lists branches by commit order if not
+specified)</td>
+</tr>
+<tr>
+<td><code>ggcb</code></td>
+<td><code>git checkout -b</code></td>
+<td>Create new branch</td>
+</tr>
+<tr>
+<td><code>ggst</code></td>
+<td><code>git stash</code></td>
+<td>Stash changes</td>
+</tr>
+<tr>
+<td><code>ggsta</code></td>
+<td><code>git stash -p</code></td>
+<td>Stash changes interactively</td>
+</tr>
+<tr>
+<td><code>ggpop</code></td>
+<td><code>git stash pop</code></td>
+<td>Apply stashed changes</td>
+</tr>
+<tr>
+<td><code>gitclean</code></td>
+<td><code>git reflog expire --all --expire=now &amp;&amp; git gc --prune=now --aggressive</code></td>
+<td>Vacuum Git repo database and clean up logs</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#table-of-contents">Go to the top</a></p>
+<h1 id="configuration">Configuration</h1>
+<h2 id="environment-variables-and-settings">Environment variables and
+settings</h2>
+<p>You can change some of the settings of the script without changing
+your <code>.bashrc</code> file (handy for updates) using environment
+variables. You can put custom environment variables in the following
+locations and they will automatically be loaded:</p>
+<ul>
+<li><code>~/.env</code></li>
+<li><code>~/.envrc</code></li>
+<li><code>~/.config/bashrc/config</code></li>
+</ul>
+<p>The text in the file should be something similar to this example:</p>
+<pre><code>#!/usr/bin/env bash
+#######################################################
+# Extreme Ultimate .bashrc Environment Variables
+# ~/.env
+# ~/.envrc
+# ~/.config/bashrc/config
+# NOTE: Type env to see a list of set variables
+#######################################################
+
+# Alias to edit this file
+alias ebe=&quot;edit ${BASH_SOURCE}&quot;
+
+#######################################################
+# Set/override the default editor
+# Examples: vim, nvim, emacs, nano, micro, helix, pico
+# or gui apps like kate, geany, gedit, notepadqq, or vscodium
+# NOTE: In Git Bash, you can use something like &quot;/c/Program\ Files/Notepad++/notepad++.exe&quot;
+#######################################################
+
+# Default text editor for various command-line utilities
+# (fallback if VISUAL is not set)
+export EDITOR=nano
+#export EDITOR=vim
+
+# Default text editor for visual (full-screen) utilities
+# (takes precedence over EDITOR)
+export VISUAL=&quot;${EDITOR}&quot;
+
+# Specifies the editor to use with &#39;sudo -e&#39; or &#39;sudoedit&#39;
+# (overrides VISUAL and EDITOR)
+export SUDO_EDITOR=&quot;${EDITOR}&quot;
+
+# Specifies the editor for &#39;fc&#39; command to edit and re-run
+# commands from history (falls back to EDITOR)
+export FCEDIT=&quot;${EDITOR}&quot;
+
+#######################################################
+# Extreme Ultimate .bashrc Configuration
+#######################################################
+
+# Determines if CTRL-h will show help
+# Ctrl+h (for help) and Ctrl+Backspace share the same key binding
+# in some terminal emulators so we default to skip this keybind
+_SKIP_HELP_KEYBIND=true
+
+# Show an installed information HUD on initial Bash load (if not skipped)
+# Link: https://github.com/LinusDierheimer/fastfetch
+# Link: https://ostechnix.com/neofetch-display-linux-systems-information/
+# Link: https://github.com/KittyKatt/screenFetch
+# Link: https://github.com/deater/linux_logo
+# Link: https://github.com/dylanaraps/pfetch
+_SKIP_SYSTEM_INFO=false
+
+# If not skipped, shows pending updates (only in Arch, Manjaro, and Ubuntu)
+# WARNING: This check for updates takes several seconds so the default is true
+_SKIP_UPGRADE_NOTIFY=true
+
+# Automatically launch TMUX terminal multiplexer in local, TTY, or SSH sessions
+# https://github.com/tmux/tmux/wiki
+# Since TMUX is pre-installed on most systems, these must be enabled here
+_TMUX_LOAD_TTY=false
+_TMUX_LOAD_SSH=false
+_TMUX_LOAD_LOCAL=false
+
+# OPTIONAL: Set and force the default TMUX session name for this script and tm
+# If not specified, an active TMUX session is used and attached to
+# If no active TMUX session exists, the current logged in user name is used
+#_TMUX_LOAD_SESSION_NAME=&quot;&quot;
+
+# Terminology is a graphical EFL terminal emulator that can run in TTY sessions
+# If installed, it can automatically be launched when starting a TTY session
+# To split the window horizontally press Ctrl+Shift+PgUp
+# To split the window vertically press Ctrl+Shift+PgDn
+# To create Tabs press Ctrl+Shift+T and cycle through using Ctrl+1-9
+# Link: https://github.com/borisfaure/terminology
+# Link: https://linoxide.com/terminology-terminal/
+_SKIP_TERMINOLOGY_TTY=true
+
+# Blesh: Bash Line Editor replaces default GNU Readline
+# Link: https://github.com/akinomyoga/ble.sh
+# Link for configuration: https://github.com/akinomyoga/ble.sh/blob/master/blerc
+# WARNING: Can be buggy with certain prompts (like Trueline)
+_SKIP_BLESH=false
+
+# Make sure the default file and directory permissions for newly created files
+# in the home directory is umask 026 to improve security.
+# (user=read/write/execute, group=read/execute, others=execute for directories)
+# The default is to skip this security setting and not modify home permissions
+_SKIP_UMASK_HOME=true
+
+# Replaces Sudo with one of the two alternatives (if installed):
+# RootDO (rdo) - A very slim alternative to both sudo and doas
+# Link: https://codeberg.org/sw1tchbl4d3/rdo
+# - OR -
+# A port of OpenBSD&#39;s doas offers two benefits over sudo:
+# 1) Its configuration file has a simple syntax and
+# 2) It is smaller, requiring less effort to audit the code
+# Link: https://github.com/Duncaen/OpenDoas or https://github.com/slicer69/doas
+# Default value is skip and must be set to false manually for security reasons
+_SKIP_SUDO_ALTERNATIVE=true
+
+# If set to true, cd will not output the current absolute path under certain
+# circumstances like when using the command cd - or using cdable_vars bookmarks
+# Link: https://www.gnu.org/software/bash/manual/bash.html#index-cd
+_SILENCE_CD_OUTPUT=false
+
+# If set to true, will not load anything that modifies the ls command or colors
+_SKIP_LS_COLORIZED=false
+
+# LSD (LSDeluxe) is a rewrite of GNU ls with lots of added features like
+# colors, icons, tree-view, more formatting options, git support, etc.
+# Fonts: Install the patched fonts of powerline, nerd-font, and/or font-awesome
+# Link: https://github.com/Peltoche/lsd
+_SKIP_LSD=false
+
+# eza/exa is a modern color replacement for ls that also has some Git support
+# Link: https://github.com/eza-community/eza
+# Link: https://github.com/ogham/exa
+_SKIP_EXA=false
+
+# grc Generic Colouriser
+# Link: https://github.com/garabik/grc
+_SKIP_GRC=false
+
+# Use built-in aliases for grc Generic Colouriser instead of it&#39;s own includes
+_GRC_USE_BASHRC_BUILTIN=true
+
+# Choose your preferred picker to use with menus
+# Valid pickers can be fzy sk fzf peco percol pick icepick selecta sentaku zf
+# or if you want UI pickers, you can choose dmenu rofi or wofi
+_PREFERRED_PICKER=rofi
+
+# If set to true, will not source bash completion scripts
+_SKIP_BASH_COMPLETION=false
+
+# If set to true, will show a calendar when Bash is started
+_SHOW_BASH_CALENDAR=false
+
+# If GNU gcal is installed, use this local for holidays
+# To show the possible options type: gcal -hh | grep &#39;Holidays in&#39;
+# Link: https://www.gnu.org/software/gcal/manual/gcal.html
+# Link: https://unix.stackexchange.com/questions/164555/how-to-emphasize-holidays-by-color-in-cal-command
+_GCAL_COUNTRY_CODE=US_AK
+
+# Skip the birthday/anniversary reminder that shows a message in your teminal?
+# Reads the birthday CSV file: ~/.config/birthdays.csv
+# The first line is ignored (header) and the format is (year is optional):
+# Month,Day,Year,&quot;Message&quot;
+# Jan,1,1985,&quot;This is a message!&quot;
+#
+# Figlet and/or Toilet application is an optional dependency
+# Install Arch/Manjaro:  sudo pacman -S toilet
+# Install Ubuntu/Debian: sudo apt-get install toilet
+_SKIP_BDAY_REMINDER=false
+
+# Set the location for the birthday/anniversary reminder CSV file
+# The default location is &quot;~/.config/birthdays.csv&quot; but you can change it here:
+#_BDAY_FILE=&quot;~/.config/birthdays.csv&quot;
+
+# Set the preferred birthday reminder font here (default is &quot;future&quot;):
+#_BDAY_FONT=future
+
+# Set to have the built in prompt use a faster but less precise Git method
+# This might be necessary on slow connections or networked directories
+# Also if set to true, will remove eza/exa&#39;s --git flag (use lsg for Git info)
+_GIT_IS_SLOW=false
+
+# Optional original prompt from 2014 version now with newly added Git support
+# download the optional .bashrc_prompt script file and place it in either your
+# home directory or as the file ~/.config/bashrc/prompt
+# You will also need to make sure this setting is set to false
+_SKIP_PROMPT_ORIGINAL=false
+
+# If false, the built-in prompt will be one single line with an abbreviated path
+# If true, the built-in prompt will split into two lines with a full path
+_PROMPT_BUILTIN_FULL_PATH=false
+
+# Trueline Bash (true 24-bit color and glyph support)
+# This is the prefered prompt since it looks amazing,
+# has so many features, is easily extended using functions,
+# and is a single Bash script file that is easy to install.
+# Link: https://github.com/petobens/trueline
+# Install: wget https://raw.githubusercontent.com/petobens/trueline/master/trueline.sh -P ~/
+# Fonts: https://github.com/powerline/fonts
+_SKIP_PROMPT_TRUELINE=false
+
+# Powerline-Go (this prompt uses no special glyphs)
+# Link: https://github.com/justjanne/powerline-go
+_SKIP_PROMPT_POWERLINE_GO=false
+
+# Powerline-Shell (details about git/svn/hg/fossil branch and Python virtualenv environment)
+# Link: https://github.com/b-ryan/powerline-shell
+_SKIP_PROMPT_POWERLINE_SHELL=false
+
+# Pureline (256 color written in bash script)
+# Link: https://github.com/chris-marsh/pureline
+# Install:
+# git clone https://github.com/chris-marsh/pureline.git
+# cp pureline/configs/powerline_full_256col.conf ~/.pureline.conf
+_SKIP_PROMPT_PURELINE=false
+
+# Starship Cross Shell Prompt (focus on compatibility and written in Rust)
+# Link: https://starship.rs
+# Install: sh -c &quot;$(curl -fsSL https://starship.rs/install.sh)&quot;
+_SKIP_PROMPT_STARSHIP=false
+
+# Oh-My-Git (only used for Git but has huge support for it, requires font)
+# Link: https://github.com/arialdomartini/oh-my-git
+# Install: git clone https://github.com/arialdomartini/oh-my-git.git ~/.oh-my-git
+_SKIP_PROMPT_OH_MY_GIT=false
+
+# Bash Git Prompt (shows git repository, branch name, difference with remote branch, number of files staged, changed, etc)
+# Link: https://github.com/magicmonty/bash-git-prompt
+# Install: git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+_SKIP_PROMPT_BASH_GIT_PROMPT=false
+
+# Bash Powerline (no need for patched fonts, supports git, previous command execution status, platform-dependent prompt symbols)
+# Link: https://github.com/riobard/bash-powerline
+# Install: curl https://raw.githubusercontent.com/riobard/bash-powerline/master/bash-powerline.sh &gt; ~/.bash-powerline.sh
+_SKIP_PROMPT_BASH_POWERLINE=false
+
+# Sexy Bash Prompt (supports git, 256 color)
+# Link: https://github.com/twolfson/sexy-bash-prompt
+# Install: (cd /tmp &amp;&amp; ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) &amp;&amp; cd sexy-bash-prompt &amp;&amp; make install)
+_SKIP_PROMPT_SEXY_BASH_PROMPT=false
+
+# Liquid Prompt (adaptive prompt with low color and no glyphs)
+# Link: https://github.com/nojhan/liquidprompt
+# Install: git clone --branch stable https://github.com/nojhan/liquidprompt.git ~/liquidprompt
+_SKIP_PROMPT_LIQUIDPROMPT=false
+
+# Original Powerline Status Line for Vim Bash Zsh fish tmux IPython Awesome i3 Qtile
+# Link: https://github.com/powerline/powerline
+# Install: https://medium.com/earlybyte/powerline-for-bash-6d3dd004f6fc
+# NOTE: Requires Python and can be used with Trueline in Bash
+# WARNING: This path may change or break in the future with new Python versions
+_SKIP_PROMPT_POWERLINE=false</code></pre>
+<h2 id="using-your-own-or-replacing-aliases">Using your own or replacing
+aliases</h2>
+<p>If you have additional custom aliases (optional in order to not
+modify your main .bashrc file), put them in a file named one of the
+following:</p>
+<ul>
+<li><code>.bash_aliases</code></li>
+<li><code>~/.config/bashrc/aliases</code></li>
+</ul>
+<p>And the text in the file should be the text below or something
+similar to this example:</p>
+<pre><code>#!/usr/bin/env bash
+#######################################################
+# Extreme Ultimate .bashrc Local User Aliases
+# ~/.bash_aliases or ~/.config/bashrc/aliases
+# NOTE: Type alias (or a) to see a list of set aliases
+#######################################################
+
+# Alias to edit this file
+alias eba=&quot;edit ${BASH_SOURCE}&quot;
+
+# Aliases for SSH
+# alias SERVERNAME=&#39;ssh USER@SERVER&#39;
+# alias SERVERPORT=&#39;ssh SERVER -l USERNAME -p PORTNUMBER&#39;
+# alias SERVERPASS=&#39;sshpass -p &#39;PASSWORD&#39; ssh USER@HOST&#39;
+# alias SERVERTMUX=&#39;ssh USER@SERVER -t tmux new-session -A -s main&#39;
+
+# Show the weather from wttr.in using curl
+# Link: https://github.com/chubin/wttr.in
+alias weather=&#39;curl wttr.in&#39;
+
+# You can also remove any existing or conflicting aliases here
+# unalias command</code></pre>
+<p>You can also override most aliases in this file as well.</p>
+<h2 id="auto-load-and-source-script-files">Auto-load and source script
+files</h2>
+<p>Any file or link found in the <code>~/.config/bashrc/bashrc.d</code>
+folder will automatically be sourced and loaded. If the folder does not
+exist or is empty, this feature is ignored.</p>
+<p>This feature gives you the ability to add features, configurations,
+environment variables, and bash script code to the <code>.bashrc</code>
+without changing it. This also gives you the flexibility to add/remove
+things that are dependant to that particular machine. It also makes it
+easier to update your <code>.bashrc</code> file without having to make
+changes to the base file (which makes it more portable to other
+machines).</p>
+<p>All files are processed in alphabetical order and loaded using the
+<code>source</code> command. To specify a load order, files can be
+prefixed with numbers (e.g. 00–filename, 50–filename, 95–filename).</p>
+<p>There are a couple of provided examples in the <code>bashrc.d</code>
+folder. Just download these into your local
+<code>~/.config/bashrc/bashrc.d</code> directory to load them.</p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>arch_mirrors_support</td>
+<td>If you are using Arch or Manjaro, this script adds a new
+<code>mirrors_update</code> command to automatically use the fastest
+mirrors. NOTE: You will need to modify this script and replace “United
+States” with your country name if not in the US.</td>
+</tr>
+<tr>
+<td>clear_color_spark</td>
+<td>Draws a colorful EQ type “spark bar” whenever you clear the screen
+using <code>clear</code> or <code>cls</code></td>
+</tr>
+<tr>
+<td>trueline_config</td>
+<td>If you use the Trueline prompt, this provides customizations and
+settings. It was moved out of the original code base into this
+script.</td>
+</tr>
+<tr>
+<td>tty_terminal_color_scheme</td>
+<td>Sets a nice easy-to-read color scheme in TTY terminals (which are
+launched by pressing CTRL+ALT and 1 through 7).</td>
+</tr>
+</tbody>
+</table>
+<p>Steps to create your own:</p>
+<ol type="1">
+<li>Create a new file in the folder
+<code>~/.config/bashrc/bashrc.d</code> like
+<code>nano ~/.config/bashrc/bashrc.d/testfile</code></li>
+<li>Place bash script code into that file like
+<code>echo "Hello World"</code> and save</li>
+<li>Reload your terminal</li>
+</ol>
+<p>Note: If creating your own prompt, you might need to call
+<code>unset PS1</code> first in your script.</p>
+<h2 id="move-files-out-of-the-home-folder-optional">Move files out of
+the home folder (optional)</h2>
+<p>Moving the files out of the home folder is completely optional. These
+files can be moved to <code>~/.config/bashrc</code> but the filenames
+will be different:</p>
+<table>
+<thead>
+<tr>
+<th>Original Location</th>
+<th>New Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~/.bashrc_help</td>
+<td>~/.config/bashrc/help</td>
+</tr>
+<tr>
+<td>~/.bash_aliases</td>
+<td>~/.config/bashrc/aliases</td>
+</tr>
+<tr>
+<td>~/.env</td>
+<td>~/.config/bashrc/config</td>
+</tr>
+<tr>
+<td>~/.envrc</td>
+<td>~/.config/bashrc/config</td>
+</tr>
+<tr>
+<td>~/.bashrc_prompt</td>
+<td>~/.config/bashrc/prompt</td>
+</tr>
+<tr>
+<td>~/README.md</td>
+<td>~/.config/bashrc/README.md</td>
+</tr>
+<tr>
+<td>~/trueline.sh</td>
+<td>~/.config/bashrc/trueline.sh (If using Trueline prompt)</td>
+</tr>
+</tbody>
+</table>
+<p>This script will automatically move your files for you. Just create a
+new .sh file, add the text below, make the file executable with
+<code>chmod +x filename.sh</code>, and run it. Optionally, you can run
+each line one at a time to skip creating a script file.</p>
+<pre><code>#!/usr/bin/env bash
+\mkdir -p ~/.config/bashrc
+[[ -f &quot;$HOME/.bashrc_help&quot; ]]   &amp;&amp; \mv ~/.bashrc_help ~/.config/bashrc/help
+[[ -f &quot;$HOME/.bash_aliases&quot; ]]  &amp;&amp; \mv ~/.bash_aliases ~/.config/bashrc/aliases
+[[ -f &quot;$HOME/.env&quot; ]]           &amp;&amp; \mv ~/.env ~/.config/bashrc/config
+[[ -f &quot;$HOME/.envrc&quot; ]]         &amp;&amp; \mv ~/.envrc ~/.config/bashrc/config
+[[ -f &quot;$HOME/.bashrc_prompt&quot; ]] &amp;&amp; \mv ~/.bashrc_prompt ~/.config/bashrc/prompt
+[[ -f &quot;$HOME/README.md&quot; ]]      &amp;&amp; \mv ~/README.md ~/.config/bashrc/
+[[ -f &quot;$HOME/trueline.sh&quot; ]]    &amp;&amp; \mv ~/trueline.sh ~/.config/bashrc/</code></pre>
+<p><a href="#table-of-contents">Go to the top</a></p>
+<h1 id="path-locations-for-binary-files">Path locations for binary
+files</h1>
+<p>Note that the following directories will automatically be put into
+your path if they exist when your shell is loaded:</p>
+<ul>
+<li><code>~/.bin</code></li>
+<li><code>~/bin</code></li>
+<li><code>~/sbin</code></li>
+<li><code>~/.local/bin</code></li>
+<li><code>~/local/bin</code></li>
+</ul>
+<p>You can place any executable script or binary file in one of those
+folders and it will always be found in the path meaning you can run it
+from anywhere on the command line.</p>
+<h1 id="auto-display-message-on-load">Auto-display message on load</h1>
+<p>Any text or ASCII in a file named <code>~/.bash_motd_shown</code>
+will be shown each time the shell is loaded.</p>
+<p>You can create color coded ASCII text using <a
+href="https://github.com/cslarsen/jp2a">jp2a</a> and your own image for
+an impressive effect:</p>
+<pre><code>jp2a --color input_image.jpg &gt; ~/.bash_motd_shown</code></pre>
+<p><a href="#table-of-contents">Go to the top</a></p>
+<h1 id="birthday-and-anniversary-reminder">Birthday and anniversary
+reminder</h1>
+<p>A file can be configured with a list of birthdays or anniversaries to
+show reminders whenever bash is loaded.</p>
+<p>You can turn on this feature in <a
+href="#environment-variables-and-settings">one of the settings files</a>
+like this:</p>
+<pre><code>_SKIP_BDAY_REMINDER=false</code></pre>
+<p>The <code>~/.config/birthdays.csv</code> file that holds the data for
+the birthday and anniversary reminder feature is a CSV (or Comma
+Separated Values) file. This is a plain text file that contains multiple
+lines of data where columns are separated by commas.</p>
+<p>Here is an example of the CSV file:</p>
+<pre><code>Month,Day,Year,&quot;Message&quot;
+Aug,25,1991,&quot;Happy Birthday Linux!&quot;
+Jun,08,1989,&quot;Happy Birthday Bash!&quot;
+Sep,13,,&quot;International Programmers Day&quot;
+Sep,27,1983,&quot;Happy Birthday GNU!&quot;</code></pre>
+<p>If you enter an optional year for a row, you will also be told how
+many years ago the event happened or the person’s age.</p>
+<p>You can also type <code>birthday</code> to manually run the
+reminders.</p>
+<p>The Linux command line <a
+href="https://www.linuxlinks.com/toilet/">TOIlet</a> console font
+application is an optional dependency and, if installed, will be used
+for all reminder notices. You can change the default font used in the <a
+href="#environment-variables-and-settings">settings</a></p>
+<p><a href="#table-of-contents">Go to the top</a></p>
+<h1 id="auto-update">Auto-update</h1>
+<p>You can do this many different ways using either a cron job, anacron
+script, or systemd timer. Our example will be a cron job.</p>
+<p>An example of a cron job that updates once a week on Sunday at 3 in
+the morning could look like this below:</p>
+<p><code>sudo -E crontab -e</code></p>
+<p><strong>Make sure to change USERNAME to your account user name in the
+/home folder (in all 3 places)</strong></p>
+<p>Using curl if installed:</p>
+<pre><code>00 03 *  *  0 if [[ $(lsattr -R -l /home/USERNAME/.bashrc | grep &quot; Immutable&quot;) ]]; then chattr -i /home/USERNAME/.bashrc; fi &amp;&amp; curl -L https://sourceforge.net/projects/ultimate-bashrc/files/_bashrc/download --output /home/USERNAME/.bashrc</code></pre>
+<p>Using wget if installed:</p>
+<pre><code>00 03 *  *  0 if [[ $(lsattr -R -l /home/USERNAME/.bashrc | grep &quot; Immutable&quot;) ]]; then sudo chattr -i /home/USERNAME/.bashrc; fi &amp;&amp; wget -c -O /home/USERNAME/.bashrc https://sourceforge.net/projects/ultimate-bashrc/files/_bashrc/download</code></pre>
+<p><strong><em>NOTE:</em></strong> You’ll notice that if the immutable
+read only flag is set (to prevent scripts and applications from
+modifying your <code>.bashrc</code> file), it is removed before the
+update. To put it back, add this to the end of the above commands:
+<code>; sudo chattr +i /home/USERNAME/.bashrc</code></p>
+<p><a href="#table-of-contents">Go to the top</a></p>
+<h1 id="extra-bash-app-recommendations">Extra: Bash App
+Recommendations</h1>
+<p>By installing these, you will take advantage of many of the best
+features in this <code>.bashrc</code> file. They are all optional.</p>
+<p>For now, these package names are for the Arch repositories, but you
+can still install most of the applications on many other distros. In
+fact, many of these are already preinstalled, in the main repositories
+for many popular distribution, or have Git pages with instructions. I
+have provided descriptions of each application to make them easier to
+find.</p>
+<p>Click on any of the application names below to visit it’s main
+website.</p>
+<h3 id="arch-linux-main-repo">Arch Linux Main Repo</h3>
+<ul>
+<li><a href="https://aria2.github.io/"><code>aria2</code></a> - Download
+utility that supports HTTP(S), FTP, BitTorrent, and Metalink</li>
+<li><a
+href="https://github.com/axel-download-accelerator/axel"><code>axel</code></a>
+- Light command line download accelerator</li>
+<li><a
+href="https://github.com/scop/bash-completion"><code>bash-completion</code></a>
+- Programmable completion for the bash shell</li>
+<li><a href="https://github.com/sharkdp/bat"><code>bat</code></a> - Cat
+clone with syntax highlighting and git integration</li>
+<li><a
+href="https://github.com/eth-p/bat-extras"><code>bat-extras/batdiff</code></a>
+- Bash scripts that integrate bat with various command line tools</li>
+<li><a href="https://www.gnu.org/software/bc/"><code>bc</code></a> -
+Arbitrary precision calculator language that supports interactive
+execution of statements</li>
+<li><a href="https://sourceware.org/bzip2/"><code>bzip2</code></a> - A
+high-quality data compression program</li>
+<li><a href="https://www.colordiff.org/"><code>colordiff</code></a> -
+Wrapper for diff that produces the same output but with pretty syntax
+highlighting</li>
+<li><a href="https://curl.se/"><code>curl</code></a> - Command line tool
+and library for transferring data with URLs</li>
+<li><a href="https://github.com/Byron/dua-cli"><code>dua-cli</code></a>
+- A tool to conveniently learn about the disk usage of directories,
+fast!</li>
+<li><a href="https://github.com/muesli/duf"><code>duf</code></a> - Disk
+Usage/Free Utility</li>
+<li><a href="http://elinks.or.cz/"><code>elinks</code></a> - Advanced
+feature-rich text-mode web browser</li>
+<li><a href="https://github.com/eza-community/eza"><code>eza</code></a>
+- A modern replacement for ls (community fork of exa)</li>
+<li><a href="https://github.com/sharkdp/fd"><code>fd</code></a> -
+Simple, fast and user-friendly alternative to find</li>
+<li><a href="https://fwupd.org/lvfs/docs/users"><code>fwupd</code></a> -
+Simple daemon to allow session software to update firmware</li>
+<li><a href="https://github.com/antonmedv/fx"><code>fx</code></a> -
+Command-line tool and terminal JSON viewer</li>
+<li><a href="https://github.com/junegunn/fzf"><code>fzf</code></a> -
+Command-line fuzzy finder</li>
+<li><a href="https://github.com/jhawthorn/fzy"><code>fzy</code></a> - A
+better fuzzy finder</li>
+<li><a href="https://www.gnu.org/software/gawk/"><code>gawk</code></a> -
+GNU version of awk</li>
+<li><a href="https://git-scm.com/"><code>git</code></a> - The fast
+distributed version control system</li>
+<li><a
+href="https://github.com/charmbracelet/glow"><code>glow</code></a> -
+Command-line markdown renderer</li>
+<li><a href="https://github.com/garabik/grc"><code>grc</code></a> - Yet
+another colouriser for beautifying your logfiles or output of
+commands</li>
+<li><a href="https://www.gnu.org/software/gzip/"><code>gzip</code></a> -
+GNU compression utility</li>
+<li><a href="https://htop.dev/"><code>htop</code></a> - Interactive
+process viewer</li>
+<li><a
+href="https://github.com/jesseduffield/lazygit"><code>lazygit</code></a>
+- Simple terminal UI for git commands</li>
+<li><a href="https://lnav.org/"><code>lnav</code></a> - A curses-based
+tool for viewing and analyzing log files</li>
+<li><a href="https://github.com/busyloop/lolcat"><code>lolcat</code></a>
+- Okay, no unicorns. But rainbows!!</li>
+<li><a href="https://github.com/Peltoche/lsd"><code>lsd</code></a> -
+Modern ls with a lot of pretty colors and awesome icons</li>
+<li><a href="https://people.freebsd.org/~abe/"><code>lsof</code></a> -
+Lists open files for running Unix processes</li>
+<li><a href="https://lynx.invisible-island.net/"><code>lynx</code></a> -
+A text browser for the World Wide Web</li>
+<li><a href="https://midnight-commander.org/"><code>mc</code></a> - A
+file manager that emulates Norton Commander</li>
+<li><a href="https://micro-editor.github.io/"><code>micro</code></a> -
+Modern and intuitive terminal-based text editor</li>
+<li><a href="https://pagure.io/mlocate"><code>mlocate</code></a> -
+Alternative to locate, faster and compatible with mlocate’s
+database</li>
+<li><a href="https://www.nano-editor.org/"><code>nano</code></a> - Pico
+editor clone with enhancements</li>
+<li><a
+href="https://github.com/scopatz/nanorc"><code>nano-syntax-highlighting</code></a>
+- Nano editor syntax highlighting enhancements</li>
+<li><a
+href="https://github.com/ruanhuabin/pbzip2"><code>pbzip2</code></a> -
+Parallel implementation of the bzip2 block-sorting file compressor</li>
+<li><a href="https://zlib.net/pigz/"><code>pigz</code></a> - Parallel
+implementation of the gzip file compressor</li>
+<li><a
+href="https://opensource.com/article/21/7/generate-passwords-pwgen"><code>pwgen</code></a>
+- Password generator for creating easily memorable passwords</li>
+<li><a href="https://ranger.github.io/"><code>ranger</code></a> -
+Simple, vim-like file manager</li>
+<li><a
+href="https://github.com/BurntSushi/ripgrep"><code>ripgrep</code></a> -
+A search tool that combines the usability of ag with the raw speed of
+grep</li>
+<li><a href="https://rsync.samba.org/"><code>rsync</code></a> - A fast
+and versatile file copying tool for remote and local files</li>
+<li><a
+href="https://github.com/ggreer/the_silver_searcher"><code>the_silver_searcher</code></a>
+- Code searching tool similar to Ack, but faster</li>
+<li><a href="https://github.com/tmux/tmux"><code>tmux</code></a> -
+Terminal multiplexer</li>
+<li><a
+href="https://github.com/andreafrancia/trash-cli"><code>trash-cli</code></a>
+- Command line trashcan (recycle bin) interface</li>
+<li><a
+href="https://www.tecmint.com/linux-tree-command-examples/"><code>tree</code></a>
+- A directory listing program displaying a depth indented list of
+files</li>
+<li><a href="https://salsa.debian.org/debian/w3m"><code>w3m</code></a> -
+Text-based Web browser as well as pager</li>
+<li><a href="https://www.gnu.org/software/wget/"><code>wget</code></a> -
+Network utility to retrieve files from the Web</li>
+<li><a
+href="https://github.com/bugaevc/wl-clipboard"><code>wl-clipboard</code></a>
+- Command-line copy/paste utilities for Wayland</li>
+<li><a href="https://github.com/astrand/xclip"><code>xclip</code></a> -
+Command line interface to the X11 clipboard</li>
+<li><a href="http://www.kfish.org/software/xsel/"><code>xsel</code></a>
+- Command-line program for getting and setting the contents of the X
+selection</li>
+<li><a
+href="https://github.com/ajeetdsouza/zoxide"><code>zoxide</code></a> - A
+smarter cd command for your terminal</li>
+</ul>
+<p><code>sudo pacman -S --asexplicit aria2 axel bash-completion bat bat-extras bc bzip2 colordiff curl dua-cli duf elinks eza fd fwupd fx fzf fzy gawk git glow grc gzip htop lazygit lnav lolcat lsd lsof lynx mc micro mlocate nano nano-syntax-highlighting pbzip2 pigz pwgen ranger ripgrep rsync the_silver_searcher tmux trash-cli tree w3m wget wl-clipboard xclip xsel zoxide</code></p>
+<h3 id="arch-user-repository-aur">Arch User Repository (AUR)</h3>
+<blockquote>
+<p>If you do not know what the AUR is, <a
+href="https://itsfoss.com/aur-arch-linux/">click here to learn how to
+use it</a>.</p>
+</blockquote>
+<ul>
+<li><a
+href="https://github.com/wustho/baca"><code>baca-ereader-git</code></a>
+- TUI Ebook Reader</li>
+<li><a
+href="https://github.com/shyiko/commacd"><code>commacd-git</code></a> -
+A faster way to move around (Bash 3+/Zsh)</li>
+<li><a
+href="https://github.com/b4b4r07/enhancd"><code>enhancd</code></a> - A
+next-generation cd command with your interactive filter</li>
+<li><a
+href="https://github.com/lincheney/fzf-tab-completion"><code>fzf-tab-completion-git</code></a>
+- Tab completion using fzf in zsh, bash, GNU readline apps (e.g. python,
+php -a etc)</li>
+<li><a
+href="https://github.com/dandavison/delta"><code>git-delta</code></a> -
+Syntax-highlighting pager for git and diff output</li>
+<li><a href="https://github.com/dvorka/hstr"><code>hstr</code></a> -
+Easily view, navigate, search and manage your command history</li>
+<li><a href="https://github.com/walles/moar"><code>moar</code></a> - A
+pager designed to just do the right thing without any configuration</li>
+<li><a
+href="https://www.vanheusden.com/multitail/"><code>multitail</code></a>
+- View one or multiple files like the original tail program</li>
+</ul>
+<p><code>yay -S baca-ereader-git commacd-git enhancd git-delta hstr moar multitail</code></p>
+<h3 id="install-qfc">Install qfc</h3>
+<p>A shell auto-complete alternative which features real-time
+multi-directories matching and results while you type against files in
+the current directory and its sub-directories</p>
+<p>https://github.com/pindexis/qfc</p>
+<p><code>git clone https://github.com/pindexis/qfc $HOME/.qfc</code></p>
+<hr />
+<h1 id="command-syntax">Command syntax</h1>
+<h2 id="folder-navigation">Folder navigation</h2>
+<p>There are no additional parameters for these commands.</p>
+<ul>
+<li><code>..</code> - Go back 1 folder</li>
+<li><code>...</code> - Go back 2 folders</li>
+<li><code>....</code> - Go back 3 folders</li>
+<li><code>.....</code> - Go back 4 folders</li>
+<li><code>..2</code> - Go back 2 folders</li>
+<li><code>..3</code> - Go back 3 folders</li>
+<li><code>..4</code> - Go back 4 folders</li>
+<li><code>..5</code> - Go back 5 folders</li>
+</ul>
+<h1 id="a"><code>a</code></h1>
+<p>Syntax: <code>a [optional_filter]</code></p>
+<p>Show a list of all available aliases and functions (in color).</p>
+<p>If the optional parameter text filter is specified, only matches will
+be shown. You can use this to search for text inside aliases and bash
+functions to find them.</p>
+<h1 id="aa"><code>aa</code></h1>
+<p>Requires: <a
+href="https://www.brain-dump.org/projects/abduco/">abduco</a></p>
+<p>Syntax: <code>aa [optional_session_name]</code></p>
+<p>Try to connect to an existing abduco session. If the session does not
+exist, create it and connect.</p>
+<p>The parameter is optional and if not specified, shows a list of
+active sessions to join. If there are no active sessions, defaults to a
+session with the same name as the logged in user.</p>
+<h1 id="aals"><code>aals</code></h1>
+<p>Requires: <a
+href="https://www.brain-dump.org/projects/abduco/">abduco</a></p>
+<p>No parameters required (but any parameter that the
+<code>abduco</code> command allows is available)</p>
+<p>Issues the default <code>abduco</code> command that lists any abduco
+sessions</p>
+<h1 id="aareset"><code>aareset</code></h1>
+<p>Requires: <a
+href="https://www.brain-dump.org/projects/abduco/">abduco</a></p>
+<p>No parameters</p>
+<p>Kill all abduco sessions</p>
+<h1 id="aaro"><code>aaro</code></h1>
+<p>Requires: <a
+href="https://www.brain-dump.org/projects/abduco/">abduco</a></p>
+<p>Syntax: <code>aaro [session_name]</code></p>
+<p>Connect to an abduco session read-only. The session name is
+required.</p>
+<h1 id="activewinpid"><code>activewinpid</code></h1>
+<p>No parameters</p>
+<p>Get active X-window process ID (after a 3 second delay)</p>
+<h1 id="alert"><code>alert</code></h1>
+<p>Syntax: <code>echo "This is an alert" | alert</code></p>
+<p>Create an alert (also useful for long running commands)</p>
+<p>Also see:
+https://askubuntu.com/questions/423646/use-of-default-alias-alert</p>
+<h1 id="analyzecode"><code>analyzecode</code></h1>
+<p>Syntax: <code>analyzecode [filename]</code></p>
+<p>Analyzes a code file to provide statistics</p>
+<h1 id="apacheconfig"><code>apacheconfig</code></h1>
+<p>No parameters</p>
+<p>Automatically find the Apache web server configuration file and edit
+it. If the configuration cannot be found, it will dump the Apache
+information that should reveal the location.</p>
+<h1 id="apacherestart"><code>apacherestart</code></h1>
+<p>No parameters</p>
+<p>Restart the Apache web server (requires Apache to be installed)</p>
+<h1 id="archnews"><code>archnews</code></h1>
+<p>Requires: <a
+href="https://wiki.archlinux.org/title/Arch_is_the_best">Arch Linux</a>
+or an <a href="https://itsfoss.com/arch-based-linux-distros/">Arch based
+distribution</a></p>
+<p>No parameters</p>
+<p>Show the latest Arch linux update news</p>
+<h1 id="asc2file"><code>asc2file</code></h1>
+<p>Syntax: <code>asc2file [filename]</code></p>
+<p>Decode base64 text from the clipboard and save it to a file</p>
+<p>Also see: <a href="#file2asc"><code>file2asc</code></a></p>
+<h1 id="bashrccheckprotect"><code>bashrccheckprotect</code></h1>
+<p>No parameters</p>
+<p>Check to see the <code>.bashrc</code> file has the immutable/write
+protected flag</p>
+<h1 id="bashrcprotect"><code>bashrcprotect</code></h1>
+<p>No parameters</p>
+<p>Make the <code>.bashrc</code> immutable/write protected (even from
+root) so that other scripts and applications can’t modify it</p>
+<h1 id="bashrcunprotect"><code>bashrcunprotect</code></h1>
+<p>No parameters</p>
+<p>Remove the immutable/write protected flag from the
+<code>.bashrc</code> file</p>
+<h1 id="bashrcupdate"><code>bashrcupdate</code></h1>
+<p>No parameters</p>
+<p>Automatically update the <code>.bashrc</code> file (and the help
+file) from SourceForge</p>
+<p>Also see: <a
+href="#bashrcupdateforce"><code>bashrcupdateforce</code></a></p>
+<h1 id="bashrcupdateforce"><code>bashrcupdateforce</code></h1>
+<p>No parameters</p>
+<p>Only updates and overwrites the <code>~.bashrc</code> file from
+SourceForge using an alias</p>
+<p>Also see: <a href="#bashrcupdate"><code>bashrcupdate</code></a></p>
+<h1 id="btrcheck"><code>btrcheck</code></h1>
+<p>No parameters</p>
+<p>Check status of raid drives</p>
+<h1 id="btrdefragdir"><code>btrdefragdir</code></h1>
+<p>No parameters</p>
+<p>Defrag a directory</p>
+<h1 id="btrdefragfile"><code>btrdefragfile</code></h1>
+<p>No parameters</p>
+<p>Defrag a file</p>
+<h1 id="btrpause"><code>btrpause</code></h1>
+<p>No parameters</p>
+<p>Cancel or pause a scrub</p>
+<h1 id="btrresume"><code>btrresume</code></h1>
+<p>No parameters</p>
+<p>Resume a paused scrub</p>
+<h1 id="btrscrub"><code>btrscrub</code></h1>
+<p>No parameters</p>
+<p>Start a scrub</p>
+<h1 id="btrstats"><code>btrstats</code></h1>
+<p>No parameters</p>
+<p>Show device statistics</p>
+<h1 id="btrstatus"><code>btrstatus</code></h1>
+<p>No parameters</p>
+<p>Show status of a scrub</p>
+<h1 id="cb2file"><code>cb2file</code></h1>
+<p>Syntax: <code>cb2file [filename]</code></p>
+<p>Save the contents of the clipboard to a file</p>
+<p>Also see: <a href="#file2cb"><code>file2cb</code></a></p>
+<h1 id="cbshow"><code>cbshow</code></h1>
+<p>No parameters</p>
+<p>Show the contents of the clipboard</p>
+<h1 id="cg"><code>cg</code></h1>
+<p>Requires: <a
+href="https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/#how-to-install-git-on-linux">Git</a></p>
+<p>No parameters</p>
+<p>Returns you to the Git project’s top level directory</p>
+<h1 id="check"><code>check</code></h1>
+<p>Syntax: <code>check [command]</code></p>
+<p>Show if a command is aliased, a file, or a built-in command</p>
+<h1 id="checkloginfailures"><code>checkloginfailures</code></h1>
+<p>Supported optional dependencies:</p>
+<ul>
+<li><a href="https://linux.die.net/man/8/aureport">aureport</a></li>
+<li><a
+href="https://man7.org/linux/man-pages/man1/lastb.1.html">lastb</a></li>
+</ul>
+<p>No parameters</p>
+<p>Check failed login attempts (if supported by your system)</p>
+<h1 id="checkreboot"><code>checkreboot</code></h1>
+<p>No parameters</p>
+<p>Check to see if the system needs to be rebooted (for example after an
+update)</p>
+<h1 id="checksha256"><code>checksha256</code></h1>
+<p>Requires: <a
+href="https://www.howtodojo.com/sha256sum-command-not-found/">sha256sum</a>
+(part of coreutils)</p>
+<p>Syntax: <code>checksha256 [filename]</code></p>
+<p>Check the sha256 checksum of a file (usually an ISO image) using a
+checksum file in the same directory</p>
+<h1 id="chfix"><code>chfix</code></h1>
+<p>Syntax: <code>check [optional_directory]</code></p>
+<p>Recursively set permissions for code files and directories</p>
+<p>If a directory is not specified, then the current directory is
+used</p>
+<p>Warning: This can remove execution permissions on script files</p>
+<h1 id="chmodcalc"><code>chmodcalc</code></h1>
+<p>Syntax: <code>chmodcalc [octal]</code> or
+<code>chmodcalc [user] [group] [other]</code></p>
+<p>Examples:</p>
+<ul>
+<li><code>chmodcalc 664</code></li>
+<li><code>chmodcalc rwx rw r</code></li>
+<li><code>chmodcalc rw- r-- ---</code></li>
+<li><code>chmodcalc rw - -</code></li>
+</ul>
+<p>Command line <code>chmod</code> calculator</p>
+<h1 id="chmodcopy"><code>chmodcopy</code></h1>
+<p>Syntax: <code>chmodcopy [source_file] [destination_file]</code></p>
+<p>Copy permissions from one file/directory to another</p>
+<h1 id="chmoddirs"><code>chmoddirs</code></h1>
+<p>Syntax: <code>chmoddirs [mode] [optional_folder]</code></p>
+<p>Examples:</p>
+<ul>
+<li><code>chmoddirs 775</code></li>
+<li><code>chmoddirs +x /some/path</code></li>
+</ul>
+<p>Recursively change only folder permissions (and skip setting file
+permission)</p>
+<h1 id="chmodfiles"><code>chmodfiles</code></h1>
+<p>Syntax: <code>chmodfiles [mode] [optional_folder]</code></p>
+<p>Examples:</p>
+<ul>
+<li><code>chmodfiles 664</code></li>
+<li><code>chmodfiles +x /some/path</code></li>
+</ul>
+<p>Recursively change only file permissions (and skip setting directory
+permissions)</p>
+<h1 id="cleanmeta"><code>cleanmeta</code></h1>
+<p>Requires: <a
+href="https://exiftool.sourceforge.net/"><code>exiftool</code></a></p>
+<p>Syntax: <code>cleanmeta [file_or_files]</code></p>
+<p>Examples:</p>
+<ul>
+<li><code>cleanmeta filename.jpg</code></li>
+<li><code>cleanmeta ~/Pictures/*.jp*</code></li>
+</ul>
+<p>Removes embedded Exif data (like geotag location or GPS tracking)
+from images, videos, and documents</p>
+<h1 id="cleansystemlogs-or-clearsystemlogs"><code>cleansystemlogs</code>
+or <code>clearsystemlogs</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a></p>
+<p>No parameters</p>
+<p>Clears log entries from the systemd journal</p>
+<h1 id="clipboard-1"><code>clipboard</code></h1>
+<p>Requires one of: <a
+href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a> for
+Wayland or, <a href="https://github.com/astrand/xclip">xclip</a> for
+X11, <a href="https://github.com/kfish/xsel">xsel</a> for X11, or <a
+href="https://ss64.com/osx/pbcopy.html">pbcopy</a> for Mac</p>
+<p>Example:
+<code>clipboard             # This shows the clipboard text</code></p>
+<p>Example:
+<code>clipboard 'hi'        # Copy 'text_to_copy' into clipboard"</code></p>
+<p>Example:
+<code>clipboard | less      # Paste clipboard's content into 'less'"</code></p>
+<p>Example:
+<code>cat file | clipboard  # Copy file's content into clipboard"</code></p>
+<p>Improved terminal clipboard management for viewing, setting, and
+clearing content, with support for piping input and output.</p>
+<h1 id="colors"><code>colors</code></h1>
+<p>No parameters</p>
+<p>Print a list of colors with escape codes</p>
+<h1 id="colors24bit"><code>colors24bit</code></h1>
+<p>No parameters</p>
+<p>Test for 24 bit true color in the terminal</p>
+<h1 id="colors256"><code>colors256</code></h1>
+<p>No parameters</p>
+<p>Print a list of all 256 color codes</p>
+<h1 id="compressimage"><code>compressimage</code></h1>
+<p>Requires: <a
+href="https://imagemagick.org/index.php">ImageMagick</a></p>
+<p>Syntax: <code>compressimage [image_file]</code></p>
+<p>Convert an image to compressed jpg format. The output file will be
+located in the same directory as the original.</p>
+<h1 id="configcopy"><code>configcopy</code></h1>
+<p>Syntax: <code>configcopy [from_user] [to_user]</code></p>
+<p>Examples:</p>
+<ul>
+<li><code>configcopy bob mary</code></li>
+<li><code>configcopy john root</code> # Copy settings to root</li>
+<li><code>configcopy "${USER}" default</code> # Copy settings to default
+<code>/etc/skel</code></li>
+</ul>
+<p>Copy CLI configuration files from one account to another</p>
+<h1 id="convert2mdtag"><code>convert2mdtag</code></h1>
+<p>Syntax: <code>convert2mdtag [markdown_title]</code></p>
+<p>Converts a markdown title string into a markdown tag</p>
+<h1 id="countfiles"><code>countfiles</code></h1>
+<p>No parameters</p>
+<p>Count all files recursively (including files in sub-directories) in
+the current folder</p>
+<h1 id="cpg"><code>cpg</code></h1>
+<p>Syntax: <code>cpg [source_files] [destination_directory]</code></p>
+<p>Copy and go to the directory specified as the second parameter</p>
+<p>Note: This is not recursive</p>
+<h1 id="cpp"><code>cpp</code></h1>
+<p>Syntax: <code>cpp [source_files] [destination]</code></p>
+<p>Optional dependency: <a href="https://rsync.samba.org/">rsync</a></p>
+<p>Copy files with a progress bar</p>
+<h1 id="cpu"><code>cpu</code></h1>
+<p>No parameters</p>
+<p>Show the top 10 CPU processes</p>
+<h1 id="cpuinfo"><code>cpuinfo</code></h1>
+<p>No parameters</p>
+<p>Show CPU information</p>
+<h1 id="createmenu"><code>createmenu</code></h1>
+<p>Supported optional dependencies:</p>
+<ul>
+<li><a href="https://github.com/jhawthorn/fzy">fzy</a> (faster and shows
+better results than many fuzzy finders)</li>
+<li><a href="https://github.com/lotabout/skim">skim</a></li>
+<li><a href="https://github.com/junegunn/fzf">fzf</a></li>
+<li><a href="https://github.com/peco/peco">peco</a></li>
+<li><a href="https://github.com/mooz/percol">percol</a></li>
+<li><a href="https://thoughtbot.com/blog/announcing-pick">pick</a></li>
+<li><a href="https://github.com/felipesere/icepick">icepick</a></li>
+<li><a href="https://github.com/garybernhardt/selecta/">selecta</a></li>
+<li><a href="https://github.com/rcmdnk/sentaku">sentaku</a></li>
+<li><a href="https://github.com/natecraddock/zf">zf</a></li>
+<li><a href="https://tools.suckless.org/dmenu/">dmenu</a></li>
+<li><a href="https://github.com/davatorium/rofi">rofi</a></li>
+<li><a href="https://sr.ht/~scoopta/wofi/">wofi</a></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>ls -1 ~ | createmenu</code></li>
+<li><code>echo -e "Jen\nTom\nJoe Bob\nAmy\nPat" | sort | createmenu</code></li>
+<li><code>cat "menuitems.txt" | createmenu</code></li>
+<li><code>echo "You picked: $(command ls -A -1 ~ | createmenu)"</code></li>
+<li><code>_TMUX_SESSION="$(tmux ls -F '#{session_name}' 2&gt; /dev/null | createmenu)"</code></li>
+<li><code>createmenu 'Option 1' 'Option 2' 'Option 3'</code></li>
+<li><code>createmenu --picker=rofi "Option 1" "Option 2" "Option 3"</code></li>
+<li><code>echo -e "Red\nGreen\nBlue" | createmenu --picker=dmenu</code></li>
+</ul>
+<p>Creates a picker menu for selecting an item from a list using input
+from either piped in multi-line text or command line arguments</p>
+<p>It is intended to be used in scripts and more complex commands and
+returns a single item selected as a string</p>
+<p>ALL dependencies are optional and not required</p>
+<h1 id="createuser"><code>createuser</code></h1>
+<p>Syntax: <code>createuser [optional_username]</code></p>
+<p>Interactively create, configure, and test a new Linux user</p>
+<p>Also see: <a href="#deleteuser"><code>deleteuser</code></a> and <a
+href="#wipeuser"><code>wipeuser</code></a></p>
+<h1 id="csvview"><code>csvview</code></h1>
+<p>Syntax: <code>csvview [filename.csv]</code></p>
+<p>Example: <code>csvview ~/.config/birthdays.csv</code></p>
+<p>View any CSV file in the terminal</p>
+<h1 id="d-or-download"><code>d</code> or <code>download</code></h1>
+<p>Requires: <a
+href="https://github.com/axel-download-accelerator/axel"><code>axel</code></a>
+or <a href="https://aria2.github.io/"><code>aria2c</code></a> or <a
+href="https://www.gnu.org/software/wget/"><code>wget</code></a> or <a
+href="https://github.com/curl/curl"><code>curl</code></a></p>
+<p>Supported optional dependencies:</p>
+<ul>
+<li><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a></li>
+<li><a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a></li>
+<li><a
+href="https://github.com/spotDL/spotify-downloader">spotdl</a></li>
+<li><a
+href="https://github.com/exislow/tidal-dl-ng">tidal-dl-ng</a></li>
+<li><a
+href="https://github.com/yaronzz/Tidal-Media-Downloader">tidal-dl</a></li>
+<li><a href="https://github.com/scdl-org/scdl">scdl</a></li>
+</ul>
+<p>Syntax: <code>d "[url]"</code></p>
+<p>Example: <code>d https://example.net/file.png</code></p>
+<p>Example:
+<code>download "https://sourceforge.net/projects/archlinux/files/latest/download"</code></p>
+<p>Automatically downloads based on URL by dynamically choosing the
+appropriate command including from services like Youtube, Spotify,
+Tidal, and SoundCloud.</p>
+<h1 id="db"><code>db</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>Shortcut alias for <code>distrobox</code></p>
+<h1 id="dbc"><code>dbc</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>No parameters</p>
+<p>Checks the status of Distrobox docker containers</p>
+<p>Also see: <a
+href="#distrobox-check"><code>distrobox-check</code></a></p>
+<h1 id="dbe"><code>dbe</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>Syntax: <code>dbe [optional_container_name]</code></p>
+<p>Enter a Distrobox (if one isn’t specified then shows a menu picklist
+of installed containers to choose from)</p>
+<h1 id="dbhe"><code>dbhe</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>Syntax: <code>dbhe [container_name] [command]</code></p>
+<p>Shortcut to run the <code>distrobox-host-exec</code> command</p>
+<p>Also see: <a
+href="https://github.com/89luca89/distrobox/blob/main/docs/posts/execute_commands_on_host.md">distrobox-host-exec</a></p>
+<h1 id="dbl"><code>dbl</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>No parameters</p>
+<p>List all Distrobox containers</p>
+<h1 id="dbls"><code>dbls</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>No parameters</p>
+<p>List only the Distrobox container names (useful for scripts)</p>
+<p>Also see: <a
+href="#distrobox-list-simple"><code>distrobox-list-simple</code></a></p>
+<h1 id="dbs"><code>dbs</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>Syntax: <code>dbs [container_name]</code></p>
+<p>Stops a Distrobox container</p>
+<h1 id="dbsa"><code>dbsa</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>No parameters</p>
+<p>Stops all Distrobox containers</p>
+<h1 id="dbup"><code>dbup</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>Syntax: <code>dbup [optional_container_name]</code></p>
+<p>Upgrade a Distrobox container or all containers if one is not
+specified</p>
+<h1 id="decrypt"><code>decrypt</code></h1>
+<p>Requires: <a href="https://gnupg.org/">GnuPG (GPG)</a></p>
+<p>Syntax: <code>decrypt [encrypted_file.gpg]</code></p>
+<p>Decrypt an <a href="#encrypt">encrypted file</a> using GPG AES 256bit
+symmetric encryption</p>
+<p>Also see: <a href="#encrypt"><code>encrypt</code></a></p>
+<h1 id="deleteuser"><code>deleteuser</code></h1>
+<p>Syntax: <code>deleteuser [username]</code></p>
+<p>Remove a user from the system</p>
+<p>Also see: <a href="#createuser"><code>createuser</code></a> and <a
+href="#wipeuser"><code>wipeuser</code></a></p>
+<h1 id="df"><code>df</code></h1>
+<p>Requires one of: <a href="https://github.com/muesli/duf">duf</a> or
+<a
+href="https://www.geeksforgeeks.org/df-command-linux-examples/">df</a></p>
+<p>Provides valuable information on disk space utilization</p>
+<h1 id="diff"><code>diff</code></h1>
+<p>Requires one of: <a
+href="https://github.com/dandavison/delta"><code>delta</code></a> (with
+or without <a
+href="https://github.com/eth-p/bat-extras"><code>bat-extras diff</code></a>),
+<a href="https://github.com/jeffkaufman/icdiff"><code>Icdiff</code></a>,
+<a href="https://www.colordiff.org"><code>colordiff</code></a>, <a
+href="https://neovim.io"><code>neovim</code></a>, <a
+href="https://www.vim.org"><code>vim</code></a>, or the <a
+href="https://man7.org/linux/man-pages/man1/diff.1.html">built-in
+<code>diff</code> command</a></p>
+<p>Syntax: <code>diff [file1] [file2]</code></p>
+<p>Aliases to use the best terminal diff application depending on what
+is installed (Use <code>\diff</code> to bypass)</p>
+<p>The application is chosen in the following order based off the first
+one found:</p>
+<ul>
+<li><a href="https://github.com/dandavison/delta"><code>delta</code></a>
+(word-level side-by-side highlighting using Levenshtein inference
+algorithm)</li>
+<li><a
+href="https://github.com/eth-p/bat-extras"><code>bat-extras diff</code></a>
+(also requires <a
+href="https://github.com/dandavison/delta"><code>delta</code></a>)</li>
+<li><a
+href="https://github.com/jeffkaufman/icdiff"><code>Icdiff</code></a></li>
+<li><a href="https://www.colordiff.org"><code>colordiff</code></a></li>
+<li><a href="https://neovim.io"><code>neovim</code></a></li>
+<li><a href="https://www.vim.org"><code>vim</code></a></li>
+<li><a href="https://man7.org/linux/man-pages/man1/diff.1.html">built-in
+<code>diff</code> command</a></li>
+</ul>
+<h1 id="dirsclear"><code>dirsclear</code></h1>
+<p>No parameters</p>
+<p>Clears the directory stack from <code>pushd</code></p>
+<p><code>dirsclear</code> is simply an alias for <code>dirs -c</code>
+which clears the directory stack instead of listing it</p>
+<p>The <code>dirs</code> command shell builtin is used to display the
+list of currently remembered directories and, by default, it includes
+the directory you are currently in</p>
+<p>A directory can get into the list via <code>pushd</code> or
+<code>p</code> command followed by the directory name and can be removed
+via <code>popd</code> or <code>p-</code> command</p>
+<p>Also see: <a href="#dirsdedup"><code>dirsdedup</code></a>. <a
+href="#p"><code>p</code></a>, and <a href="#p-"><code>p-</code></a></p>
+<h1 id="dirsdedup"><code>dirsdedup</code></h1>
+<p>No parameters</p>
+<p>Removes duplicates from the directory stack from
+<code>pushd</code></p>
+<p>Also see: <a href="#dirsclear"><code>dirsclear</code></a>, <a
+href="#p"><code>p</code></a>, and <a href="#p-"><code>p-</code></a></p>
+<h1 id="diskspace"><code>diskspace</code></h1>
+<p>Supported optional dependencies:</p>
+<ul>
+<li><a href="https://github.com/Byron/dua-cli"><code>dua</code></a> -
+parallel disk space analyzer in interactive mode TUI/GUI (in color)</li>
+<li><a href="https://github.com/dundee/gdu"><code>gdu</code></a> - fast
+parallel disk usage analyzer written in Go</li>
+<li><a href="https://dev.yorhel.nl/ncdu"><code>Ncdu</code></a> - disk
+usage analyzer with an ncurses interface</li>
+<li><a
+href="https://github.com/imsnif/diskonaut"><code>diskonaut</code></a> -
+visual treemap of what is taking up your disk space</li>
+<li><a href="https://github.com/bootandy/dust"><code>Dust</code></a> -
+like du written in Rust and more intuitive</li>
+<li><a
+href="https://man7.org/linux/man-pages/man1/du.1.html"><code>du</code></a>
+- summarize device usage recursively for directories</li>
+</ul>
+<p>Syntax: <code>diskspace [optional_directory]</code></p>
+<p>This command will help you find out which directories are taking up
+the most (or least) space</p>
+<p><code>du</code> is used if none of the optional dependencies are
+found</p>
+<h1 id="distrobox-check"><code>distrobox-check</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>No parameters</p>
+<p>Checks the status of Distrobox docker containers</p>
+<p>Also see: <a href="#dbc"><code>dbc</code></a></p>
+<h1 id="distrobox-list-simple"><code>distrobox-list-simple</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>No parameters</p>
+<p>List only the Distrobox container names (useful for scripts)</p>
+<p>Also see: <a href="#dbls"><code>dbls</code></a></p>
+<h1 id="distrobox-pick"><code>distrobox-pick</code></h1>
+<p>Requires: <a
+href="https://github.com/89luca89/distrobox">Distrobox</a></p>
+<p>No parameters</p>
+<p>Shows a menu to choose a Distrobox container (useful for scripts)</p>
+<h1 id="download-dircolors"><code>download-dircolors</code></h1>
+<p>Requires: <a
+href="https://www.gnu.org/software/coreutils/manual/html_node/dircolors-invocation.html">dircolors</a></p>
+<p>Alias for downloading the extensive LS_COLORS file
+<code>.dircolors</code> for color directory listings from
+https://github.com/ahmadassaf/dircolors to the user’s home directory</p>
+<h1 id="e-or-edit"><code>e</code> or <code>edit</code></h1>
+<p>Syntax: <code>e [filename]</code> or <code>edit [filename]</code></p>
+<p>Example: <code>e ~/.bashrc</code></p>
+<p>Example: <code>edit /etc/ssh/sshd_config</code></p>
+<p>An advanced file editing command that enhances security and
+convenience by automatically handling permissions, symlinks, and
+immutable files. It can auto-find and edit scripts in your
+<code>$PATH</code>, supports tab renaming with Tmux and other terminals,
+and performs post-edit actions like prompting to restart services when
+modifying relevant configuration files—all using your default editor
+specified in <code>$EDITOR</code> (or auto-detected based on installed
+editors).</p>
+<p>Features:</p>
+<ul>
+<li>Easy Access Through Aliasing: Quickly accessible via the
+<code>e</code> alias, streamlining the editing process.</li>
+<li>Automatic Privilege Management: Seamlessly switches between normal
+editing and <code>sudoedit</code> based on file permissions, ensuring
+secure editing of system files without manual intervention.</li>
+<li>Intelligent Symlink Handling: Automatically detects and resolves
+symlinks to edit the actual target files, preventing unintended edits to
+symlink pointers.</li>
+<li>Immutable File Support: Detects files with the immutable attribute
+(<code>chattr +i</code>), prompts to temporarily remove the attribute
+for editing, and reapplies it after saving changes.</li>
+<li>Auto-Find and Edit Scripts in <code>$PATH</code>: If you provide a
+filename without a path and it exists in your system’s
+<code>$PATH</code>, the script locates and opens it for editing.</li>
+<li>Dynamic Tab Management: Integrates with terminal multiplexers and
+emulators like Tmux, Kitty, WezTerm, Konsole, and many more to rename
+tabs with the name of the file being edited, enhancing navigation and
+multitasking.</li>
+<li>Adaptive Editor Selection: Uses the editor specified in the
+<code>$EDITOR</code> environment variable ensuring consistency with your
+preferred tools. If <code>$EDITOR</code> is not set, it is auto-detected
+based on what’s installed.</li>
+<li>Transparent Editing Mode Indication: Clearly indicates when elevated
+privileges are used (e.g., when using <code>sudoedit</code> or
+<code>visudo</code>), keeping you aware of privilege escalations.</li>
+<li>Color-Coded Visual Feedback: Provides colored messages and prompts
+for better readability and user interaction.</li>
+<li>Security Features: Includes specific procedures for safely editing
+critical files like <code>sudoedit</code> or <code>/etc/sudoers</code>
+by automatically using <code>visudo</code> preventing errors that could
+lock you out.</li>
+<li>Automated Service Management: Recognizes edits to specific
+configuration files and offers to perform related actions, such as:
+<ul>
+<li>Reloading shell profiles after editing <code>~/.bash_profile</code>
+or <code>~/.bashrc</code></li>
+<li>Updating GRUB configuration after editing
+<code>/etc/default/grub</code></li>
+<li>Testing and restarting Apache or Nginx after editing their
+respective configuration files</li>
+<li>Restarting SSH service after changes to
+<code>/etc/ssh/sshd_config</code></li>
+<li>Rebuilding the initial ramdisk with <code>mkinitcpio</code> after
+editing <code>/etc/vconsole.conf</code></li>
+<li>Refreshing Tmux configuration</li>
+<li>Merging X resources when relevant files are edited</li>
+</ul></li>
+<li>Environment Variable Preservation: Maintains your environment
+variables during elevated editing sessions, preserving local custom
+settings and configurations.</li>
+<li>Graceful Handling of Non-Existent Files: Attempts to create new
+files with appropriate permissions, using <code>sudo</code> if
+necessary.</li>
+<li>Extensive Code Comments and Clean Code: The source code is
+well-documented for ease of customization and understanding, making it
+ideal for advanced users and developers.</li>
+</ul>
+<p>The default editor is the <code>EDITOR</code> environment variable
+usually set in the <code>~/.bashrc</code> file, <a
+href="#environment-variables-and-settings">but can be overridden</a> in
+<code>~/.env</code> or <code>~/.envrc</code> or
+<code>~/.config/bashrc/config</code> like this:</p>
+<pre><code>#######################################################
+# Set the default editor
+# Examples: vim, nvim, emacs, nano, micro, helix, pico
+#######################################################
+export EDITOR=nano</code></pre>
+<h1 id="ebrc"><code>ebrc</code></h1>
+<p>No parameters</p>
+<p>Edit the <code>.bashrc</code> file using the default editor. Any
+parameters passed in does a search in the ~/.bashrc file instead.</p>
+<p>Also see: <a href="#findbashrc"><code>findbashrc</code></a></p>
+<h1 id="encrypt"><code>encrypt</code></h1>
+<p>Requires: <a href="https://gnupg.org/">GnuPG (GPG)</a></p>
+<p>Syntax: <code>encrypt [file_to_encrypt]</code></p>
+<p>Encrypt a file using GPG AES 256bit symmetric encryption</p>
+<p>The output file is the original filename with an appended
+<code>.gpg</code> extension</p>
+<p>Also see: <a href="#decrypt"><code>decrypt</code></a></p>
+<h1 id="ext3check"><code>ext3check</code></h1>
+<p>No parameters</p>
+<p>Check and repair Ext3 filesystem</p>
+<h1 id="ext3stats"><code>ext3stats</code></h1>
+<p>No parameters</p>
+<p>Show statistics for Ext3 filesystem</p>
+<h1 id="ext3trim"><code>ext3trim</code></h1>
+<p>No parameters</p>
+<p>Trim unused blocks on Ext3 filesystem</p>
+<h1 id="ext4check"><code>ext4check</code></h1>
+<p>No parameters</p>
+<p>Check and repair EXT4 filesystem</p>
+<h1 id="ext4stats"><code>ext4stats</code></h1>
+<p>No parameters</p>
+<p>Show statistics for EXT4 filesystem</p>
+<h1 id="ext4trim"><code>ext4trim</code></h1>
+<p>No parameters</p>
+<p>Trim unused blocks on EXT4 filesystem</p>
+<h1 id="extract"><code>extract</code></h1>
+<p>Syntax: <code>extract [archive_filename]</code></p>
+<p>Extract any archive(s) into the current directory</p>
+<p>Supports:</p>
+<ul>
+<li><code>.bz2</code> - requires <a
+href="https://sourceware.org/bzip2/">bunzip2</a></li>
+<li><code>.rar</code> - requires <a
+href="https://www.tecmint.com/how-to-open-extract-and-create-rar-files-in-linux/">rar</a></li>
+<li><code>.gz</code> - requires <a
+href="https://www.linux.org/docs/man1/gzip.html">gunzip</a></li>
+<li><code>.tar</code> - requires tar</li>
+<li><code>.tar.bz2</code> - requires tar</li>
+<li><code>.tar.gz</code> - requires tar</li>
+<li><code>.tbz2</code> - requires tar</li>
+<li><code>.tgz</code> - requires tar</li>
+<li><code>.zip</code> - requires <a
+href="https://www.tecmint.com/install-zip-and-unzip-in-linux/">unzip</a></li>
+<li><code>.Z</code> - requires <a
+href="https://www.linuxfordevices.com/tutorials/linux/uncompress-z-file">uncompress</a></li>
+<li><code>.7z</code> - requires <a
+href="https://www.fosslinux.com/43270/how-to-install-and-use-7-zip-in-linux.htm">7z</a></li>
+</ul>
+<h1 id="f"><code>f</code></h1>
+<p>Supported optional dependency: <a
+href="https://github.com/sharkdp/fd"><code>fdfind</code></a></p>
+<p>Syntax: <code>f [text]</code></p>
+<p>Syntax: <code>f --sudo [text]</code></p>
+<p>Syntax: or use the alias <code>findfile [text]</code></p>
+<p>Search filenames in the current folder</p>
+<p>Some text may need to be surrounded by quotes - especially if it
+contains spaces</p>
+<p>The –sudo parameter will search as sudo ignoring permissions</p>
+<h1 id="f2fscheck"><code>f2fscheck</code></h1>
+<p>No parameters</p>
+<p>Check and repair F2FS filesystem</p>
+<h1 id="f2fsstats"><code>f2fsstats</code></h1>
+<p>No parameters</p>
+<p>Show statistics for F2FS filesystem</p>
+<h1 id="f2fstrim"><code>f2fstrim</code></h1>
+<p>No parameters</p>
+<p>Trim unused blocks on F2FS filesystem</p>
+<h1 id="failed"><code>failed</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a></p>
+<p>No parameters</p>
+<p>Show any services that have failed</p>
+<h1 id="fastping"><code>fastping</code></h1>
+<p>Syntax: <code>fastping [server]</code></p>
+<p>Some as the ping command except the ping interval is only 1
+second</p>
+<h1 id="fatcheck"><code>fatcheck</code></h1>
+<p>No parameters</p>
+<p>Check and repair FAT filesystem</p>
+<h1 id="fatstats"><code>fatstats</code></h1>
+<p>No parameters</p>
+<p>Show information about FAT filesystem</p>
+<h1 id="file2asc"><code>file2asc</code></h1>
+<p>Requires one of: <a
+href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a> for
+Wayland or, <a href="https://github.com/astrand/xclip">xclip</a> for
+X11, <a href="https://github.com/kfish/xsel">xsel</a> for X11, or <a
+href="https://ss64.com/osx/pbcopy.html">pbcopy</a> for Mac</p>
+<p>Usage: <code>file2asc [filename]</code></p>
+<p>Compress any file to the clipboard as base64 text (see
+<code>asc2file</code>)</p>
+<p>Also see: <a href="#asc2file"><code>asc2file</code></a></p>
+<h1 id="file2cb"><code>file2cb</code></h1>
+<p>Requires one of: <a
+href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a> for
+Wayland or, <a href="https://github.com/astrand/xclip">xclip</a> for
+X11, <a href="https://github.com/kfish/xsel">xsel</a> for X11, or <a
+href="https://ss64.com/osx/pbcopy.html">pbcopy</a> for Mac</p>
+<p>Usage: <code>file2cb [filename]</code></p>
+<p>Load the contents of a file to the clipboard.</p>
+<p>Also see: <a href="#cb2file"><code>cb2file</code></a></p>
+<h1 id="filetimenow"><code>filetimenow</code></h1>
+<p>Syntax: <code>filetimenow [filename]</code></p>
+<p>Change a file’s (or files using a wildcard) accessed and modified
+time to now</p>
+<p>There is no file creation date in Unix, only access, modify, and
+change</p>
+<h1 id="find24"><code>find24</code></h1>
+<p>No parameters</p>
+<p>Recursively find all files in the current directory that have been
+modified in the last 24 hours</p>
+<h1 id="findalias"><code>findalias</code></h1>
+<p>Usage: <code>findalias "[text]"</code></p>
+<p>List available aliases with optional filter parameter</p>
+<h1 id="findapps"><code>findapps</code></h1>
+<p>Requires: Graphical desktop environment</p>
+<p>Usage: <code>findapps "[text]"</code></p>
+<p>Does a text search for installed graphical application in a desktop
+environment</p>
+<h1 id="findbashrc"><code>findbashrc</code></h1>
+<p>Usage: findbashrc “[pattern]”</p>
+<p>Usage: findbashrc “[pattern1]” “[pattern2]” …</p>
+<p>Example: <code>findbashrc pkg pacman</code></p>
+<p>Searches for text inside the ~/.bashrc file</p>
+<h1 id="findcode"><code>findcode</code></h1>
+<p>Usage: <code>findcode "[text]"</code></p>
+<p>Usage: <code>findcode "[regex]"</code></p>
+<p>Usage: <code>findcode --sudo "[text]"</code></p>
+<p>Recursively searches the current directory for text (or regex) in
+only source code files for 74 different programming languages</p>
+<p>Lines longer than 1,000 characters will be cut off because of issues
+with large files like, for example, minified javascript</p>
+<p>The –sudo parameter will search as sudo ignoring permissions</p>
+<h1 id="findfunction"><code>findfunction</code></h1>
+<p>Usage: <code>findfunction "[text]"</code></p>
+<p>List available functions with optional filter parameter</p>
+<h1 id="findlinks"><code>findlinks</code></h1>
+<p>Usage: <code>findlinks "/backup"</code></p>
+<p>Recursively find all the symlinks containing search text in the
+current directory</p>
+<h1 id="findlog"><code>findlog</code></h1>
+<p>Requires: <a href="https://github.com/junegunn/fzf">fzf</a></p>
+<p>No parameters</p>
+<p>Shows all log files in <code>/var/log</code> with previews and
+returns the full filename path of the log chosen</p>
+<h1 id="findtext"><code>findtext</code></h1>
+<p>Usage: <code>findtext "[text]"</code></p>
+<p>Usage: <code>findtext "[regex]"</code></p>
+<p>Usage: <code>findtext --sudo "[text]"</code></p>
+<p>Recursively searches for text in all files in the current folder</p>
+<p>Lines longer than 1,000 characters will be cut off because of issues
+with very large files</p>
+<p>The –sudo parameter will search as sudo ignoring permissions</p>
+<h1 id="firmwareupdate"><code>firmwareupdate</code></h1>
+<p>Requires: <a href="https://fwupd.org/">fwupdmgr</a></p>
+<p>Install: <code>pkginstall fwupdmgr</code></p>
+<p>No parameters</p>
+<p>Update the firmware on Linux automatically and safely using
+<code>fwupdmgr</code> which is used by many companies like Corsair,
+Dell, HP, Intel, Logitech, etc.</p>
+<h1
+id="fixinvalidexecutepermissions"><code>fixinvalidexecutepermissions</code></h1>
+<p>Usage: <code>fixuserhome [optional_directory]</code></p>
+<p>Remove unneeded and invalid execute permissions from strictly
+non-executable file types recursively like:</p>
+<ul>
+<li>Archive Files</li>
+<li>Audio Files</li>
+<li>Backup and Temporary Files</li>
+<li>Checksum and Security Files</li>
+<li>Configuration Files</li>
+<li>Cryptographic Key and Certificate Files</li>
+<li>Database Files</li>
+<li>Documents and Text Files</li>
+<li>Font Files</li>
+<li>Gaming and Emulation Files</li>
+<li>Image Files</li>
+<li>Markup and Markdown Files</li>
+<li>Non-Executable Code (should never contain a shebang like CSS or
+HTML)</li>
+<li>Subtitle Files</li>
+<li>Video Files</li>
+<li>And More</li>
+</ul>
+<p>It is good practice to remove execute permissions from data files to
+enhance security, as script or executable files masquerading as these
+types could potentially be malicious</p>
+<h1 id="fixuserhome"><code>fixuserhome</code></h1>
+<p>Usage: <code>fixuserhome [optional_user_name]</code></p>
+<p>Repairs and sets proper permissions of the home directory (optionally
+specify a user)</p>
+<p>WARNING: This could cause a problem on certain servers. Use with
+caution!</p>
+<h1 id="flatpakclean"><code>flatpakclean</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>No parameters</p>
+<p>Removes orphans and unused Flatpak packages</p>
+<h1 id="flatpakhas"><code>flatpakhas</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>Usage: <code>flatpakhas [package]</code></p>
+<p>Show if a Flatpak package is installed and it’s information and
+version</p>
+<h1 id="flatpakinstall"><code>flatpakinstall</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>Usage: <code>flatpakinstall [packages separated by spaces]</code></p>
+<p>Install a Flatpak package</p>
+<h1 id="flatpaklist"><code>flatpaklist</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>No parameters</p>
+<p>List all installed Flatpak packages</p>
+<h1 id="flatpakmakeicons"><code>flatpakmakeicons</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>No parameters</p>
+<p>Make icons for all installed Flatpak packages</p>
+<h1 id="flatpakremotes"><code>flatpakremotes</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>No parameters</p>
+<p>Show all Flatpak repos/remotes</p>
+<h1 id="flatpakremove"><code>flatpakremove</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>Usage: <code>flatpakremove [package]</code></p>
+<p>Remove a Flatpak package</p>
+<h1 id="flatpaksearch"><code>flatpaksearch</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>Usage: <code>flatpaksearch [search_text]</code></p>
+<p>Search for a Flatpak package</p>
+<h1 id="flatpaksize"><code>flatpaksize</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>No parameters</p>
+<p>List all installed Flatpak packages and their disk space size</p>
+<h1 id="flatpakupdate"><code>flatpakupdate</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>Usage: <code>flatpakupdate [package]</code></p>
+<p>Update a Flatpak package</p>
+<h1 id="flatpakupdateall"><code>flatpakupdateall</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>No parameters</p>
+<p>Update all Flatpak packages</p>
+<h1 id="flatpakwipe"><code>flatpakwipe</code></h1>
+<p>Requires: <a href="https://flatpak.org/">Flatpak</a></p>
+<p>Usage: <code>flatpakwipe [package]</code></p>
+<p>Remove a Flatpak package and delete all it’s data</p>
+<h1 id="flushcache"><code>flushcache</code></h1>
+<p>No parameters</p>
+<p>Clear RAM memory cache, buffer and swap space</p>
+<h1 id="flushdns"><code>flushdns</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>flushdns</code></p>
+<p>No parameters</p>
+<p>Clears the DNS (domain name system) cache in order to refresh and
+update stored domain name resolution information ensuring accurate and
+up-to-date results</p>
+<p>DNS is used to translate human-readable domain names (like
+<code>www.example.com</code>) into IP addresses (like
+<code>192.168.1.1</code>) that networking can understand</p>
+<h1 id="folders"><code>folders</code></h1>
+<p>No parameters</p>
+<p>Recursively list disk space of immediate directories one level deep
+starting in the current directory</p>
+<h1 id="free"><code>free</code></h1>
+<p>No parameters</p>
+<p>Display amount of free and used memory in MB</p>
+<h1 id="fstab"><code>fstab</code></h1>
+<p>No parameters</p>
+<p>Edit your Linux system’s file system table (requires root)</p>
+<h1 id="fullpath"><code>fullpath</code></h1>
+<p>Syntax: <code>fullpath [file]</code></p>
+<p>Shows full path of file or wildcard</p>
+<h1 id="gdiff"><code>gdiff</code></h1>
+<p>Requires one of: <a href="https://meldmerge.org/">Meld</a>, <a
+href="https://apps.kde.org/kompare/">Kompare</a>, <a
+href="https://kdiff3.sourceforge.net/">KDiff3</a>, or <a
+href="http://furius.ca/xxdiff/">XXDiff</a></p>
+<p>Syntax: <code>gdiff [file1] [file2]</code></p>
+<p>Open a diff in a graphical environment using the first graphical UI
+diff tool found installed</p>
+<p>The application is chosen in the following order based off the first
+one found:</p>
+<ul>
+<li><a href="https://meldmerge.org/">Meld</a></li>
+<li><a href="https://apps.kde.org/kompare/">Kompare</a></li>
+<li><a href="https://kdiff3.sourceforge.net/">KDiff3</a></li>
+<li><a href="http://furius.ca/xxdiff/">XXDiff</a></li>
+</ul>
+<h1 id="genpw"><code>genpw</code></h1>
+<p>Syntax: <code>genpw [optional_length] [+/-s]</code></p>
+<p>Example: <code>genpw</code></p>
+<p>Example: <code>genpw 8</code></p>
+<p>Example: <code>genpw 128 +s</code></p>
+<p>Example: <code>genpw 20 -s</code></p>
+<p>Generate passwords takes an optional parameter for length and -s or
++s for symbols but the user is prompted if not specified</p>
+<h1 id="getfunctions"><code>getfunctions</code></h1>
+<p>Syntax: <code>showfunctions [filename]</code></p>
+<p>Example: <code>showfunctions ~/.bashrc</code></p>
+<p>List and sort all function names with line numbers from source code
+files of most languages</p>
+<h1 id="gitalias"><code>gitalias</code></h1>
+<p>Requires: <a href="https://github.com/GitAlias/gitalias">Git
+Alias</a> and <a href="https://git-scm.com/">Git</a></p>
+<p>No parameters</p>
+<p>Updates/installs the latest Git aliases</p>
+<p>“Git Alias is a collection of git version control alias settings that
+can help you work faster and better. Git Alias provides short aliases
+such as s for status, command aliases such as chart and churn, lookup
+aliases such as whois and whatis, workflow aliases such as topic-begin
+for feature branch development, and more.”</p>
+<p>If you install this and the gitalias.txt is located in the user’s
+home folder, it will automatically be sourced and included by the
+Extreme Ultimate .bashrc File.</p>
+<h1 id="gitbranch"><code>gitbranch</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>Syntax: <code>gitbranch [optional_branch_name]</code></p>
+<p>Changes the current branch</p>
+<p>Shows and interactive menu if no branch specified</p>
+<p>This command can use following optional pickers and are used in the
+following order: - <a href="https://github.com/jhawthorn/fzy">fzy</a> -
+<a href="https://github.com/lotabout/skim">skim</a> - <a
+href="https://github.com/junegunn/fzf">fzf</a> - <a
+href="https://github.com/peco/peco">peco</a> - <a
+href="https://github.com/mooz/percol">percol</a> - <a
+href="https://thoughtbot.com/blog/announcing-pick">pick</a> - <a
+href="https://github.com/felipesere/icepick">icepick</a> - <a
+href="https://github.com/garybernhardt/selecta/">selecta</a> - <a
+href="https://github.com/rcmdnk/sentaku">sentaku</a> - <a
+href="https://github.com/natecraddock/zf">zf</a></p>
+<h1 id="getbranchhelp"><code>getbranchhelp</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>No parameters</p>
+<p>Assist in generating <a
+href="https://mirocommunity.readthedocs.io/en/latest/internals/branching-model.html">structured
+branch names</a> with options for project codes and ticket numbers</p>
+<p>It prompts for input step-by-step to form branch names like:</p>
+<ul>
+<li><code>prefix/12345-put-description-here</code></li>
+<li><code>prefix/PROJ-12345-put-description-here</code></li>
+<li><code>prefix/put-description-here</code></li>
+</ul>
+<p>The new branch name is also placed on the clipboard if supported</p>
+<h1 id="gitcommithelp"><code>gitcommithelp</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>No parameters</p>
+<p>Generate standardized <a
+href="https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716">semantic
+Git commit messages</a> automatically (with emoji icons) and copy them
+to the clipboard</p>
+<p>This function facilitates the creation of commit messages following
+<a
+href="https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716">semantic
+conventions</a></p>
+<p><a
+href="https://sparkbox.com/foundry/semantic_commit_messages">Conventional
+commits</a> are a specification for adding human and machine readable
+meaning to commit messages in order to provide simple navigation through
+git history and logs</p>
+<p>This command prompts for input step-by-step to form commits like:</p>
+<ul>
+<li>🔧 chore: updating grunt tasks etc; no production code change</li>
+<li>📝 docs: changes to the documentation</li>
+<li>✨ feat: new feature for the user, not a new feature for build
+script</li>
+<li>🐛 fix: bug fix for the user, not a fix to a build script</li>
+<li>♻️ refactor: refactoring production code, eg. renaming a
+variable</li>
+<li>💅 style: formatting, missing semi colons, etc; no production code
+change</li>
+<li>🧪 test: adding missing tests, refactoring tests; no production code
+change</li>
+</ul>
+<p>The new commit message is also placed on the clipboard if
+supported</p>
+<h1 id="gitfixsettings"><code>gitfixsettings</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>Set Git defaults like user name, email, pager, and diff</p>
+<h1 id="gitls"><code>gitls</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>No parameters</p>
+<p>List files in the current directory and show each file status in
+Git</p>
+<h1 id="gitmodifieddate"><code>gitmodifieddate</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>No parameters</p>
+<p>List files in the current directory by Git last modified date</p>
+<h1 id="gitrepos"><code>gitrepos</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>No parameters</p>
+<p>Find all Git repos in the current directory recursively</p>
+<h1 id="gitresetbranch"><code>gitresetbranch</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>No parameters</p>
+<p>Forces Git to overwrite local files and resets the branch in the
+current directory</p>
+<p>WARNING: This will remove all changes made since the last
+check-in</p>
+<h1 id="gitupdaterepos"><code>gitupdaterepos</code></h1>
+<p>Requires: <a href="https://git-scm.com/">Git</a></p>
+<p>Syntax: <code>totalsize [optional_levels_deep]</code></p>
+<p>Update all Git repositories in the current directory. Works only one
+level deep by default, or the number of levels deep can be specified as
+a parameter.</p>
+<h1 id="gpu"><code>gpu</code></h1>
+<p>Requires: <a href="https://github.com/Syllo/nvtop">NVTOP</a></p>
+<p>Runs the NVTOP command if installed. NVTOP stands for Neat Videocard
+TOP, a (h)top like task monitor for GPUs and accelerators. It can handle
+multiple GPUs and print information about them in a htop-familiar
+way.</p>
+<h1 id="grabvideo"><code>grabvideo</code></h1>
+<p>Requires: <a href="https://ffmpeg.org/">FFmpeg</a></p>
+<p>Syntax: <code>encrypt [/path/output_file.mpg]</code></p>
+<p>Video capture the Linux desktop</p>
+<h1 id="h"><code>h</code></h1>
+<p>Syntax: <code>h [search_text]</code></p>
+<p>Search command line history (also <code>CTRL-S</code> and
+<code>CTRL-R</code>)</p>
+<h1 id="has"><code>has</code></h1>
+<p>Syntax: <code>has [package]</code></p>
+<p>Show if a package is installed and it’s information and version</p>
+<h1 id="hascommand"><code>hascommand</code></h1>
+<p>Syntax: <code>hascommand [--strict] [command-name]</code></p>
+<p>Example:
+<code>[[ hascommand --strict grep ]] &amp;&amp; echo "Yes" || echo "No"</code></p>
+<p>Check if a command or alias exists. If <code>--strict</code> is set
+as a parameter, only accept commands and not aliases.</p>
+<h1 id="hlp"><code>hlp</code></h1>
+<p>No parameters</p>
+<p>Show full color help information</p>
+<h1 id="home"><code>home</code></h1>
+<p>No parameters</p>
+<p>Go to your home folder</p>
+<h1 id="hoststoggle"><code>hoststoggle</code></h1>
+<p>Optional Dependency: <a
+href="https://github.com/hectorm/hblock">hBlock</a></p>
+<p>No parameters</p>
+<p>Toggle the hosts file off and back on</p>
+<h1 id="ipexternal"><code>ipexternal</code></h1>
+<p>No parameters</p>
+<p>Get outside external IP addresses</p>
+<h1 id="iplocal"><code>iplocal</code></h1>
+<p>No parameters</p>
+<p>Get local IP addresses</p>
+<h1 id="json"><code>json</code></h1>
+<p>Requires: <a href="https://github.com/antonmedv/fx">fx</a> or <a
+href="https://jless.io/">jless</a> or <a
+href="https://itsfoss.com/pretty-print-json-linux/">jq</a></p>
+<p>Displays a formatted JSON file in the terminal</p>
+<h1 id="l."><code>l.</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing - only show hidden files</p>
+<h1 id="labc"><code>labc</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing - alphabetical sort</p>
+<h1 id="lc"><code>lc</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing - sort by change time</p>
+<h1 id="ldir"><code>ldir</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing - directories only</p>
+<h1 id="les"><code>les</code></h1>
+<p>Same parameters as <code>less</code></p>
+<p>Less with no line numbers showing</p>
+<h1 id="lfile"><code>lfile</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing - files only</p>
+<h1 id="lines"><code>lines</code></h1>
+<p>Syntax:
+<code>lines &lt;FILENAME&gt; &lt;LINE_NUMBER&gt; [OPTIONAL_LINE_NUMBERS...]</code></p>
+<p>Example: <code>lines filename.txt 123</code></p>
+<p>Example: <code>lines filename.txt 123 456 78</code></p>
+<p>Example: <code>lines filename.txt 50-100</code></p>
+<p>Example: <code>lines filename.txt 10 20 30-40</code></p>
+<p>Display specific lines or line ranges from a file</p>
+<h1 id="lk"><code>lk</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing - sort by size</p>
+<h1 id="ll"><code>ll</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing - long listing format with full column color</p>
+<h1 id="lll"><code>lll</code></h1>
+<p>Requires one of: <a href="https://github.com/muesli/duf">duf</a> or
+<a href="https://github.com/bexxmodd/vizex">vizex</a> or <a
+href="https://www.geeksforgeeks.org/df-command-linux-examples/">df</a></p>
+<p>Provides valuable information on disk space utilization for local
+disks</p>
+<h1 id="llfs"><code>llfs</code></h1>
+<p>No parameters</p>
+<p>List all files larger than a given size in the current directory</p>
+<h1 id="lm"><code>lm</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing: pipe through ‘more’</p>
+<h1 id="locount"><code>locount</code></h1>
+<p>Requires: <a
+href="https://www.geeksforgeeks.org/locate-command-in-linux-with-examples/">mlocate</a></p>
+<p>Syntax: <code>locount [part_of_filename_search]</code></p>
+<p>Display the number of matching filename search entries using the
+<code>locate</code> command</p>
+<h1 id="logout"><code>logout</code></h1>
+<p>No parameters</p>
+<p>Log out the current user out if in a desktop environment</p>
+<h1 id="logs"><code>logs</code></h1>
+<p>Requires: <a
+href="https://www.howtogeek.com/481766/how-to-use-the-tail-command-on-linux/">tail</a></p>
+<p>No parameters</p>
+<p>Show all logs in <code>/var/log</code></p>
+<h1 id="logview"><code>logview</code></h1>
+<p>Requires one of <a href="https://github.com/tstack/lnav">lnav</a> or
+<a href="https://www.vanheusden.com/multitail/">multitail</a> or <a
+href="https://www.gnu.org/software/coreutils/manual/html_node/tail-invocation.html">tail</a></p>
+<p>Syntax: <code>logview [/var/log/filename.log]</code></p>
+<p>Use sudo to view log files in real time</p>
+<h1 id="lr"><code>lr</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing: recursive ls</p>
+<h1 id="lt"><code>lt</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing: sort by date</p>
+<h1 id="ltree"><code>ltree</code></h1>
+<p>Directory listing: tree format</p>
+<h1 id="lu"><code>lu</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing: sort by access time</p>
+<h1 id="lw"><code>lw</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing: wide listing format</p>
+<h1 id="lx"><code>lx</code></h1>
+<p>Same parameters as <code>ls</code></p>
+<p>Directory listing: sort by extension</p>
+<h1 id="m"><code>m</code></h1>
+<p>Same parameters as <code>mount</code></p>
+<p>A short alias to mount a file system</p>
+<h1 id="mc"><code>mc</code></h1>
+<p>Requires: <a href="https://midnight-commander.org/">Midnight
+Commander</a></p>
+<p>Same parameters as <code>mc</code></p>
+<p>Alias for Midnight Commander (mc) to exit into current directory if
+the script is present (usually comes with mc).</p>
+<p>It also disables the subshell since this causes problems for many
+reasons:</p>
+<ul>
+<li>https://unix.stackexchange.com/questions/57439/slow-start-of-midnight-commander</li>
+<li>https://midnight-commander.org/ticket/3580</li>
+</ul>
+<p>If you need the subshell, use <code>mcc</code> instead or
+<code>\mc</code>.</p>
+<p>Also see: <a href="#mcc"><code>mcc</code></a></p>
+<h1 id="mcc"><code>mcc</code></h1>
+<p>Requires: <a href="https://midnight-commander.org/">Midnight
+Commander</a></p>
+<p>Same parameters as <code>mc</code></p>
+<p>Alias for Midnight Commander (mc) to exit into current directory if
+the script is present (usually comes with mc).</p>
+<p>This uses the subshell feature but can take longer to load on some
+systems.</p>
+<p>Also see: <a href="#mc"><code>mc</code></a></p>
+<h1 id="mkdirg"><code>mkdirg</code></h1>
+<p>Same parameters as <code>mkdir</code></p>
+<p>Create and go to the directory</p>
+<h1 id="mostused"><code>mostused</code></h1>
+<p>No parameters</p>
+<p>See what command you are using the most</p>
+<h1 id="mvg"><code>mvg</code></h1>
+<p>Syntax:
+<code>mvg [file(s)_to_move] [new_directory_location/]</code></p>
+<p>Move and go to the directory</p>
+<h1 id="mx"><code>mx</code></h1>
+<p>Syntax: <code>mx [file_or_wildcards]</code></p>
+<p>Make files executable</p>
+<h1 id="mysqlconfig"><code>mysqlconfig</code></h1>
+<p>No parameters</p>
+<p>Attempt to automatically locate and edit the MySQL configuration
+file</p>
+<h1 id="mysqldatadir"><code>mysqldatadir</code></h1>
+<p>No parameters</p>
+<p>Show MySQL’s data directory location</p>
+<h1 id="netwatch"><code>netwatch</code></h1>
+<p>Requires: <a href="https://github.com/raboof/nethogs">nethogs</a> or
+<a
+href="https://www.tecmint.com/iftop-linux-network-bandwidth-monitoring-tool/">iftop</a>
+or <a
+href="https://www.howtogeek.com/426031/how-to-use-the-linux-lsof-command/">lsof</a></p>
+<p>No parameters</p>
+<p>Watch real time network activity</p>
+<h1 id="new"><code>new</code></h1>
+<p>No parameters</p>
+<p>Directory listing showing recently created/updated files in the
+current directory</p>
+<h1 id="ngconfig"><code>ngconfig</code></h1>
+<p>No parameters</p>
+<p>Automatically find the Nginx web server configuration file and edit
+it.</p>
+<h1 id="ngrestart"><code>ngrestart</code></h1>
+<p>No parameters</p>
+<p>Restart the Nginx web server (requires Nginx to be installed)</p>
+<h1 id="now"><code>now</code></h1>
+<p>No parameters</p>
+<p>Show the time</p>
+<h1 id="ntfscheck"><code>ntfscheck</code></h1>
+<p>No parameters</p>
+<p>Check and repair NTFS filesystem</p>
+<h1 id="ntfsstats"><code>ntfsstats</code></h1>
+<p>No parameters</p>
+<p>Show information about NTFS filesystem</p>
+<h1 id="open"><code>open</code></h1>
+<p>Syntax: <code>open [filename]</code></p>
+<p>Open any document in it’s default window manager application</p>
+<h1 id="p-"><code>p-</code></h1>
+<p>Quick alias for <code>popd</code></p>
+<p>The <code>popd</code> command changes the current directory to the
+directory that was most recently stored by the <code>pushd</code>
+command</p>
+<p>Every time you use the <code>pushd</code> command, a single directory
+is stored for your use. However, you can store multiple directories by
+using the <code>pushd</code> command multiple times. The directories are
+stored sequentially in a virtual stack or list, so if you use the
+<code>pushd</code> command once, the directory in which you use the
+command is placed at the bottom of the stack. If you use the command
+again, the second directory is placed on top of the first one. The
+process repeats every time you use the <code>pushd</code> command.</p>
+<p>If you use the <code>popd</code> command, the directory on the top of
+the stack is removed and the current directory is changed to that
+directory. If you use the <code>popd</code> command again, the next
+directory on the stack is removed.</p>
+<p>Also see: <a href="#p"><code>p</code></a>, <a
+href="#dirsclear"><code>dirsclear</code></a>, and <a
+href="#dirsdedup"><code>dirsdedup</code></a></p>
+<h1 id="p"><code>p</code></h1>
+<p>Quick alias for <code>pushd</code> that now has a deduped directory
+stack</p>
+<p><code>pushd</code> is a shell built-in command which allows us to
+easily manipulate the directory stack</p>
+<p>This appends a directory to the top of the directory stack, or
+rotates the stack, making the new top of the stack the present working
+directory. The <code>d</code> in <code>pushd</code> stands for the
+directory as it pushes the directory path onto the stack. The directory
+stack increases in size after each <code>pushd</code> command. This
+stack is based on the Last In First Out (LIFO) principle. This command
+has an exit status 0 i.e, it returns success unless an invalid argument
+is supplied or the directory change fails.</p>
+<p>Here is an example of how it works:</p>
+<pre><code>&gt;&gt; dir3 $ p ~/dir2
+Directory Stack:
+ 1  ~/dir2  &lt;-- We just added this to the stack (0 is current directory)
+ 2  ~/dir3
+&gt;&gt; dir2 $ p ~/dir1
+Directory Stack:
+ 0  ~/dir1  &lt;-- We just added this to the stack
+ 1  ~/dir2
+ 2  ~/dir3  &lt;-- Now let&#39;s go to entry 2 in the list
+&gt;&gt; dir1 $ p +2 &lt;-- Go to stack list index 2 which is dir3
+Directory Stack:
+ 0  ~/dir3  &lt;-- Now this directory moved to the top
+ 1  ~/dir1
+ 2  ~/dir2
+&gt;&gt; dir3 # p
+ 0  ~/dir1  &lt;-- This is the same as p +1 and swaps location
+ 1  ~/dir3
+ 2  ~/dir2
+&gt;&gt; dir1 $ dirs  &lt;-- Now we are in ~/dir1, let&#39;s list the dirs
+Directory Stack:
+ 0  ~/dir1
+ 1  ~/dir3
+ 2  ~/dir2  &lt;-- Let&#39;s remove this one by it&#39;s index
+&gt;&gt; dir1 $ p- +2
+Directory Stack:
+ 0  ~/dir1
+ 1  ~/dir3  &lt;-- Now ~/dir2 is gone from the stack
+&gt;&gt; dir1 $ p-
+ 0  ~/dir3  &lt;-- Now ~/dir1 is gone from the stack
+&gt;&gt; dir3 $   &lt;-- And we switched to the next directory</code></pre>
+<p>Normally, you would use the <code>cd</code> command to move from one
+directory to another. However, if you spend a lot of time on the command
+line, <code>pushd</code> and <code>popd</code> commands will increase
+your productivity and efficiency.</p>
+<p>We can navigate between the dictionaries using the <code>cd</code>
+command. But suppose, you are in the fourth directory. Then to navigate
+to the second directory, the <code>cd</code> command has to be used
+twice. But by using <code>pushd</code> command, it can be achieved in
+one step. In one step, we can navigate from any directory in the stack
+to another directory in the stack. Directory manipulation becomes easier
+and efficient.</p>
+<p>Also see: <a
+href="https://opensource.com/article/19/8/navigating-bash-shell-pushd-popd">Directory
+Navigation Using the <code>pushd</code> and <code>popd</code>
+Commands</a></p>
+<p>Also see: <a href="#p-"><code>p-</code></a>, <a
+href="#dirsclear"><code>dirsclear</code></a>, and <a
+href="#dirsdedup"><code>dirsdedup</code></a></p>
+<h1 id="pacman-clean-cache"><code>pacman-clean-cache</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>No parameters</p>
+<p>Clean the pacman and helper package caches <code>yay</code> and
+<code>paru</code> if installed</p>
+<h1 id="pacmanfix"><code>pacmanfix</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>No parameters</p>
+<p>Fixes most pacman errors</p>
+<h1 id="pacmanfixkeys"><code>pacmanfixkeys</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>No parameters</p>
+<p>Fix problematic pacman keys</p>
+<h1 id="pacnew"><code>pacnew</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>No parameters</p>
+<p>Check for default configuration file backups</p>
+<h1 id="path"><code>path</code></h1>
+<p>No parameters</p>
+<p>List the PATH environment variable directories</p>
+<p>Normally, to execute a custom program or script, we need to use its
+full path unless it is found in one of these directories</p>
+<h1 id="pathappend"><code>pathappend</code></h1>
+<p>Syntax: <code>pathappend [directory]</code></p>
+<p>Add directories to the end of the path (last in the search order)</p>
+<p>Also see: <a href="#pathprepend"><code>pathprepend</code></a></p>
+<h1 id="pathprepend"><code>pathprepend</code></h1>
+<p>Syntax: <code>pathprepend [directory]</code></p>
+<p>Add directories to the beginning of the path (first in the search
+order)</p>
+<p>Also see: <a href="#pathappend"><code>pathappend</code></a></p>
+<h1 id="pci"><code>pci</code></h1>
+<p>No parameters</p>
+<p>Show the PCI device tree</p>
+<h1 id="phpcheck"><code>phpcheck</code></h1>
+<p>Requires: <a href="https://www.php.net/">PHP</a></p>
+<p>Syntax: <code>phpcheck [filename.php]</code></p>
+<p>Check the syntax of a PHP file for errors</p>
+<h1 id="phpconfig"><code>phpconfig</code></h1>
+<p>Requires: <a href="https://www.php.net/">PHP</a></p>
+<p>No parameters</p>
+<p>Edit the PHP configuration</p>
+<h1 id="pkg"><code>pkg</code></h1>
+<p>Requires: <a href="https://github.com/moson-mo/pacseek">pacseek</a>
+and <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Same parameters as <code>pacseek</code></p>
+<p>Launch <code>pacseek</code> if installed</p>
+<h1 id="pkgcheck"><code>pkgcheck</code></h1>
+<p>Requires: <a
+href="https://github.com/archlinux/pacman-contrib">pacman-contrib</a>
+and <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Check for updates without root access</p>
+<h1 id="pkgclean"><code>pkgclean</code></h1>
+<p>No parameters</p>
+<p>Removes orphans or unused packages for most distributions</p>
+<h1 id="pkgdependencies"><code>pkgdependencies</code></h1>
+<p>Requires: <a
+href="https://github.com/archlinux/pacman-contrib">pacman-contrib</a>
+and <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkgdependencies [package]</code></p>
+<p>Add aliases to find dependencies for a package</p>
+<h1 id="pkgforcereinstall"><code>pkgforcereinstall</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkgforcereinstall [package]</code></p>
+<p>Force remove a package ignoring required dependencies and then
+reinstall the package</p>
+<h1 id="pkgforceremove"><code>pkgforceremove</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkgforceremove [package]</code></p>
+<p>Force remove a package ignoring required dependencies</p>
+<h1 id="pkginstall"><code>pkginstall</code></h1>
+<p>Syntax: <code>pkginstall [package]</code></p>
+<p>Installs a package on most distributions</p>
+<h1 id="pkginstallregex"><code>pkginstallregex</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkginstallregex [regex]</code></p>
+<p>Install a list of packages using regular expressions (does not
+include the AUR)</p>
+<h1 id="pkglist"><code>pkglist</code></h1>
+<p>No parameters (except on Arch which includes a search text
+parameter)</p>
+<p>List all installed packages on most distributions</p>
+<h1 id="pkglistmore"><code>pkglistmore</code></h1>
+<p>No parameters</p>
+<p>List all packages explicitly installed and all dependent packages
+that are not explicitly installed on most distributions</p>
+<h1 id="pkglocalpackagefiles"><code>pkglocalpackagefiles</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkglocalpackagefiles [package]</code></p>
+<p>List all the local files in an installed package</p>
+<h1 id="pkgmarkasdependency"><code>pkgmarkasdependency</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkgmarkasdependency [package]</code></p>
+<p>Mark a package as only a dependency</p>
+<h1 id="pkgmarkasexplicit"><code>pkgmarkasexplicit</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkgmarkasexplicit [package]</code></p>
+<p>Mark a package as explicitly installed or only a dependency</p>
+<h1 id="pkgremove"><code>pkgremove</code></h1>
+<p>Syntax: <code>pkgremove [package]</code></p>
+<p>Removes a package on most distributions</p>
+<h1 id="pkgsearch"><code>pkgsearch</code></h1>
+<p>Syntax: <code>pkgsearch [package]</code></p>
+<p>Searches for a package on most distributions</p>
+<h1
+id="pkgsearchcontainingfile"><code>pkgsearchcontainingfile</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkgsearchcontainingfile [/path/filename]</code></p>
+<p>Search for a package containing a file</p>
+<h1 id="pkgupdate"><code>pkgupdate</code></h1>
+<p>Syntax: <code>pkgupdate [package]</code></p>
+<p>Updates an installed package on most distributions</p>
+<h1 id="pkgupdateall"><code>pkgupdateall</code></h1>
+<p>No parameters</p>
+<p>Update the system and all packages on the vast majority of
+distributions</p>
+<h1 id="pkgverifyall"><code>pkgverifyall</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>No parameters</p>
+<p>Verify all installed packages</p>
+<h1 id="pkgverifylocalpackage"><code>pkgverifylocalpackage</code></h1>
+<p>Requires: <a href="https://archlinux.org/pacman/">Pacman</a> from <a
+href="https://archlinux.org/">Arch Linux</a> or <a
+href="https://github.com/PandaFoss/Awesome-Arch">Arch based
+distros</a></p>
+<p>Syntax: <code>pkgverifylocalpackage [package]</code></p>
+<p>Verify the presence of the files installed by a package</p>
+<h1 id="pkgwhatuses"><code>pkgwhatuses</code></h1>
+<p>Requires: Ubuntu requires <code>apt-rdepends</code> and Arch requires
+<code>pacman-contrib</code></p>
+<p>Find the programs that requires a dependent package (only supported
+by some package managers/distros)</p>
+<h1 id="ports"><code>ports</code></h1>
+<p>Requires: <a
+href="https://www.howtogeek.com/513003/how-to-use-netstat-on-linux/">netstat</a></p>
+<p>No parameters</p>
+<p>Show all open ports</p>
+<h1 id="preview"><code>preview</code></h1>
+<p>Requires: <a href="https://github.com/junegunn/fzf">fzf</a></p>
+<p>No parameters</p>
+<p>Shows all files recursively in the current directory with previews to
+open for editing</p>
+<h1 id="pwcheck"><code>pwcheck</code></h1>
+<p>Requires: <a
+href="https://www.cyberciti.biz/security/linux-password-strength-checker/">cracklib</a></p>
+<p>Syntax: <code>pwcheck [password]</code></p>
+<p>Check password strength</p>
+<h1 id="pwd-"><code>pwd-</code></h1>
+<p>No parameters</p>
+<p>Show the previous directory</p>
+<h1 id="pwdtail"><code>pwdtail</code></h1>
+<p>No parameters</p>
+<p>Returns the last 2 fields of the current working directory</p>
+<h1 id="r"><code>r</code></h1>
+<p>Also can be called with <code>ranger</code></p>
+<p>Requires: <a href="https://github.com/ranger/ranger">ranger</a></p>
+<p>Same parameters as <code>ranger</code></p>
+<p>Launches the ranger application if installed and maintains the last
+selected directory on exit.</p>
+<p>Also see: <a href="#ranger"><code>ranger</code></a></p>
+<h1 id="ranger"><code>ranger</code></h1>
+<p>Also can be called with <code>r</code></p>
+<p>Requires: <a href="https://github.com/ranger/ranger">ranger</a></p>
+<p>Same parameters as <code>ranger</code></p>
+<p>Launches the ranger application if installed and maintains the last
+selected directory on exit.</p>
+<p>Also see: <a href="#r"><code>r</code></a></p>
+<h1 id="rebootforce"><code>rebootforce</code></h1>
+<p>No parameters</p>
+<p>Force a reboot</p>
+<h1 id="rebootlater"><code>rebootlater</code></h1>
+<p>Syntax: <code>rebootlater [MILITARY_TIME]</code></p>
+<p>Example: <code>rebootlater '02:30'</code></p>
+<p>Example: <code>rebootlater '23:00'</code></p>
+<p>Schedule the computer to auto reboot at a specified time</p>
+<h1 id="rebootsafe"><code>rebootsafe</code></h1>
+<p>No parameters</p>
+<p>Reboot safely</p>
+<h1 id="regexformat"><code>regexformat</code></h1>
+<p>Syntax: <code>regexformat "Text to make safe for regex."</code></p>
+<p>Format and escape text to make it safe for a regular expression
+search</p>
+<h1 id="repeat"><code>repeat</code></h1>
+<p>Syntax: <code>repeat [count] [command]</code></p>
+<p>Example: <code>repeat 3 echo "test"</code></p>
+<p>Repeat a command n times</p>
+<h1 id="resolvesymlink"><code>resolvesymlink</code></h1>
+<p>Syntax: <code>resolvesymlink [symlink-or-directory]</code></p>
+<p>Example: <code>resolvesymlink ~/.steampath</code></p>
+<p>Cross-platform realpath equivalent for resolving symlinks to an
+absolute path</p>
+<h1 id="rmd"><code>rmd</code></h1>
+<p>Syntax: <code>rmd [directory]</code></p>
+<p>Remove a directory and all contents and subdirectories</p>
+<h1 id="rot13"><code>rot13</code></h1>
+<p>Syntax: <code>rot13 "text"</code></p>
+<p>Run the same command to encrypt or decrypt English text</p>
+<p>ROT13 (rotate by 13 places) replaces a letter with the letter 13
+letters after it in the alphabet</p>
+<p>It has been described as the “Usenet equivalent printing an answer to
+a quiz upside down” as it provides virtually no cryptographic
+security</p>
+<h1 id="runwithfeedback"><code>runwithfeedback</code></h1>
+<p>Syntax: <code>runwithfeedback [description] [command]</code></p>
+<p>Parameters: 1. [description] - Text description to display while the
+command is running 2. [command] - The command to execute</p>
+<p>Example: <code>runwithfeedback "Hello ${USER}" "sleep 2"</code></p>
+<p>Example: <code>runwithfeedback 'This will fail' false</code></p>
+<p>This function automates the process of executing a command and
+providing visual feedback. It displays an hourglass symbol next to the
+provided description while the command is running. Upon successful
+execution, the hourglass is replaced with a green checkmark. If the
+command fails, a red cross symbol is displayed instead.</p>
+<h1 id="runfree"><code>runfree</code></h1>
+<p>Syntax: <code>runfree [command]</code></p>
+<p>Example: <code>runfree firefox</code></p>
+<p>Start a program but immediately disown it and detach it from the
+terminal</p>
+<h1 id="say"><code>say</code></h1>
+<p>Requires one of: <a href="https://rhvoice.org">RHVoice</a> or <a
+href="https://espeak.sourceforge.net/">espeak</a></p>
+<p>Syntax: <code>say "Hello World"</code> or
+<code>say "I love $(uname --kernel-name)"</code></p>
+<p>Speak text in a female voice</p>
+<h1 id="sayclipboard"><code>sayclipboard</code></h1>
+<p>Also can be called with <code>saycb</code></p>
+<p>Requires one of: <a href="https://rhvoice.org">RHVoice</a> or <a
+href="https://espeak.sourceforge.net/">espeak</a></p>
+<p>Speak the text on the clipboard in a female voice</p>
+<h1 id="scanscripts"><code>scanscripts</code></h1>
+<p>No parameters</p>
+<p>Show all scripts in the current directory and show which shell it
+uses</p>
+<h1 id="servicedisable"><code>servicedisable</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>servicedisable [service_name]</code></p>
+<p>Disables a service and prevents startup on boot</p>
+<h1 id="serviceenable"><code>serviceenable</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>serviceenable [service_name]</code></p>
+<p>Start a service and enable automatic startup at boot</p>
+<h1 id="servicekill"><code>servicekill</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>servicekill [service_name]</code></p>
+<p>Force terminate a service</p>
+<h1 id="servicereload"><code>servicereload</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>servicereload [service_name]</code></p>
+<p>Reload a service’s configuration files</p>
+<h1 id="servicerestart"><code>servicerestart</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>servicerestart [service_name]</code></p>
+<p>Stop and restart a service</p>
+<h1 id="services"><code>services</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>No parameters</p>
+<p>List all running or failed services</p>
+<h1 id="servicesall"><code>servicesall</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>No parameters</p>
+<p>List all services</p>
+<h1 id="servicestart"><code>servicestart</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>servicestart [service_name]</code></p>
+<p>Start a service</p>
+<h1 id="servicestatus"><code>servicestatus</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>servicestatus [service_name]</code></p>
+<p>Show the status of a service</p>
+<h1 id="servicestop"><code>servicestop</code></h1>
+<p>Requires: <a href="https://systemd.io/">systemd</a> (found on most
+Linux distributions)</p>
+<p>Syntax: <code>servicestop [service_name]</code></p>
+<p>Stop a service</p>
+<h1 id="smash"><code>smash</code></h1>
+<p>Syntax: <code>smash [firefox]</code></p>
+<p>Kill process by name with prompt</p>
+<h1 id="snapclean"><code>snapclean</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>No parameters</p>
+<p>Removes orphans or unused Snap packages</p>
+<h1 id="snaphas"><code>snaphas</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>Syntax: <code>snaphas [package]</code></p>
+<p>Show if a Snap package is installed and it’s information and
+version</p>
+<h1 id="snapinstall"><code>snapinstall</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>Syntax: <code>snapinstall [package]</code></p>
+<p>Install a Snap package</p>
+<h1 id="snaplist"><code>snaplist</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>No parameters</p>
+<p>List all installed Snap packages</p>
+<h1 id="snapremove"><code>snapremove</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>Syntax: <code>snapremove [package]</code></p>
+<p>Remove a Snap package</p>
+<h1 id="snapsearch"><code>snapsearch</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>Syntax: <code>snapsearch [text]</code></p>
+<p>Search for a Snap package</p>
+<h1 id="snapsize"><code>snapsize</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>No parameters</p>
+<p>List all installed Snap packages and their disk space size</p>
+<h1 id="snapupdate"><code>snapupdate</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>Syntax: <code>snapupdate [package]</code></p>
+<p>Update a Snap package</p>
+<h1 id="snapupdateall"><code>snapupdateall</code></h1>
+<p>Requires: <a
+href="https://ubuntu.com/core/services/guide/snaps-intro">Snap</a></p>
+<p>No parameters</p>
+<p>Update all Snap packages</p>
+<h1 id="sparkbars"><code>sparkbars</code></h1>
+<p>No parameters</p>
+<p>Draw spark “EQ” type bars across the terminal</p>
+<h1 id="sshrestart"><code>sshrestart</code></h1>
+<p>No parameters</p>
+<p>Restart the SSH service</p>
+<h1 id="sshstart"><code>sshstart</code></h1>
+<p>No parameters</p>
+<p>Start the SSH service</p>
+<h1 id="sshstatus"><code>sshstatus</code></h1>
+<p>No parameters</p>
+<p>Show if the SSH service is running or not</p>
+<h1 id="sshstop"><code>sshstop</code></h1>
+<p>No parameters</p>
+<p>Stop the SSH service</p>
+<h1 id="stopwatch"><code>stopwatch</code></h1>
+<p>No parameters</p>
+<p>Command line stop watch timer</p>
+<h1 id="swapindent"><code>swapindent</code></h1>
+<p>Syntax: <code>snapremove [filename]</code></p>
+<p>Example: <code>swapindent /path/codefile.sh</code></p>
+<p>Example: <code>cat "/path/codefile.sh" | swapindent</code></p>
+<p>Swaps tab and spaces indentation in the provided file or in standard
+input</p>
+<ul>
+<li>If a file is provided, it modifies the file in-place</li>
+<li>If no file is provided, it reads from standard input and writes to
+standard output</li>
+</ul>
+<h1 id="sync2ssh"><code>sync2ssh</code></h1>
+<p>Requires: <a href="https://rsync.samba.org/">rsync</a></p>
+<p>Syntax:
+<code>sync2ssh [LOCAL_DIR] [REMOTE_USER@REMOTE_HOST[:PORT]] [REMOTE_DIR] [OPTIONAL: SSH_PASS]</code></p>
+<p>Example:
+<code>sync2ssh ~/local/folder/ user@example.com /path/on/remote"</code></p>
+<p>Example with password:
+<code>sync2ssh ~/local/folder/ user@example.com /path/on/remote password123"</code></p>
+<p>Example with custom port:
+<code>sync2ssh ~/local/folder/ user@example.com:2222 /path/on/remote"</code></p>
+<p>Synchronize files using rsync over SSH</p>
+<h1 id="timeelapsed"><code>timeelapsed</code></h1>
+<p>Syntax: <code>timeelapsed [YYYY-MM-DD] [optional_reason]</code></p>
+<p>Example:
+<code>timeelapsed 1991-08-25 "Linux was announced"</code></p>
+<p>Shows the amount of time that has elapsed since a date</p>
+<h1 id="tmattach"><code>tmattach</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>Syntax: <code>tmattach [optional_session_name]</code></p>
+<p>Attach to an existing Tmux session (shows a menu)</p>
+<h1 id="tmclients"><code>tmclients</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>No parameters</p>
+<p>List all Tmux clients</p>
+<h1 id="tmd"><code>tmd</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>No parameters</p>
+<p>Detach from a Tmux session but leave the session running</p>
+<h1 id="tmkill"><code>tmkill</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>Syntax: <code>tmkill [session_name]</code></p>
+<p>Kill a Tmux session</p>
+<h1 id="tmlist"><code>tmlist</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>No parameters</p>
+<p>List all Tmux sessions</p>
+<h1 id="tmlistkeys"><code>tmlistkeys</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>No parameters</p>
+<p>List all the Tmux key bindings</p>
+<h1 id="tmnew"><code>tmnew</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>Syntax: <code>tmnew [session_name]</code></p>
+<p>Create a new session</p>
+<h1 id="tmrename"><code>tmrename</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>Syntax: <code>tmrename [new_session_name]</code></p>
+<p>Rename a Tmux session</p>
+<h1 id="tmreset"><code>tmreset</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>No parameters</p>
+<p>Kill all Tmux sessions</p>
+<h1 id="tmsessiongroup"><code>tmsessiongroup</code></h1>
+<p>Requires: <a href="https://github.com/tmux/tmux/wiki">Tmux</a></p>
+<p>Syntax: <code>tmsessiongroup [session_name]</code></p>
+<p>Create a new session group (good for multiple monitors)</p>
+<h1 id="today"><code>today</code></h1>
+<p>No parameters</p>
+<p>Show the date only</p>
+<h1 id="toiletfont"><code>toiletfont</code></h1>
+<p>No parameters</p>
+<p>Shows toilet fonts if toilet is installed</p>
+<h1 id="toiletfontlist"><code>toiletfontlist</code></h1>
+<p>No parameters</p>
+<p>Shows toilet fonts if toilet is installed</p>
+<h1 id="top"><code>top</code></h1>
+<p>Requires one of: <a
+href="https://github.com/aristocratos/btop">btop</a>, <a
+href="https://github.com/aristocratos/bpytop">bpytop</a>, <a
+href="https://github.com/aristocratos/bashtop">bashtop</a>, <a
+href="http://nmon.sourceforge.net/pmwiki.php">nmon</a>, <a
+href="https://nicolargo.github.io/glances/">glances</a>, <a
+href="https://github.com/cjbassi/ytop">ytop</a>, <a
+href="https://github.com/aksakalli/gtop">gtop</a>, or <a
+href="https://htop.dev/">htop</a></p>
+<p>Runs an installed system monitor application with the most or best
+features.</p>
+<p>The application is chosen in the following order based off the first
+one found:</p>
+<ul>
+<li><a href="https://github.com/aristocratos/btop">btop</a></li>
+<li><a href="https://github.com/aristocratos/bpytop">bpytop</a></li>
+<li><a href="https://github.com/aristocratos/bashtop">bashtop</a></li>
+<li><a href="http://nmon.sourceforge.net/pmwiki.php">nmon</a></li>
+<li><a href="https://nicolargo.github.io/glances/">glances</a></li>
+<li><a href="https://github.com/cjbassi/ytop">ytop</a></li>
+<li><a href="https://github.com/aksakalli/gtop">gtop</a></li>
+<li><a href="https://htop.dev/">htop</a></li>
+</ul>
+<h1 id="totalsize"><code>totalsize</code></h1>
+<p>Syntax: <code>totalsize [optional_directory]</code></p>
+<p>Show the size of the current or specified directory</p>
+<h1 id="trash-1"><code>trash</code></h1>
+<p>Optional Dependencies: <a
+href="https://www.tecmint.com/trash-cli-manage-linux-trash-from-command-line/">Trash-cli</a></p>
+<p>Syntax: <code>trash [filename]</code></p>
+<p>Send file(s) to the trash (works with most desktop environments)</p>
+<p>Also see: <a href="#trashempty"><code>trashempty</code></a> and <a
+href="#trashlist"><code>trashlist</code></a></p>
+<h1 id="trashempty"><code>trashempty</code></h1>
+<p>Optional Dependencies: <a
+href="https://www.tecmint.com/trash-cli-manage-linux-trash-from-command-line/">Trash-cli</a></p>
+<p>No parameters</p>
+<p>Empty and permanently delete all the files in the trash</p>
+<p>Also see: <a href="#trash"><code>trash</code></a> and <a
+href="#trashlist"><code>trashlist</code></a></p>
+<h1 id="trashlist"><code>trashlist</code></h1>
+<p>Optional Dependencies: <a
+href="https://www.tecmint.com/trash-cli-manage-linux-trash-from-command-line/">Trash-cli</a></p>
+<p>No parameters</p>
+<p>Display the contents of the trash</p>
+<p>Also see: <a href="#trash"><code>trash</code></a> and <a
+href="#trashempty"><code>trashempty</code></a></p>
+<h1 id="treed"><code>treed</code></h1>
+<p>Requires: <a
+href="https://www.tecmint.com/linux-tree-command-examples/">tree</a></p>
+<p>Syntax: <code>tree [optional_directory]</code></p>
+<p>List folders recursively in a tree</p>
+<h1 id="trim"><code>trim</code></h1>
+<p>Syntax: <code>trim "  text "</code></p>
+<p>Example: <code>echo "$(trim '  text ')"</code></p>
+<p>Trim leading and trailing characters</p>
+<h1 id="trimcb"><code>trimcb</code></h1>
+<p>Requires one of: <a
+href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a> for
+Wayland or, <a href="https://github.com/astrand/xclip">xclip</a> for
+X11, <a href="https://github.com/kfish/xsel">xsel</a> for X11, or <a
+href="https://ss64.com/osx/pbcopy.html">pbcopy</a> for Mac</p>
+<p>No parameters</p>
+<p>Trim leading and trailing characters on the clipboard and replace the
+clipboard text</p>
+<h1 id="ttymouseoff"><code>ttymouseoff</code></h1>
+<p>Requires: <a href="https://github.com/telmich/gpm">gpm</a>
+(preinstalled on most distributions)</p>
+<p>No parameters</p>
+<p>Turns off mouse support in TTY terminals (may require reboot)</p>
+<h1 id="ttymouseon"><code>ttymouseon</code></h1>
+<p>Requires: <a href="https://github.com/telmich/gpm">gpm</a>
+(preinstalled on most distributions)</p>
+<p>No parameters</p>
+<p>Turns on mouse support in TTY terminals</p>
+<h1 id="ttymousestatus"><code>ttymousestatus</code></h1>
+<p>Requires: <a href="https://github.com/telmich/gpm">gpm</a>
+(preinstalled on most distributions)</p>
+<p>No parameters</p>
+<p>Determine if mouse support is activated in TTY terminals</p>
+<h1 id="typefile"><code>typefile</code></h1>
+<p>No parameters</p>
+<p>Type text straight into a file - press <code>CTRL-d</code> when
+done</p>
+<h1 id="ui"><code>ui</code></h1>
+<p>No parameters</p>
+<p>If in a desktop environment, launch the default file manager in the
+current directory</p>
+<h1 id="ulocate"><code>ulocate</code></h1>
+<p>Requires: <a
+href="https://www.geeksforgeeks.org/locate-command-in-linux-with-examples/">mlocate</a></p>
+<p>Syntax: <code>ulocate [part_of_filename_search]</code></p>
+<p>Using <code>mlocate</code> but update the database before locating a
+file</p>
+<h1 id="um"><code>um</code></h1>
+<p>Same parameters as <code>umount</code></p>
+<p>Quick alias to un-mount a file system</p>
+<h1 id="up"><code>up</code></h1>
+<p>Syntax: <code>up 3</code></p>
+<p>Go up a specified number of folders</p>
+<h1 id="usb"><code>usb</code></h1>
+<p>Requires:
+(lsusb)[https://www.howtogeek.com/devops/how-to-use-lsusb-in-linux-with-a-practical-example/]</p>
+<p>No parameters</p>
+<p>Show the USB device tree</p>
+<h1 id="ver"><code>ver</code></h1>
+<p>No parameters</p>
+<p>Show the version of the OS and kernel</p>
+<h1 id="whichdisplay"><code>whichdisplay</code></h1>
+<p>No parameters</p>
+<p>Shows the current display server (e.g. X11 or Wayland)</p>
+<h1 id="whichtty"><code>whichtty</code></h1>
+<p>No parameters</p>
+<p>Alias to show the current TTY (CTRL-ALT-1 through 7)</p>
+<h1 id="windowinfo"><code>windowinfo</code></h1>
+<p>Requires: <a
+href="https://gitlab.freedesktop.org/xorg/app/xprop">xprop</a> from the
+X Window system</p>
+<p>Change the cursor to a crosshair to select a window for information
+like geometry, class name, etc.</p>
+<h1 id="wipeuser"><code>wipeuser</code></h1>
+<p>Syntax: <code>wipeuser [optional_username]</code></p>
+<p>Remove a user and all traces (including their home directory) from
+the system</p>
+<p>Also see: <a href="#createuser"><code>createuser</code></a> and <a
+href="#deleteuser"><code>deleteuser</code></a></p>
+<h1 id="xfscheck"><code>xfscheck</code></h1>
+<p>No parameters</p>
+<p>Check and repair XFS filesystem</p>
+<h1 id="xfsstats"><code>xfsstats</code></h1>
+<p>No parameters</p>
+<p>Show information about XFS filesystem</p>
+<h1 id="xfstrim"><code>xfstrim</code></h1>
+<p>No parameters</p>
+<p>Trim unused blocks on XFS filesystem</p>
+<h1 id="yt"><code>yt</code></h1>
+<p>Requires: <a href="https://github.com/pystardust/ytfzf">ytfzf</a></p>
+<p>Syntax: <code>yt [search_text]</code></p>
+<p>Play YouTube videos in the terminal</p>
+<h1 id="ytd"><code>ytd</code></h1>
+<p>Requires: <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> or <a
+href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a></p>
+<p>Syntax: <code>ytd [youtube_video_url]</code></p>
+<p>Download a YouTube video</p>
+<h1 id="zattach"><code>zattach</code></h1>
+<p>Requires: <a href="https://zellij.dev/">Zellij</a></p>
+<p>Syntax: <code>zattach [optional_session_name]</code></p>
+<p>Attach to an existing Zellij session (shows interactive menu of
+sessions if not specified)</p>
+<h1 id="zfscheck"><code>zfscheck</code></h1>
+<p>No parameters</p>
+<p>Check and repair ZFS pool</p>
+<h1 id="zfsdefragdir"><code>zfsdefragdir</code></h1>
+<p>No parameters</p>
+<p>Defrag a directory (snapshot-based)</p>
+<h1 id="zfsdefragfile"><code>zfsdefragfile</code></h1>
+<p>No parameters</p>
+<p>Defrag a file (snapshot-based)</p>
+<h1 id="zfspause"><code>zfspause</code></h1>
+<p>No parameters</p>
+<p>Pause a scrub on ZFS pool</p>
+<h1 id="zfsresume"><code>zfsresume</code></h1>
+<p>No parameters</p>
+<p>Resume a paused scrub on ZFS pool</p>
+<h1 id="zfsscrub"><code>zfsscrub</code></h1>
+<p>No parameters</p>
+<p>Start a scrub on ZFS pool</p>
+<h1 id="zfsscrubstatus"><code>zfsscrubstatus</code></h1>
+<p>No parameters</p>
+<p>Show status of ZFS pool scrub</p>
+<h1 id="zfsstats"><code>zfsstats</code></h1>
+<p>No parameters</p>
+<p>Show ZFS pool statistics</p>
+<h1 id="zfsstatus"><code>zfsstatus</code></h1>
+<p>No parameters</p>
+<p>Check status of ZFS pool</p>
+<h1 id="zfstrim"><code>zfstrim</code></h1>
+<p>No parameters</p>
+<p>Trim unused blocks on ZFS pool</p>
+<h1 id="zj"><code>zj</code></h1>
+<p>Requires: <a href="https://zellij.dev/">Zellij</a></p>
+<p>Syntax: <code>zj [optional_session_name]</code></p>
+<p>Launch Zellij and create a new session if needed</p>
+<h1 id="zkill"><code>zkill</code></h1>
+<p>Requires: <a href="https://zellij.dev/">Zellij</a></p>
+<p>Syntax: <code>zkill [session_name]</code></p>
+<p>Kill a Zellij session</p>
+<h1 id="zlist"><code>zlist</code></h1>
+<p>Requires: <a href="https://zellij.dev/">Zellij</a></p>
+<p>No parameters</p>
+<p>List all the Zellij sessions</p>
+<h1 id="znew"><code>znew</code></h1>
+<p>Requires: <a href="https://zellij.dev/">Zellij</a></p>
+<p>Syntax: <code>znew [session_name]</code></p>
+<p>Create a new Zellij session</p>
+<h1 id="zreset"><code>zreset</code></h1>
+<p>Requires: <a href="https://zellij.dev/">Zellij</a></p>
+<p>No parameters</p>
+<p>Kill all Zellij sessions</p>
+<p><a href="#table-of-contents">Go to the top</a></p>
+<hr />
+<h1 id="license">License</h1>
+<h2 id="the-mit-license-mit"><a href="https://mit-license.org/">The MIT
+License (MIT)</a></h2>
+<p>Copyright © 2024</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+“Software”), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</body>
+</html>

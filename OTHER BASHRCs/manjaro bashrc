@@ -1,0 +1,719 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+colors() {
+	local fgc bgc vals seq0
+
+	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
+	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
+	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
+	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
+
+	# foreground colors
+	for fgc in {30..37}; do
+		# background colors
+		for bgc in {40..47}; do
+			fgc=${fgc#37} # white
+			bgc=${bgc#40} # black
+
+			vals="${fgc:+$fgc;}${bgc}"
+			vals=${vals%%;}
+
+			seq0="${vals:+\e[${vals}m}"
+			printf "  %-9s" "${seq0:-(default)}"
+			printf " ${seq0}TEXT\e[m"
+			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+		done
+		echo; echo
+	done
+}
+
+[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+
+# Change the window title of X terminals
+case ${TERM} in
+	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
+		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
+		;;
+	screen*)
+		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
+		;;
+esac
+
+use_color=true
+
+# Set colorful PS1 only on colorful terminals.
+# dircolors --print-database uses its own built-in database
+# instead of using /etc/DIR_COLORS.  Try to use the external file
+# first to take advantage of user additions.  Use internal bash
+# globbing instead of external grep binary.
+safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
+match_lhs=""
+[[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
+[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
+[[ -z ${match_lhs}    ]] \
+	&& type -P dircolors >/dev/null \
+	&& match_lhs=$(dircolors --print-database)
+[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+
+if ${use_color} ; then
+	# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+	if type -P dircolors >/dev/null ; then
+		if [[ -f ~/.dir_colors ]] ; then
+			eval $(dircolors -b ~/.dir_colors)
+		elif [[ -f /etc/DIR_COLORS ]] ; then
+			eval $(dircolors -b /etc/DIR_COLORS)
+		fi
+	fi
+
+	if [[ ${EUID} == 0 ]] ; then
+		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
+	else
+		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+	fi
+
+	alias ls='ls --color=auto'
+	alias grep='grep --colour=auto'
+	alias egrep='egrep --colour=auto'
+	alias fgrep='fgrep --colour=auto'
+else
+	if [[ ${EUID} == 0 ]] ; then
+		# show root@ when we don't have colors
+		PS1='\u@\h \W \$ '
+	else
+		PS1='\u@\h \w \$ '
+	fi
+fi
+
+unset use_color safe_term match_lhs sh
+
+#alias cp="cp -i"                          # confirm before overwriting something
+#alias df='df -h'                          # human-readable sizes
+#alias free='free -m'                      # show sizes in MB
+#alias np='nano -w PKGBUILD'
+#alias more=less
+
+xhost +local:root > /dev/null 2>&1
+
+# Bash won't get SIGWINCH if another process is in the foreground.
+# Enable checkwinsize so that bash will check the terminal size when
+# it regains control.  #65623
+# http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
+shopt -s checkwinsize
+
+shopt -s expand_aliases
+
+# export QT_SELECT=4
+
+# Enable history appending instead of overwriting.  #139609
+shopt -s histappend
+
+### EXPORT ###
+export EDITOR='nano'
+export VISUAL='nano'
+export HISTCONTROL=ignoreboth:erasedups
+export PAGER='most'
+
+#Ibus settings if you need them
+#type ibus-setup in terminal to change settings and start the daemon
+#delete the hashtags of the next lines and restart
+#export GTK_IM_MODULE=ibus
+#export XMODIFIERS=@im=dbus
+#export QT_IM_MODULE=ibus
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
+
+#ignore upper and lowercase when TAB completion
+bind "set completion-ignore-case on"
+
+### ALIASES ###
+
+#list
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias ll='ls -alFh'
+alias l='ls'
+alias l.="ls -A | egrep '^\.'"
+alias listdir="ls -d */ > list"
+
+#pacman
+alias sps='sudo pacman -S'
+alias spr='sudo pacman -R'
+alias sprs='sudo pacman -Rs'
+alias sprdd='sudo pacman -Rdd'
+alias spqo='sudo pacman -Qo'
+alias spsii='sudo pacman -Sii'
+
+# show the list of packages that need this package - depends mpv as example
+function_depends()  {
+    search=$(echo "$1")
+    sudo pacman -Sii $search | grep "Required" | sed -e "s/Required By     : //g" | sed -e "s/  /\n/g"
+    }
+
+alias depends='function_depends'
+
+#fix obvious typo's
+alias cd..='cd ..'
+alias pdw='pwd'
+alias udpate='sudo pacman -Syyu'
+alias upate='sudo pacman -Syyu'
+alias updte='sudo pacman -Syyu'
+alias updqte='sudo pacman -Syyu'
+alias upqll='paru -Syu --noconfirm'
+alias upal='paru -Syu --noconfirm'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#readable output
+alias df='df -h'
+
+#keyboard
+alias give-me-azerty-be="sudo localectl set-x11-keymap be"
+alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
+
+#setlocale
+alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
+alias setlocales="sudo localectl set-x11-keymap be && sudo localectl set-locale LANG=en_US.UTF-8"
+
+#pacman unlock
+alias unlock="sudo rm /var/lib/pacman/db.lck"
+alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
+
+#arcolinux logout unlock
+alias rmlogoutlock="sudo rm /tmp/arcologout.lock"
+
+#which graphical card is working
+alias whichvga="/usr/local/bin/arcolinux-which-vga"
+
+#free
+alias free="free -mt"
+
+#continue download
+alias wget="wget -c"
+
+#userlist
+alias userlist="cut -d: -f1 /etc/passwd | sort"
+
+#merge new settings
+alias merge="xrdb -merge ~/.Xresources"
+
+# Aliases for software managment
+# pacman or pm
+alias pacman='sudo pacman --color auto'
+alias update='sudo pacman -Syyu'
+alias upd='sudo pacman -Syyu'
+
+# paru as aur helper - updates everything
+alias pksyua="paru -Syu --noconfirm"
+alias upall="paru -Syu --noconfirm"
+alias upa="paru -Syu --noconfirm"
+
+#ps
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+#grub update
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+#grub issue 08/2022
+alias install-grub-efi="sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArcoLinux"
+
+#add new fonts
+alias update-fc='sudo fc-cache -fv'
+
+#copy/paste all content of /etc/skel over to home folder - backup of config created - beware
+#skel alias has been replaced with a script at /usr/local/bin/skel
+
+#backup contents of /etc/skel to hidden backup folder in home/user
+alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
+
+#copy shell configs
+alias cb='cp /etc/skel/.bashrc ~/.bashrc && exec bash'
+alias cz='cp /etc/skel/.zshrc ~/.zshrc && echo "Copied."'
+alias cf='cp /etc/skel/.config/fish/config.fish ~/.config/fish/config.fish && echo "Copied."'
+
+#switch between bash and zsh
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
+
+#switch between displaymanager or bootsystem
+alias toboot="sudo /usr/local/bin/arcolinux-toboot"
+alias togrub="sudo /usr/local/bin/arcolinux-togrub"
+alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
+alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
+alias toly="sudo pacman -S ly --noconfirm --needed ; sudo systemctl enable ly.service -f ; echo 'Ly is active - reboot now'"
+alias togdm="sudo pacman -S gdm --noconfirm --needed ; sudo systemctl enable gdm.service -f ; echo 'Gdm is active - reboot now'"
+alias tolxdm="sudo pacman -S lxdm --noconfirm --needed ; sudo systemctl enable lxdm.service -f ; echo 'Lxdm is active - reboot now'"
+
+# kill commands
+# quickly kill conkies
+alias kc='killall conky'
+# quickly kill polybar
+alias kp='killall polybar'
+# quickly kill picom
+alias kpi='killall picom'
+
+#hardware info --short
+alias hw="hwinfo --short"
+
+#audio check pulseaudio or pipewire
+alias audio="pactl info | grep 'Server Name'"
+
+#skip integrity check
+alias paruskip='paru -S --mflags --skipinteg'
+alias yayskip='yay -S --mflags --skipinteg'
+alias trizenskip='trizen -S --skipinteg'
+
+#check vulnerabilities microcode
+alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
+
+#check cpu
+alias cpu="cpuid -i | grep uarch | head -n 1"
+
+#get fastest mirrors in your neighborhood
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
+#our experimental - best option for the moment
+alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
+alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
+
+#mounting the folder Public for exchange between host and guest on virtualbox
+alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
+
+#enabling vmware services
+alias start-vmware="sudo systemctl enable --now vmtoolsd.service"
+alias vmware-start="sudo systemctl enable --now vmtoolsd.service"
+alias sv="sudo systemctl enable --now vmtoolsd.service"
+
+#shopt
+shopt -s autocd # change to named directory
+shopt -s cdspell # autocorrects cd misspellings
+shopt -s cmdhist # save multi-line commands in history as single line
+shopt -s dotglob
+shopt -s histappend # do not overwrite history
+shopt -s expand_aliases # expand aliases
+
+#youtube download
+alias yta-aac="yt-dlp --extract-audio --audio-format aac "
+alias yta-best="yt-dlp --extract-audio --audio-format best "
+alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "
+
+#Recent Installed Packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
+
+#iso and version used to install ArcoLinux
+alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
+alias isoo="cat /etc/dev-rel"
+
+#Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+
+# This will generate a list of explicitly installed packages
+alias list="sudo pacman -Qqe"
+#This will generate a list of explicitly installed packages without dependencies
+alias listt="sudo pacman -Qqet"
+# list of AUR packages
+alias listaur="sudo pacman -Qqem"
+# add > list at the end to write to a file
+
+# install packages from list
+# pacman -S --needed - < my-list-of-packages.txt
+
+#clear
+alias clean="clear; seq 1 $(tput cols) | sort -R | sparklines | lolcat"
+
+#search content with ripgrep
+alias rg="rg --sort path"
+
+#get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+#nano for important configuration files
+#know what you do in these files
+alias nlxdm="sudo $EDITOR /etc/lxdm/lxdm.conf"
+alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
+alias npacman="sudo $EDITOR /etc/pacman.conf"
+alias ngrub="sudo $EDITOR /etc/default/grub"
+alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
+alias nmakepkg="sudo $EDITOR /etc/makepkg.conf"
+alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
+alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
+alias narcomirrorlist="sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist"
+alias nsddm="sudo $EDITOR /etc/sddm.conf"
+alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
+alias nfstab="sudo $EDITOR /etc/fstab"
+alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
+alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
+alias ngnupgconf="sudo $EDITOR /etc/pacman.d/gnupg/gpg.conf"
+alias nhosts="sudo $EDITOR /etc/hosts"
+alias nhostname="sudo $EDITOR /etc/hostname"
+alias nresolv="sudo $EDITOR /etc/resolv.conf"
+alias nb="$EDITOR ~/.bashrc"
+alias nz="$EDITOR ~/.zshrc"
+alias nf="$EDITOR ~/.config/fish/config.fish"
+alias nneofetch="$EDITOR ~/.config/neofetch/config.conf"
+alias nplymouth="sudo $EDITOR /etc/plymouth/plymouthd.conf"
+alias nvconsole="sudo $EDITOR /etc/vconsole.conf"
+alias nenvironment="sudo $EDITOR /etc/environment"
+alias nloader="sudo $EDITOR /boot/efi/loader/loader.conf"
+
+
+#reading logs with bat
+alias lcalamares="bat /var/log/Calamares.log"
+alias lpacman="bat /var/log/pacman.log"
+alias lxorg="bat /var/log/Xorg.0.log"
+alias lxorgo="bat /var/log/Xorg.0.log.old"
+
+#gpg
+#verify signature for isos
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+#receive the key of a developer
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
+
+#fixes
+alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
+alias keyfix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias key-fix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias keys-fix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias fixkey="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias fixkeys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias fix-key="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias fix-keys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias fix-pacman-conf="/usr/local/bin/arcolinux-fix-pacman-conf"
+alias fix-pacman-keyserver="/usr/local/bin/arcolinux-fix-pacman-gpg-conf"
+alias fix-grub="/usr/local/bin/arcolinux-fix-grub"
+alias fixgrub="/usr/local/bin/arcolinux-fix-grub"
+
+#maintenance
+alias big="expac -H M '%m\t%n' | sort -h | nl"
+alias downgrada="sudo downgrade --ala-url https://ant.seedhost.eu/arcolinux/"
+
+#hblock (stop tracking with hblock)
+#use unhblock to stop using hblock
+alias unhblock="hblock -S none -D none"
+
+#systeminfo
+alias probe="sudo -E hw-probe -all -upload"
+alias sysfailed="systemctl list-units --failed"
+
+#shutdown or reboot
+alias ssn="sudo shutdown now"
+alias sr="reboot"
+
+#update betterlockscreen images
+alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
+
+#give the list of all installed desktops - xsessions desktops
+alias xd="ls /usr/share/xsessions"
+alias xdw="ls /usr/share/wayland-sessions"
+
+#give a list of the kernels installed
+alias kernel="ls /usr/lib/modules"
+alias kernels="ls /usr/lib/modules"
+
+#am I on grub or systemd-boot
+alias boot="sudo bootctl status | grep Product"
+
+# # ex = EXtractor for all kinds of archives
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+#wayland aliases
+alias wsimplescreen="wf-recorder -a"
+alias wsimplescreenrecorder="wf-recorder -a -c h264_vaapi -C aac -d /dev/dri/renderD128 --file=recording.mp4"
+
+#btrfs aliases
+alias btrfsfs="sudo btrfs filesystem df /"
+alias btrfsli="sudo btrfs su li / -t"
+
+#snapper aliases
+alias snapcroot="sudo snapper -c root create-config /"
+alias snapchome="sudo snapper -c home create-config /home"
+alias snapli="sudo snapper list"
+alias snapcr="sudo snapper -c root create"
+alias snapch="sudo snapper -c home create"
+
+#Leftwm aliases
+alias lti="leftwm-theme install"
+alias ltu="leftwm-theme uninstall"
+alias lta="leftwm-theme apply"
+alias ltupd="leftwm-theme update"
+alias ltupg="leftwm-theme upgrade"
+
+#arcolinux applications
+#att is a symbolic link now
+#alias att="archlinux-tweak-tool"
+alias adt="arcolinux-desktop-trasher"
+alias abl="arcolinux-betterlockscreen"
+alias agm="arcolinux-get-mirrors"
+alias amr="arcolinux-mirrorlist-rank-info"
+alias aom="arcolinux-osbeck-as-mirror"
+alias ars="arcolinux-reflector-simple"
+alias atm="arcolinux-tellme"
+alias avs="arcolinux-vbox-share"
+alias awa="arcolinux-welcome-app"
+
+#git
+alias rmgitcache="rm -r ~/.cache/git"
+alias grh="git reset --hard"
+
+#pamac
+alias pamac-unlock="sudo rm /var/tmp/pamac/dbs/db.lock"
+
+#moving your personal files and folders from /personal to ~
+alias personal='cp -Rf /personal/* ~'
+
+#create a file called .bashrc-personal and put all your personal aliases
+#in there. They will not be overwritten by skel.
+
+[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+
+# reporting tools - install when not installed
+neofetch
+#screenfetch
+#alsi
+#paleofetch
+#fetch
+#hfetch
+#sfetch
+#ufetch
+#ufetch-arco
+#pfetch
+#sysinfo
+#sysinfo-retro
+#cpufetch
+#colorscript random
+#hyfetch
+
+###---------- ALIASES ----------###
+# source ~/.bashrc
+
+# echo "" && fortune && echo ""
+
+alias alert='notify-send --urgency=low "$(history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//")"'
+# alias tolga='sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tolgaerok/scripts/main/Fedora39/TolgaFedora39.sh)"'
+
+
+alias systcl="sudo /home/tolga/scripts/systcl.sh"
+
+###---------- my tools ----------###
+alias htos="sudo ~/.config/MY-TOOLS/assets/scripts/Zysnc-Options/ZYSNC-HOME-TO-SERVER.sh"
+alias mount="sudo ~/.config/MY-TOOLS/assets/scripts/Mounting-Options/MOUNT-ALL.sh"
+alias mse="sudo ~/scripts/MYTOOLS/mse.sh"
+alias stoh="sudo ~/.config/MY-TOOLS/assets/scripts/Zysnc-Options/ZYSNC-SERVER-TO-HOME.sh"
+alias umount="sudo ~/.config/MY-TOOLS/assets/scripts/Mounting-Options/UMOUNT-ALL.sh"
+
+###---------- fun stuff ----------###
+alias pics="sxiv -t $HOME/Pictures/CUSTOM-WALLPAPERS/"
+alias wp="sxiv -t $HOME/Pictures/Wallpaper/"
+
+###---------- navigate files and directories ----------###
+alias ..="cd .."
+alias cl="clear"
+alias copy="rsync -P"
+alias la="lsd -a"
+alias ll="lsd -l"
+alias Ls="lsd"
+alias ls="ls --color=auto"
+alias dir="dir --color=auto"
+alias lsla="lsd -la"
+
+# alias chmod commands
+alias 000='sudo chmod -R 000'
+alias 644='sudo chmod -R 644'
+alias 666='sudo chmod -R 666'
+alias 755='sudo chmod -R 755'
+alias 777='sudo chmod -R 777'
+alias mx='sudo chmod a+x'
+
+# Search command line history
+alias h="history | grep "
+
+# Search running processes
+alias p="ps aux | grep "
+alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
+
+# Search files in the current folder
+alias f="find . | grep "
+
+# Alias's for safe and forced reboots
+alias rebootsafe='sudo shutdown -r now'
+alias rebootforce='sudo shutdown -r -n now'
+
+###---------- Tools ----------###
+alias rc="source ~/.bashrc"
+alias bashrc='kwrite  ~/.bashrc'
+alias tweak='sudo bash -c "echo westwood > /proc/sys/net/ipv4/tcp_congestion_control && echo mq-deadline | sudo tee /sys/block/sda/queue/scheduler"'
+alias cong="sysctl net.ipv4.tcp_congestion_control"
+alias fmem="echo && echo 'Current mem:' && free -h && sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches' && echo && echo 'After: ' && free -h"
+alias fmem2="echo && echo 'Current mem:' && free -h && sudo /bin/sh -c '/bin/sync && /sbin/sysctl -w vm.drop_caches=3' && echo && echo 'After: ' && free -h"
+alias fstab="sudo mount -a && sudo systemctl daemon-reload && echo && echo \"Reloading of fstab done\" && echo"
+alias grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg && sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg"
+alias io="cat /sys/block/sda/queue/scheduler"
+alias line="echo '## ------------------------------ ##'"
+alias nvidia="sudo systemctl enable --now akmods --force && sudo dracut --force && echo && echo \"Force akmods and Dracut on nvidia done\" && echo"
+alias pdfcompress='bash /home/tolga/scripts/pdf1.sh'
+alias samba='gum spin --spinner dot --title "Restarting Samba" -- sleep 2 && sudo systemctl enable smb.service nmb.service && sudo systemctl restart smb.service nmb.service'
+alias swapreload="cl && echo && echo 'Turning swap off:' && echo 'Turning swap on:' && line && sudo swapon --all && sudo swapon --show && echo && echo 'Reload Swap(s):' && line && sudo mount -a && sudo systemctl daemon-reload && sudo swapon --show && echo && echo 'Free memory:' && line && free -h && echo && duf && sys && fmem"
+alias sys="echo && io && echo && cong && echo && echo 'ZSWAP status: ( Y = ON )' && cat /sys/module/zswap/parameters/enabled && systemctl restart earlyoom && systemctl status earlyoom --no-pager"
+alias trim="sudo fstrim -av"
+alias up="sudo pacman -Syu && yay && flatpak update"
+alias update="sudo pacman -Syu && yay && flatpak update"
+alias sysctl-reload="sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system && sysctl -p"
+
+###---------- file access ----------###
+alias bconf="vim ~/.config/bash/.bashrc"
+alias cp="cp -riv"
+alias htos='sudo ~/.config/MY-TOOLS/assets/scripts/Zysnc-Options/ZYSNC-HOME-TO-SERVER.sh'
+alias mkdir="mkdir -vp"
+alias mount='sudo ~/.config/MY-TOOLS/assets/scripts/Mounting-Options/MOUNT-ALL.sh'
+alias mse='sudo ~/scripts/MYTOOLS/MAKE-SCRIPTS-EXECUTABLE.sh'
+alias mv="mv -iv"
+alias mynix='sudo ~/.config/MY-TOOLS/assets/scripts/COMMAN-NIX-COMMAND-SCRIPT/MyNixOS-commands.sh'
+alias samba='echo && line && echo "Restarting samba" && line && sleep 2 && sudo systemctl enable smb.service nmb.service && sudo systemctl restart smb.service nmb.service && sudo systemctl restart wsdd'
+alias stoh='sudo ~/.config/MY-TOOLS/assets/scripts/Zysnc-Options/ZYSNC-SERVER-TO-HOME.sh'
+alias trimgen='sudo ~/.config/MY-TOOLS/assets/scripts/GENERATION-TRIMMER/TrimmGenerations.sh'
+alias umount='sudo ~/.config/MY-TOOLS/assets/scripts/Mounting-Options/UMOUNT-ALL.sh'
+alias zconf="vim ~/.config/zsh/.zshrc"
+
+###---------- session ----------###
+alias sess='session=$XDG_SESSION_TYPE && echo "" && gum spin --spinner dot --title "Current XDG session is: [ $session ] """ -- sleep 2'
+
+# ###---------- Nvidia session ----------###
+# export LIBVA_DRIVER_NAME=nvidia
+# export WLR_NO_HARDWARE_CURSORS=1
+# export __GLX_VENDOR_LIBRARY_NAME=nvidia
+# export __GL_SHADER_CACHE=1
+# export __GL_THREADED_OPTIMIZATION=1
+
+###---------- Konsole effects ----------###
+PS1="\[\e[1;m\]┌[\[\e[1;32m\]\u\[\e[1;34m\]@\h\[\e[1;m\]] \[\e[1;m\]::\[\e[1;36m\] \W \[\e[1;m\]::\n\[\e[1;m\]└\[\e[1;33m\]➤\[\e[0;m\]  "
+
+###---------- Vscoding ----------###
+# eval "$(direnv hook bash)"
+
+###---------- Solus related ----------###
+
+###---------- Nix package manager ----------###
+# export PATH="/home/brian/.nix-profile/bin:$PATH"
+# . /home/brian/.nix-profile/etc/profile.d/nix.sh
+# export LC_ALL=en_US.utf8
+# export LANG=en_US.utf8
+
+alias solus='sudo mount -a && sudo systemctl daemon-reload && sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system'
+
+# Function to generate a random color code
+random_color() {
+  echo $((16 + RANDOM % 216))
+}
+
+# Function to generate a random color code
+random_color() {
+  echo $((16 + RANDOM % 216))
+}
+
+# Define colors
+YELLOW=226
+WHITE=231
+BRIGHT_BLUE=81
+
+# Function to display fortune with random colors
+fortune_with_random_colors() {
+  local color
+  color=$(random_color)
+  printf "\033[38;5;%dm%s\033[0m\n" "$color" "$1"
+}
+
+# Check if the system is Solus
+if [ -f "/usr/bin/eopkg" ]; then
+    # Solus system
+    export PATH="/home/brian/.nix-profile/bin:$PATH"
+    FORTUNE_COMMAND="/home/brian/.nix-profile/bin/fortune"
+else
+    # Other distro
+    FORTUNE_COMMAND="fortune"
+fi
+
+# Fetch the fortune message
+fortune_message="$($FORTUNE_COMMAND)"
+
+# Display the fortune message with random colors
+echo "" && fortune_with_random_colors "$fortune_message" && echo ""
+
+# nix-env -iA nixpkgs.fortune
+# export NIXPKGS_ALLOW_UNFREE=1 && nix-env -iA nixpkgs.megasync
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+#shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=5000
+HISTFILESIZE=10000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+#shopt -s checkwinsize
+
+XDG_DESKTOP_DIR="$HOME/"
+XDG_DOWNLOAD_DIR="$HOME/"
+XDG_DOCUMENTS_DIR="$HOME/"
+XDG_MUSIC_DIR="$HOME/"
+XDG_PICTURES_DIR="$HOME/"
+XDG_VIDEOS_DIR="$HOME/"
+XDG_TEMPLATES_DIR="$HOME/Templates"
+XDG_PUBLICSHARE_DIR="$HOME/Public"
+

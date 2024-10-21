@@ -1,0 +1,125 @@
+##### CLEANUP
+# Unbind the default tmux command prefix, CTRL+b.
+unbind C-b
+#####
+
+##### PREFERENCES
+# Use CTRL+a as our tmux command prefix.
+set -g prefix C-a
+
+# Lower the default tmux delay, this makes tmux more responsive.
+set -s escape-time 1
+
+# Enable mouse movements.
+#setw -g mode-mouse off
+#
+## Enable pane selection via the mouse.
+#set -g mouse-select-pane on
+#
+## Enable the mouse to resize panes.
+#set -g mouse-resize-pane on
+#
+## Enable the mouse to change the current window.
+#set -g mouse-select-window on
+
+# Make tmux use 256 colors.
+set -g default-terminal "screen-256color"
+
+# Make tmux act like xterm to prevent Vim issues:
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
+# Only resize the screen size if the smaller screen user has their window
+# active. This way my screen won't be resized to an incredibly small window
+# unnecessarily.
+setw -g aggressive-resize on
+
+# Store a lot of history.
+set -g history-limit 10000
+
+# Refresh the status bar every n seconds.
+set -g status-interval 15
+
+#####
+
+##### MAPPINGS
+# PREFIX CTRL+a: send CTRL+a to the local application.
+bind C-a send-prefix
+
+# PREFIX r: Instantly reload tmux's configuration file.
+bind r source-file ~/.config/tmux/tmux.conf \; display "tmux has been reloaded!"
+
+# PREFIX i: Create a new vertial pane.
+bind i split-window -h
+
+# PREFIX o: Create a new horizontal pane.
+bind o split-window -v
+
+# Use Vim movement key mappings for switching around between panes.
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Use Vim movement key mappings (uppercase) for resizing panes.
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
+#####
+
+##### COPY MODE VI
+# Enable vi copy mode 
+setw -g mode-keys vi
+
+# Use v to trigger selection    
+bind-key -n v copy-mode
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+
+# Use y to yank current selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi Y send-keys -X copy-selection
+
+# Esc as Escape
+bind-key -T copy-mode-vi Escape send-keys -X cancel
+
+# PREFIX p: paste buffer 
+bind p paste-buffer
+
+##### APPEARANCE
+# Set statusbar colors
+#set -g status-style bg=yellow,fg=black
+
+# Default window title colors.
+#setw -g window-style fg=brightblue,bg=default
+
+# Active window title colors.
+#setw -g window-status-current-style fg=brightred,bg=default
+
+# Pane border.
+#set -g pane-border-style fg=black
+#set -g pane-active-border-style fg=brightgreen
+
+# Message text.
+#set -g message-style fg=brightred,bg=black
+
+# Pane number display.
+#set -g display-panes-active-colour blue
+#set -g display-panes-colour brightred
+
+# Clock colors.
+#set -g clock-mode-colour green
+
+# Make the left side of our status bar display the hostname.
+#set -g status-left "#H"
+
+# Display the date and time on the right side of the status bar.
+#set -g status-right "%m-%d-%Y @ %r %Z"
+
+# Center our windows in the status bar display.
+#set -g status-justify centre
+
+# Disable window activity notifications in tmux windows.
+#setw -g monitor-activity off
+
+#####
+

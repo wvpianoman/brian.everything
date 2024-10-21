@@ -1,0 +1,14 @@
+[Unit]
+Description=rclone mega
+Documentation=https://rclone.org
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/rclone --vfs-cache-mode full --vfs-cache-max-age 168h mount mega: /home/brian/MEGA/
+Restart=on-failure
+RestartSec=3
+RestartPreventExitStatus=3
+
+[Install]
+WantedBy=default.target
