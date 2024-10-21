@@ -53,12 +53,12 @@ essential_packages=(
     openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults 
     plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
     tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed lolcat fortune-mod
-    gum fan2go fan2go-dbginfo qt5ct
+    gum fan2go fan2go-dbginfo qt5ct git-lfs git
 )
 # kde packages
 kde_packages=(
     akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers
-    kdepim-addons merkuro yakuake
+    kdepim-addons yakuake korganizer
 )
 
 # gnome packages
@@ -211,6 +211,8 @@ else
     sudo eopkg install -y libva-intel-driver
     echo "Video acceleration drivers installed successfully."
 fi
+
+echo "alias cake='interface=\$(ip link show | awk -F: '\''\$0 ~ \"wlp|wlo|wlx\" && \$0 !~ \"NO-CARRIER\" {gsub(/^[ \\t]+|[ \\t]+$/, \"\", \$2); print \$2; getline}'\''); sudo tc -s qdisc show dev \$interface && sudo systemctl status apply-cake-qdisc.service'" >> ~/.bashrc
 
 `curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh`
 atuin register
