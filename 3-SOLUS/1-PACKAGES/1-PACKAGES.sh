@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
-# Brian Francisco
-# Packages
-# Sept 26 2024
+# Brian Francisco Packages
+# 22 Oct 2024
 
 #   《˘ ͜ʖ ˘》
 
-# Tolga Erok
-# for
-# Brian
+# Tolga Erok for Brian
 # 19/4/2024
 
 # Assign a color variable based on the RANDOM number
@@ -214,8 +211,11 @@ fi
 
 echo "alias cake='interface=\$(ip link show | awk -F: '\''\$0 ~ \"wlp|wlo|wlx\" && \$0 !~ \"NO-CARRIER\" {gsub(/^[ \\t]+|[ \\t]+$/, \"\", \$2); print \$2; getline}'\''); sudo tc -s qdisc show dev \$interface && sudo systemctl status apply-cake-qdisc.service'" >> ~/.bashrc
 
-`curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh`
-atuin register
+### Install Atuin - Shell History Replacement
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+atuin register -u wvpianoman -e dbf.linux@gmail.com
+atuin import auto
+atuin sync
 
 # Function to clear systemd journal logs
 function clear_journal_logs() {
