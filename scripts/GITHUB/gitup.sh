@@ -14,7 +14,7 @@ start_time=$(date +%s)
 REPO_DIR="/home/brian/github/brian-everything"
 
 # Commit message with timestamp and custom changes in Australian format..
-COMMIT_MSG="(ツ)_/¯ Edit: $(date '+%d-%m-%Y %I:%M:%S %p')"
+COMMIT_MSG=┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿ Edit: $(date '+%m-%d-%Y %I:%M:%S %p')"
 
 # Add some tweaks
 git config --global core.compression 9
@@ -37,7 +37,7 @@ git config --global credential.helper "cache --timeout=3600"
 
 if [[ $remote_url == *"git@github.com"* ]]; then
     echo ""
-    echo "Remote URL is set to SSH. Proceeding with the script..."
+    echo "Remote URL is set to SSH. Proceeding with the script..." | lolcat
     echo ""
 else
     echo "Remote URL is not set to SSH. Please set up SSH key-based authentication for the remote repository."
@@ -87,10 +87,10 @@ if git status --porcelain | grep -qE '^\s*[MARCDU]'; then
     # Push changes to the main branch
     echo "Pushing changes to remote repository..."
     git push origin main
-    echo "Files uploaded"
+    figlet Files Uploaded
 else
     echo "No changes to commit."
-    echo "Nothing to Upload"
+    figlet Nothing Uploaded
 fi
 
 end_time=$(date +%s)
@@ -99,6 +99,6 @@ time_taken=$((end_time - start_time))
 
 notify-send --icon=ktimetracker --app-name="DONE" "Uploaded " "Completed:
 
-        (ツ)_/¯
+       ┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿
     Time taken: $time_taken
     " -u normal
