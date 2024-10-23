@@ -73,12 +73,7 @@ fi
 
 echo "" && fortune | lolcat && echo ""
 
-# eval "$(starship init bash)"brew install starship
+# eval "$(starship init bash)"
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-
-. "$HOME/.atuin/bin/env"
-
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
-

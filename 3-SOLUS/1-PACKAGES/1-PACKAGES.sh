@@ -50,7 +50,7 @@ essential_packages=(
     openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults 
     plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
     tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed lolcat fortune-mod
-    gum fan2go fan2go-dbginfo qt5ct git-lfs git
+    gum fan2go fan2go-dbginfo qt5ct git-lfs figlet
 )
 # kde packages
 kde_packages=(
@@ -121,6 +121,10 @@ test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.bashrc
+echo >>/home/brian/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>/home/brian/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew install gcc
 
 ### Install Starship prompt
 brew install starship
@@ -257,13 +261,14 @@ clear_journal_logs
 remove_residual_config_files
 
 # install eopkg 3rd aprty
-# echo -e "\n\n----------------------------------------------"
-# echo -e "|     Installing a couple 3rd party apps     |"
-# echo -e "----------------------------------------------\n\n"
-# sudo pip3 install eopkg3p
+echo -e "\n\n----------------------------------------------"
+echo -e "|     Installing a couple 3rd party apps     |"
+echo -e "----------------------------------------------\n\n"
+sudo pip3 install eopkg3p
 
 # install 3rd party apps
-# eopkg3p install sublime-text
+eopkg3p install sublime-text
+eopkg3p install teamviewer
 
 echo -e "\n\n----------------------------------------------"
 echo -e "|     Let's clean up your SSD                 |"
