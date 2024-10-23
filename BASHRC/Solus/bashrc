@@ -23,7 +23,7 @@ HCOLOR="\[\033[38;5;206m\]"
 PS1="\[\e[1;m\]┌(${FG}\u ${AT}@ ${HCOLOR}\h\[\e[1;m\]) \[\e[1;m\]➤\[\e[1;36m\] \W \[\e[1;m\] \n\[\e[1;m\]└\[\e[1;33m\]➤\[\e[0;m\]  "
 
 # ###---------- Vscoding ----------###
-# eval "$(direnv hook bash)"
+eval "$(direnv hook bash)"
 
 XDG_DESKTOP_DIR="$HOME/"
 XDG_DOWNLOAD_DIR="$HOME/"
@@ -72,3 +72,13 @@ fi
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 
 echo "" && fortune | lolcat && echo ""
+
+# eval "$(starship init bash)"brew install starship
+
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
+

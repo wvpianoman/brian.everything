@@ -2,6 +2,7 @@
 
 <h1 align="center">
    The Ultimate Distrobox / Docker / BoxBuddy Cheat Sheet 
+                Brian F 10-22-24
 </h1>
 
 
@@ -32,34 +33,14 @@ xhost +si:localuser:$USER
 ```
 Follow the instructions on Github to create and enter a new container. Then you can run commands for the native distro and install whatever you want (just exercise care).
 
-## BOXBUDDY  - Allowing Filesystem Access via the Command Line 
+To allow easier access to Distrobox via GUI, you need to install a couple of flatpak apps.  Boxbuddy and Flatseal.  To install these run
+'''bash
+flatpak install flathub io.github.dvlv.boxbuddyrs
+flatpak install flathub com.github.tchx84.Flatseal
+'''
 
-You will need to determine if BoxBuddy is a user-level or system-level flatpak. 
-To do this, execute: 
-```bash
-flatpak list –columns=app,installation | grep boxbuddyrs 
-```
-This should say either “user” or “system”. 
+## BOXBUDDY  - Allowing Filesystem Access with Flatseal
 
-If you have BoxBuddy as a user-level flatpak, execute: 
-```bash
-flatpak override –user io.github.dvlv.boxbuddyrs –filesystem=home 
-```
-If BoxBuddy is instead a system-level flatpak, execute: 
-```bash
-sudo flatpak override io.github.dvlv.boxbuddyrs –filesystem=home 
-```
-**_To allow host access instead, change –filesystem=home to –filesystem=host above._** 
+Boxbuddy needs access to the user files to operate properly.  You just need to start Flatseal and pick BoxBuddy from the Applications tab on the left hand side.  Once you have selected BoxBuddy, scroll down to Filesystems and tick the switch for All user files.
 
-### Removing Filesystem Access via the Command Line 
-
-After creating your Box with a custom home directory, you may wish to remove filesystem permissions again. 
-
-If you have BoxBuddy as a user-level flatpak, execute: 
-```bash
-flatpak override –user –reset io.github.dvlv.boxbuddyrs 
-```
-If BoxBuddy is instead a system-level flatpak, execute: 
-```bash
-sudo flatpak override –reset io.github.dvlv.boxbuddyrs
-```
+Exit Flatseal, reboot to ensure all system changes are applied, Run BoxBuddy and make your first container.

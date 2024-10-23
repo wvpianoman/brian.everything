@@ -108,6 +108,26 @@ install_packages "Installing utilities for different file system access" "${shel
 # Install Software Packages
 install_packages "Installing ZSH / FISH shells and Plug-ins""${software_packages[@]}"
 
+# Install direnv for Visual Studio Code
+curl -sfL https://direnv.net/install.sh | sudo bash
+
+### Install Linuxbrew on Solus ###
+# install Prerequisites
+sudo eopkg install -c system.devel
+sudo eopkg install solbuild
+
+# Install Linuxbrew
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+# Shell Configuration
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.bashrc
+
+### Install Starship prompt
+brew install starship
+
 	# Install some fonts
 sudo eopkg install -y font-fira-ttf font-firacode-ttf font-awesome-ttf noto-sans-ttf
 
@@ -214,8 +234,14 @@ fi
 
 echo "alias cake='interface=\$(ip link show | awk -F: '\''\$0 ~ \"wlp|wlo|wlx\" && \$0 !~ \"NO-CARRIER\" {gsub(/^[ \\t]+|[ \\t]+$/, \"\", \$2); print \$2; getline}'\''); sudo tc -s qdisc show dev \$interface && sudo systemctl status apply-cake-qdisc.service'" >> ~/.bashrc
 
-`curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh`
-atuin register
+### Install Atuin - Shell History Replacement
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+# 1st run register acct with this line
+# atuin register
+# run on another machine, use this to login
+atuin login
+atuin import auto
+atuin sync
 
 # Function to clear systemd journal logs
 function clear_journal_logs() {
