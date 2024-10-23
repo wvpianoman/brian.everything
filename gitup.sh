@@ -4,8 +4,8 @@
     # Tolga Erok. ¯\_(ツ)_/¯..
     # 20/8/23.
 
-    config_files="$HOME/GitHub/brian-everything"
-    work_tree="$HOME/GitHub/brian-everything"
+    config_files="$HOME/GitHub/brian.everything"
+    work_tree="$HOME/GitHub/brian.everything"
     start_time=$(date +%s)
     
     # Check if the remote URL is set to SSH
