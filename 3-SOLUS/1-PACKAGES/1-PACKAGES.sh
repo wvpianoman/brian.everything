@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
-# Brian Francisco
-# Packages
-# Sept 26 2024
+# Brian Francisco Packages
+# 22 Oct 2024
 
 #   《˘ ͜ʖ ˘》
 
-# Tolga Erok
-# for
-# Brian
+# Tolga Erok for Brian
 # 19/4/2024
 
 # Assign a color variable based on the RANDOM number
