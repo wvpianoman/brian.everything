@@ -11,10 +11,10 @@ set -e
 
 start_time=$(date +%s)
 # Directory of your Git repository
-REPO_DIR="/home/brian/github/brian-everything"
+REPO_DIR="/home/brian/github/brian.everything"
 
 # Commit message with timestamp and custom changes in Australian format..
-COMMIT_MSG=┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿ Edit: $(date '+%m-%d-%Y %I:%M:%S %p')"
+COMMIT_MSG="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿  Edit: $(date '+%d-%m-%Y %I:%M:%S %p')"
 
 # Add some tweaks
 git config --global core.compression 9
@@ -26,7 +26,8 @@ git config --global http.postBuffer 524288000
 if [ ! -d "$REPO_DIR/.git" ]; then
     echo "Initializing Git repository in $REPO_DIR..."
     git init "$REPO_DIR"
-    git remote add origin git@github.com:wvpianoman/brian-everything.git
+    git remote add origin git@github.com:wvpianoman/brian.everything
+    everything.git
 fi
 
 # Check if the remote URL is set to SSH
@@ -37,7 +38,7 @@ git config --global credential.helper "cache --timeout=3600"
 
 if [[ $remote_url == *"git@github.com"* ]]; then
     echo ""
-    echo "Remote URL is set to SSH. Proceeding with the script..." | lolcat
+    echo "Remote URL is set to SSH. Proceeding with the script..."
     echo ""
 else
     echo "Remote URL is not set to SSH. Please set up SSH key-based authentication for the remote repository."
@@ -87,10 +88,10 @@ if git status --porcelain | grep -qE '^\s*[MARCDU]'; then
     # Push changes to the main branch
     echo "Pushing changes to remote repository..."
     git push origin main
-    figlet Files Uploaded
+    echo "Files uploaded"
 else
     echo "No changes to commit."
-    figlet Nothing Uploaded
+    echo "Nothing to Upload"
 fi
 
 end_time=$(date +%s)
@@ -99,6 +100,6 @@ time_taken=$((end_time - start_time))
 
 notify-send --icon=ktimetracker --app-name="DONE" "Uploaded " "Completed:
 
-       ┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿
+        (ツ)_/¯
     Time taken: $time_taken
     " -u normal
