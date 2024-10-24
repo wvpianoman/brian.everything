@@ -23,6 +23,12 @@ if [ ! -d ".git" ]; then
     git remote add origin "$GITHUB_REPO"
 fi
 
+touch ~/.ssh/config
+echo "Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519" > ~/.ssh/config
+
 # Set permissions and ownership for .ssh directory and files
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/config
