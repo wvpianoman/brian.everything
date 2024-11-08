@@ -35,6 +35,7 @@ Follow the instructions on Github to create and enter a new container. Then you 
 
 To allow easier access to Distrobox via GUI, you need to install a couple of flatpak apps.  Boxbuddy and Flatseal.  To install these run
 '''bash
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub io.github.dvlv.boxbuddyrs
 flatpak install flathub com.github.tchx84.Flatseal
 '''
