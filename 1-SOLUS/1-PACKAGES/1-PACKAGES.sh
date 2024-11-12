@@ -261,14 +261,14 @@ clear_journal_logs
 remove_residual_config_files
 
 # install eopkg 3rd aprty
-echo -e "\n\n----------------------------------------------"
-echo -e "|     Installing a couple 3rd party apps     |"
-echo -e "----------------------------------------------\n\n"
-sudo pip3 install eopkg3p
+# echo -e "\n\n----------------------------------------------"
+# echo -e "|     Installing a couple 3rd party apps     |"
+# echo -e "----------------------------------------------# # \n\n"
+# sudo pip3 install eopkg3p
 
 # install 3rd party apps
-eopkg3p install sublime-text
-eopkg3p install teamviewer
+# eopkg3p install sublime-text
+# eopkg3p install teamviewer
 
 echo -e "\n\n----------------------------------------------"
 echo -e "|     Let's clean up your SSD                 |"
@@ -282,4 +282,3 @@ echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
 exit 0
-

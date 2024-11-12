@@ -75,5 +75,13 @@ echo "" && fortune | lolcat && echo ""
 
 # eval "$(starship init bash)"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
+eval "$(atuin init bash)"
+. "$HOME/.atuin/bin/env"
+
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+alias cake='interface=$(ip link show | awk -F: '\''$0 ~ "wlp|wlo|wlx" && $0 !~ "NO-CARRIER" {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; getline}'\''); sudo tc -s qdisc show dev $interface && sudo systemctl status apply-cake-qdisc.service'
