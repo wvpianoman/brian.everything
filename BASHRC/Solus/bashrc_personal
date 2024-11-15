@@ -76,7 +76,7 @@ ORANGE='\e[1;93m'
 NC='\e[0m'
 
 display_message() {
-    clear
+ #   clear
     echo -e "\n                  Tolga's cleanup && updater\n"
     echo -e "\e[34m|--------------------\e[33m Currently configuring:\e[34m-------------------|"
     echo -e "|${YELLOW}==>${NC}  $1"
@@ -86,8 +86,8 @@ display_message() {
 }
 
 # Debugging step: echo what will be passed to display_message
-echo "Calling display_message with: [${GREEN}✔${NC}]  Cleanup complete, ENJOY!"
-display_message "[${GREEN}✔${NC}]  Cleanup complete, ENJOY!"
+#echo "Calling display_message with: [${GREEN}✔${NC}]  Cleanup complete, ENJOY!"
+#display_message "[${GREEN}✔${NC}]  Cleanup complete, ENJOY!"
 
 countdown() {
     local seconds=$1
@@ -274,8 +274,9 @@ btrfs_manage() {
 
 alias btrfs-manage="btrfs_manage"
 
-
 ###---------- Solus related ----------###
 alias solus='sudo mount -a && sudo systemctl daemon-reload && sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system'
 
 alias gitup='sudo ~/scripts/GITHUB/gitup.sh'
+
+alias cake='interface=$(ip link show | awk -F: '\''$0 ~ "wlp|wlo|wlx" && $0 !~ "NO-CARRIER" {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; getline}'\''); sudo tc -s qdisc show dev $interface && sudo systemctl status apply-cake-qdisc.service'

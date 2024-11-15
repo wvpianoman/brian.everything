@@ -1,3 +1,15 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="gnzh"
+
 #
 # .zshrc is sourced in interactive shells.
 # It should contain commands to set up aliases,
@@ -37,20 +49,21 @@ setopt COMPLETE_IN_WORD
 # initialize starship
 eval "$(starship init zsh)"
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+if [ -f $ZSH/oh-my-zsh.sh ]; then
+  source $ZSH/oh-my-zsh.sh
+fi
 
 # Ctrl + Arrow keybindings
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
-
-# Ctrl + Backspace/Delete Kebindings
-bindkey '^H' backward-kill-word
-bindkey '^[[3;5~' kill-word
-
-# ALt + Backspace/Delete Keybinds
-bindkey "^[[3~" delete-char
-bindkey -M emacs '^[[3;3~' kill-word
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -58,31 +71,55 @@ SAVEHIST=10000
 setopt appendhistory
 setopt SHARE_HISTORY
 
+plugins=(git)
+
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nano'
+ else
+   export EDITOR='mano'
+ fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PAGER='most'
+
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+setopt GLOB_DOTS
+#share commands between terminal instances or not
+unsetopt SHARE_HISTORY
+#setopt SHARE_HISTORY
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export HISTCONTROL=ignoreboth:erasedups
+
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
 # reporting tools - install when not installed
-#neofetch
+
+# fastfetch -c brian.jsonc
 
 fortune
-
-# Enable if GNome is your DE
-# Check whether if the windowing system is Xorg or Wayland windowing system and set environment variables accordingly
-# Tolga Erok
-
-if [[ ${XDG_SESSION_TYPE} == "wayland" ]]; then
-    export MOZ_ENABLE_WAYLAND=1
-    export OBS_USE_EGL=1
-    echo "Running on Wayland: Enabled Wayland-specific settings."
-    echo "" && sleep 1
-
-elif [[ ${XDG_SESSION_TYPE} == "x11" ]]; then
-    export MOZ_ENABLE_WAYLAND=0
-    export OBS_USE_EGL=0
-    echo "Running on Xorg: Disabled Wayland-specific settings."
-    echo "" && sleep 1
-else
-    echo "Unknown windowing system: ${XDG_SESSION_TYPE}. No changes made."
-    echo "" && sleep 1
-fi
-
-echo "" && fortune | lolcat && echo ""

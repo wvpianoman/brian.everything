@@ -25,12 +25,12 @@ PS1="\[\e[1;m\]┌(${FG}\u ${AT}@ ${HCOLOR}\h\[\e[1;m\]) \[\e[1;m\]➤\[\e[1;36m
 # ###---------- Vscoding ----------###
 eval "$(direnv hook bash)"
 
-XDG_DESKTOP_DIR="$HOME/"
-XDG_DOWNLOAD_DIR="$HOME/"
-XDG_DOCUMENTS_DIR="$HOME/"
-XDG_MUSIC_DIR="$HOME/"
-XDG_PICTURES_DIR="$HOME/"
-XDG_VIDEOS_DIR="$HOME/"
+XDG_DESKTOP_DIR="$HOME/Desktop"
+XDG_DOWNLOAD_DIR="$HOME/Downloads"
+XDG_DOCUMENTS_DIR="$HOME/Documents"
+XDG_MUSIC_DIR="$HOME/Music"
+XDG_PICTURES_DIR="$HOME/Pictures"
+XDG_VIDEOS_DIR="$HOME/Videos"
 XDG_TEMPLATES_DIR="$HOME/Templates"
 XDG_PUBLICSHARE_DIR="$HOME/Public"
 
@@ -69,19 +69,16 @@ else
     echo "" && sleep 1
 fi
 
-[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+[[ -f ~/.bashrc_personal ]] && . ~/.bashrc_personal
 
 echo "" && fortune | lolcat && echo ""
 
 # eval "$(starship init bash)"
 
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-
-eval "$(atuin init bash)"
-. "$HOME/.atuin/bin/env"
-
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+. "$HOME/.atuin/bin/env"
 
-alias cake='interface=$(ip link show | awk -F: '\''$0 ~ "wlp|wlo|wlx" && $0 !~ "NO-CARRIER" {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; getline}'\''); sudo tc -s qdisc show dev $interface && sudo systemctl status apply-cake-qdisc.service'
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"

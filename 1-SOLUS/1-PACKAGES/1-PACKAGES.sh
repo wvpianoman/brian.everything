@@ -68,7 +68,7 @@ gnome_packages=(
 software_packages=(
     blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox
     scribus-docs shotwell simplescreenrecorder uget vlc github-cli discord darktable lyx telegram deja-dup
-    soundconverter ghostwriter element vivaldi-stable obs-studio scribus cherrytree
+    soundconverter ghostwriter nheko vivaldi-stable obs-studio scribus cherrytree
 )
 
 # utilities for file system access
