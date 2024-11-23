@@ -116,7 +116,7 @@ unsetopt SHARE_HISTORY
 
 export HISTCONTROL=ignoreboth:erasedups
 
-[[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
+[[ -f ~/.zshrc_personal ]] && . ~/.zshrc_personal
 
 # reporting tools - install when not installed
 

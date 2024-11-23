@@ -1,7 +1,6 @@
 ###---------- ALIASES ----------###
 
 alias alert='notify-send --urgency=low "$(history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//")"'
-alias tolga='sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tolgaerok/scripts/main/Fedora39/TolgaFedora39.sh)"'
 
 alias systcl="sudo /home/brian/scripts/systcl.sh"
 
@@ -78,7 +77,6 @@ ORANGE='\e[1;93m'
 NC='\e[0m'
 
 display_message() {
-    clear
     echo -e "\n                  Tolga's cleanup && updater\n"
     echo -e "\e[34m|--------------------\e[33m Currently configuring:\e[34m-------------------|"
     echo -e "|${YELLOW}==>${NC}  $1"
@@ -88,8 +86,8 @@ display_message() {
 }
 
 # Debugging step: echo what will be passed to display_message
-echo "Calling display_message with: [${GREEN}✔${NC}]  Cleanup complete, ENJOY!"
-display_message "[${GREEN}✔${NC}]  Cleanup complete, ENJOY!"
+# echo "Calling display_message with: [${GREEN}✔${NC}]  Cleanup complete, ENJOY!"
+# display_message "[${GREEN}✔${NC}]  Cleanup complete, ENJOY!"
 
 countdown() {
     local seconds=$1
@@ -167,7 +165,7 @@ echo -e "\e[1;32m[✔]\e[0m Network is metered. Rotating and vacuuming journal l
 sleep 1 && \
 cleanup_fedora && \
 echo -e "\e[1;32m[✔]\e[0m Checking system updates .....\n" && \
-sudo dnf5 update && \
+sudo dnf update && \
 display_message "[\e[1;32m✔\e[0m]  Checking flatpaks" && \
 echo -e "\e[1;32m[✔]\e[0m Checking updates for installed flatpak programs...\n" && \
 sudo flatpak update --appstream && flatpak update && \
@@ -289,91 +287,6 @@ btrfs_manage() {
 
 alias btrfs-manage="btrfs_manage"
 
-###---------- Konsole effects ----------###
-# PS1="\[\e[1;m\]┌(\[\e[1;32m\]\u\[\e[1;34m\]@\h\[\e[1;m\]) \[\e[1;m\]➤\[\e[1;36m\] \W \[\e[1;m\] \n\[\e[1;m\]└\[\e[1;33m\]➤\[\e[0;m\]  "
+alias cake='interface=$(ip link show | awk -F: '\''$0 ~ "wlp|wlo|wlx" && $0 !~ "NO-CARRIER" {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; getline}'\''); sudo tc -s qdisc show dev $interface && sudo systemctl status apply-cake-qdisc.service'
 
-###---------- Nix package manager ----------###
-# export PATH="/home/tolga/.nix-profile/bin:$PATH"
-# . /home/tolga/.nix-profile/etc/profile.d/nix.sh
-
-###---------- Vscoding ----------###
-# eval "$(direnv hook bash)"
-
-###---------- Solus related ----------###
-alias solus='sudo mount -a && sudo systemctl daemon-reload && sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system'
-
-# Function to generate a random color code
-random_color() {
-    echo $((16 + RANDOM % 216))
-}
-
-# Function to display fortune with random colors
-fortune_with_random_colors() {
-    local color
-    color=$(random_color)
-    printf "\033[38;5;%dm%s\033[0m\n" "$color" "$1"
-}
-
-    FORTUNE_COMMAND="fortune"
-
-# Fetch the fortune message
-fortune_message="$($FORTUNE_COMMAND)"
-
-# nix-env -iA nixpkgs.fortune
-# export NIXPKGS_ALLOW_UNFREE=1 && nix-env -iA nixpkgs.megasync
-
-# don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=20000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-XDG_DESKTOP_DIR="$HOME/"
-XDG_DOWNLOAD_DIR="$HOME/"
-XDG_DOCUMENTS_DIR="$HOME/"
-XDG_MUSIC_DIR="$HOME/"
-XDG_PICTURES_DIR="$HOME/"
-XDG_VIDEOS_DIR="$HOME/"
-XDG_TEMPLATES_DIR="$HOME/Templates"
-XDG_PUBLICSHARE_DIR="$HOME/Public"
-
-# Check whether if the windowing system is Xorg or Wayland windowing system and set environment variables accordingly
-# Tolga Erok
-
-if [[ ${XDG_SESSION_TYPE} == "wayland" ]]; then
-    export MOZ_ENABLE_WAYLAND=1
-    export OBS_USE_EGL=1
-    echo "Running on Wayland: Enabled Wayland-specific settings."
-    echo "" && sleep .1
-
-elif [[ ${XDG_SESSION_TYPE} == "x11" ]]; then
-    export MOZ_ENABLE_WAYLAND=0
-    export OBS_USE_EGL=0
-    echo "Running on Xorg: Disabled Wayland-specific settings."
-    echo "" && sleep .1
-else
-    echo "Unknown windowing system: ${XDG_SESSION_TYPE}. No changes made."
-    echo "" && sleep .1
-fi
-
-# Check if qt5ct is installed and set QT/Kvantum theme settings
-if command -v qt5ct &>/dev/null; then
-    export QT_QPA_PLATFORM="xcb"
-    export QT_QPA_PLATFORMTHEME="qt5ct"
-    echo "qt5ct is installed: QT settings applied."
-    echo "" && sleep .1
-else
-    echo "qt5ct is not installed: QT settings not applied."
-    echo "You can install qt5ct with: sudo dnf install qt5ct"
-    echo "" && sleep .1
-fi
-
-cl && echo "" && fortune | lolcat && echo ""
+echo "" && fortune | lolcat && echo ""
