@@ -58,16 +58,16 @@ else
 fi
 
 # Check if qt5ct is installed and set QT/Kvantum theme settings
-if command -v qt5ct &>/dev/null; then
-    export QT_QPA_PLATFORM="xcb"
-    export QT_QPA_PLATFORMTHEME="qt5ct"
-    echo "qt5ct is installed: QT settings applied."
-    echo "" && sleep 1
-else
-    echo "qt5ct is not installed: QT settings not applied."
-    echo "You can install qt5ct with: sudo dnf install qt5ct"
-    echo "" && sleep 1
-fi
+# if command -v qt5ct &>/dev/null; then
+#     export QT_QPA_PLATFORM="xcb"
+#     export QT_QPA_PLATFORMTHEME="qt5ct"
+#     echo "qt5ct is installed: QT settings applied."
+#     echo "" && sleep 1
+# else
+#     echo "qt5ct is not installed: QT settings not applied."
+#     echo "You can install qt5ct with: sudo dnf install qt5ct"
+#     echo "" && sleep 1
+# fi
 
 [[ -f ~/.bashrc_personal ]] && . ~/.bashrc_personal
 
