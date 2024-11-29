@@ -64,6 +64,11 @@ gnome_packages=(
     numlockx spectacle kitty gnome-commander spacefm xfce4-terminal thunar-archive-plugin
 )
 
+# budgie packages
+budgie_packages=(
+	budgie-desktop budgie-extras-daemon budgie-desktop-branding budgie-applications-menu budgie-window-shuffler budgie-desktop-devel budgie-screensaver mojave-gtk-theme vala-panel-appmenu budgie-previews budgie-quicknote-applet budgie-weathershow-applet budgie-shutdown-timer xrdp-budgie-integration budgie-calendar-applet budgie-user-indicator-redux-applet budgie-cputemp-applet menulibre budgie-control-center  budgie-haste-applet vala-panel-appmenu-budgie-desktop budgie-visualspace-applet pocillo-gtk-theme budgie-restart-applet pocillo-gtk-theme-slim materia-gtk-theme-dark budgie-calendar-applet budgie-session budgie-extras budgie-applications-menu materia-gtk-theme-light materia-gtk-theme-dark-compact budgie-backgrounds budgie-showtime-applet budgie-showtime-applet materia-gtk-theme-compact mojave-gtk-theme-alt materia-gtk-theme celtic-magic-button budgie-hotcorners-applet budgie-desktop-view budgie-kangaroo-applet budgie-takeabreak-applet budgie-screenshot-applet budgie-countdown-applet materia-gtk-theme-light-compact budgie-brightness-controller-applet
+	)
+
 # software packages
 software_packages=(
     blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox
@@ -89,18 +94,19 @@ install_packages() {
 }
 
 # Install essential packages
-install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
+install_packages "Installing Essential Software Packages""${essential_packages[@]}"
 
 # Install DE packages
-# Pick either KDE or Gnome
-install_packages "Installing KDE Packages" "${kde_packages[@]}"
-# install_packages "Installing gnome Packages""${gnome_packages[@]}"
+# Pick Budgie, Gnome or KDE
+install_packages "Installing KDE Packages""${kde_packages[@]}"
+# install_packages "Installing Gnome Packages""${gnome_packages[@]}"
+install_packages "Installing Budgie Packages""${budgie_packages|@|}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
 
 # Install filesystem utilities
-install_packages "Installing utilities for different file system access" "${shells[@]}"
+install_packages "Installing utilities for different file system access""${shells[@]}"
 
 # Install Software Packages
 install_packages "Installing ZSH / FISH shells and Plug-ins""${software_packages[@]}"
@@ -261,14 +267,14 @@ clear_journal_logs
 remove_residual_config_files
 
 # install eopkg 3rd aprty
-# echo -e "\n\n----------------------------------------------"
-# echo -e "|     Installing a couple 3rd party apps     |"
-# echo -e "----------------------------------------------# # \n\n"
-# sudo pip3 install eopkg3p
+echo -e "\n\n----------------------------------------------"
+echo -e "|     Installing a couple 3rd party apps     |"
+echo -e "----------------------------------------------\n\n"
+#sudo pip3 install eopkg3p
 
 # install 3rd party apps
-# eopkg3p install sublime-text
-# eopkg3p install teamviewer
+#eopkg3p install sublime-text
+#eopkg3p install teamviewer
 
 echo -e "\n\n----------------------------------------------"
 echo -e "|     Let's clean up your SSD                 |"
@@ -282,3 +288,4 @@ echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
 exit 0
+
