@@ -100,7 +100,7 @@ install_packages "Installing Essential Software Packages""${essential_packages[@
 # Pick Budgie, Gnome or KDE
 install_packages "Installing KDE Packages""${kde_packages[@]}"
 # install_packages "Installing Gnome Packages""${gnome_packages[@]}"
-install_packages "Installing Budgie Packages""${budgie_packages|@|}"
+# install_packages "Installing Budgie Packages""${budgie_packages|@|}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
