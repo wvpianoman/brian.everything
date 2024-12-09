@@ -66,7 +66,7 @@ gnome_packages=(
 
 # budgie packages
 budgie_packages=(
-	budgie-desktop budgie-extras-daemon budgie-desktop-branding budgie-applications-menu budgie-window-shuffler budgie-desktop-devel budgie-screensaver mojave-gtk-theme vala-panel-appmenu budgie-previews budgie-quicknote-applet budgie-weathershow-applet budgie-shutdown-timer xrdp-budgie-integration budgie-calendar-applet budgie-user-indicator-redux-applet budgie-cputemp-applet menulibre budgie-control-center  budgie-haste-applet vala-panel-appmenu-budgie-desktop budgie-visualspace-applet pocillo-gtk-theme budgie-restart-applet pocillo-gtk-theme-slim materia-gtk-theme-dark budgie-calendar-applet budgie-session budgie-extras budgie-applications-menu materia-gtk-theme-light materia-gtk-theme-dark-compact budgie-backgrounds budgie-showtime-applet budgie-showtime-applet materia-gtk-theme-compact mojave-gtk-theme-alt materia-gtk-theme celtic-magic-button budgie-hotcorners-applet budgie-desktop-view budgie-kangaroo-applet budgie-takeabreak-applet budgie-screenshot-applet budgie-countdown-applet materia-gtk-theme-light-compact budgie-brightness-controller-applet
+	sudo eopkg it budgie-desktop budgie-extras-daemon budgie-desktop-branding budgie-applications-menu budgie-window-shuffler budgie-desktop-devel budgie-screensaver mojave-gtk-theme vala-panel-appmenu budgie-previews budgie-quicknote-applet budgie-weathershow-applet budgie-shutdown-timer xrdp-budgie-integration budgie-calendar-applet budgie-user-indicator-redux-applet budgie-cputemp-applet menulibre budgie-control-center  budgie-haste-applet vala-panel-appmenu-budgie-desktop budgie-visualspace-applet pocillo-gtk-theme budgie-restart-applet pocillo-gtk-theme-slim materia-gtk-theme-dark budgie-calendar-applet budgie-session budgie-extras budgie-applications-menu materia-gtk-theme-light materia-gtk-theme-dark-compact budgie-backgrounds budgie-showtime-applet budgie-showtime-applet materia-gtk-theme-compact mojave-gtk-theme-alt materia-gtk-theme celtic-magic-button budgie-hotcorners-applet budgie-desktop-view budgie-kangaroo-applet budgie-takeabreak-applet budgie-screenshot-applet budgie-countdown-applet materia-gtk-theme-light-compact budgie-brightness-controller-applet
 	)
 
 # software packages
@@ -94,11 +94,11 @@ install_packages() {
 }
 
 # Install essential packages
-install_packages "Installing Essential Software Packages""${essential_packages[@]}"
+install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
 
 # Install DE packages
 # Pick Budgie, Gnome or KDE
-install_packages "Installing KDE Packages""${kde_packages[@]}"
+install_packages "Installing KDE Packages" "${kde_packages[@]}"
 # install_packages "Installing Gnome Packages""${gnome_packages[@]}"
 # install_packages "Installing Budgie Packages""${budgie_packages|@|}"
 
@@ -106,34 +106,13 @@ install_packages "Installing KDE Packages""${kde_packages[@]}"
 install_packages "Installing Software Packages""${software_packages[@]}"
 
 # Install filesystem utilities
-install_packages "Installing utilities for different file system access""${shells[@]}"
+install_packages "Installing utilities for different file system access" "${shells[@]}"
 
 # Install Software Packages
 install_packages "Installing ZSH / FISH shells and Plug-ins""${software_packages[@]}"
 
 # Install direnv for Visual Studio Code
 curl -sfL https://direnv.net/install.sh | sudo bash
-
-### Install Linuxbrew on Solus ###
-# install Prerequisites
-sudo eopkg install -c system.devel
-sudo eopkg install solbuild
-
-# Install Linuxbrew
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-
-# Shell Configuration
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.bashrc
-echo >>/home/brian/.bashrc
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>/home/brian/.bashrc
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-brew install gcc
-
-### Install Starship prompt
-brew install starship
 
 	# Install some fonts
 sudo eopkg install -y font-fira-ttf font-firacode-ttf font-awesome-ttf noto-sans-ttf
@@ -241,15 +220,6 @@ fi
 
 echo "alias cake='interface=\$(ip link show | awk -F: '\''\$0 ~ \"wlp|wlo|wlx\" && \$0 !~ \"NO-CARRIER\" {gsub(/^[ \\t]+|[ \\t]+$/, \"\", \$2); print \$2; getline}'\''); sudo tc -s qdisc show dev \$interface && sudo systemctl status apply-cake-qdisc.service'" >> ~/.bashrc
 
-### Install Atuin - Shell History Replacement
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-# 1st run register acct with this line
-# atuin register
-# run on another machine, use this to login
-atuin login
-atuin import auto
-atuin sync
-
 # Function to clear systemd journal logs
 function clear_journal_logs() {
     sudo journalctl --vacuum-time=7d
@@ -266,16 +236,6 @@ sudo eopkg clean -y
 clear_journal_logs
 remove_residual_config_files
 
-# install eopkg 3rd aprty
-# echo -e "\n\n----------------------------------------------"
-# echo -e "|     Installing a couple 3rd party apps     |"
-# echo -e "----------------------------------------------\n\n"
-# sudo pip3 install eopkg3p
-
-# install 3rd party apps
-# eopkg3p install sublime-text
-# eopkg3p install teamviewer
-
 echo -e "\n\n----------------------------------------------"
 echo -e "|     Let's clean up your SSD                 |"
 echo -e "----------------------------------------------\n\n"
@@ -288,4 +248,3 @@ echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
 exit 0
-

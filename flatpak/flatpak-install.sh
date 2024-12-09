@@ -16,7 +16,9 @@ sudo -v
 clear
 
 # Remote flatpak list (my personal collection)
+# 1st one is for Solus, 2nd is for Aurora/Bluefin
 FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks | tr '\n' ' ')
+# FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-aurora | tr '\n' ' ')
 
 # Add Flathub remote repository if it doesn't already exist
 echo -e "${YELLOW}Adding Flathub repository if not present...${NC}"
