@@ -18,6 +18,7 @@ clear
 # Remote flatpak list (my personal collection)
 # 1st one is for Solus
 FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks | tr '\n' ' ')
+# FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-aurora | tr '\n' ' ')
 
 # This one is for Aurora/Bluiefin
 # FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-aurora | tr '\n' ' ')
