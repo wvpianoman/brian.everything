@@ -72,8 +72,8 @@ budgie_packages=(
 # software packages
 software_packages=(
     blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox
-    scribus-docs shotwell simplescreenrecorder uget vlc github-cli discord darktable lyx telegram deja-dup
-    soundconverter ghostwriter element vivaldi-stable obs-studio scribus cherrytree
+    scribus-docs shotwell simplescreenrecorder uget vlc github-cli discord nheko telegram deja-dup
+    soundconverter vivaldi-stable obs-studio scribus
 )
 
 # utilities for file system access
@@ -113,27 +113,6 @@ install_packages "Installing ZSH / FISH shells and Plug-ins""${software_packages
 
 # Install direnv for Visual Studio Code
 curl -sfL https://direnv.net/install.sh | sudo bash
-
-### Install Linuxbrew on Solus ###
-# install Prerequisites
-sudo eopkg install -c system.devel
-sudo eopkg install solbuild
-
-# Install Linuxbrew
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-
-# Shell Configuration
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.bashrc
-echo >>/home/brian/.bashrc
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>/home/brian/.bashrc
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-brew install gcc
-
-### Install Starship prompt
-brew install starship
 
 	# Install some fonts
 sudo eopkg install -y font-fira-ttf font-firacode-ttf font-awesome-ttf noto-sans-ttf
@@ -241,15 +220,6 @@ fi
 
 echo "alias cake='interface=\$(ip link show | awk -F: '\''\$0 ~ \"wlp|wlo|wlx\" && \$0 !~ \"NO-CARRIER\" {gsub(/^[ \\t]+|[ \\t]+$/, \"\", \$2); print \$2; getline}'\''); sudo tc -s qdisc show dev \$interface && sudo systemctl status apply-cake-qdisc.service'" >> ~/.bashrc
 
-### Install Atuin - Shell History Replacement
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-# 1st run register acct with this line
-# atuin register
-# run on another machine, use this to login
-atuin login
-atuin import auto
-atuin sync
-
 # Function to clear systemd journal logs
 function clear_journal_logs() {
     sudo journalctl --vacuum-time=7d
@@ -266,16 +236,6 @@ sudo eopkg clean -y
 clear_journal_logs
 remove_residual_config_files
 
-# install eopkg 3rd aprty
-echo -e "\n\n----------------------------------------------"
-echo -e "|     Installing a couple 3rd party apps     |"
-echo -e "----------------------------------------------\n\n"
-sudo pip3 install eopkg3p
-
-# install 3rd party apps
-eopkg3p install sublime-text
-eopkg3p install teamviewer
-
 echo -e "\n\n----------------------------------------------"
 echo -e "|     Let's clean up your SSD                 |"
 echo -e "----------------------------------------------\n\n"
@@ -288,4 +248,3 @@ echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
 exit 0
-
