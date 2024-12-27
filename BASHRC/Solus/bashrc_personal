@@ -213,25 +213,7 @@ alias sess='session=$XDG_SESSION_TYPE && echo "" && gum spin --spinner dot --tit
 # export __GL_SHADER_CACHE=1
 # export __GL_THREADED_OPTIMIZATION=1
 
-btrfs_balance_and_monitor() {
-  echo "Starting Btrfs balance for /home..."
-  sudo btrfs balance start -m -d /home
-  echo "Balance started. Monitoring status every 10 seconds..."
-  while true; do
-    echo "Checking balance status..."
-    sudo btrfs balance status /home
-    sleep 10
-  done
-}
-
-# Alias to run the function
-alias btrfs-home="btrfs_balance_and_monitor"
-
 ###---------- BTRFS TOOLS ----------######
-alias balance-home="sudo btrfs balance start /home && sudo btrfs balance status /home"
-alias balance-root="sudo btrfs balance start / && sudo btrfs balance status /"
-alias scrub-home="sudo btrfs scrub start /home && sudo btrfs scrub status /home"
-alias scrub-root="sudo btrfs scrub start / && sudo btrfs scrub status /"
 
 btrfs_manage() {
     clear
@@ -246,32 +228,33 @@ btrfs_manage() {
     read -p "Enter your choice [1-5]: " choice
 
     case $choice in
-        1)
-            echo "Starting balance on /home..."
-            sudo btrfs balance start /home && sudo btrfs balance status /home
-            ;;
-        2)
-            echo "Starting balance on /..."
-            sudo btrfs balance start / && sudo btrfs balance status /
-            ;;
-        3)
-            echo "Starting scrub on /home..."
-            sudo btrfs scrub start /home && sudo btrfs scrub status /home
-            ;;
-        4)
-            echo "Starting scrub on /..."
-            sudo btrfs scrub start / && sudo btrfs scrub status /
-            ;;
-        5)
-            echo "Exiting."
-            return 0
-            ;;
-        *)
-            echo "Invalid option. Please choose a number between 1 and 5."
-            ;;
+    1)
+        echo "Starting balance on /home..."
+        sudo btrfs balance start /home && sudo btrfs balance status /home
+        ;;
+    2)
+        echo "Starting balance on /..."
+        sudo btrfs balance start / && sudo btrfs balance status /
+        ;;
+    3)
+        echo "Starting scrub on /home..."
+        sudo btrfs scrub start /home && sudo btrfs scrub status /home
+        ;;
+    4)
+        echo "Starting scrub on /..."
+        sudo btrfs scrub start / && sudo btrfs scrub status /
+        ;;
+    5)
+        echo "Exiting."
+        return 0
+        ;;
+    *)
+        echo "Invalid option. Please choose a number between 1 and 5."
+        ;;
     esac
 }
 
+# Alias to run the function
 alias btrfs-manage="btrfs_manage"
 
 ###---------- Solus related ----------###
@@ -279,4 +262,4 @@ alias solus='sudo mount -a && sudo systemctl daemon-reload && sudo udevadm contr
 
 alias gitup='sudo ~/scripts/GITHUB/gitup.sh'
 
-alias cake='interface=$(ip link show | awk -F: '\''$0 ~ "wlp|wlo|wlx" && $0 !~ "NO-CARRIER" {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; getline}'\''); sudo tc -s qdisc show dev $interface && sudo systemctl status apply-cake-qdisc.service'
+alias cake='interface=$(ip link show | awk -F: '\''$0 ~ "wlp|wlo|wlx" && $0 !~ "NO-CARRIER" {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; getline}'\''); sudo systemctl daemon-reload && sudo systemctl restart apply-cake-qdisc.service && sudo tc -s qdisc show dev $interface && sudo systemctl status apply-cake-qdisc.service'

@@ -1,69 +1,62 @@
 #!/bin/bash
 # Tolga Erok
-# 2-6-24
+# systemd to force CAKE onto any active network interface.
+# 19 Oct 2024
 
-# Colors for output
+# curl -sL https://raw.githubusercontent.com/tolgaerok/solus/main/PERSONAL-SCRIPTS/SYSTEMD-STUFF/CAKE/make-cake-systemD-V2.sh | sudo bash
+
 YELLOW="\033[1;33m"
 BLUE="\033[0;34m"
 RED="\033[0;31m"
-NC="\033[0m" # No Color
+NC="\033[0m"
 
-# Function to apply CAKE qdisc to an interface
-apply_cake_qdisc() {
-    local interface=$1
-    local bandwidth=$2
-    echo -e "${BLUE}Configuring interface ${interface} with bandwidth ${bandwidth}...${NC}"
-    if sudo tc qdisc replace dev "$interface" root cake bandwidth "$bandwidth"; then
-        echo -e "${YELLOW}Successfully configured CAKE qdisc on ${interface} with bandwidth ${bandwidth}.${NC}"
-    else
-        echo -e "${RED}Failed to configure CAKE qdisc on ${interface}.${NC}"
-    fi
-}
+# Detect any active network interface (uplink or wireless) and trim leading/trailing spaces
+interface=$(ip link show | awk -F: '$0 ~ "^[2-9]:|^[1-9][0-9]: " && $0 ~ "UP" && $0 !~ "LOOPBACK|NO-CARRIER" {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; getline}')
 
-# Get a list of all network interfaces (excluding irrelevant ones)
-interfaces=$(ip link show | awk -F: '$0 !~ "lo|virbr|docker|^[^0-9]"{print $2;getline}')
-
-# Define bandwidth (adjust as needed or set dynamically)
-default_bandwidth="1Gbit"
-
-# Apply CAKE qdisc to each interface
-for interface in $interfaces; do
-    apply_cake_qdisc "$interface" "$default_bandwidth"
-done
-
-# Display the configured qdiscs
-for interface in $interfaces; do
-    echo -e "${BLUE}Qdisc configuration for ${interface}:${NC}"
-    sudo tc qdisc show dev "$interface"
-done
-
-# Add net.core.default_qdisc = cake to /etc/sysctl.conf if it doesn't exist
-sysctl_conf="/etc/sysctl.conf"
-if grep -qxF 'net.core.default_qdisc = cake' "$sysctl_conf"; then
-    echo -e "${YELLOW}net.core.default_qdisc is already set to cake in ${sysctl_conf}.${NC}"
-else
-    echo 'net.core.default_qdisc = cake' | sudo tee -a "$sysctl_conf"
-    echo -e "${YELLOW}Added net.core.default_qdisc = cake to ${sysctl_conf}.${NC}"
+if [ -z "$interface" ]; then
+    echo -e "${RED}No active network interface found. Exiting.${NC}"
+    exit 1
 fi
 
-# Apply the sysctl settings
-if sudo sysctl -p; then
-    echo -e "${YELLOW}sysctl settings applied successfully.${NC}"
-else
-    echo -e "${RED}Failed to apply sysctl settings.${NC}"
-fi
+echo -e "${BLUE}Detected active network interface: ${interface}${NC}"
 
-echo -e "${YELLOW}Traffic control settings applied successfully.${NC}"
-echo -e "${YELLOW}net.core.default_qdisc set to cake in /etc/sysctl.conf.${NC}"
+SERVICE_NAME="apply-cake-qdisc.service"
+SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME"
 
-# Verification Step
-for interface in $interfaces; do
-    echo -e "${BLUE}Verifying qdisc configuration for ${interface}:${NC}"
-    qdisc_output=$(sudo tc qdisc show dev "$interface")
-    if echo "$qdisc_output" | grep -q 'cake'; then
-        echo -e "${YELLOW}CAKE qdisc is active on ${interface}.${NC}"
-    else
-        echo -e "${RED}CAKE qdisc is NOT active on ${interface}.${NC}"
-    fi
-    echo "$qdisc_output"
-done
+echo -e "${BLUE}Creating systemd service file at ${SERVICE_FILE}...${NC}"
+sudo bash -c "cat > $SERVICE_FILE" <<EOF
+[Unit]
+Description=Apply CAKE qdisc to $interface
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/tc qdisc replace dev $interface root cake bandwidth 1Gbit
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo -e "${BLUE}Reloading systemd daemon...${NC}"
+sudo systemctl daemon-reload
+
+echo -e "${BLUE}Starting the service...${NC}"
+sudo systemctl start $SERVICE_NAME
+
+echo -e "${BLUE}Enabling the service to start at boot...${NC}"
+sudo systemctl enable $SERVICE_NAME
+
+echo -e "${BLUE}Verifying qdisc configuration for ${interface}:${NC}"
+sudo tc qdisc show dev "$interface"
+
+echo -e "${YELLOW}CAKE qdisc should be applied to ${interface} now.${NC}"
+
+# Show detailed qdisc status for the interface
+sudo tc -s qdisc show dev "$interface"
+
+# Check the status of the systemd service
+sudo systemctl status apply-cake-qdisc.service
+
+echo "alias cake2='interface=\$(ip link show | awk -F: '\''\$0 ~ \"wlp|wlo|wlx\" && \$0 \\\!~ \"NO-CARRIER\" {gsub(/^[ \\t]+|[ \\t]+$/, \"\", \$2); print \$2; getline}'\''); sudo systemctl daemon-reload && sudo systemctl restart apply-cake-qdisc.service && sudo tc -s qdisc show dev \$interface && sudo systemctl status apply-cake-qdisc.service'" >> ~/.bashrc
