@@ -13,12 +13,14 @@ RED='\033[0;31m'   # Red for error messages
 # Cache sudo credentials to avoid repeated password prompts
 sudo -v
 
-clear
+#clear
 
 # Remote flatpak list (my personal collection)
 # 1st one is for Solus
-FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks | tr '\n' ' ')
-# FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-aurora | tr '\n' ' ')
+#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks | tr '\n' ' ')
+
+# This is BigLinux
+FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-biglinux | tr '\n' ' ')
 
 # This one is for Aurora/Bluiefin
 # FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-aurora | tr '\n' ' ')
@@ -44,19 +46,6 @@ for app in $FLATPAK_LIST; do
     fi
 done
 
-# Check & Install Distrobox if not already installed
-if ! command -v distrobox &>/dev/null; then
-    echo -e "${YELLOW}Installing Docker...${NC}"
-    sudo eopkg it docker
-    echo -e "${YELLOW}Installing Distrobox...${NC}"
-    curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
-    sudo groupadd docker
-    sudo usermod -aG docker $USER
-    echo 'xhost +si:localuser:$USER'>>$HOME/.bashrc
-    echo 'export PATH="/home/brian/.local/bin:$PATH"'>>$HOME/.bashrc
-else
-    echo -e "${GREEN}Distrobox is already installed.${NC}\n"
-fi
 
 # check if Firefox is installed as a Flatpak
 is_firefox_flatpak_installed() {
