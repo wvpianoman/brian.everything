@@ -1,5 +1,12 @@
-Systemd timer create file in /etc/systemd/system/paccache.timer with the following contents
+### Systemd timer *to clean up paccache*
 
+Create a file with 
+
+```console 
+sudo nano /etc/systemd/system/paccache.timer
+```
+with the following contents
+```
 [Unit]
 Description=Clean-up old pacman pkg cache
 
@@ -9,5 +16,10 @@ Persistent=true
 
 [Install]
 WantedBy=multi-user.target
+```
 
-Enable by sudo systemctl start paccache.timer
+
+Enable with
+```console 
+sudo systemctl start paccache.timer
+```
