@@ -44,18 +44,11 @@ sudo eopkg it dialog zenity -y
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
-    dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg 
-    noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server 
-    openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults 
-    plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
-    tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed lolcat fortune-mod
-    gum fan2go fan2go-dbginfo qt5ct git-lfs figlet
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietool cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv dnsutils duf earlyoom easyeffects espeak espeak-ng fancontrol mbpfan fd-find figlet firmware-realtek flatpak fortune-mod fortunes fortunes-min gdebi git gnupg2 grep grub-customizer gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,rtp,ugly} gtk2-engines-murrine murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines haveged ibus-gtk4 intel-media-va-driver iptables jq kate kdegraphics-thumbnailers libavcodec-extra libffi8 libffi-dev libfreeaptx0 libgc1 librabbitmq4 librabbitmq-dev librist4 libsodium23 libsodium-dev libtool libvdpau1 libvdpau-va-gl1 libxext6 llvm-16 lsd make meld libegl1-mesa libgl{u,w}1-mesa mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-firefox mpg123 nano neofetch neovim neovim-qt snmpd net-tools nftables openssh-{client,server} ostree p7zip p7zip-full p7zip-rar packagekit pandoc pip pipewire-{audio,doc} pkg-config plasma-discover-backend-{flatpak,fwupd} plasma-firewall plocate powertop python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
 )
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers
-    kdepim-addons yakuake korganizer
+    akonadi-import-wizard dolphin-plugins ffmpeg ffmpegthumbnailer ffmpegthumbs kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer
 )
 
 # gnome packages
@@ -64,21 +57,14 @@ gnome_packages=(
     numlockx spectacle kitty gnome-commander spacefm xfce4-terminal thunar-archive-plugin
 )
 
-# budgie packages
-budgie_packages=(
-	sudo eopkg it budgie-desktop budgie-extras-daemon budgie-desktop-branding budgie-applications-menu budgie-window-shuffler budgie-desktop-devel budgie-screensaver mojave-gtk-theme vala-panel-appmenu budgie-previews budgie-quicknote-applet budgie-weathershow-applet budgie-shutdown-timer xrdp-budgie-integration budgie-calendar-applet budgie-user-indicator-redux-applet budgie-cputemp-applet menulibre budgie-control-center  budgie-haste-applet vala-panel-appmenu-budgie-desktop budgie-visualspace-applet pocillo-gtk-theme budgie-restart-applet pocillo-gtk-theme-slim materia-gtk-theme-dark budgie-calendar-applet budgie-session budgie-extras budgie-applications-menu materia-gtk-theme-light materia-gtk-theme-dark-compact budgie-backgrounds budgie-showtime-applet budgie-showtime-applet materia-gtk-theme-compact mojave-gtk-theme-alt materia-gtk-theme celtic-magic-button budgie-hotcorners-applet budgie-desktop-view budgie-kangaroo-applet budgie-takeabreak-applet budgie-screenshot-applet budgie-countdown-applet materia-gtk-theme-light-compact budgie-brightness-controller-applet
-	)
-
 # software packages
 software_packages=(
-    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox
-    scribus-docs shotwell simplescreenrecorder uget vlc github-cli discord nheko telegram deja-dup
-    soundconverter vivaldi-stable obs-studio scribus
+    blender blender-data ghostwriter gimp gimp-help-en krita inkscape boomaga digikam flameshot kdepim kdepim-addons rclone rclone-browser rhythmbox scribus scribus-doc scribus-template shotwell simplescreenrecorder syncthing syncthing-gtk telegram-desktop uget vlc yakuake nheko
 )
 
 # utilities for file system access
 filesystem_utilities=(
-    btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype
+    btrfs-progs exfatprogs f2fs-tools hfsprogs hfsplus hfsutils jfsutils lvm2 nilfs-tools reiserfsprogs reiser4progs udftools xfsprogs disktype apfs-dkms apfsprogs libfsapfs-utils libfsapfs1 exfat-fuse btrfs-assistant
 )
 
 # utilities for file system access
@@ -89,7 +75,7 @@ shells=(
 # Install packages
 install_packages() {
     echo -e "${ORANGE}$1${NC}"
-    sudo eopkg it -y "${@:2}" || handle_error "Failed to install: $1"
+    sudo apt install -y --install-recommends "${@:2}" || handle_error "Failed to install: $1"
     echo "Package installation completed."
 }
 
@@ -97,10 +83,7 @@ install_packages() {
 install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
 
 # Install DE packages
-# Pick Budgie, Gnome or KDE
 install_packages "Installing KDE Packages" "${kde_packages[@]}"
-# install_packages "Installing Gnome Packages""${gnome_packages[@]}"
-# install_packages "Installing Budgie Packages""${budgie_packages|@|}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
@@ -111,11 +94,8 @@ install_packages "Installing utilities for different file system access" "${shel
 # Install Software Packages
 install_packages "Installing ZSH / FISH shells and Plug-ins""${software_packages[@]}"
 
-# Install direnv for Visual Studio Code
-curl -sfL https://direnv.net/install.sh | sudo bash
-
 	# Install some fonts
-sudo eopkg install -y font-fira-ttf font-firacode-ttf font-awesome-ttf noto-sans-ttf
+sudo apt install -y fonts-font-awesome fonts-noto-color-emoji xfonts-100dpi fonts-noto-color-emoji
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
 sudo unzip FiraCode.zip -d /usr/share/fonts
@@ -166,6 +146,8 @@ rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
 sudo systemctl start thermald.service
 sudo systemctl status thermald.service
 
+sudo systemctl enable --now earlyoom
+
 	# Audio
 	[ -f /usr/bin/easyeffects ] && [ -f $HOME/.config/easyeffects/output/default.json ] && easyeffects -l default
 	[ -f /usr/bin/pulseeffects ] && [ -f $HOME/.config/PulseEffects/output/default.json ] && pulseeffects -l default
@@ -196,29 +178,72 @@ EOF
 }
 
 # Check GPU information
+    # Install firmware for AMD GPU
+    sudo apt update
+    sudo apt install firmware-amd-graphics -y
+    echo "AMD GPU firmware installed successfully."
+
+# Check GPU information
 gpu_info=$(lspci | grep -i 'VGA\|3D')
 if [[ -z $gpu_info ]]; then
     echo "No GPU found."
     exit 1
 fi
 
-# Check GPU is present
-if [[ $gpu_info =~ "AMD" ]]; then
+# Check if NVIDIA GPU is present
+if [[ $gpu_info =~ "NVIDIA" ]]; then
+    # Check if NVIDIA drivers are already installed
+    if nvidia-smi &>/dev/null; then
+        read -r -p "NVIDIA drivers are already installed" -t 2 -n 1 -s
+        echo "."
+    else
+        # Install NVIDIA drivers
+        sudo apt update
+        sudo apt install nvidia-driver firmware-misc-nonfree -y
+        sudo apt install -y nvidia-driver
+        sudo bash -c 'echo -e "blacklist nouveau\noptions nouveau modeset=0" >> /etc/modprobe.d/blacklist-nouveau.conf'
 
+        # Path to the grub configuration file
+        grub_file="/etc/default/grub"
+
+        # Comment out the existing GRUB_CMDLINE_LINUX line
+        sed -i 's/^GRUB_CMDLINE_LINUX=/#&/' "$grub_file"
+
+        # Add the new GRUB_CMDLINE_LINUX line after the commented line
+        sed -i '/^#GRUB_CMDLINE_LINUX=/a GRUB_CMDLINE_LINUX="rhgb quiet rd.driver.blacklist=nouveau"' "$grub_file"
+
+        sudo update-grub
+
+        echo "NVIDIA drivers installed successfully."
+
+        # Run NVIDIA settings
+        sudo nvidia-settings
+    fi
+
+elif [[ $gpu_info =~ "AMD" ]]; then
     # Install firmware for AMD GPU
-    sudo eopkg update
-    sudo eopkg install -y linux-firmware xorg-driver-video-amdgpu
+    sudo apt update
+    sudo apt install firmware-amd-graphics -y
     echo "AMD GPU firmware installed successfully."
 
 else
     # Install video acceleration for HD Intel i965
-    sudo eopkg update
-    sudo eopkg install xorg-driver-video-intel
-    sudo eopkg install -y libva-intel-driver
+    sudo apt update
+    sudo apt install xserver-xorg-video-intel
+    sudo apt install -y i965-va-driver libva-drm2 libva-x11-2 vainfo
     echo "Video acceleration drivers installed successfully."
 fi
 
-echo "alias cake='interface=\$(ip link show | awk -F: '\''\$0 ~ \"wlp|wlo|wlx\" && \$0 !~ \"NO-CARRIER\" {gsub(/^[ \\t]+|[ \\t]+$/, \"\", \$2); print \$2; getline}'\''); sudo tc -s qdisc show dev \$interface && sudo systemctl status apply-cake-qdisc.service'" >> ~/.bashrc
+# Function to remove residual configuration files
+function remove_residual_config_files() {
+    packages=$(dpkg -l | awk '/^rc/ { print $2 }')
+    if [ -n "$packages" ]; then
+        sudo dpkg -P $packages
+        echo "Residual configuration files removed."
+    else
+        echo "No residual configuration files found."
+    fi
+}
 
 # Function to clear systemd journal logs
 function clear_journal_logs() {
@@ -230,9 +255,9 @@ function clear_journal_logs() {
 echo -e "\n\n----------------------------------------------"
 echo -e "|     Let's clean up                         |"
 echo -e "----------------------------------------------\n\n"
-# sudo update-grub
-sudo eopkg remove-orphans -y
-sudo eopkg clean -y
+sudo update-grub
+sudo apt-get autoremove -y
+sudo apt-get autoclean -y
 clear_journal_logs
 remove_residual_config_files
 
