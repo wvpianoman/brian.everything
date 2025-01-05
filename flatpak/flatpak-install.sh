@@ -20,10 +20,10 @@ sudo -v
 #FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks | tr '\n' ' ')
 
 # This is BigLinux
-#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-biglinux | tr '\n' ' ')
+FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-biglinux | tr '\n' ' ')
 
 # This is siduction
-FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-siduction | tr '\n' ' ')
+#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-siduction | tr '\n' ' ')
 
 # This one is for Aurora/Bluiefin
 # FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-aurora | tr '\n' ' ')

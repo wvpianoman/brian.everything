@@ -78,7 +78,7 @@ gnome_packages=(
 software_packages=(
     blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli 
     discord nheko telegram-desktop deja-dup soundconverter vivaldi vivaldi-ffmpeg-codecs obs-studio scribus uget vlc
-    onlyoffice-bin
+    onlyoffice-bin wps-office
 )
 
 # utilities for file system access
