@@ -83,7 +83,7 @@ software_packages=(
 
 # utilities for file system access
 filesystem_utilities=(
-    btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype
+    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g reiserfsprogs udftools xfsprogs
 )
 
 # utilities for file system access
@@ -113,49 +113,70 @@ install_packages "Installing Software Packages""${software_packages[@]}"
 install_packages "Installing utilities for different file system access" "${shells[@]}"
 
 # Install Software Packages
-install_packages "Installing ZSH-FISH shells and Plug-ins""${software_packages[@]}"
+install_packages "Installing shells and Plug-ins""${software_packages[@]}"
 
 # Install some fonts
 
-wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
-sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
+# Configuration to install custom fonts
+# ----------------------------------------------------------------------------
+
+# print formatted headers
+print_header() {
+ # clear
+  echo -e "\n\033[94m=============================\033[0m"
+  echo -e "\033[1;94m$1\033[0m"
+  echo -e "\033[94m=============================\033[0m\n"
+}
+
+# install packages with a message
+install_packages() {
+  local msg="$1"
+  shift
+  echo -e "\033[92m$msg\033[0m"
+  for package in "$@"; do
+    echo -e "  - Installing \033[93m$package\033[0m..."
+    sudo pacman -S --noconfirm "$package"
+  done
+  echo
+}
+
+# AUR installations with a message
+install_aur() {
+  local msg="$1"
+  shift
+  echo -e "\033[92m$msg\033[0m"
+  for package in "$@"; do
+    echo -e "  - Installing \033[93m$package\033[0m from AUR..."
+    paru -S --noconfirm "$package"
+  done
+  echo
+}
+
+# Main script
+print_header "Installing Recommended Fonts"
+install_packages "Recommended fonts for comprehensive coverage:" \
+  noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+
+print_header "Optional but Highly Recommended Fonts"
+install_packages "Adding optional but highly recommended fonts for broader compatibility:" \
+  ttf-liberation ttf-dejavu ttf-roboto
+
+print_header "Fonts Available on the AUR"
+install_aur "Installing fonts available on the Arch User Repository:" \
+  ttf-symbola
+
+print_header "Popular Monospaced Fonts"
+install_packages "Enhancing your experience with popular monospaced fonts:" \
+  ttf-jetbrains-mono ttf-fira-code ttf-hack adobe-source-code-pro-fonts
+
+print_header "Apple Fonts"
+install_packages "Adding Apple fonts:" \
+  apple-fonts
+  
+echo -e "\033[92mFont installation complete!\033[0m"
 
 # Reloading Font
 sudo fc-cache -vf
-
-# Removing zip Files
-rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
-
-	zip_file="Apple-Fonts-San-Francisco-New-York-master.zip"
-
-	# Check if the ZIP file exists
-	if [ -f "$zip_file" ]; then
-		# Remove existing ZIP file
-		sudo rm -f "$zip_file"
-		echo "Existing ZIP file removed."
-	fi
-
-	# Download the ZIP file
-	curl -LJO https://github.com/tolgaerok/Apple-Fonts-San-Francisco-New-York/archive/refs/heads/master.zip
-
-	# Check if the download was successful
-	if [ -f "$zip_file" ]; then
-		# Unzip the contents to the system-wide fonts directory
-		sudo unzip -o "$zip_file" -d /usr/share/fonts/
-
-		# Update font cache
-		sudo fc-cache -f -v
-
-		# Remove the ZIP file
-		rm "$zip_file"
-
-		display_message "[${GREEN}✔${NC}] Apple fonts installed successfully."
-		echo ""
-		gum spin --spinner dot --title "Re-thinking... 1 sec" -- sleep 2
-	else
-		display_message "[${RED}✘${NC}] Download failed. Please check the URL and try again."
-		gum spin --spinner dot --title "Stand-by..." -- sleep 2
-	fi
 
 sudo systemctl start thermald.service
 sudo systemctl status thermald.service
