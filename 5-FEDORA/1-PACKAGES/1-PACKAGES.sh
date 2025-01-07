@@ -52,7 +52,7 @@ is_service_enabled() {
 	systemctl is-enabled "$1" &>/dev/null
 }
 
-# bash <(curl -s https://ultramarine-linux.org/migrate.sh)
+bash <(curl -s https://ultramarine-linux.org/migrate.sh)
 
 # Function to print text in yellow color
 print_yellow() {
@@ -109,13 +109,13 @@ sudo dnf install -y acl aria2 attr autoconf automake bash-completion bc binutils
 
 sleep 3
 
-sudo dnf install -y digikam ghostwriter gimp gimp-help gimp-data-extras gparted inkscape blender boomaga pdfarranger rclone rclone-browser scribus simplescreenrecorder variety discord fish virt-manager lolcat fortune-mod telegram-desktop virtualbox virtualbox-guest-additions thunderbird neochat
+sudo dnf install -y digikam ghostwriter gimp gimp-help gimp-data-extras gparted inkscape blender boomaga pdfarranger rclone rclone-browser scribus simplescreenrecorder variety discord fish virt-manager lolcat fortune-mod telegram-desktop virtualbox virtualbox-guest-additions thunderbird nheko boomaga
 
 sleep 3
 
 echo "Installing PLASMA Packages"
 
-sudo dnf install -y kdepim-addons kate kate-plugins dolphin-plugins merkuro plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot korganizer hplip hplip-gui
+sudo dnf install -y kdepim-addons kate kate-plugins dolphin-plugins plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot korganizer hplip hplip-gui
 
 sleep 3
 
@@ -306,9 +306,11 @@ sudo fstrim -av
 echo -e "\n\n----------------------------------------------"
 echo -e "|                                            |"
 echo -e "|      Setup Complete! Enjoy Ultramarine     |"
-echo -e "|       Please run ___________.sh            |"
-echo -e "|    to back up your APT packages and more   |"
-echo -e "|                                            |"
+echo -e "|                        		              |"
+echo -e "|    	Please Run						      |"
+echo -e "|          atuin login						  |"
+echo -e "|          atuin import auto				  |"
+echo -e "|          atuin sync                        |"
 echo -e "----------------------------------------------\n\n"
 
 # exit 0
