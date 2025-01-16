@@ -1,18 +1,20 @@
-#!/bin/bash
-### #!/usr/bin/env bash
+#
+#
+# WORKING COPY
+#
+#
+#
 
-# Brian Francisco
-# Personal use case packages
-# 22 May 2024
+#!/usr/bin/env bash
+
+# Brian Francisco Packages
+# 22 Oct 2024
 
 #   《˘ ͜ʖ ˘》
 
-# Tolga Erok
-# for
-# Brian
-# 4/3/2024
+# Tolga Erok for Brian
+# 19/4/2024
 
-# clear
 # Assign a color variable based on the RANDOM number
 RED='\e[1;31m'
 GREEN='\e[1;32m'
@@ -22,6 +24,9 @@ CYAN='\e[1;36m'
 WHITE='\e[1;37m'
 ORANGE='\e[1;93m'
 NC='\e[0m'
+
+# Cache sudo credentials to avoid repeated password prompts
+sudo -v
 
 echo '[charm]
 name=Charm
@@ -81,69 +86,74 @@ echo "Installing RPM Fusion Repositories"
 	sudo dnf install -y rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
 #	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
-	sudo dnf install -y dnf
-
-sleep 3
+sleep 2
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
-echo "Installing Essential Software Packages"
+# essantial software pckages
+essential_packages=(
+	PackageKit acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep grub-customizer gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gstreamer1-{libav,vaapi} gtk-murrine-engine gtk2-engines gtk{2,3}-immodule-xim haveged hplip hplip-gui htop ibus-gtk4 intel-media-driver iptables iptables-services jq kernel-modules-extra kitty krita libXext libffi libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl llvm18-libs lpcnetfreedv lsd make mbedtls meld mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libO{penCL,SMesa} mesa-libglapi mesa-vulkan-drivers mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pipewire-codec-aptx pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw uget ugrep unrar-free un{zip,rar} virt-manager vlc wget wsdd xclip zed zip zram zram-generator zram-generator-defaults zstd 
+)
 
-sudo dnf install -y  codec2  gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services libffi libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl libXext llvm18-libs lpcnetfreedv mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-vulkan-drivers net-snmp net-tools nftables openssh openssh-{clients,server} ostree pip pipewire-codec-aptx pulseeffects python3 python3-pip python3-setproctitle sassc openssl sshpass
+# kde packages
+kde_packages=(
+    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake 
+)
 
-sleep 3
+# gnome packages
+gnome_packages=(
+    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin
+    numlockx spectacle kitty gnome-commander spacefm xfce4-terminal thunar-archive-plugin
+)
 
-# read -n 1 -r -s -p $'Press enter to continue...\n'
+# software packages
+software_packages=(
+	blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita nheko pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety virt-manager virtualbox virtualbox-guest-additions vlc 
+)
 
-echo "Package installation completed."
+# utilities for file system access
+filesystem_utilities=(
+	btrfs-assistant btrfs-progs btrbk btrfsmaintenance apfs-fuse disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs    
+)
 
-sleep 3
+# system Shells
+shells=(
+    zsh zsh-autosuggestions zsh-lovers zsh-syntax-highlighting fish
+)
 
-# read -n 1 -r -s -p $'Press enter to continue...\n'
+# Install packages
+install_packages() {
+    echo -e "${ORANGE}$1${NC}"
+    sudo dnf5 install -y  "${@:2}" || handle_error "Failed to install: $1"
+    echo "Package installation completed."
+}
 
-echo "Installing Software Packages"
+# Install essential packages
+install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
 
-sudo dnf install -y acl aria2 attr autoconf automake bash-completion bc binutils btop busybox btrfs-assistant ca-certificates cifs-utils cjson cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf-plugins-core dnfdragora dnf duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fortune-mod git gnupg2 grep jq kernel-modules-extra krita lsd make mbedtls meld mozilla-ublock-origin mpg123 nano p7zip p7zip-gui p7zip-plugins PackageKit pandoc pkg-config plocate powertop qrencode ripgrep rsync rygel sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw ugrep un{zip,rar} unrar-free virt-manager wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd uget vlc zsh zsh-autosuggestions zsh-syntax-highlighting zsh-lovers screen socat grub-customizer hplip zed kitty fonts-tweak-tool soundconverter
+# Install DE packages
+install_packages "Installing KDE Packages" "${kde_packages[@]}"
+#install_packages "Installing Gnome Packages" "${gnome_packages[@]}"
 
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Install Software Packages
+install_packages "Installing Software Packages""${software_packages[@]}"
 
-sleep 3
+# Install filesystem utilities
+install_packages "Installing utilities for different file system access" "${shells[@]}"
 
-sudo dnf install -y digikam ghostwriter gimp gimp-help gimp-data-extras gparted inkscape blender boomaga pdfarranger rclone rclone-browser scribus simplescreenrecorder variety discord fish virt-manager lolcat fortune-mod telegram-desktop virtualbox virtualbox-guest-additions thunderbird nheko boomaga
+# Install Software Packages
+install_packages "Installing ZSH / FISH shells and Plug-ins""${filesystem_utilities[@]}"
 
-sleep 3
-
-echo "Installing PLASMA Packages"
-
-sudo dnf install -y kdepim-addons kate kate-plugins dolphin-plugins plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake arc-kde-yakuake materia-kde-yakuake akonadi akonadi-calendar-tools akonadi-import-wizard kdegraphics-thumbnailers yakuake fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot korganizer hplip hplip-gui
-
-sleep 3
-
-# echo "Installing Gnome Packages"
-
-# sudo dnf group install -y "gnome-desktop"
-
-# sudo dnf install -y breeze-gtk breeze-gtk-{gtk2,gtk3,gtk4} breeze-icon-theme gnome-tweaks thunar-archive-plugin Thunar thunar-volman numlockx spectacle kitty gnome-commander spacefm soundconverter xfce4-terminal fonts-tweak-tool
-
-echo "Installing BTRFS Packages"
-sudo dnf install -y  btrfs-assistant btrfs-progs btrbk btrfsmaintenance
-
-echo "Installing utilites for different file system access"
-
-sudo dnf install -y apfs-fuse btrfs-progs disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs
 
 wget https://mega.nz/linux/repo/Fedora_40/x86_64/megasync-Fedora_40.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_40.x86_64.rpm"
 
 echo "Package installation completed."
 
-sleep 3
+sleep 2
 
-# read -n 1 -r -s -p $'Press enter to continue...\n'
-
-sudo dnf install -y earlyoom
 sudo systemctl enable --now earlyoom
 
-sleep 3
+sleep 2
 
 	# Install some font tools and fonts
 	display_message "[${GREEN}✔${NC}]  Installing some font tools and fonts"
@@ -191,19 +201,11 @@ sudo unzip Meslo.zip -d /usr/share/fonts
 		gum spin --spinner dot --title "Stand-by..." -- sleep 2
 	fi
 
-	# Reloading Font
-	sudo fc-cache -vf
-
 	# Removing zip Files
 	rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
 	sudo fc-cache -f -v
 
-	# sudo dnf install fontconfig-font-replacements -y --skip-broken && sudo dnf install fontconfig-enhanced-defaults -y --skip-broken
-
-	# sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tolgaerok/tolga-scripts/main/Fedora39/San-Francisco-family/San-Francisco-family.sh)"
-
 ####################################################
-
 	# Enable trim support
 	sudo systemctl enable fstrim.timer
 #################################################
