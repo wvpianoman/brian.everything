@@ -158,17 +158,13 @@ sleep 2
 	# Install some font tools and fonts
 	display_message "[${GREEN}✔${NC}]  Installing some font tools and fonts"
 sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig -y
-	sudo dnf install -y fontawesome-fonts powerline-fonts 'google-roboto*' 'mozilla-fira*' fira-code-fonts
-	sudo dnf install -y redhat-{mono,text,display}-{fonts,vf-fonts} xorg-x11-fonts-ISO8859-1-100dpi google-noto-emoji-color-fonts
-    sudo rpm -i https://downloads.sourceforge.net/sudo dnf install -y apfs-fuse btrfs-progs disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogsproject/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+	sudo dnf install -y fontawesome-fonts powerline-fonts 'google-roboto*' 'mozilla-fira*' fira-code-fonts meslo-nerd-fonts firacode-nerd-fonts
+	sudo dnf install -y redhat-{mono,text,display}-{fonts,vf-fonts} xorg-x11-fonts-ISO8859-1-100dpi google-noto-emoji-color-fonts droidsansmono-nerd-fonts
+    sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 	sudo mkdir -p ~/.local/share/fonts
-	cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-sudo unzip FiraCode.zip -d /usr/share/fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-sudo unzip Meslo.zip -d /usr/share/fonts
-# wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
-# sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
+
+wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
+sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
 
 	zip_file="Apple-Fonts-San-Francisco-New-York-master.zip"
 
@@ -187,9 +183,6 @@ sudo unzip Meslo.zip -d /usr/share/fonts
 		# Unzip the contents to the system-wide fonts directory
 		sudo unzip -o "$zip_file" -d /usr/share/fonts/
 
-		# Update font cache
-		sudo fc-cache -f -v
-
 		# Remove the ZIP file
 		rm "$zip_file"
 
@@ -201,8 +194,8 @@ sudo unzip Meslo.zip -d /usr/share/fonts
 		gum spin --spinner dot --title "Stand-by..." -- sleep 2
 	fi
 
-	# Removing zip Files
-	rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
+	# Removing zip Files & recache fonts
+	rm ./WPS-FONTS.zip
 	sudo fc-cache -f -v
 
 ####################################################
