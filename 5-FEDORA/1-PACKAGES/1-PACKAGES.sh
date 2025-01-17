@@ -1,14 +1,7 @@
-#
-#
-# WORKING COPY
-#
-#
-#
-
 #!/usr/bin/env bash
 
 # Brian Francisco Packages
-# 22 Oct 2024
+# 16 Jan 2025
 
 #   《˘ ͜ʖ ˘》
 
@@ -301,10 +294,10 @@ sudo fstrim -av
 echo -e "\n\n----------------------------------------------"
 echo -e "|                                            |"
 echo -e "|      Setup Complete! Enjoy Ultramarine     |"
-echo -e "|                        		              |"
-echo -e "|    	Please Run						      |"
-echo -e "|          atuin login						  |"
-echo -e "|          atuin import auto				  |"
+echo -e "|                                            |"
+echo -e "|    	Please Run                            |"
+echo -e "|          atuin login                       |"
+echo -e "|          atuin import auto                 |"
 echo -e "|          atuin sync                        |"
 echo -e "----------------------------------------------\n\n"
 
