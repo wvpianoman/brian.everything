@@ -137,8 +137,12 @@ install_packages "Installing utilities for different file system access" "${shel
 # Install Software Packages
 install_packages "Installing ZSH / FISH shells and Plug-ins""${filesystem_utilities[@]}"
 
-
 wget https://mega.nz/linux/repo/Fedora_40/x86_64/megasync-Fedora_40.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_40.x86_64.rpm"
+
+sudo wget -qO /etc/yum.repos.d/softmaker.repo https://shop.softmaker.com/repo/softmaker.repo
+
+sudo dnf update
+sudo dnf install softmaker-freeoffice-2024
 
 echo "Package installation completed."
 

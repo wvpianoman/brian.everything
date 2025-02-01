@@ -167,6 +167,7 @@ flatpak --user uninstall --unused -y --noninteractive && \
 /usr/bin/flatpak --user update -y --noninteractive && \
 /usr/bin/flatpak --user repair && \
 recache_fonts && \
+brew upgrade
 echo -e "\e[1;32m[✔]\e[0m All updates and cleanups are complete."'
 
 # recache all Flatpak and system fonts

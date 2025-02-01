@@ -91,6 +91,11 @@ shells=(
     zsh zsh-autosuggestions zsh-syntax-highlighting fish
 )
 
+# AUR specific packages
+aur_packages=(
+  sierra-breeze-enhanced boomaga tlrc
+)
+
 # Install packages
 install_packages() {
     echo -e "${ORANGE}$1${NC}"
@@ -114,6 +119,9 @@ install_packages "Installing utilities for different file system access" "${shel
 
 # Install Software Packages
 install_packages "Installing shells and Plug-ins""${software_packages[@]}"
+
+# Install packages from the AUR
+install_aur "Installing AUR specific packages""${aur_packages[@]}"
 
 # Install some fonts
 
@@ -163,7 +171,7 @@ install_packages "Adding optional but highly recommended fonts for broader compa
 
 print_header "Fonts Available on the AUR"
 install_aur "Installing fonts available on the Arch User Repository:" \
-  ttf-symbola
+  ttf-symbola 
 
 print_header "Popular Monospaced Fonts"
 install_packages "Enhancing your experience with popular monospaced fonts:" \
