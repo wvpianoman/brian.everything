@@ -99,7 +99,7 @@ aur_packages=(
 # Install packages
 install_packages() {
     echo -e "${ORANGE}$1${NC}"
-    sudo pacman -Sy --noconfirm "${@:2}" || handle_error "Failed to install: $1"
+    sudo pacman -Sy --noconfirm --needed "${@:2}" || handle_error "Failed to install: $1"
     echo "Package installation completed."
 }
 
@@ -143,7 +143,7 @@ install_packages() {
   echo -e "\033[92m$msg\033[0m"
   for package in "$@"; do
     echo -e "  - Installing \033[93m$package\033[0m..."
-    sudo pacman -Sy --noconfirm "$package"
+    sudo pacman -Sy --noconfirm --needed "$package"
   done
   echo
 }
