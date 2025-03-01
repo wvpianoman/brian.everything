@@ -71,14 +71,14 @@ kde_packages=(
 # gnome packages
 gnome_packages=(
     breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin
-    numlockx spectacle kitty gnome-commander spacefm xfce4-terminal thunar-archive-plugin
+    numlockx spectacle kitty gnome-commander spacefm xfce4-terminal 
 )
 
 # software packages
 software_packages=(
     blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli 
     discord nheko telegram-desktop deja-dup soundconverter vivaldi vivaldi-ffmpeg-codecs obs-studio scribus uget vlc
-    onlyoffice-bin wps-office
+    onlyoffice-bin wps-office microsoft-edge-stable-bin masterpdfeditor-free pdfarranger
 )
 
 # utilities for file system access
@@ -93,7 +93,7 @@ shells=(
 
 # AUR specific packages
 aur_packages=(
-  sierra-breeze-enhanced boomaga tlrc
+  boomaga tlrc
 )
 
 # Install packages
@@ -155,7 +155,7 @@ install_aur() {
   echo -e "\033[92m$msg\033[0m"
   for package in "$@"; do
     echo -e "  - Installing \033[93m$package\033[0m from AUR..."
-    paru -S --noconfirm "$package"
+    paru -S "$package"
   done
   echo
 }
@@ -167,11 +167,11 @@ install_packages "Recommended fonts for comprehensive coverage:" \
 
 print_header "Optional but Highly Recommended Fonts"
 install_packages "Adding optional but highly recommended fonts for broader compatibility:" \
-  ttf-liberation ttf-dejavu ttf-roboto
+  ttf-liberation ttf-dejavu ttf-roboto times-newer-roman ttf-times-new-roman ttf-symbola
 
 print_header "Fonts Available on the AUR"
 install_aur "Installing fonts available on the Arch User Repository:" \
-  ttf-symbola 
+  redhat-fonts 
 
 print_header "Popular Monospaced Fonts"
 install_packages "Enhancing your experience with popular monospaced fonts:" \
