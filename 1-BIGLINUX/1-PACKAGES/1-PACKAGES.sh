@@ -78,7 +78,8 @@ gnome_packages=(
 software_packages=(
     blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli 
     discord nheko telegram-desktop deja-dup soundconverter vivaldi vivaldi-ffmpeg-codecs obs-studio scribus uget vlc
-    onlyoffice-bin wps-office microsoft-edge-stable-bin masterpdfeditor-free pdfarranger
+    onlyoffice-bin wps-office microsoft-edge-stable-bin masterpdfeditor-free pdfarranger firefox-adblock-plus
+    firefox-dark-reader hblock
 )
 
 # utilities for file system access
@@ -155,7 +156,7 @@ install_aur() {
   echo -e "\033[92m$msg\033[0m"
   for package in "$@"; do
     echo -e "  - Installing \033[93m$package\033[0m from AUR..."
-    paru -S "$package"
+    yay "$package"
   done
   echo
 }
