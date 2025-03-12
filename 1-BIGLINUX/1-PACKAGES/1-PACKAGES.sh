@@ -60,7 +60,7 @@ essential_packages=(
     grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} 
     openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed 
     plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
-    tar terminator thefuck thermald tumbler gufw zenity
+    tar terminator thefuck thermald tumbler gufw zenity hardinfo2
 )
 # kde packages
 kde_packages=(
@@ -78,13 +78,14 @@ gnome_packages=(
 software_packages=(
     blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli 
     discord nheko telegram-desktop deja-dup soundconverter vivaldi vivaldi-ffmpeg-codecs obs-studio scribus uget vlc
-    onlyoffice-bin wps-office microsoft-edge-stable-bin masterpdfeditor-free pdfarranger firefox-adblock-plus
-    firefox-dark-reader hblock
+    onlyoffice-bin microsoft-edge-stable-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader 
+    hblock freeoffice gitkraken
 )
 
 # utilities for file system access
 filesystem_utilities=(
-    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g reiserfsprogs udftools xfsprogs
+    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g
+    reiserfsprogs udftools xfsprogs
 )
 
 # utilities for file system access
@@ -172,7 +173,7 @@ install_packages "Adding optional but highly recommended fonts for broader compa
 
 print_header "Fonts Available on the AUR"
 install_aur "Installing fonts available on the Arch User Repository:" \
-  redhat-fonts 
+  redhat-fonts times-newer-roman ttf-times-new-roman
 
 print_header "Popular Monospaced Fonts"
 install_packages "Enhancing your experience with popular monospaced fonts:" \
