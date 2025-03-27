@@ -8,14 +8,14 @@
 # Inpiration and guidance from Tolga Erok 
 
 # Assign a color variable based on the RANDOM number
-RED='\e[1;31m'
-GREEN='\e[1;32m'
-YELLOW='\e[1;33m'
 BLUE='\e[1;34m'
 CYAN='\e[1;36m'
+GREEN='\e[1;32m'
+NC='\033[0m'
+ORANGE='\033[0;33m'
+RED='\e[1;31m'
 WHITE='\e[1;37m'
-ORANGE='\e[1;93m'
-NC='\e[0m'
+YELLOW='\e[1;33m'
 
 # Cache sudo credentials to avoid repeated password prompts
 sudo -v
@@ -34,10 +34,6 @@ execute_command() {
 echo -e "doing stuff..."
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
-
-# Define colors
-ORANGE='\033[0;33m'
-NC='\033[0m'
 
 # add Cachy Repo to BigLinux
 echo "This script is about to run another script."
@@ -60,7 +56,7 @@ essential_packages=(
     grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} 
     openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed 
     plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
-    tar terminator thefuck thermald tumbler gufw zenity hardinfo2
+    tar terminator thefuck thermald tumbler gufw zenity hardinfo2 manjaro-pacnew-checker
 )
 # kde packages
 kde_packages=(
