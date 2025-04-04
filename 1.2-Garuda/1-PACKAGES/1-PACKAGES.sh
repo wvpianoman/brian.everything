@@ -49,7 +49,11 @@ wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst &&
 essential_packages=(
     acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
     dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw
+<<<<<<< HEAD
+    grep gum ibus jq lsd make m••••••••eld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar}
+=======
     grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} 
+>>>>>>> origin/main
     openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed 
     plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
     tar terminator thefuck thermald tumbler gufw zenity hardinfo2 
@@ -63,7 +67,7 @@ kde_packages=(
 # software packages
 software_packages=(
     blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli 
-    discord nheko telegram-desktop deja-dup soundconverter vivaldi vivaldi-ffmpeg-codecs obs-studio scribus uget vlc
+    discord neochat telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc
     onlyoffice-bin microsoft-edge-stable-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader 
     hblock freeoffice gitkraken
 )

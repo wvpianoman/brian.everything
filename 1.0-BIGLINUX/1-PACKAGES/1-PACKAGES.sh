@@ -73,9 +73,8 @@ gnome_packages=(
 # software packages
 software_packages=(
     blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli 
-    discord nheko telegram-desktop deja-dup soundconverter vivaldi vivaldi-ffmpeg-codecs obs-studio scribus uget vlc
-    onlyoffice-bin microsoft-edge-stable-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader 
-    hblock freeoffice gitkraken
+    discord telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin microsoft-edge-stable-bin 
+    masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken
 )
 
 # utilities for file system access

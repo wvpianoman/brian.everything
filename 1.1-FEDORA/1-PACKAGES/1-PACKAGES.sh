@@ -90,7 +90,7 @@ essential_packages=(
 
 # kde packages
 kde_packages=(
-    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake 
+    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake neochat 
 )
 
 # gnome packages
@@ -101,7 +101,8 @@ gnome_packages=(
 
 # software packages
 software_packages=(
-	blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita nheko pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety virt-manager virtualbox virtualbox-guest-additions vlc 
+	blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita 
+	ocrmypdf ocrmypdf+watcher ocrmypdf-doc pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc #virt-manager virtualbox virtualbox-guest-additions 
 )
 
 # utilities for file system access
@@ -160,8 +161,8 @@ sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig -y
     sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 	sudo mkdir -p ~/.local/share/fonts
 
-wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
-sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
+# wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
+# sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
 
 	zip_file="Apple-Fonts-San-Francisco-New-York-master.zip"
 
@@ -192,7 +193,7 @@ sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
 	fi
 
 	# Removing zip Files & recache fonts
-	rm ./WPS-FONTS.zip
+#	rm ./WPS-FONTS.zip
 	sudo fc-cache -f -v
 
 ####################################################
