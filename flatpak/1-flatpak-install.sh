@@ -17,26 +17,26 @@ sudo -v
 
 # Remote flatpak list (my personal collection)
 
-# for BigLinux
-FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-biglinux | tr '\n' ' ')
+# for Aurora/Bluiefin
+# FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-aurora | tr '\n' ' ')
 
-# for Garuda
-#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-garuda | tr '\n' ' ')
+# for BigLinux
+#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-biglinux | tr '\n' ' ')
 
 # for Fedora
 #FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-fedora | tr '\n' ' ')
 
+# for Garuda
+#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-garuda | tr '\n' ' ')
+
 # for Makulu
-#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-makulu | tr '\n' ' ')
+FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-makulu | tr '\n' ' ')
 
 # for siduction
 #FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-siduction | tr '\n' ' ')
 
 # for Solus
 #FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-solus | tr '\n' ' ')
-
-# for Aurora/Bluiefin
-# FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-aurora | tr '\n' ' ')
 
 # Add Flathub remote repository if it doesn't already exist
 echo -e "${YELLOW}Adding Flathub repository if not present...${NC}"
