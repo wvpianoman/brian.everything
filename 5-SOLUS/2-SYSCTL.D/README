@@ -1,0 +1,25 @@
+Files in this directory contain configuration for systemd-sysctl.service, a
+service to configure sysctl kernel parameters.
+
+See man:sysctl.d(5) for explanation of the configuration file format, and
+man:sysctl(8) and man:systemd-sysctl.service(8) for a description of when and
+how this configuration is applied.
+
+Use 'systemd-analyze cat-config sysctl.d' to display the effective config.
+
+# Command to reload system configurations:
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# System Reload Command
+#  sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system
+
+# alias sysctl-reload="sudo udevadm control --reload-rules && sudo udevadm trigger && sudo sysctl --system"
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# About These Settings
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# These configurations aim to optimize various aspects of the Linux system, including network performance, file systems, and kernel behavior.
+# The tweaks are inspired by configurations from RHEL, Fedora, Solus, Mint, Cachy, Ultramarine and Windows Server. Adjustments have been made
+# based on personal experimentation and preferences.  Keep in mind that before applying these tweaks, it's recommended to test in a controlled
+# environment and monitor system behavior.
+#
+# Tolga Erok
