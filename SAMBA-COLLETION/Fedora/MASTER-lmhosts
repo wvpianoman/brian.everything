@@ -1,0 +1,14 @@
+# Additional entries
+127.0.0.1   localhost
+127.0.0.1   fedora39-G1-800
+
+# Custom entries
+192.168.0.2  DIGA
+192.168.0.6  iPhone
+192.168.0.8  LMDE6CASAOS
+192.168.0.9  UNKNOWN
+192.168.0.10 TUNCAY-W11-ENT
+192.168.0.11 lmdeServer
+192.168.0.13 fedora39-G1-800
+192.168.0.15 KingTolga
+192.168.0.20 W11-SERVER
