@@ -2,7 +2,6 @@
 
 # Brian Francisco Packages
 # Dec 30 2024
-
 #   《˘ ͜ʖ ˘》
 
 # Inpiration and guidance from Tolga Erok 
@@ -37,50 +36,40 @@ echo -e "doing stuff..."
 
 # add Cachy Repo to BigLinux
 echo "This script is about to run another script."
-sh ./add-cachy.sh
+#sh ./add-cachy.sh
 echo "This script has just run another script."
 
 #add sublime text repo and install sublime text 4
-curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+#curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+#echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 
-sudo pacman -Syu sublime-text
+#sudo pacman -Syu sublime-text
 
 # Install MegaSync
 wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
-    dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw
-    grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} 
-    openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed 
-    plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
-    tar terminator thefuck thermald tumbler gufw zenity hardinfo2 manjaro-pacnew-checker
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 manjaro-pacnew-checker
 )
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers
-    kdepim-addons yakuake korganizer
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer
 )
 
 # gnome packages
 gnome_packages=(
-    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin
-    numlockx spectacle kitty gnome-commander spacefm xfce4-terminal 
+    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin numlockx spectacle kitty gnome-commander spacefm xfce4-terminal 
 )
 
 # software packages
 software_packages=(
-    blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli 
-    discord telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin microsoft-edge-stable-bin 
-    masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken
+    blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli discord telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin microsoft-edge-stable-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken
 )
 
 # utilities for file system access
 filesystem_utilities=(
-    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g
-    reiserfsprogs udftools xfsprogs
+    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g reiserfsprogs udftools xfsprogs
 )
 
 # utilities for file system access
@@ -214,7 +203,6 @@ EOF
 	display_message "${GREEN}[✔]${NC} Shutdown speed configured"
 	gum spin --spinner dot --title "Stand-by..." -- sleep 2
 }
-
 
 # Function to clear systemd journal logs
 function clear_journal_logs() {

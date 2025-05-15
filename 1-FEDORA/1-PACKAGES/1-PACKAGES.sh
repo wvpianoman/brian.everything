@@ -100,7 +100,7 @@ gnome_packages=(
 
 # software packages
 software_packages=(
-	blender boomaga digikam flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc
+	blender boomaga digikam flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc
 )
 
 # home only packages
@@ -110,7 +110,7 @@ home_only=(
 
 # utilities for file system access
 filesystem_utilities=(
-	btrfs-assistant btrfs-progs btrbk btrfsmaintenance apfs-fuse disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs    
+	btrfs-assistant btrfs-progs btrbk btrfsmaintenance apfs-fuse disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs timeshift
 )
 
 # system Shells
@@ -144,8 +144,14 @@ install_packages "Installing ZSH / FISH shells and Plug-ins""${filesystem_utilit
 ## Install Packages for home only
 install_packages "Installing packages for use at home only" "${home_only[@]}"
 
+# Install Klassy Global Theme plugin
+sudo dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:paul4us/Fedora_42/home:paul4us.repo
+sudo dnf install klassy
+
+# Install Megasync
 wget https://mega.nz/linux/repo/Fedora_42/x86_64/megasync-Fedora_42.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_42.x86_64.rpm"
 
+# Install Softmaker FreeOffice
 sudo wget -qO /etc/yum.repos.d/softmaker.repo https://shop.softmaker.com/repo/softmaker.repo
 
 sudo dnf update
