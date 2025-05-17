@@ -39,22 +39,22 @@ echo "This script is about to run another script."
 #sh ./add-cachy.sh
 echo "This script has just run another script."
 
-#add sublime text repo and install sublime text 4
-#curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-#echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+add sublime text repo and install sublime text 4
+curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 
-#sudo pacman -Syu sublime-text
+sudo pacman -Syu sublime-text
 
 # Install MegaSync
 wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 manjaro-pacnew-checker
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 manjaro-pacnew-checker python-pyqt6
 )
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer neochat
 )
 
 # gnome packages
