@@ -100,7 +100,7 @@ gnome_packages=(
 
 # software packages
 software_packages=(
-	blender boomaga digikam flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger persepolis rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc
+	blender boomaga digikam flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc
 )
 
 # home only packages
@@ -156,11 +156,6 @@ sudo wget -qO /etc/yum.repos.d/softmaker.repo https://shop.softmaker.com/repo/so
 
 sudo dnf update
 sudo dnf install softmaker-freeoffice-2024
-
-# Install Brave Browser
-sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-
-sudo dnf install brave-browser
 
 echo "Package installation completed."
 
@@ -317,10 +312,16 @@ echo -e "\n\n----------------------------------------------"
 echo -e "|                                            |"
 echo -e "|      Setup Complete! Enjoy Ultramarine     |"
 echo -e "|                                            |"
-echo -e "|    	Please Run                            |"
+echo -e "|--------------------------------------------|"
+echo -e "|                                            |"
+echo -e "|      Open a new temrinal window and type   |"
+echo -e "|    	the following to setup Atuin          |"
 echo -e "|          atuin login                       |"
 echo -e "|          atuin import auto                 |"
 echo -e "|          atuin sync                        |"
+echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
+
+# exit 0
 
 # exit 0

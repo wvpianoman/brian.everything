@@ -35,6 +35,22 @@ echo -e "doing stuff..."
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
+    # add nemesis repo
+    lines_to_add=(
+      " "
+      "[nemesis_repo]"
+      "SigLevel = Never"
+      "Server = https://erikdubois.github.io/$repo/$arch"
+      " "
+    )
+
+    # Line to insert before
+    insert_before="[chaotic-aur]"
+
+    # Loop through lines and insert each one
+     for line in "${lines_to_add[@]}"; do
+        sed -i "/$insert_before/i $line" /etc/pacman.conf
+    done
 
 #add sublime text repo and install sublime text 4
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
@@ -47,16 +63,7 @@ wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst &&
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
-    dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw
-<<<<<<< HEAD
-    grep gum ibus jq lsd make m••••••••eld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar}
-=======
-    grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} 
->>>>>>> origin/main
-    openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed 
-    plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
-    tar terminator thefuck thermald tumbler gufw zenity hardinfo2 
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 python-pyqt6 sed 
 )
 # kde packages
 kde_packages=(
@@ -85,7 +92,7 @@ shells=(
 
 # AUR specific packages
 aur_packages=(
-  boomaga tlrc
+  tlrc
 )
 
 # Install packages
@@ -146,7 +153,7 @@ install_aur() {
   echo -e "\033[92m$msg\033[0m"
   for package in "$@"; do
     echo -e "  - Installing \033[93m$package\033[0m from AUR..."
-    yay "$package"
+    paru -S "$package"
   done
   echo
 }

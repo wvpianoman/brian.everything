@@ -46,4 +46,22 @@ echo ""
 echo -e "Please note that <Rate Mirrors> utility is irrelevant and may show different results each time it is run ..."
 echo ""
 
+    
+    # add nemesis repo
+    lines_to_add=(
+      " "
+      "[nemesis_repo]"
+      "SigLevel = Never"
+      "Server = https://erikdubois.github.io/$repo/$arch"
+      " "
+    )
+
+    # Line to insert before
+    insert_before="[chaotic-aur]"
+
+    # Loop through lines and insert each one
+     for line in "${lines_to_add[@]}"; do
+        sed -i "/$insert_before/i $line" /etc/pacman.conf
+    done
+
 exit 0
