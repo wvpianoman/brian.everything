@@ -3,7 +3,7 @@
 # Brian Francisco Packages
 # 12 May 2025
 
- Clone the repository
+# Clone the repository
 git clone https://github.com/VERT-sh/vert.git
 cd vert
 # Install dependencies

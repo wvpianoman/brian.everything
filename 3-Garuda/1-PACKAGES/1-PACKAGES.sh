@@ -75,7 +75,7 @@ kde_packages=(
 software_packages=(
     blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli 
     discord neochat telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc
-    onlyoffice-bin microsoft-edge-stable-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader 
+    onlyoffice-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader 
     hblock freeoffice gitkraken
 )
 

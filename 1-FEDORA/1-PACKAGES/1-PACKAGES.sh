@@ -144,18 +144,22 @@ install_packages "Installing ZSH / FISH shells and Plug-ins""${filesystem_utilit
 ## Install Packages for home only
 install_packages "Installing packages for use at home only" "${home_only[@]}"
 
+# Install Sublime Text
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+sudo dnf install sublime-text -y
+
 # Install Klassy Global Theme plugin
 sudo dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:paul4us/Fedora_42/home:paul4us.repo
-sudo dnf install klassy
+sudo dnf install klassy -y
 
 # Install Megasync
-wget https://mega.nz/linux/repo/Fedora_42/x86_64/megasync-Fedora_42.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_42.x86_64.rpm"
+wget https://mega.nz/linux/repo/Fedora_42/x86_64/megasync-Fedora_42.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_42.x86_64.rpm" -y
 
 # Install Softmaker FreeOffice
 sudo wget -qO /etc/yum.repos.d/softmaker.repo https://shop.softmaker.com/repo/softmaker.repo
-
 sudo dnf update
-sudo dnf install softmaker-freeoffice-2024
+sudo dnf install softmaker-freeoffice-2024 -y
 
 echo "Package installation completed."
 
