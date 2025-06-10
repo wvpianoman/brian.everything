@@ -19,16 +19,23 @@ NC='\e[0m'
 sudo -v
 
 # Install docker:
-sudo pacman -Sy docker
+sudo pacman -Sy --noconfirm --needed iptables docker
+sleep 1
 sudo systemctl start docker.service
+sleep 1
 sudo systemctl enable docker.service
+sleep 1
+
+ # Install distrobox without root:
+curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
 
 #  Create docker user group and add current user to it:
-sudo groupadd docker
-sudo usermod -aG docker $USER
 
- ### Install distrobox without root:
-curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
+sleep 1
+sudo groupadd docker
+sleep 1
+sudo usermod -aG docker $USER
+sleep 1
 
 #  Add these lines to .bashrc so DIstrobox will be in your path and you can run graphical applications:
 echo "export PATH="$PATH:$HOME/local/bin"" >> ~/.bashrc
