@@ -4,7 +4,7 @@
 
 # ----- PATH Configuration -----
 # Add custom and standard binary locations to PATH for command execution
-PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:/sbin:$HOME/bin:$HOME/.local/bin"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:/sbin:$HOME/bin:$HOME/.local/bin"
 
 # Only apply the following settings if bash is running interactively
 case $- in
@@ -105,13 +105,13 @@ fi
 # Configure shell history settings
 HISTCONTROL=ignoreboth  # Ignore duplicate and space-prefixed commands
 shopt -s histappend     # Append to history file instead of overwriting it
-HISTSIZE=1000           # Number of commands to remember in memory
-HISTFILESIZE=2000       # Number of commands to store in the history file
+HISTSIZE=10000           # Number of commands to remember in memory
+HISTFILESIZE=20000       # Number of commands to store in the history file
 shopt -s checkwinsize   # Check and adjust the terminal window size after each command
 
-# Load custom aliases if ~/.bash_aliases exists
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+# Load custom aliases if ~/.bashrc_aliases exists
+if [ -f ~/.bashrc_aliases ]; then
+    . ~/.bashrc_aliases
 fi
 
 # ----- NVM Configuration -----
@@ -157,44 +157,12 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
-# Apply CAKE qdisc easily - Tolga Erok
-function cake-restart() {
-    service_name="tolga-apply-cake-qdisc.service"
-    service_name2="tolga-apply-cake-qdisc-wake.service"
-
-    # Detect active network interface
-    interface=$(ip -o link show | awk -F': ' '
-    $2 ~ /wlp|wlo|wlx|eth|eno/ && /UP/ && !/NO-CARRIER/ {print $2; exit}')
-    
-    if [[ -z "$interface" ]]; then
-        echo -e "\033[0;31mError: No active network interface detected!\033[0m"
-        return 1
-    fi
-
-    echo -e "\033[0;34mRestarting CAKE qdisc for interface: $interface\033[0m"
-
-    sudo systemctl daemon-reload
-    sudo systemctl restart "tolga-apply-cake-qdisc.service"
-    sudo systemctl restart "tolga-apply-cake-qdisc-wake.service"
-
-    echo -e "\033[0;34mVerifying qdisc configuration for $interface:\033[0m"
-    sudo tc -s qdisc show dev "$interface"
-
-    echo -e "\033[0;34mSystemd service statuses:\033[0m"
-    sudo systemctl status "tolga-apply-cake-qdisc.service" --no-pager
-    sudo systemctl status "tolga-apply-cake-qdisc-wake.service" --no-pager
-}
-
-alias cake-status="sudo systemctl status tolga-apply-cake-qdisc.service --no-pager && sudo systemctl status tolga-apply-cake-qdisc-wake.service --no-pager"
-alias cake-restart="cake-restart"
-
+# atuin configuration
 . "$HOME/.atuin/bin/env"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
 
-alias linuxtweaks_update='
-  echo "Running uninstaller...";
-  curl -sL https://raw.githubusercontent.com/tolgaerok/linuxtweaks/main/MY_PYTHON_APP/uninstaller.sh | sudo bash;
-  echo "Uninstall complete. Now checking for updates...";
-  curl -sL https://raw.githubusercontent.com/tolgaerok/linuxtweaks/main/MY_PYTHON_APP/installer.sh | sudo bash'
+# docker/dirtrobox configuration
+export PATH="$PATH:$HOME/local/bin"
+xhost +si:localuser:brian
