@@ -32,6 +32,9 @@ FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everyt
 # for Makulu
 #FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-makulu | tr '\n' ' ')
 
+# PikaOS
+#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-pikaos | tr '\n' ' ')
+
 # for siduction
 #FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-siduction | tr '\n' ' ')
 
@@ -41,7 +44,7 @@ FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everyt
 # Add Flathub remote repository if it doesn't already exist
 echo -e "${YELLOW}Adding Flathub repository if not present...${NC}"
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+#flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
 
 # Install or update the Flatpaks from my list
 echo -e "${YELLOW}****************************************************${NC}"

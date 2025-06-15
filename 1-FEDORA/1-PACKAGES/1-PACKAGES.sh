@@ -50,7 +50,7 @@ is_service_enabled() {
 	systemctl is-enabled "$1" &>/dev/null
 }
 
-bash <(curl -s https://ultramarine-linux.org/migrate.sh)
+# bash <(curl -s https://ultramarine-linux.org/migrate.sh)
 
 # Function to print text in yellow color
 print_yellow() {
@@ -85,7 +85,7 @@ sleep 2
 
 # essantial software pckages
 essential_packages=(
-	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gstreamer1-{libav,vaapi} gtk-murrine-engine gtk2-engines gtk{2,3}-immodule-xim haveged hplip hplip-gui htop ibus-gtk4 intel-media-driver iptables iptables-services jq kernel-modules-extra kitty libXext libffi libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl llvm18-libs lpcnetfreedv lsd make mbedtls meld mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libO{penCL,SMesa} mesa-vulkan-drivers mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pipewire-codec-aptx pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw uget ugrep unrar-free un{zip,rar} vlc wget wsdd xclip zed zip zram zram-generator zram-generator-defaults zstd PackageKit
+	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gstreamer1-{libav,vaapi} gtk-murrine-engine gtk2-engines gtk{2,3}-immodule-xim haveged hplip hplip-gui htop ibus-gtk4 intel-media-driver iptables iptables-services jq kernel-modules-extra kitty libXext libffi libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl llvm18-libs lpcnetfreedv lsd make mbedtls meld mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libO{penCL,SMesa} mesa-vulkan-drivers mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pipewire-codec-aptx pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw uget ugrep unrar-free un{zip,rar} vlc wget wsdd xclip zed zip zram zram-generator zram-generator-defaults zstd PackageKit yad
 )
 
 # kde packages
@@ -244,7 +244,7 @@ sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig -y
 	cp $SYS_PATH /etc/sysctl.conf.bak
 
 	echo
-	yellow_msg 'Default sysctl.conf file Saved. Directory: /etc/sysctl.conf.bak'
+	print_yellow 'Default sysctl.conf file Saved. Directory: /etc/sysctl.conf.bak'
 	echo
 	gum spin --spinner dot --title "Stand-by..." -- sleep 1
 
@@ -257,13 +257,13 @@ function cleanup_fedora() {
 	sudo dnf autoremove -y
 
 	### Install Atuin - Shell History Replacement
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+#curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 # 1st run register acct with this line
 # atuin register
 # run on another machine, use this to login
-atuin login
-atuin import auto
-atuin sync
+#atuin login
+#atuin import auto
+#atuin sync
 
 	# Sort the lists of installed packages and packages to keep
 	display_message "[${GREEN}✔${NC}]  Sorting out list of installed packages and packages to keep..."
