@@ -100,12 +100,12 @@ gnome_packages=(
 
 # software packages
 software_packages=(
-	blender boomaga digikam flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc
+    blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc
 )
 
 # home only packages
 home_only=(
-	virt-manager discord virtualbox virtualbox-guest-additions telegram-desktop
+	virt-manager discord virtualbox virtualbox-guest-additions 
 )
 
 # utilities for file system access
@@ -150,8 +150,8 @@ sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com
 sudo dnf install sublime-text -y
 
 # Install Klassy Global Theme plugin
-sudo dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:paul4us/Fedora_42/home:paul4us.repo
-sudo dnf install klassy -y
+# sudo dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:paul4us/Fedora_42/home:paul4us.repo
+# sudo dnf install klassy -y
 
 # Install Megasync
 wget https://mega.nz/linux/repo/Fedora_42/x86_64/megasync-Fedora_42.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_42.x86_64.rpm" -y
