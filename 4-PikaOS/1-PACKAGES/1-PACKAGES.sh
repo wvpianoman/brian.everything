@@ -13,16 +13,14 @@ echo "Installing essential packages..."
 # sublime-text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo tee /etc/apt/keyrings/sublimehq-pub.asc > /dev/null
 echo -e 'Types: deb\nURIs: https://download.sublimetext.com/\nSuites: apt/stable/\nSigned-By: /etc/apt/keyrings/sublimehq-pub.asc' | sudo tee /etc/apt/sources.list.d/sublime-text.sources
-sudo nala update
-sudo nala install sublime-text
+sudo nala update && sudo nala install sublime-text
 
 # freeoffice
-su -
+sudo su
 mkdir -p /etc/apt/keyrings
 wget -qO- https://shop.softmaker.com/repo/linux-repo-public.key | gpg --dearmor > /etc/apt/keyrings/softmaker.gpg
 echo "deb [signed-by=/etc/apt/keyrings/softmaker.gpg] https://shop.softmaker.com/repo/apt stable non-free" > /etc/apt/sources.list.d/softmaker.list
-apt update
-apt install softmaker-freeoffice-2024
+nala update && nala install softmaker-freeoffice-2024
 
 # Megasync
 wget https://mega.nz/linux/repo/Debian_testing/amd64/megasync-Debian_testing_amd64.deb && sudo apt install "$PWD/megasync-Debian_testing_amd64.deb"
@@ -31,7 +29,7 @@ wget https://mega.nz/linux/repo/Debian_testing/amd64/megasync-Debian_testing_amd
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
 echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-sudo apt update && sudo apt install gum
+sudo nala update && sudo nala install gum
 
 # onlyoffice
 mkdir -p -m 700 ~/.gnupg
@@ -43,10 +41,18 @@ sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
 echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
 sudo nala update && sudo nala install onlyoffice-desktopeditors onlyoffice-desktopeditors-help
 
-sudo nala install blender blender-data gimp gimp-help-en inkscape boomaga digikam discord neochat telegram-desktop scribus scribus-template rclone rclone-browser flameshot fastfetch persepolis
+#fileu
+wget https://filelu.com/IO83v8fj9nbLQxAs/filelusync_amd64.zip
+unzip filelusync_amd64.zip
+cd filelusync_amd64
+chmod +x install
+./install
+
+sudo nala install blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat telegram-desktop scribus scribus-template rclone rclone-browser flameshot fastfetch persepolis variety
 
 
-sudo nala install cowsay dialog yad duf espeak espeak-ng fancontrol figlet fortune-mod fortunes fortunes-min pandoc
+sudo nala install cowsay dialog yad duf espeak espeak-ng fancontrol figlet fortune-mod fortunes fortunes-min pandoc fish uget aria2 hardinfo2 thefuck ocrmypdf ocrmypdf-doc pdfsandwich meld
+
 
 
 
@@ -70,7 +76,7 @@ echo "Package installation completed."
 
 
 # Installing fonts
-sudo apt install fonts-font-awesome fonts-noto-color-emoji xfonts-100dpi fonts-noto-color-emoji
+sudo nala install fonts-font-awesome fonts-noto-color-emoji xfonts-100dpi fonts-noto-color-emoji
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 sudo unzip FiraCode.zip -d /usr/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip

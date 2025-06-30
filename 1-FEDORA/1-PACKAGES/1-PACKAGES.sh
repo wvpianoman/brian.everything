@@ -50,7 +50,7 @@ is_service_enabled() {
 	systemctl is-enabled "$1" &>/dev/null
 }
 
-# bash <(curl -s https://ultramarine-linux.org/migrate.sh)
+bash <(curl -s https://ultramarine-linux.org/migrate.sh)
 
 # Function to print text in yellow color
 print_yellow() {
