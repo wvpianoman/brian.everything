@@ -50,7 +50,7 @@ is_service_enabled() {
 	systemctl is-enabled "$1" &>/dev/null
 }
 
-bash <(curl -s https://ultramarine-linux.org/migrate.sh)
+#bash <(curl -s https://ultramarine-linux.org/migrate.sh)
 
 # Function to print text in yellow color
 print_yellow() {
@@ -80,6 +80,12 @@ echo "Installing RPM Fusion Repositories"
 #	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 sleep 2
+
+if [ "$(rpm -qa terra-release | head -c1 | wc -c)" -eq 0 ]; then
+  trace sudo dnf install -y --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt="terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc" terra-release
+else
+  echo " --> Seems like terra-release has already been installed"
+fi
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
@@ -319,7 +325,7 @@ echo -e "|                                            |"
 echo -e "|--------------------------------------------|"
 echo -e "|                                            |"
 echo -e "|      Open a new temrinal window and type   |"
-echo -e "|    	the following to setup Atuin          |"
+echo -e "|    	the following to setup Atuin         |"
 echo -e "|          atuin login                       |"
 echo -e "|          atuin import auto                 |"
 echo -e "|          atuin sync                        |"
