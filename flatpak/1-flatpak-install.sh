@@ -34,6 +34,8 @@ detect_distro() {
         echo "fedora"
     elif [ -f /etc/redhat-release ]; then
         echo "fedora"
+    elif [ -f /etc/nobara-release ]; then
+        echo "fedora"
     elif [ -f /etc/debian_version ]; then
         echo "debian"
     else
