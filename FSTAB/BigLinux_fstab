@@ -4,7 +4,7 @@
 # be used with UUID= as a more robust way to name devices that works even if
 # disks are added and removed. See fstab(5).
 #
-# <file system>             <mount point>  <type>  <options>  <dump>  <pass>
+# <file system>                           <mount point>  <type>  <options>  <dump>  <pass>
 UUID=843efecb-79e2-48b7-bbcf-65d67724c8d2 /              btrfs   subvol=/@,defaults,noatime,compress-force=zstd:5,discard=async 0 0
 UUID=843efecb-79e2-48b7-bbcf-65d67724c8d2 /home          btrfs   subvol=/@home,defaults,noatime,compress-force=zstd,discard=async 0 0
 UUID=843efecb-79e2-48b7-bbcf-65d67724c8d2 /var/cache     btrfs   subvol=/@cache,defaults,noatime,compress-force=zstd,discard=async 0 0

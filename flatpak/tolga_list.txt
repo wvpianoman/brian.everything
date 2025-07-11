@@ -1,0 +1,40 @@
+app/com.dec05eba.gpu_screen_recorder/x86_64/stable      # screen recorder using the GPU only
+app/com.heroicgameslauncher.hgl/x86_64/stable           # Open Source Epic, GOG and Amazon Prime Games launcher
+app/com.ranfdev.DistroShelf                             # GTK4 GUI for Distrobox Container
+app/com.valvesoftware.Steam/x86_64/stable               # the ultimate destination for playing, discussing, and creating games
+app/io.github.getnf.embellish                           # GTK4 eamless experience for installing, uninstalling and updating of Nerd Fonts
+app/io.github.ilya_zlobintsev.LACT/x86_64/stable        # allows you to control your AMD, Nvidia or Intel GPU on a Linux system
+app/io.podman_desktop.PodmanDesktop                     # a simple and user-friendly interface for managing containers
+app/me.iepure.devtoolbox                                # a collection of powerful yet simple-to-use tools to solve the most common daily development problems
+app/net.davidotek.pupgui2/x86_64/stable                 # ProtonUP-QT : manage Wine- & Proton-based tools for Steam & Lutris
+app/net.lutris.Lutris/x86_64/stable                     # a video game preservation platform
+app/org.fedoraproject.MediaWriter                       # Fedora ISO Image burning tool
+app/org.gustavoperedo.FontDownloader                    # GTK application allows you to search and install fonts directly from Google Fonts' website
+app/sh.loft.devpod                                      # provides an open source alternative to GitHub codespaces
+com.discordapp.Discord                                  # instant messaging and VoIP social platform
+com.github.tchx84.Flatseal                              # a graphical utility to review and modify permissions from your Flatpak applications
+com.obsproject.Studio                                   # capture, composite, encode, record, and stream video content, efficiently.
+com.obsproject.Studio.Plugin.GStreamerVaapi             #
+com.obsproject.Studio.Plugin.OBSVkCapture               #
+com.rtosta.zapzap                                       # WhatsApp webapp for with a native application experience.
+com.wps.Office                                          #
+io.github.aandrew_me.ytdn                               #
+io.github.dvlv.boxbuddyrs                               #
+io.github.flattool.Warehouse                            #
+io.missioncenter.MissionCenter                          #
+org.gnome.Connections                                   #
+org.gnome.DejaDup                                       #
+org.gnome.Rhythmbox3                                    #
+org.gnome.World.PikaBackup                              #
+org.gnome.baobab                                        #
+org.gtk.Gtk3theme.Arc-Dark                              #
+runtime/org.gtk.Gtk3theme.Breeze                        #
+runtime/org.gtk.Gtk3theme.Yaru-Blue/x86_64/stable       #
+runtime/org.gtk.Gtk3theme.Yaru-Blue/x86_64/stable       #
+runtime/org.gtk.Gtk3theme.Yaru-Deepblue/x86_64/stable   #
+runtime/org.gtk.Gtk3theme.adw-gtk3                      #
+runtime/org.gtk.Gtk3theme.adw-gtk3-dark                 #
+runtime/org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/23.08  # Vulkan & OpenGL overlay for monitoring FPS, temps, CPU/GPU load & more
+runtime/org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/24.08  # Vulkan & OpenGL overlay for monitoring FPS, temps, CPU/GPU load & more
+runtime/org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/23.08 # allow Gamescope to function on non-x86 architectures, useful for Flatpaks such as Prism Launcher
+runtime/org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/24.08 # allow Gamescope to function on non-x86 architectures, useful for Flatpaks such as Prism Launcher
