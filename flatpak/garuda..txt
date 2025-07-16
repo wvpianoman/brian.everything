@@ -16,3 +16,6 @@ app/com.dec05eba.gpu_screen_recorder/x86_64/stable
 app/io.github.ilya_zlobintsev.LACT/x86_64/stable
 app/net.mkiol.SpeechNote/x86_64/stable
 app/dev.vencord.Vesktop/x86_64/stable
+app/io.appflowy.AppFlowy/x86_64/stable
+app/io.github.getnf.embellish
+app/org.gustavoperedo.FontDownloader
