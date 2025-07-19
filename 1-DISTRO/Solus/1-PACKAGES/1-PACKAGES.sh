@@ -44,24 +44,17 @@ sudo eopkg it dialog zenity -y
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl 
-    dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg 
-    noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server 
-    openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults 
-    plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv
-    tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed lolcat fortune-mod
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed lolcat fortune-mod
     gum fan2go fan2go-dbginfo qt5ct git-lfs figlet starship yad 
 )
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers
-    kdepim-addons yakuake korganizer neochat
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer neochat
 )
 
 # gnome packages
 gnome_packages=(
-    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin
-    numlockx spectacle kitty gnome-commander spacefm xfce4-terminal thunar-archive-plugin
+    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin numlockx spectacle kitty gnome-commander spacefm xfce4-terminal thunar-archive-plugin
 )
 
 # budgie packages
@@ -71,9 +64,7 @@ budgie_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam rclone rclone-browser rhythmbox
-    scribus-docs shotwell simplescreenrecorder uget vlc github-cli discord nheko telegram deja-dup
-    soundconverter vivaldi-stable obs-studio scribus baobab 
+    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder uget vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab
 )
 
 # utilities for file system access
@@ -83,7 +74,7 @@ filesystem_utilities=(
 
 # utilities for file system access
 shells=(
-    zsh zsh-dbginfo zsh-autosuggestions zsh-syntax-highlighting antidote powerlevel10k powerline powerline-dbginfo rcm fish
+    zsh zsh-autosuggestions zsh-syntax-highlighting antidote powerlevel10k powerline rcm fish
 )
 
 # Install packages
