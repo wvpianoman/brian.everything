@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # Brian Francisco Packages
-# 16 Jan 2025
-
+# 17 July 2025
 #   《˘ ͜ʖ ˘》
 
 # Tolga Erok for Brian
@@ -45,16 +44,8 @@ is_service_active() {
 	systemctl is-active "$1" &>/dev/null
 }
 
-# Function to check if a service is enabled
-is_service_enabled() {
-	systemctl is-enabled "$1" &>/dev/null
-}
-
-<<<<<<<< HEAD:1-FEDORA/1-PACKAGES/1-PACKAGES.sh
+# UltraMarine Convert Script
 bash <(curl -s https://ultramarine-linux.org/migrate.sh)
-========
-#bash <(curl -s https://ultramarine-linux.org/migrate.sh)
->>>>>>>> origin/main:1-DISTRO/FEDORA/1-PACKAGES/1-PACKAGES.sh
 
 # Function to print text in yellow color
 print_yellow() {
@@ -318,24 +309,9 @@ clear_journal_logs
 cleanup_fedora
 
 echo -e "\n\n----------------------------------------------"
-echo -e "|     Let's clean up your SSD                 |"
-echo -e "----------------------------------------------\n\n"
-sudo fstrim -av
-
-echo -e "\n\n----------------------------------------------"
 echo -e "|                                            |"
 echo -e "|      Setup Complete! Enjoy Ultramarine     |"
 echo -e "|                                            |"
-echo -e "|--------------------------------------------|"
-echo -e "|                                            |"
-echo -e "|      Open a new temrinal window and type   |"
-echo -e "|    	the following to setup Atuin         |"
-echo -e "|          atuin login                       |"
-echo -e "|          atuin import auto                 |"
-echo -e "|          atuin sync                        |"
-echo -e "|                                            |"
-echo -e "----------------------------------------------\n\n"
-
-# exit 0
+echo -e "|--------------------------------------------|\n\n"
 
 # exit 0
