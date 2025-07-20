@@ -17,5 +17,6 @@ app/io.github.ilya_zlobintsev.LACT/x86_64/stable
 app/net.mkiol.SpeechNote/x86_64/stable
 app/dev.vencord.Vesktop/x86_64/stable
 app/io.appflowy.AppFlowy/x86_64/stable
-app/io.github.getnf.embellish
-app/org.gustavoperedo.FontDownloader
+app/io.github.getnf.embellish/x86_64/stable
+app/org.gustavoperedo.FontDownloader/x86_64/stable
+app/me.iepure.devtoolbox/x86_64/stable

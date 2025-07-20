@@ -45,7 +45,7 @@ sudo eopkg it dialog zenity -y
 # essantial software pckages
 essential_packages=(
     acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety virt-manager font-manager zed lolcat fortune-mod
-    gum fan2go fan2go-dbginfo qt5ct git-lfs figlet starship yad 
+    gum fan2go fan2go-dbginfo qt5ct git-lfs figlet starship yad hardinfo2
 )
 # kde packages
 kde_packages=(
