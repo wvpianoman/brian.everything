@@ -1,6 +1,6 @@
 # brian-everything
 
- This is my personal installation/maintenance scripts for  **UltraMarine** (*Fedora*), **Solus** and **MXLinux** (*Debian*) here, but I only have it as a backup/failsafe/woops (because sometimes I tinker until I break my OS, and I HAVE to get back up and going *A.S.A.P*)
+ This is my personal installation/maintenance scripts for  **Ultramarine**/**Nobara** (*Fedora*), **Garuda** and **PikaOS** here, but I only have it as a backup/failsafe/woops (because sometimes I tinker until I break my OS, and I HAVE to get back up and going *A.S.A.P*).  You will find mothballed stuff for *Solus*, *MXLinux*, *siduction*, *BigLinux* and *NixOS*.
  
  I do have this repo curated to fit my personal use-case, but you may find some help/ideas here to help you on your Linux journey.
 
