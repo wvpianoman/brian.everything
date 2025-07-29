@@ -47,36 +47,20 @@ sudo pacman -Syu sublime-text
 # Install MegaSync
 wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
 
-# essantial software pckages
-essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 python-pyqt6 sed 
-)
+# add cachy
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key 3056513887B78AEB
 
-# kde packages
-kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer
-)
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
 
 # software packages
 software_packages=(
-    blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli discord neochat telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken
+    blender btrbk gimp rclone rclone-browser rhythmbox simplescreenrecorder github-cli deja-dup soundconverter scribus uget vlc masterpdfeditor-free hblock freeoffice
 )
 
-# utilities for file system access
-filesystem_utilities=(
-    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g
-    reiserfsprogs udftools xfsprogs
-)
 
-# utilities for file system access
-shells=(
-    zsh zsh-autosuggestions zsh-syntax-highlighting fish
-)
-
-# AUR specific packages
-aur_packages=(
-  tlrc
-)
 
 # Install packages
 install_packages() {
@@ -86,24 +70,25 @@ install_packages() {
 }
 
 # Install essential packages
-install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
+#install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
 
 # Install DE packages
 # Pick Gnome or KDE
-install_packages "Installing KDE Packages" "${kde_packages[@]}"
+#install_packages "Installing KDE Packages" "${kde_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
 
 # Install filesystem utilities
-install_packages "Installing utilities for different file system access" "${shells[@]}"
+#install_packages "Installing utilities for different file system access" "${shells[@]}"
 
 # Install Software Packages
-install_packages "Installing shells and Plug-ins""${software_packages[@]}"
+#install_packages "Installing shells and Plug-ins""${software_packages[@]}"
 
 # Install packages from the AUR
-install_aur "Installing AUR specific packages""${aur_packages[@]}"
+#install_aur "Installing AUR specific packages""${aur_packages[@]}"
 
+Exit 0
 # Install some fonts
 
 # Configuration to install custom fonts
