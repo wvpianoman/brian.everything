@@ -26,3 +26,4 @@ app/io.appflowy.AppFlowy/x86_64/stable
 app/io.github.getnf.embellish/x86_64/stable
 app/org.gustavoperedo.FontDownloader/x86_64/stable
 app/me.iepure.devtoolbox/x86_64/stable
+app/org.onlyoffice.desktopeditors/x86_64/stable

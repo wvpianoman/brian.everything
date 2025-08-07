@@ -1,0 +1,25 @@
+arch-repo: https://geo.mirror.pkgbuild.com
+impl: http://github.com/blend-os/tracks/raw/main
+repo: https://pkg-repo.blendos.co
+#track: default-gnome
+track: plasma
+packages:
+#  - 'gnome-tweaks' # Add this line to include GNOME Tweaks
+  - 'akonadi-import-wizard'
+  - 'dolphin-plugins'
+  - 'ffmpegthumbs'
+#  - 'flameshot'
+#  - 'kate'
+  - 'kdegraphics-thumbnailers'
+  - 'kdepim-addons'
+#  - 'yakuake'
+  - 'korganizer'
+  - 'fastfetch'
+  - 'yad'
+  - 'zsh'
+  - 'zsh-autocomplete'
+  - 'zsh-autosuggestions'
+  - 'zsh-completions'
+  - 'zsh-syntax-highlighting'
+  - 'zsh-lovers'
+
