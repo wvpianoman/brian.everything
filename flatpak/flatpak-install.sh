@@ -17,10 +17,10 @@ sudo -v
 
 # Remote flatpak list (my personal collection)
 # 1st one is for Solus
-#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks | tr '\n' ' ')
+FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/lists/flatpaks-solus | tr '\n' ' ')
 
 # This is BigLinux
-FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-biglinux | tr '\n' ' ')
+#FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-biglinux | tr '\n' ' ')
 
 # This is Fedora/Ultramarine
 #FLATPAK_LIST=$(curl -s https://raw.githubusercontent.com/wvpianoman/brian.everything/refs/heads/main/flatpak/flatpaks-fedora | tr '\n' ' ')
