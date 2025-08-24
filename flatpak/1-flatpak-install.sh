@@ -38,6 +38,8 @@ detect_distro() {
         echo "fedora"
     elif [ -f /etc/debian_version ]; then
         echo "debian"
+    elif [ -f /etc/solus-release ]; then
+        echo "solus"
     else
         echo "unknown"
     fi
@@ -47,6 +49,7 @@ case "$(detect_distro)" in
     arch) sudo pacman -Sy --noconfirm yad ;;
     fedora) sudo dnf5 install -y yad ;;
     debian) sudo apt update && sudo apt install -y yad ;;
+    solus) sudo eopkg it yad -y ;;
     *) zenity --error --text="Unsupported distro." ; exit 1 ;;
 esac
 
