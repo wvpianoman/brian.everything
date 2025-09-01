@@ -3,22 +3,10 @@
 # Tolga Erok.
 # My personal Fedora 39 KDE tweaker
 # 18/11/2023
-
-# Run from remote location:::.
-# sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tolgaerok/tolga-scripts/main/Fedora39/remote-assets/configure_dnf.sh)"
-
+#
 #  ¯\_(ツ)_/¯
-#    █████▒▓█████ ▓█████▄  ▒█████   ██▀███   ▄▄▄
-#  ▓██   ▒ ▓█   ▀ ▒██▀ ██▌▒██▒  ██▒▓██ ▒ ██▒▒████▄
-#  ▒████ ░ ▒███   ░██   █▌▒██░  ██▒▓██ ░▄█ ▒▒██  ▀█▄
-#  ░▓█▒  ░ ▒▓█  ▄ ░▓█▄   ▌▒██   ██░▒██▀▀█▄  ░██▄▄▄▄██
-#  ░▒█░    ░▒████▒░▒████▓ ░ ████▓▒░░██▓ ▒██▒ ▓█   ▓██▒
-#   ▒ ░    ░░ ▒░ ░ ▒▒▓  ▒ ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░
-#   ░       ░ ░  ░ ░ ▒  ▒   ░ ▒ ▒░   ░▒ ░ ▒░  ▒   ▒▒ ░
-#   ░ ░       ░    ░ ░  ░ ░ ░ ░ ▒    ░░   ░   ░   ▒
-#   ░  ░      ░    ░ ░     ░              ░  ░   ░
 
-clear
+#clear
 
 # Assign a color variable based on the RANDOM number
 RED='\e[1;31m'
@@ -74,33 +62,29 @@ configure_dnf() {
         sudo nano "$DNF_CONF_PATH" <<EOL
 [main]
 gpgcheck=1
-installonly_limit=3
+installonly_limit=2
 clean_requirements_on_remove=True
 best=False
 skip_if_unavailable=True
 fastestmirror=1
-max_parallel_downloads=10
+max_parallel_downloads=20
 deltarpm=true
 metadata_timer_sync=0
 metadata_expire=6h
 metadata_expire_filter=repo:base:2h
 metadata_expire_filter=repo:updates:12h
 EOL
-
         # Inform the user that the update is complete
         display_message "DNF configuration updated for faster updates."
-        sudo dnf5 install -y fedora-workstation-repositories
+#        sudo dnf5 install -y fedora-workstation-repositories
         sudo dnf5 update && sudo dnf makecache
-
-        sleep 3
+#        sleep 3
         display_message "DNF configuration complete && makecache created ..."
-
     else
         # Inform the user that the configuration file doesn't exist
         check_error
         echo "Error: DNF configuration file not found at $DNF_CONF_PATH."
     fi
-
 }
 
 # Call the function to install multimedia codecs

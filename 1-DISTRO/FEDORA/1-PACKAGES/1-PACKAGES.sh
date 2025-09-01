@@ -86,7 +86,7 @@ fi
 
 # essantial software pckages
 essential_packages=(
-	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gstreamer1-{libav,vaapi} gtk-murrine-engine gtk2-engines gtk{2,3}-immodule-xim haveged hplip hplip-gui htop ibus-gtk4 intel-media-driver iptables iptables-services jq kernel-modules-extra kitty libXext libffi libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl llvm18-libs lpcnetfreedv lsd make mbedtls meld mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libO{penCL,SMesa} mesa-vulkan-drivers mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pipewire-codec-aptx pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw uget ugrep unrar-free un{zip,rar} vlc wget wsdd xclip zed zip zram zram-generator zram-generator-defaults zstd PackageKit yad
+	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep gtk-murrine-engine gtk2-engines gtk{2,3}-immodule-xim haveged hplip hplip-gui htop ibus-gtk4 intel-media-driver iptables iptables-services jq kernel-modules-extra libXext libffi libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl llvm18-libs lpcnetfreedv lsd make mbedtls meld mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libO{penCL,SMesa} mesa-vulkan-drivers mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pipewire-codec-aptx pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ugrep unrar-free un{zip,rar} wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd PackageKit 
 )
 
 # kde packages
@@ -101,7 +101,7 @@ gnome_packages=(
 
 # software packages
 software_packages=(
-    blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc
+    blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder soundconverter telegram-desktop ufw uget variety vlc yad	zed
 )
 
 # home only packages
