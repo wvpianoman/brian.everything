@@ -101,7 +101,7 @@ gnome_packages=(
 
 # software packages
 software_packages=(
-    blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc
+    blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc tesseract tesseract-langpack-eng tesseract-tools gimagereader-qt
 )
 
 # home only packages

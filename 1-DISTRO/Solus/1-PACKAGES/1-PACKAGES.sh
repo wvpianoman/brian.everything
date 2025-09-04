@@ -63,7 +63,7 @@ budgie_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder uget vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab xournalpp fonts-installer
+    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder uget vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab xournalpp fonts-installer tesseract tessdata gimagereader
 )
 
 # utilities for file system access
