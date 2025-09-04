@@ -29,3 +29,6 @@ app/io.github.chidiwilliams.Buzz/x86_64/stable
 app/com.github.tenderowl.frog/x86_64/stable
 app/com.logseq.Logseq/x86_64/stable
 app/app.devsuite.Ptyxis/x86_64/stable
+app/org.onlyoffice.desktopeditors/x86_64/stable
+app/flathub com.axosoft.GitKraken/x86_64/stable
+app/io.github.amit9838.mousam/x86_64/stable
