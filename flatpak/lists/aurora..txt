@@ -58,3 +58,7 @@ app/app.devsuite.Ptyxis/x86_64/stable
 app/org.gnome.OCRFeeder/x86_64/stable
 app/io.github.manisandro.gImageReader/x86_64/stable
 app/work.openpaper.Paperwork/x86_64/stable
+app/com.github.dynobo.normcap/x86_64/stable
+app/com.github.xournalpp.xournalpp/x86_64/stable
+app/com.pot_app.pot/x86_64/stable
+app/xyz.rescribe.rescribe/x86_64/stable
