@@ -44,11 +44,11 @@ sudo eopkg it dialog zenity -y
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety font-manager zed lolcat fortune-mod gum fan2go fan2go-dbginfo qt5ct git-lfs figlet starship yad hardinfo2 #virt-manager
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety font-manager zed lolcat fortune-mod gum fan2go fan2go-dbginfo qt5ct git-lfs figlet starship yad hardinfo2 klassy klassy-dbginfo virt-manager
 )
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer neochat
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer neochat nheko
 )
 
 # gnome packages
@@ -56,14 +56,9 @@ gnome_packages=(
     breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin numlockx spectacle kitty gnome-commander spacefm xfce4-terminal thunar-archive-plugin
 )
 
-# budgie packages
-budgie_packages=(
-	sudo eopkg it budgie-desktop budgie-extras-daemon budgie-desktop-branding budgie-applications-menu budgie-window-shuffler budgie-desktop-devel budgie-screensaver mojave-gtk-theme vala-panel-appmenu budgie-previews budgie-quicknote-applet budgie-weathershow-applet budgie-shutdown-timer xrdp-budgie-integration budgie-calendar-applet budgie-user-indicator-redux-applet budgie-cputemp-applet menulibre budgie-control-center  budgie-haste-applet vala-panel-appmenu-budgie-desktop budgie-visualspace-applet pocillo-gtk-theme budgie-restart-applet pocillo-gtk-theme-slim materia-gtk-theme-dark budgie-calendar-applet budgie-session budgie-extras budgie-applications-menu materia-gtk-theme-light materia-gtk-theme-dark-compact budgie-backgrounds budgie-showtime-applet budgie-showtime-applet materia-gtk-theme-compact mojave-gtk-theme-alt materia-gtk-theme celtic-magic-button budgie-hotcorners-applet budgie-desktop-view budgie-kangaroo-applet budgie-takeabreak-applet budgie-screenshot-applet budgie-countdown-applet materia-gtk-theme-light-compact budgie-brightness-controller-applet
-	)
-
 # software packages
 software_packages=(
-    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder uget vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab xournalpp fonts-installer tesseract tessdata gimagereader
+    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder uget vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab xournalpp fonts-installer tesseract tessdata gimagereader vivaldi-snapshot
 )
 
 # utilities for file system access
@@ -87,10 +82,9 @@ install_packages() {
 install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
 
 # Install DE packages
-# Pick Budgie, Gnome or KDE
+# Pick Gnome or KDE
 install_packages "Installing KDE Packages" "${kde_packages[@]}"
 # install_packages "Installing Gnome Packages""${gnome_packages[@]}"
-# install_packages "Installing Budgie Packages""${budgie_packages|@|}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
