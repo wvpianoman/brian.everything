@@ -39,8 +39,3 @@ app/com.github.dynobo.normcap/x86_64/stable
 app/com.github.xournalpp.xournalpp/x86_64/stable
 app/com.pot_app.pot/x86_64/stable
 app/xyz.rescribe.rescribe/x86_64/stable
-app/org.flameshot.Flameshot/x86_64/stable
-app/org.kde.krita/x86_64/stable
-app/com.github.jeromerobert.pdfarranger/x86_64/stable
-app/org.inkscape.Inkscape/x86_64/stable
-app/org.gimp.GIMP/x86_64/stable
