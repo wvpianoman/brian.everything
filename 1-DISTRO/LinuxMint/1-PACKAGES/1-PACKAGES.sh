@@ -55,7 +55,7 @@ pikman i gtk2-engines-murrine murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immod
 
 pikman i pipewire-{audio,doc} pkg-config plasma-discover-backend-{flatpak,fwupd} plasma-firewall plocate powertop python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zram-tools zstd gparted
 
-pikman i akonadi-import-wizard korganizer kdepim-addons hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat telegram-desktop scribus scribus-template rclone rclone-browser flameshot fastfetch persepolis variety vlc simplescreenrecorder uget
+pikman i akonadi-import-wizard korganizer kdepim-addons hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat telegram-desktop scribus scribus-template rclone rclone-browser flameshot fastfetch persepolis variety vlc simplescreenrecorder uget linux-lowlatency-6.11 linux-lowlatency-6.14
 
 echo "Package installation completed."
     sleep 3
