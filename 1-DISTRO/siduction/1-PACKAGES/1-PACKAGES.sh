@@ -49,7 +49,7 @@ nala update && nala install onlyoffice-desktopeditors onlyoffice-desktopeditors-
 # chmod +x install
 # ./install
 
-apt install blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot fastfetch persepolis variety vlc simplescreenrecorder uget
+apt install blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot fastfetch persepolis variety vlc simplescreenrecorder uget megacmd
 
 nala install cowsay dialog yad duf espeak espeak-ng fancontrol figlet fortune-mod fortunes fortunes-min pandoc fish uget aria2 hardinfo2 thefuck ocrmypdf ocrmypdf-doc pdfsandwich meld acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietool cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv
 
