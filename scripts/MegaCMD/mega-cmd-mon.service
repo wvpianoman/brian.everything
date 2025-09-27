@@ -1,0 +1,14 @@
+#sudo cp mega-cmd-mon.service /etc/systemd/system/mega-cmd-mon.service
+[Unit]
+Description=Mega-CMD per-user service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5
+ExecStart=/usr/bin/mega-cmd-server
+
+[Install]
+WantedBy=default.target

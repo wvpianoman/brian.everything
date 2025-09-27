@@ -1,0 +1,10 @@
+[Unit]
+Description=Start Brians Mega-CMD on login
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=30m
+Unit=mega-cmd-mon.service
+
+[Install]
+WantedBy=timers.target
