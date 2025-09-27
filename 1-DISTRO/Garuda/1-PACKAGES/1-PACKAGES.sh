@@ -68,7 +68,7 @@ essential_packages=(
 # kde packages
 kde_packages=(
     akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers
-    kdepim-addons yakuake korganizer
+    kdepim-addons yakuake korganizer 
 )
 
 # software packages
