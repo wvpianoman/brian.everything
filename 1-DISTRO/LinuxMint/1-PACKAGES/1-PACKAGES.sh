@@ -55,7 +55,7 @@ sudo apt install -y yad espeak espeak-ng fancontrol figlet fortune-mod fortunes 
 
 sudo nala install -y  haveged ibus-gtk4 jq lsd make ublock-origin-doc webext-ublock-origin-firefox mpg123 nano neofetch neovim neovim-qt snmpd net-tools nftables openssh-{client,server} ostree p7zip p7zip-full p7zip-rar packagekit pandoc pip pipewire-{audio,doc} pkg-config plocate powertop python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv tar terminator tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zram-tools zstd gparted #virt-manager
 
-sudo nala install hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot vlc simplescreenrecorder linux-lowlatency-6.11 megacmd
+sudo nala install hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot vlc simplescreenrecorder linux-lowlatency-6.11 megacmd microsoft-edge-dev
 
 echo "Package installation completed."
     sleep 3
@@ -121,10 +121,10 @@ echo -e "|     Let's clean up your SSD                 |"
 echo -e "----------------------------------------------\n\n"
 sudo fstrim -av
 
-echo -e "\n\n----------------------------------------------"
-echo -e "|                                            |"
-echo -e "|        Setup Complete! Enjoy PikaOS!           |"
-echo -e "|                                            |"
-echo -e "----------------------------------------------\n\n"
+echo -e "\n\n-------------------------------------------"
+echo -e "|                                         |"
+echo -e "|     Setup Complete! Enjoy LinuxMint     |"
+echo -e "|                                         |"
+echo -e "-------------------------------------------\n\n"
 
 exit 0

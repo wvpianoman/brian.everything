@@ -14,7 +14,7 @@ cat > "$bin_dir/brian-mega.sh" << 'EOF'
 set -e
 
 # Auto-login change your password brother
-mega-login "dbf.linux@gmail.com" "PASSWORD"
+mega-login "dbf.linux@gmail.com" "********"
 
 # Sync directories
 mega-sync "$HOME/Documents"               "/Documents"
