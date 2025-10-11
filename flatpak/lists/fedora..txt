@@ -28,10 +28,10 @@ app/me.iepure.devtoolbox/x86_64/stable
 app/org.onlyoffice.desktopeditors/x86_64/stable
 app/io.github.equicord.equibop/x86_64/stable
 app/org.upscayl.Upscayl/x86_64/stable
-app/io.github.chidiwilliams.Buzz/x86_64/stable
+#app/io.github.chidiwilliams.Buzz/x86_64/stable
 app/com.github.tenderowl.frog/x86_64/stable
 app/com.logseq.Logseq/x86_64/stable
-app/app.devsuite.Ptyxis/x86_64/stable
+#app/app.devsuite.Ptyxis/x86_64/stable
 app/org.gnome.OCRFeeder/x86_64/stable
 app/io.github.manisandro.gImageReader/x86_64/stable
 app/work.openpaper.Paperwork/x86_64/stable
