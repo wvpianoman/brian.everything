@@ -41,6 +41,13 @@ sudo chown root:root /tmp/onlyoffice.gpg
 sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
 
 echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
+
+# grub-customizer
+
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt-get update
+sudo apt-get install grub-customizer
+
 sudo nala update && sudo nala install onlyoffice-desktopeditors onlyoffice-desktopeditors-help gum softmaker-freeoffice-2024 sublime-text fonts-crosextra-caladea
 
 #fileu
