@@ -3,6 +3,8 @@
 # For Brians
 set -e
 
+wget https://mega.nz/linux/repo/Debian_testing/amd64/megacmd-Debian_testing_amd64.deb && sudo apt install "$PWD/megacmd-Debian_testing_amd64.deb"
+
 service_dir="$HOME/.config/systemd/user"
 bin_dir="$HOME/bin"
 
@@ -14,7 +16,7 @@ cat > "$bin_dir/brian-mega.sh" << 'EOF'
 set -e
 
 # Auto-login change your password brother
-mega-login "dbf.linux@gmail.com" "********"
+mega-login "dbf.linux@gmail.com" "PASSWORD"
 
 # Sync directories
 mega-sync "$HOME/Documents"               "/Documents"
@@ -23,6 +25,7 @@ mega-sync "$HOME/Templates"               "/Templates"
 mega-sync "$HOME/Music"                   "/Music"
 mega-sync "$HOME/Videos"                  "/Videos"
 mega-sync "$HOME/Downloads/appimage_files" "/appimage_files"
+mega-sync "$HOME/Downloads/apps"          "apps"
 mega-sync "$HOME/github"                  "/github"
 mega-sync "$HOME/scripts"                 "/scripts"
 mega-sync "$HOME/Downloads/ventoy"        "/Ventoy"

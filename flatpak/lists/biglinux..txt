@@ -19,6 +19,7 @@ app/net.mkiol.SpeechNote/x86_64/stable
 app/org.garudalinux.firedragon/x86_64/stable
 app/org.upscayl.Upscayl/x86_64/stable
 app/xyz.rescribe.rescribe/x86_64/stable
+app/io.github.mightycreak.Diffuse/x86_64/stable
 #app/app.devsuite.Ptyxis/x86_64/stable
 #app/com.axosoft.GitKraken/x86_64/stable
 #app/com.github.dynobo.normcap/x86_64/stable
@@ -34,3 +35,4 @@ app/xyz.rescribe.rescribe/x86_64/stable
 #app/org.gustavoperedo.FontDownloader/x86_64/stable
 #app/org.kde.ghostwriter/x86_64/stable
 #app/work.openpaper.Paperwork/x86_64/stable
+
