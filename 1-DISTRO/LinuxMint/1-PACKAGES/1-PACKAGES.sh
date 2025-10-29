@@ -87,7 +87,7 @@ sudo apt install -y  haveged ibus-gtk4 jq lsd make ublock-origin-doc webext-ublo
 
 sudo apt install 
 
-sudo apt install hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot vlc simplescreenrecorder megacmd obs-studio ocrmypdf duf gum figlet kitty pandoc gum thunar thunar-gtkhash thunar-archive-plugin thunar-media-tags-plugin thunar-font-manager thunar-volman thunar-megasync thunarx-python 
+sudo apt install hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot vlc simplescreenrecorder megacmd obs-studio ocrmypdf duf gum figlet kitty pandoc gum thunar thunar-gtkhash thunar-archive-plugin thunar-media-tags-plugin thunar-font-manager thunar-volman thunar-megasync thunarx-python yakuake
 
 echo "Package installation completed."
     sleep 3
@@ -110,8 +110,7 @@ echo "Package installation completed."
 
 # Installing fonts
 sudo apt install fonts-font-awesome xfonts-100dpi fonts-noto-color-emoji fonts-crosextra-caladea fonts-crosextra-carlito fonts-firacode fonts-noto-unhinted fonts-ubuntu-classic fonts-noto-mono 
-wget https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip
-sudo unzip FiraCode.zip -d /usr/share/fonts
+ 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip
 sudo unzip Meslo.zip -d /usr/share/fonts
 
@@ -119,7 +118,7 @@ sudo unzip Meslo.zip -d /usr/share/fonts
 sudo fc-cache -vf
 
 # Removing zip Files
-rm ./Fira_Code_v6.2.zip ./Meslo.zip
+rm ./Meslo.zip
 
 # Function to remove residual configuration files
 function remove_residual_config_files() {

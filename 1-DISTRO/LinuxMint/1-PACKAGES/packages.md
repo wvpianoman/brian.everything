@@ -43,13 +43,8 @@
     git                             fast, scalable, distributed revision control system
     gnupg2                          a free PGP replacement for secure communication and data storage
     grep                            GNU grep. egrep and fgrep
-    grub-customizer                 GUI to configure GRUB2 and BURG
-    gstreamer1.0-libav              GStreamer plugins for the libav codec library
-    gstreamer1.0-plugins            GStreamer plugins from the (bad, base, good, rtp & ugly) set
-    gstreamer1.0-tools              Tools for GStreamer multimedia framework
-    gstreamer1.0-vaapi              GStreamer plugins for video decoding/encoding using VA-API
-    gtk2-engines                    theme engines for GTK+ 2.x
-    gtk2-engines-murrine            cairo-based gtk+-2.0 theme engine
+    
+
     haveged                         Linux entropy source using the HAVEGE algorithm
     ibus-gtk4                       Intelligent Input Bus - GTK4 support
     intel-media-va-driver           VAAPI driver for the Intel GEN8+ Graphics family
@@ -154,6 +149,7 @@
     ghostwriter                 Disstraction-free, themable Markdown editor
     gimp                        GNU Image Manipulation Program
     gimp-help-en                Documentation for GIMP (English)
+    gparted 
     inkscape                    vector-based drawing program
     kdepim                      KDE Personal Information Metapackage
     kdepim-addons               Additional plugins for KDE PIM applications
