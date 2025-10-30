@@ -18,10 +18,12 @@ echo -e 'Types: deb\nURIs: https://download.sublimetext.com/\nSuites: apt/stable
 #pikman update && pikman install sublime-text
 
 # freeoffice
-sudo su
 
-wget -qO- https://shop.softmaker.com/repo/linux-repo-public.key | gpg --dearmor > /etc/apt/keyrings/softmaker.gpg
-echo "deb [signed-by=/etc/apt/keyrings/softmaker.gpg] https://shop.softmaker.com/repo/apt stable non-free" > /etc/apt/sources.list.d/softmaker.list
+__dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+su -c "${__dir}/freeoffice.sh" root
+
+# wget -qO- https://shop.softmaker.com/repo/linux-repo-public.key | gpg --dearmor > /etc/apt/keyrings/softmaker.gpg
+# echo "deb [signed-by=/etc/apt/keyrings/softmaker.gpg] https://shop.softmaker.com/repo/apt stable non-free" > /etc/apt/sources.list.d/softmaker.list
 # pikman update && pikman install softmaker-freeoffice-2024
 
 # Megasync
@@ -85,7 +87,7 @@ sudo apt install -y yad espeak espeak-ng fancontrol figlet fortune-mod fortunes 
 
 sudo apt install -y  haveged ibus-gtk4 jq lsd make ublock-origin-doc webext-ublock-origin-firefox mpg123 nano neofetch neovim neovim-qt snmpd net-tools nftables openssh-{client,server} ostree p7zip p7zip-full p7zip-rar packagekit pandoc pip pipewire-{audio,doc} pkg-config plocate powertop python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv tar terminator tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zram-tools zstd gparted kdeconnect meld #virt-manager
 
-sudo apt install 
+sudo apt install
 
 sudo apt install hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot vlc simplescreenrecorder megacmd obs-studio ocrmypdf duf gum figlet kitty pandoc gum thunar thunar-gtkhash thunar-archive-plugin thunar-media-tags-plugin thunar-font-manager thunar-volman thunar-megasync thunarx-python yakuake
 
@@ -109,8 +111,8 @@ echo "Package installation completed."
 
 
 # Installing fonts
-sudo apt install fonts-font-awesome xfonts-100dpi fonts-noto-color-emoji fonts-crosextra-caladea fonts-crosextra-carlito fonts-firacode fonts-noto-unhinted fonts-ubuntu-classic fonts-noto-mono 
- 
+sudo apt install fonts-font-awesome xfonts-100dpi fonts-noto-color-emoji fonts-crosextra-caladea fonts-crosextra-carlito fonts-firacode fonts-noto-unhinted fonts-ubuntu-classic fonts-noto-mono
+
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip
 sudo unzip Meslo.zip -d /usr/share/fonts
 
