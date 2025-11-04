@@ -68,13 +68,7 @@ sudo apt install fish
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
 
-# fish plugins
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-
-fisher install IlanCosman/tide@v6
-
-
-sudo apt update && sudo apt install onlyoffice-desktopeditors onlyoffice-desktopeditors-help gum softmaker-freeoffice-2024 sublime-text fonts-crosextra-caladea
+sudo apt update && sudo apt install onlyoffice-desktopeditors onlyoffice-desktopeditors-help gum sublime-text fonts-crosextra-caladea
 
 #fileu
 # wget https://filelu.com/IO83v8fj9nbLQxAs/filelusync_amd64.zip

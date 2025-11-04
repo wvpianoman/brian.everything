@@ -3,7 +3,7 @@ app/com.dec05eba.gpu_screen_recorder/x86_64/stable
 app/io.github.ilya_zlobintsev.LACT/x86_64/stable
 app/com.github.tchx84.Flatseal/x86_64/stable
 app/com.jgraph.drawio.desktop/x86_64/stable
-app/eu.betterbird.Betterbird/x86_64/stable
+#app/eu.betterbird.Betterbird/x86_64/stable
 app/io.github.aandrew_me.ytdn/x86_64/stable
 app/io.github.flattool.Warehouse/x86_64/stable
 app/io.github.ilya_zlobintsev.LACT/x86_64/stable
@@ -27,7 +27,7 @@ app/org.upscayl.Upscayl/x86_64/stable
 app/com.github.tenderowl.frog/x86_64/stable
 app/com.logseq.Logseq/x86_64/stable
 #app/org.onlyoffice.desktopeditors/x86_64/stable
-app/com.axosoft.GitKraken/x86_64/stable
+#app/com.axosoft.GitKraken/x86_64/stable
 app/io.github.amit9838.mousam/x86_64/stable
 app/org.gnome.OCRFeeder/x86_64/stable
 app/io.github.manisandro.gImageReader/x86_64/stable
