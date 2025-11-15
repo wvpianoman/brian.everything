@@ -1,0 +1,321 @@
+
+┌────────────────────────────────────┐
+│ Ultramarine Linux Migration Script │
+└──────────────────────────────╴v0.1.3
+Welcome to the Fedora to Ultramarine Linux migration script!
+This script will migrate your Fedora system to Ultramarine Linux.
+Please make sure you have a backup of your system before proceeding, as this script will make major changes to your system.
+This script will also update your system to the latest version of Fedora before proceeding. Please make sure you can properly update your system before proceeding.
+
+□ Are you sure you want to continue? (Y/n) 
+━━━╸Beginning migration╺━━━
+
+■ (1/3) Updating system...
++ sudo dnf update -y
+Updating and loading repositories:
+Repositories loaded.
+Nothing to do.
++ sudo dnf downgrade dnf5 -y
+Updating and loading repositories:
+Repositories loaded.
+Package                                      Arch   Version         Repository      Size
+Downgrading:
+ dnf5                                        x86_64 5.2.12.0-1.fc42 fedora       2.3 MiB
+   replacing dnf5                            x86_64 5.2.17.0-1.fc42 updates      2.8 MiB
+ dnf5-plugins                                x86_64 5.2.12.0-1.fc42 fedora       1.2 MiB
+   replacing dnf5-plugins                    x86_64 5.2.17.0-1.fc42 updates      1.3 MiB
+ dnf5daemon-server                           x86_64 5.2.12.0-1.fc42 fedora     643.6 KiB
+   replacing dnf5daemon-server               x86_64 5.2.17.0-1.fc42 updates    726.1 KiB
+ libdnf5                                     x86_64 5.2.12.0-1.fc42 fedora       3.6 MiB
+   replacing libdnf5                         x86_64 5.2.17.0-1.fc42 updates      3.8 MiB
+ libdnf5-cli                                 x86_64 5.2.12.0-1.fc42 fedora     867.6 KiB
+   replacing libdnf5-cli                     x86_64 5.2.17.0-1.fc42 updates    920.8 KiB
+ libdnf5-plugin-expired-pgp-keys             x86_64 5.2.12.0-1.fc42 fedora      82.5 KiB
+   replacing libdnf5-plugin-expired-pgp-keys x86_64 5.2.17.0-1.fc42 updates     86.5 KiB
+ python3-libdnf5                             x86_64 5.2.12.0-1.fc42 fedora       7.8 MiB
+   replacing python3-libdnf5                 x86_64 5.2.17.0-1.fc42 updates      9.2 MiB
+
+Transaction Summary:
+ Replacing:          7 packages
+ Downgrading:        7 packages
+
+Total size of inbound packages is 5 MiB. Need to download 5 MiB.
+After this operation, 2 MiB will be freed (install 16 MiB, remove 19 MiB).
+[1/7] libdnf5-cli-0:5.2.12.0-1.fc42.x86 100% | 670.4 KiB/s | 346.6 KiB |  00m01s
+[2/7] libdnf5-plugin-expired-pgp-keys-0 100% | 198.4 KiB/s | 103.4 KiB |  00m01s
+[3/7] libdnf5-0:5.2.12.0-1.fc42.x86_64  100% |   1.9 MiB/s |   1.2 MiB |  00m01s
+[4/7] dnf5-plugins-0:5.2.12.0-1.fc42.x8 100% | 680.1 KiB/s | 450.9 KiB |  00m01s
+[5/7] dnf5-0:5.2.12.0-1.fc42.x86_64     100% |   1.2 MiB/s | 834.7 KiB |  00m01s
+[6/7] python3-libdnf5-0:5.2.12.0-1.fc42 100% |   2.0 MiB/s |   1.5 MiB |  00m01s
+[7/7] dnf5daemon-server-0:5.2.12.0-1.fc 100% | 254.1 KiB/s | 288.4 KiB |  00m01s
+--------------------------------------------------------------------------------
+[7/7] Total                             100% |   3.3 MiB/s |   4.7 MiB |  00m01s
+Running transaction
+[ 1/16] Verify package files            100% | 636.0   B/s |   7.0   B |  00m00s
+[ 2/16] Prepare transaction             100% |  36.0   B/s |  14.0   B |  00m00s
+[ 3/16] Downgrading libdnf5-0:5.2.12.0- 100% | 109.1 MiB/s |   3.6 MiB |  00m00s
+[ 4/16] Downgrading libdnf5-cli-0:5.2.1 100% |  60.8 MiB/s | 871.4 KiB |  00m00s
+[ 5/16] Downgrading dnf5-0:5.2.12.0-1.f 100% |  54.8 MiB/s |   2.3 MiB |  00m00s
+[ 6/16] Downgrading dnf5-plugins-0:5.2. 100% |  68.8 MiB/s |   1.2 MiB |  00m00s
+[ 7/16] Downgrading dnf5daemon-server-0 100% |  21.9 MiB/s | 649.2 KiB |  00m00s
+[ 8/16] Downgrading python3-libdnf5-0:5 100% | 195.4 MiB/s |   7.8 MiB |  00m00s
+[ 9/16] Downgrading libdnf5-plugin-expi 100% |  16.3 MiB/s |  83.7 KiB |  00m00s
+[10/16] Removing dnf5-plugins-0:5.2.17. 100% |   7.2 KiB/s | 155.0   B |  00m00s
+[11/16] Removing dnf5-0:5.2.17.0-1.fc42 100% |   3.8 KiB/s | 156.0   B |  00m00s
+[12/16] Removing dnf5daemon-server-0:5. 100% |   1.3 KiB/s |  39.0   B |  00m00s
+[13/16] Removing libdnf5-cli-0:5.2.17.0 100% |   5.9 KiB/s |  30.0   B |  00m00s
+[14/16] Removing libdnf5-plugin-expired 100% |   1.7 KiB/s |   7.0   B |  00m00s
+[15/16] Removing python3-libdnf5-0:5.2. 100% |  15.8 KiB/s |  81.0   B |  00m00s
+[16/16] Removing libdnf5-0:5.2.17.0-1.f 100% |  58.0   B/s |  56.0   B |  00m01s
+Complete!
+
+
+■ (2/3) Installing repositories...
+
+ ...[1/3] RPM Fusion
+ --> Installing rpmfusion-nonfree-release and rpmfusion-free-release
++ sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm
+Updating and loading repositories:
+Repositories loaded.
+ https://mirrors.rpmfusion.org/nonfree/ 100% |  24.3 KiB/s |  11.4 KiB |  00m00s
+ https://mirrors.rpmfusion.org/free/fed 100% |  19.3 KiB/s |  11.3 KiB |  00m01s
+Package                    Arch   Version Repository        Size
+Installing:
+ rpmfusion-free-release    noarch 42-1    @commandline   5.6 KiB
+ rpmfusion-nonfree-release noarch 42-1    @commandline   5.8 KiB
+
+Transaction Summary:
+ Installing:         2 packages
+
+Total size of inbound packages is 23 KiB. Need to download 0 B.
+After this operation, 11 KiB extra will be used (install 11 KiB, remove 0 B).
+Running transaction
+[1/4] Verify package files              100% |   2.0 KiB/s |   2.0   B |  00m00s
+[2/4] Prepare transaction               100% |  12.0   B/s |   2.0   B |  00m00s
+[3/4] Installing rpmfusion-nonfree-rele 100% | 527.1 KiB/s |   7.4 KiB |  00m00s
+[4/4] Installing rpmfusion-free-release 100% |  30.1 KiB/s |   7.2 KiB |  00m00s
+Warning: skipped OpenPGP checks for 2 packages from repository: @commandline
+Complete!
+
+ ...[2/3] Terra
+ --> Seems like terra-release has already been installed
+
+ ...[3/3] Ultramarine Repositories
++ sudo dnf install -y --repofrompath 'ultramarine,https://repos.fyralabs.com/um$releasever' --setopt=ultramarine.gpgkey=https://repos.fyralabs.com/um42/key.asc ultramarine-repos-common
+Updating and loading repositories:
+ ultramarine                            100% | 127.5 KiB/s | 237.1 KiB |  00m02s
+ RPM Fusion for Fedora 42 - Free        100% | 132.3 KiB/s | 158.0 KiB |  00m01s
+ RPM Fusion for Fedora 42 - Free - Upda 100% |  57.0 KiB/s |  79.1 KiB |  00m01s
+ RPM Fusion for Fedora 42 - Nonfree - U 100% |  57.6 KiB/s |  29.4 KiB |  00m01s
+ RPM Fusion for Fedora 42 - Nonfree     100% | 276.4 KiB/s |  96.7 KiB |  00m00s
+Repositories loaded.
+Package                   Arch   Version   Repository       Size
+Installing:
+ ultramarine-repos-common noarch 42-1.um42 ultramarine 690.0   B
+
+Transaction Summary:
+ Installing:         1 package
+
+Total size of inbound packages is 7 KiB. Need to download 7 KiB.
+After this operation, 690 B extra will be used (install 690 B, remove 0 B).
+[1/1] ultramarine-repos-common-0:42-1.u 100% |  11.4 KiB/s |   6.8 KiB |  00m01s
+--------------------------------------------------------------------------------
+[1/1] Total                             100% |  11.4 KiB/s |   6.8 KiB |  00m01s
+Running transaction
+[2A[1/2] https://repos.fyralabs.com/um42/k 100% |   1.4 KiB/s | 843.0   B |  00m01s
+--------------------------------------------------------------------------------
+[2/2] Total                             100% |  11.4 KiB/s |   6.8 KiB |  00m01s
+Importing OpenPGP key 0xB62E2F67:
+ UserID     : "Ultramarine Linux <security@fyralabs.com>"
+ Fingerprint: 5573381E2FFD919A443F7FCF9F7E76AEB62E2F67
+ From       : https://repos.fyralabs.com/um42/key.asc
+The key was successfully imported.
+[1/3] Verify package files              100% |   0.0   B/s |   1.0   B |  00m00s
+[2/3] Prepare transaction               100% |   6.0   B/s |   1.0   B |  00m00s
+[3/3] Installing ultramarine-repos-comm 100% |   4.0 KiB/s | 964.0   B |  00m00s
+Complete!
+
+
+■ (3/3) Converting to Ultramarine...
+ ... Falling back to `ultramarine-release-common`
++ sudo dnf swap -y fedora-release-common ultramarine-release-common --allowerasing
+Updating and loading repositories:
+ Ultramarine Linux 42                   100% |   9.0 KiB/s |  15.1 KiB |  00m02s
+>>> Downloading successful, but checksum doesn't match. Calculated: 1b40a09d2f67
+>>> Librepo error: repomd.xml GPG signature verification error: Signing key not 
+ https://repos.fyralabs.com/um42/key.as 100% |   1.3 KiB/s | 843.0   B |  00m01s
+Importing OpenPGP key 0xB62E2F67:
+ UserID     : "Ultramarine Linux <security@fyralabs.com>"
+ Fingerprint: 5573381E2FFD919A443F7FCF9F7E76AEB62E2F67
+ From       : https://repos.fyralabs.com/um42/key.asc
+The key was successfully imported.
+ Ultramarine Linux 42                   100% |  25.3 KiB/s |  39.9 KiB |  00m02s
+>>> Downloading successful, but checksum doesn't match. Calculated: 1b40a09d2f67
+Repositories loaded.
+Package                             Arch   Version        Repository       Size
+Removing:
+ fedora-release-common              noarch 42-30          updates      20.2 KiB
+Removing dependent packages:
+ fedora-release-cinnamon            noarch 42-30          updates       0.0   B
+ fedora-release-identity-cinnamon   noarch 42-30          updates       1.9 KiB
+Installing:
+ ultramarine-release-common         noarch 42-20.um42     ultramarine  22.8 KiB
+Installing dependencies:
+ ansible-collection-ansible-posix   noarch 2.0.0-1.fc42   fedora      412.8 KiB
+ ansible-core                       noarch 2.18.6-1.fc42  updates      13.9 MiB
+ distribution-gpg-keys              noarch 1.114-1.fc42   updates     924.2 KiB
+ python3-jinja2                     noarch 3.1.6-1.fc42   fedora        2.9 MiB
+ python3-resolvelib                 noarch 1.0.1-7.fc42   fedora       91.2 KiB
+ terra-release-extras               noarch 42-4           terra         2.2 KiB
+ ultramarine-release                noarch 42-20.um42     ultramarine   0.0   B
+ ultramarine-release-identity-basic noarch 42-20.um42     ultramarine 699.0   B
+ ultramarine-repos                  noarch 42-1.um42      ultramarine   0.0   B
+ yyjson                             x86_64 0.12.0-1.fc42  updates     264.2 KiB
+Installing weak dependencies:
+ fastfetch                          x86_64 2.44.0-1.fc42  updates       1.5 MiB
+ golang-github-ultramarine-linux-um x86_64 0.4.5-0.1.um42 ultramarine  12.4 MiB
+ ultramarine-repos-extras           noarch 42-1.um42      ultramarine   3.9 KiB
+
+Transaction Summary:
+ Installing:        14 packages
+ Removing:           3 packages
+
+Total size of inbound packages is 9 MiB. Need to download 9 MiB.
+After this operation, 32 MiB extra will be used (install 32 MiB, remove 22 KiB).
+[ 1/14] ultramarine-repos-0:42-1.um42.n 100% |  92.9 KiB/s |   6.1 KiB |  00m00s
+[ 2/14] terra-release-extras-0:42-4.noa 100% | 107.6 KiB/s |   8.1 KiB |  00m00s
+[ 3/14] ultramarine-release-common-0:42 100% | 232.0 KiB/s |  20.2 KiB |  00m00s
+[ 4/14] ultramarine-release-0:42-20.um4 100% |  56.3 KiB/s |   6.6 KiB |  00m00s
+[ 5/14] ultramarine-release-identity-ba 100% |  59.9 KiB/s |   7.3 KiB |  00m00s
+[ 6/14] ultramarine-repos-extras-0:42-1 100% |  66.8 KiB/s |   9.9 KiB |  00m00s
+[ 7/14] python3-resolvelib-0:1.0.1-7.fc 100% | 256.7 KiB/s |  45.4 KiB |  00m00s
+[ 8/14] python3-jinja2-0:3.1.6-1.fc42.n 100% |   2.3 MiB/s | 496.7 KiB |  00m00s
+[ 9/14] ansible-collection-ansible-posi 100% | 494.1 KiB/s | 108.7 KiB |  00m00s
+[10/14] yyjson-0:0.12.0-1.fc42.x86_64   100% | 275.1 KiB/s | 117.2 KiB |  00m00s
+[11/14] fastfetch-0:2.44.0-1.fc42.x86_6 100% | 896.7 KiB/s | 536.2 KiB |  00m01s
+[12/14] golang-github-ultramarine-linux 100% |   6.1 MiB/s |   3.7 MiB |  00m01s
+[13/14] distribution-gpg-keys-0:1.114-1 100% |   1.1 MiB/s | 724.2 KiB |  00m01s
+[14/14] ansible-core-0:2.18.6-1.fc42.no 100% |   4.8 MiB/s |   3.7 MiB |  00m01s
+--------------------------------------------------------------------------------
+[14/14] Total                           100% |   3.5 MiB/s |   9.4 MiB |  00m03s
+Running transaction
+[ 1/19] Verify package files            100% | 583.0   B/s |  14.0   B |  00m00s
+[ 2/19] Prepare transaction             100% |  46.0   B/s |  17.0   B |  00m00s
+[ 3/19] Installing yyjson-0:0.12.0-1.fc 100% |  17.3 MiB/s | 265.6 KiB |  00m00s
+[ 4/19] Installing python3-resolvelib-0 100% |  19.3 MiB/s |  98.8 KiB |  00m00s
+[ 5/19] Installing python3-jinja2-0:3.1 100% | 171.4 MiB/s |   2.9 MiB |  00m00s
+[ 6/19] Installing ansible-core-0:2.18. 100% | 109.9 MiB/s |  14.4 MiB |  00m00s
+[ 7/19] Installing ansible-collection-a 100% |  59.2 MiB/s | 424.7 KiB |  00m00s
+[ 8/19] Installing distribution-gpg-key 100% |  47.1 MiB/s |   1.0 MiB |  00m00s
+[ 9/19] Installing terra-release-extras 100% | 931.0 KiB/s |   2.8 KiB |  00m00s
+[10/19] Installing ultramarine-release- 100% | 311.2 KiB/s | 956.0   B |  00m00s
+[11/19] Installing ultramarine-repos-0: 100% |  40.4 KiB/s | 124.0   B |  00m00s
+[12/19] Installing ultramarine-release- 100% |  40.4 KiB/s | 124.0   B |  00m00s
+[13/19] Installing ultramarine-release- 100% |   4.7 MiB/s |  29.1 KiB |  00m00s
+[14/19] Installing ultramarine-repos-ex 100% |   1.4 MiB/s |   4.2 KiB |  00m00s
+[15/19] Installing golang-github-ultram 100% | 327.4 MiB/s |  12.4 MiB |  00m00s
+[16/19] Installing fastfetch-0:2.44.0-1 100% |  86.3 MiB/s |   1.6 MiB |  00m00s
+[17/19] Removing fedora-release-cinnamo 100% |  24.4 KiB/s | 100.0   B |  00m00s
+[18/19] Removing fedora-release-common- 100% |   5.7 KiB/s |  29.0   B |  00m00s
+[19/19] Removing fedora-release-identit 100% |   1.0   B/s |   3.0   B |  00m02s
+Complete!
++ sudo dnf group install --allowerasing --no-best -y ultramarine-product-common
+Updating and loading repositories:
+ Terra 42 (Extras)                      100% |   5.7 KiB/s |   7.9 KiB |  00m01s
+>>> Librepo error: repomd.xml GPG signature verification error: Signing key not 
+ https://repos.fyralabs.com/terra42-ext 100% |   1.5 KiB/s | 843.0   B |  00m01s
+Importing OpenPGP key 0xE36BD507:
+ UserID     : "Terra 42 - Extras <security@fyralabs.com>"
+ Fingerprint: B00B4389AAF8F0361540261C650E6DE6E36BD507
+ From       : https://repos.fyralabs.com/terra42-extras/key.asc
+The key was successfully imported.
+ Terra 42 (Extras)                      100% | 307.5 KiB/s | 200.8 KiB |  00m01s
+Repositories loaded.
+Package "fastfetch-2.44.0-1.fc42.x86_64" is already installed.
+Package "git-2.51.1-1.fc42.x86_64" is already installed.
+Package "golang-github-ultramarine-linux-um-0.4.5-0.1.um42.x86_64" is already installed.
+Package "linux-firmware-20251021-1.fc42.noarch" is already installed.
+Package "ultramarine-release-42-20.um42.noarch" is already installed.
+
+Package                          Arch   Version         Repository       Size
+Installing group/module packages:
+ NetworkManager-tui              x86_64 1:1.52.1-1.fc42 updates     711.8 KiB
+ ultramarine-fun                 noarch 42-1.um42       ultramarine   1.3 KiB
+ ultramarine-phony-bookmarks     noarch 0-6.um42        ultramarine   0.0   B
+ ultramarine-shell-config        noarch 1.2.6-1.um42    ultramarine   4.1 KiB
+ ultramarine-system-configs-core noarch 1.1-1.um42      ultramarine 549.0   B
+ zstd                            x86_64 1.5.7-1.fc42    fedora        1.7 MiB
+Installing dependencies:
+ bat                             x86_64 0.25.0-6.fc42   updates       5.6 MiB
+ fzf                             x86_64 0.65.2-1.fc42   updates       4.6 MiB
+ newt                            x86_64 0.52.25-1.fc42  fedora      213.7 KiB
+ starship                        x86_64 1.23.0-1.fc42   terra        11.4 MiB
+ zsh                             x86_64 5.9-17.fc42     updates       7.9 MiB
+ zsh-autosuggestions             noarch 0.7.1-2.fc42    fedora       42.8 KiB
+ zsh-syntax-highlighting         noarch 0.8.0-5.fc42    fedora      177.3 KiB
+Installing groups:
+ Ultramarine common packages                                                 
+
+Transaction Summary:
+ Installing:        13 packages
+
+Total size of inbound packages is 12 MiB. Need to download 12 MiB.
+After this operation, 32 MiB extra will be used (install 32 MiB, remove 0 B).
+[ 1/13] ultramarine-fun-0:42-1.um42.noa 100% | 108.4 KiB/s |   8.3 KiB |  00m00s
+[ 2/13] ultramarine-phony-bookmarks-0:0 100% |  80.2 KiB/s |   6.8 KiB |  00m00s
+[ 3/13] ultramarine-system-configs-core 100% |  66.8 KiB/s |   7.4 KiB |  00m00s
+[ 4/13] ultramarine-shell-config-0:1.2. 100% |  69.6 KiB/s |   9.5 KiB |  00m00s
+[ 5/13] zsh-autosuggestions-0:0.7.1-2.f 100% | 151.2 KiB/s |  21.3 KiB |  00m00s
+[ 6/13] zsh-syntax-highlighting-0:0.8.0 100% | 347.4 KiB/s |  56.3 KiB |  00m00s
+[ 7/13] newt-0:0.52.25-1.fc42.x86_64    100% | 492.3 KiB/s | 114.7 KiB |  00m00s
+[ 8/13] zstd-0:1.5.7-1.fc42.x86_64      100% |   1.6 MiB/s | 485.9 KiB |  00m00s
+[ 9/13] starship-0:1.23.0-1.fc42.x86_64 100% |  12.6 MiB/s |   3.8 MiB |  00m00s
+[10/13] NetworkManager-tui-1:1.52.1-1.f 100% | 461.3 KiB/s | 225.1 KiB |  00m00s
+[11/13] zsh-0:5.9-17.fc42.x86_64        100% |   5.9 MiB/s |   3.3 MiB |  00m01s
+[12/13] fzf-0:0.65.2-1.fc42.x86_64      100% |   2.5 MiB/s |   1.6 MiB |  00m01s
+[13/13] bat-0:0.25.0-6.fc42.x86_64      100% |   3.0 MiB/s |   2.6 MiB |  00m01s
+--------------------------------------------------------------------------------
+[13/13] Total                           100% |   7.8 MiB/s |  12.2 MiB |  00m02s
+Running transaction
+[ 1/15] Verify package files            100% | 419.0   B/s |  13.0   B |  00m00s
+[ 2/15] Prepare transaction             100% |  35.0   B/s |  13.0   B |  00m00s
+[ 3/15] Installing zsh-0:5.9-17.fc42.x8 100% |  84.4 MiB/s |   8.1 MiB |  00m00s
+[ 4/15] Installing zsh-autosuggestions- 100% |  10.7 MiB/s |  43.9 KiB |  00m00s
+[ 5/15] Installing zsh-syntax-highlight 100% |  35.8 MiB/s | 183.2 KiB |  00m00s
+[ 6/15] Installing fzf-0:0.65.2-1.fc42. 100% | 201.6 MiB/s |   4.6 MiB |  00m00s
+[ 7/15] Installing bat-0:0.25.0-6.fc42. 100% | 222.5 MiB/s |   5.6 MiB |  00m00s
+[ 8/15] Installing newt-0:0.52.25-1.fc4 100% |  11.7 MiB/s | 226.9 KiB |  00m00s
+[ 9/15] Installing starship-0:1.23.0-1. 100% | 308.1 MiB/s |  11.4 MiB |  00m00s
+[10/15] Installing ultramarine-shell-co 100% | 332.3 KiB/s |   5.0 KiB |  00m00s
+[11/15] Installing NetworkManager-tui-1 100% |  43.5 MiB/s | 713.3 KiB |  00m00s
+[12/15] Installing zstd-0:1.5.7-1.fc42. 100% | 106.9 MiB/s |   1.7 MiB |  00m00s
+[13/15] Installing ultramarine-system-c 100% | 315.1 KiB/s | 968.0   B |  00m00s
+[14/15] Installing ultramarine-phony-bo 100% |  40.4 KiB/s | 124.0   B |  00m00s
+[15/15] Installing ultramarine-fun-0:42 100% |   7.0 KiB/s |   2.8 KiB |  00m00s
+Complete!
++ sudo dnf swap -y fedora-logos ultramarine-logos --allowerasing
+Updating and loading repositories:
+Repositories loaded.
+Package            Arch   Version       Repository       Size
+Removing:
+ fedora-logos      noarch 42.0.1-1.fc42 anaconda      1.7 MiB
+Installing:
+ ultramarine-logos noarch 42.0.1-2.um42 ultramarine 477.5 KiB
+
+Transaction Summary:
+ Installing:         1 package
+ Removing:           1 package
+
+Total size of inbound packages is 341 KiB. Need to download 341 KiB.
+After this operation, 1 MiB will be freed (install 477 KiB, remove 2 MiB).
+[1/1] ultramarine-logos-0:42.0.1-2.um42 100% |   2.4 MiB/s | 340.7 KiB |  00m00s
+--------------------------------------------------------------------------------
+[1/1] Total                             100% |   1.4 MiB/s | 340.7 KiB |  00m00s
+Running transaction
+[1/4] Verify package files              100% | 500.0   B/s |   1.0   B |  00m00s
+[2/4] Prepare transaction               100% |   9.0   B/s |   2.0   B |  00m00s
+[3/4] Installing ultramarine-logos-0:42 100% |  22.6 MiB/s | 508.8 KiB |  00m00s
+[4/4] Removing fedora-logos-0:42.0.1-1. 100% | 798.0   B/s | 249.0   B |  00m00s
+Complete!
+Adding DNF defaults...
+/dev/fd/63: line 144: /etc/dnf/dnf.conf: Permission denied
