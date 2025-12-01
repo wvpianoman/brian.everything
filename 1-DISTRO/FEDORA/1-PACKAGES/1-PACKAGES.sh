@@ -57,7 +57,7 @@ check_ssh() {
 }
 
 # UltraMarine Convert Script
-bash <(curl -s https://ultramarine-linux.org/migrate.sh)
+#bash <(curl -s https://ultramarine-linux.org/migrate.sh)
 
 check_ssh
 
@@ -80,7 +80,7 @@ fi
 
 # essantial software pckages
 essential_packages=(
-	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep  haveged hplip hplip-gui htop ibus-gtk4 intel-media-driver iptables iptables-services jq kernel-modules-extra lsd make mbedtls meld mesa-filesystem mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pipewire-codec-aptx pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ugrep unrar-free un{zip,rar} wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd PackageKit megacmd
+	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep  haveged hplip hplip-gui htop ibus-gtk4 iptables iptables-services jq kernel-modules-extra lsd make mbedtls meld mesa-filesystem mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ugrep unrar-free un{zip,rar} wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd PackageKit
 )
 
 # kde packages
@@ -99,12 +99,12 @@ cinnamon_packages=(
 )
 # software packages
 software_packages=(
-    blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad zed helix simplescreenrecorder telegram-desktop
+    blender boomaga digikam flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad helix mediawriter 
 )
 
 # home only packages
 home_only=(
-	virt-manager virtualbox virtualbox-guest-additions
+	virt-manager
 )
 
 # utilities for file system access
@@ -147,6 +147,7 @@ install_packages "Installing packages for use at home only" "${home_only[@]}"
 # Install Sublime Text
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+
 sudo dnf install sublime-text -y
 
 # Install Klassy Global Theme plugin
