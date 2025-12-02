@@ -55,16 +55,14 @@ cinnamon_packages=(
     numlockx cairo-dock cairo-dock-plug-ins kitty fuse
 )
 
-)
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers
-    kdepim-addons yakuake korganizer 
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer 
 )
 
 # software packages
 software_packages=(
-    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rhythmbox shotwell simplescreenrecorder github-cli neochat telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork
+    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork
 )
 
 # utilities for file system access
@@ -79,7 +77,7 @@ shells=(
 
 # AUR specific packages
 aur_packages=(
-  tlrc
+  tlrc boomaga
 )
 
 # Install packages
@@ -95,7 +93,7 @@ install_packages "Installing Essential Software Packages" "${essential_packages[
 # Install DE packages
 # Pick Cinnamon or KDE
 install_packages "Installing Cinnamon Packages" "${cinnamon_packages[@]}"
-install_packages "Installing KDE Packages" "${kde_packages[@]}"
+#install_packages "Installing KDE Packages" "${kde_packages[@]}"
 
 
 # Install Software Packages
