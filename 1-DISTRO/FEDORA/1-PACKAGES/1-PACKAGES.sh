@@ -142,7 +142,7 @@ install_packages "Installing utilities for different file system access" "${shel
 install_packages "Installing ZSH / FISH shells and Plug-ins""${filesystem_utilities[@]}"
 
 ## Install Packages for home only
-install_packages "Installing packages for use at home only" "${home_only[@]}"
+#install_packages "Installing packages for use at home only" "${home_only[@]}"
 
 # Install Sublime Text
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
