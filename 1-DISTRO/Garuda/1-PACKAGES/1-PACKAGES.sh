@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-
 # Brian Francisco Packages
-# Dec 30 2024
-
+# Dec 3 2025
 #   《˘ ͜ʖ ˘》
 
 # Inpiration and guidance from Tolga Erok 
@@ -47,7 +45,7 @@ wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst &&
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 python-pyqt6 yad
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw openssh p7zip pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 python-pyqt6 yad
 )
 
 # cinnamon packages
@@ -78,14 +76,25 @@ shells=(
 
 # AUR specific packages
 aur_packages=(
-  tlrc
+  tlrc boomaga
 )
-
 # Install packages
 install_packages() {
     echo -e "${ORANGE}$1${NC}"
     sudo pacman -Sy --noconfirm --needed "${@:2}" || handle_error "Failed to install: $1"
     echo "Package installation completed."
+}
+
+# AUR installations with a message
+install_aur() {
+  local msg="$1"
+  shift
+  echo -e "\033[92m$msg\033[0m"
+  for package in "$@"; do
+    echo -e "  - Installing \033[93m$package\033[0m from AUR..."
+    paru -S "$package"
+  done
+  echo
 }
 
 # Install essential packages
@@ -107,8 +116,6 @@ install_packages "Installing shells and Plug-ins""${software_packages[@]}"
 
 # Install packages from the AUR
 install_aur "Installing AUR specific packages""${aur_packages[@]}"
-
-# Install some fonts
 
 # Configuration to install custom fonts
 # ----------------------------------------------------------------------------
@@ -145,7 +152,6 @@ install_aur() {
   echo
 }
 
-# Main script
 print_header "Installing Recommended Fonts"
 install_packages "Recommended fonts for comprehensive coverage:" \
   noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
