@@ -1,6 +1,6 @@
 #app/app.devsuite.Ptyxis/x86_64/stable
 app/app.zen_browser.zen/x86_64/stable
-#app/com.axosoft.GitKraken/x86_64/stable
+app/com.axosoft.GitKraken/x86_64/stable
 app/com.dec05eba.gpu_screen_recorder/x86_64/stable
 app/com.github.dynobo.normcap/x86_64/stable
 app/com.github.tchx84.Flatseal/x86_64/stable
