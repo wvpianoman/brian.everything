@@ -34,13 +34,13 @@ echo -e "doing stuff..."
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
 #add sublime text repo and install sublime text 4
-curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+# curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+# echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 
 sudo pacman -Syu sublime-text
 
 # Install MegaSync
-wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
+# wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
 
 # essantial software pckages
 essential_packages=(
@@ -49,18 +49,17 @@ essential_packages=(
 
 # cinnamon packages
 cinnamon_packages=(
-    numlockx cairo-dock cairo-dock-plug-ins kitty fuse
+    numlockx cairo-dock cairo-dock-plug-ins kitty fuse gedit
 )
 
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers
-    kdepim-addons yakuake korganizer 
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer 
 )
 
 # software packages
 software_packages=(
-    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rclone-browser rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken
+    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rclone-browser rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken microsoft-edge-stable gnome-tweaks file-roller gnome-maps gnome-calendar gnome-clocks nautilus nautilus-extension-gnome-terminal vlc ulauncher plank conky jq
 )
 
 # utilities for file system access
@@ -77,6 +76,7 @@ shells=(
 aur_packages=(
   tlrc boomaga
 )
+
 # Install packages
 install_packages() {
     echo -e "${ORANGE}$1${NC}"
