@@ -40,7 +40,7 @@ echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable
 sudo pacman -Syu sublime-text
 
 # Install MegaSync
-wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
+#wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
 
 # essantial software pckages
 essential_packages=(
@@ -49,7 +49,7 @@ essential_packages=(
 
 # cinnamon packages
 cinnamon_packages=(
-    numlockx cairo-dock cairo-dock-plug-ins kitty fuse gedit xarchiver pcmanfm thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin tumbler ark thunar-vcs-plugin thunar-shares-plugin gtkhash-thunar plank-reloaded-git crystal-dock-git
+    numlockx cairo-dock cairo-dock-plug-ins kitty fuse gedit xarchiver pcmanfm thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin tumbler ark thunar-vcs-plugin thunar-shares-plugin gtkhash-thunar plank-reloaded-git
 )
 
 # kde packages

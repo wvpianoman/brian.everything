@@ -80,12 +80,12 @@ fi
 
 # essantial software pckages
 essential_packages=(
-	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep  haveged hplip hplip-gui htop ibus-gtk4 iptables iptables-services jq kernel-modules-extra lsd make mbedtls meld mesa-filesystem mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ugrep unrar-free un{zip,rar} wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd PackageKit
+	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep  haveged hplip hplip-gui htop ibus-gtk4 iptables iptables-services jq kernel-modules-extra lsd make mbedtls meld mesa-filesystem mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ugrep unrar-free un{zip,rar} wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd
 )
 
 # kde packages
 kde_packages=(
-    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake neochat
+    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake
 )
 
 # gnome packages
@@ -95,11 +95,12 @@ gnome_packages=(
 
 # Cinnamon packages
 cinnamon_packages=(
-     numlockx cairo-dock cairo-dock-plug-ins kitty fuse-libs fuse
+     numlockx cairo-dock cairo-dock-plug-ins kitty fuse-libs fuse thunar gtkhash-thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman micro 
 )
+
 # software packages
 software_packages=(
-    blender boomaga digikam flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad helix mediawriter 
+    blender boomaga digikam ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad helix mediawriter xournal paperwork flatseal 
 )
 
 # home only packages
@@ -136,10 +137,10 @@ install_packages "Installing CINNAMON Packages" "${cinnamon_packages[@]}"
 install_packages "Installing Software Packages""${software_packages[@]}"
 
 # Install filesystem utilities
-install_packages "Installing utilities for different file system access" "${shells[@]}"
+install_packages "Installing utilities for different file system access" "${filesystem_utilities[@]}"
 
 # Install Software Packages
-install_packages "Installing ZSH / FISH shells and Plug-ins""${filesystem_utilities[@]}"
+install_packages "Installing ZSH / FISH shells and Plug-ins""${shells[@]}"
 
 ## Install Packages for home only
 install_packages "Installing packages for use at home only" "${home_only[@]}"
@@ -155,7 +156,7 @@ sudo dnf install sublime-text -y
 # sudo dnf install klassy -y
 
 # Install Megasync
-wget https://mega.nz/linux/repo/Fedora_42/x86_64/megasync-Fedora_42.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_42.x86_64.rpm"
+#wget https://mega.nz/linux/repo/Fedora_42/x86_64/megasync-Fedora_42.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_42.x86_64.rpm"
 
 # Install Softmaker FreeOffice
 sudo wget -qO /etc/yum.repos.d/softmaker.repo https://shop.softmaker.com/repo/softmaker.repo
@@ -166,7 +167,11 @@ echo "Package installation completed."
 
 sleep 2
 
-sudo systemctl enable --now earlyoom
+##add flatpak repos
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+
+#sudo systemctl enable --now earlyoom
 
 sleep 2
 
@@ -257,15 +262,6 @@ function cleanup_fedora() {
 	# Remove unnecessary dependencies
 	sudo dnf autoremove -y
 
-	### Install Atuin - Shell History Replacement
-#curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-# 1st run register acct with this line
-# atuin register
-# run on another machine, use this to login
-#atuin login
-#atuin import auto
-#atuin sync
-
 	# Sort the lists of installed packages and packages to keep
 	display_message "[${GREEN}✔${NC}]  Sorting out list of installed packages and packages to keep..."
 	comm -23 <(sudo dnf repoquery --installonly --latest-limit=-1 -q | sort) <(sudo dnf list installed | awk '{print $1}' | sort) >/tmp/orphaned-pkgs
@@ -310,7 +306,7 @@ cleanup_fedora
 
 echo -e "\n\n----------------------------------------------"
 echo -e "|                                            |"
-echo -e "|      Setup Complete! Enjoy Ultramarine     |"
+echo -e "|               Setup Complete!              |"
 echo -e "|                                            |"
 echo -e "|--------------------------------------------|\n\n"
 
