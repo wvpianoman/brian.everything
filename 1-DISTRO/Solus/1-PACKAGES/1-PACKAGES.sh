@@ -44,7 +44,7 @@ sudo eopkg it dialog zenity -y
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety font-manager zed lolcat fortune-mod fan2go fan2go-dbginfo qt5ct git-lfs figlet starship yad hardinfo2 klassy klassy-dbginfo megacmd megacmd-dbginfo numbat numbat-dbginfo #virt-manager
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety font-manager zed lolcat fortune-mod fan2go fan2go-dbginfo qt5ct git-lfs figlet yad hardinfo2 klassy klassy-dbginfo numbat numbat-dbginfo #starship #virt-manager
 )
 # kde packages
 kde_packages=(
@@ -58,7 +58,7 @@ gnome_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder uget vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab xournalpp fonts-installer tesseract tessdata gimagereader vivaldi-snapshot paperwork ghostwriter cherrytree gimagereader gpu-screen-recorder logseq xournalpp
+    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab xournalpp fonts-installer tesseract tessdata gimagereader vivaldi-snapshot paperwork ghostwriter cherrytree gimagereader gpu-screen-recorder logseq xournalpp smplayer smplayer-theme solseek
 )
 
 # utilities for file system access
@@ -107,14 +107,14 @@ sudo unzip FiraCode.zip -d /usr/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.zip
 sudo unzip Meslo.zip -d /usr/share/fonts
 
-wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
-sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
+#wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
+#sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
 
 # Reloading Font
 sudo fc-cache -vf
 
 # Removing zip Files
-rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
+rm ./FiraCode.zip ./Meslo.zip
 
 	zip_file="Apple-Fonts-San-Francisco-New-York-master.zip"
 
