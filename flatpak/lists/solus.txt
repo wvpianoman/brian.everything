@@ -11,7 +11,7 @@ app/com.jgraph.drawio.desktop/x86_64/stable
 app/com.microsoft.EdgeDev/x86_64/stable
 app/com.pot_app.pot/x86_64/stable
 app/com.vscodium.codium/x86_64/stable
-app/eu.betterbird.Betterbird/x86_64/stable
+#app/eu.betterbird.Betterbird/x86_64/stable
 app/io.appflowy.AppFlowy/x86_64/stable
 app/io.github.aandrew_me.ytdn/x86_64/stable
 app/io.github.amit9838.mousam/x86_64/stable
