@@ -59,22 +59,22 @@ kde_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rclone-browser rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken microsoft-edge-stable
+    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rclone-browser rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gparted
 )
 
 # utilities for file system access
 filesystem_utilities=(
-    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g reiserfsprogs udftools xfsprogs
+    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs
 )
 
 # utilities for file system access
 shells=(
-    zsh zsh-autosuggestions zsh-syntax-highlighting fish
+    zsh zsh-autosuggestions zsh-syntax-highlighting fish oh-my-posh
 )
 
 # AUR specific packages
 aur_packages=(
-  tlrc boomaga
+  tlrc boomaga fresh-editor
 )
 
 # Install packages
@@ -101,17 +101,17 @@ install_packages "Installing Essential Software Packages" "${essential_packages[
 
 # Install DE packages
 # Pick Gnome or KDE
-install_packages "Installing Cinnamon Packages" "${cinnamon_packages[@]}"
-# install_packages "Installing KDE Packages" "${kde_packages[@]}"
+# install_packages "Installing Cinnamon Packages" "${cinnamon_packages[@]}"
+install_packages "Installing KDE Packages" "${kde_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
 
 # Install filesystem utilities
-install_packages "Installing utilities for different file system access" "${shells[@]}"
+install_packages "Installing utilities for different file system access" "${filesystem_utilities[@]}"
 
 # Install Software Packages
-install_packages "Installing shells and Plug-ins""${software_packages[@]}"
+install_packages "Installing shells and Plug-ins""${shells[@]}"
 
 # Install packages from the AUR
 install_aur "Installing AUR specific packages""${aur_packages[@]}"
