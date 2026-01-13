@@ -10,17 +10,17 @@
 
 echo -e "Installing packages not in repo..."
 
-# sublime-text
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo tee /etc/apt/keyrings/sublimehq-pub.asc > /dev/null
-echo -e 'Types: deb\nURIs: https://download.sublimetext.com/\nSuites: apt/stable/\nSigned-By: /etc/apt/keyrings/sublimehq-pub.asc' | sudo tee /etc/apt/sources.list.d/sublime-text.sources
-#sudo nala update && sudo nala install sublime-text
-
 # freeoffice
 #sudo su
 
 #wget -qO- https://shop.softmaker.com/repo/linux-repo-public.key | gpg --dearmor > /etc/apt/keyrings/softmaker.gpg
 #echo "deb [signed-by=/etc/apt/keyrings/softmaker.gpg] https://shop.softmaker.com/repo/apt stable non-free" > /etc/apt/sources.list.d/softmaker.list
 # sudo apt update && sudo apt install softmaker-freeoffice-2024
+
+# sublime-text
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo tee /etc/apt/keyrings/sublimehq-pub.asc > /dev/null
+echo -e 'Types: deb\nURIs: https://download.sublimetext.com/\nSuites: apt/stable/\nSigned-By: /etc/apt/keyrings/sublimehq-pub.asc' | sudo tee /etc/apt/sources.list.d/sublime-text.sources
+#sudo nala update && sudo nala install sublime-text
 
 #Install gum : A tool for glamorous shell scripts. https://github.com/charmbracelet/gum
 
@@ -43,6 +43,10 @@ sudo nala install hunspell-en-us hyphen-en-us blender blender-data gimp gimp-hel
 
 echo -e "Package installation completed."
     sleep 3
+echo -e "seting up flatpak repos"
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
