@@ -59,7 +59,7 @@ kde_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rclone-browser rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gparted
+    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rclone-browser rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gparted google-chrome
 )
 
 # utilities for file system access

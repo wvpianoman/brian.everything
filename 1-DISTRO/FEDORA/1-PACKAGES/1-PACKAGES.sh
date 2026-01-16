@@ -88,19 +88,14 @@ kde_packages=(
     akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake
 )
 
-# gnome packages
-gnome_packages=(
-    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin numlockx spectacle kitty gnome-commander spacefm xfce4-terminal
-)
-
 # Cinnamon packages
 cinnamon_packages=(
-     numlockx cairo-dock cairo-dock-plug-ins kitty fuse-libs fuse thunar gtkhash-thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman micro 
+     numlockx cairo-dock cairo-dock-plug-ins kitty fuse-libs fuse thunar gtkhash-thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman 
 )
 
 # software packages
 software_packages=(
-    blender boomaga digikam ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad helix mediawriter xournal paperwork flatseal 
+    blender boomaga digikam ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad helix mediawriter xournal paperwork flatseal telegram-desktop micro diffuse gimagereader-qt xournalpp xournalpp-plugins 
 )
 
 # home only packages
@@ -129,9 +124,8 @@ install_packages() {
 install_packages "Installing Essential Packages" "${essential_packages[@]}"
 
 # Install DE packages
-#install_packages "Installing KDE Packages" "${kde_packages[@]}"
-#install_packages "Installing Gnome Packages" "${gnome_packages[@]}"
-install_packages "Installing CINNAMON Packages" "${cinnamon_packages[@]}"
+install_packages "Installing KDE Packages" "${kde_packages[@]}"
+#install_packages "Installing CINNAMON Packages" "${cinnamon_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
@@ -146,17 +140,13 @@ install_packages "Installing ZSH / FISH shells and Plug-ins""${shells[@]}"
 install_packages "Installing packages for use at home only" "${home_only[@]}"
 
 # Install Sublime Text
-sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
-sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
-
-sudo dnf install sublime-text -y
+#sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+#sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+#sudo dnf install sublime-text -y
 
 # Install Klassy Global Theme plugin
 # sudo dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:paul4us/Fedora_42/home:paul4us.repo
 # sudo dnf install klassy -y
-
-# Install Megasync
-#wget https://mega.nz/linux/repo/Fedora_42/x86_64/megasync-Fedora_42.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_42.x86_64.rpm"
 
 # Install Softmaker FreeOffice
 sudo wget -qO /etc/yum.repos.d/softmaker.repo https://shop.softmaker.com/repo/softmaker.repo
