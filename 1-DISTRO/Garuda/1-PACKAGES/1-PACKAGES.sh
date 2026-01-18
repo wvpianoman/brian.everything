@@ -100,7 +100,7 @@ install_aur() {
 install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
 
 # Install DE packages
-# Pick Gnome or KDE
+# Pick Cinnamon or KDE
 # install_packages "Installing Cinnamon Packages" "${cinnamon_packages[@]}"
 install_packages "Installing KDE Packages" "${kde_packages[@]}"
 
