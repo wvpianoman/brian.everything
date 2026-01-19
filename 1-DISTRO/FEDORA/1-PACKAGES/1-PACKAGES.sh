@@ -85,7 +85,7 @@ essential_packages=(
 
 # kde packages
 kde_packages=(
-    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake
+    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake kweather
 )
 
 # Cinnamon packages
@@ -180,7 +180,7 @@ sleep 2
 	display_message "[${GREEN}✔${NC}]  Installing some font tools and fonts"
 sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig -y
 	sudo dnf install -y fontawesome-fonts powerline-fonts 'google-roboto*' 'mozilla-fira*' fira-code-fonts meslo-nerd-fonts firacode-nerd-fonts
-	sudo dnf install -y redhat-{mono,text,display}-{fonts,vf-fonts} xorg-x11-fonts-ISO8859-1-100dpi google-noto-emoji-color-fonts droidsansmono-nerd-fonts
+	sudo dnf install -y redhat-{mono,text,display}-{fonts,vf-fonts} xorg-x11-fonts-ISO8859-1-100dpi google-noto-emoji-color-fonts droidsansmono-nerd-fonts jetbrains-mono-fonts-all
     sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 	sudo mkdir -p ~/.local/share/fonts
 
