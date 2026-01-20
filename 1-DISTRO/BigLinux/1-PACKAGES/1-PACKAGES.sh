@@ -54,7 +54,7 @@ essential=(
 
 # software packages
 software=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer packagekit blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gimagereader-qt hblock xournalpp gpu-screen-recorder zen-browser-bin lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork micro gparted google-chrome waveterm 
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer packagekit blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gimagereader-qt hblock xournalpp gpu-screen-recorder lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork micro gparted google-chrome waveterm 
 )
 
 # utilities for file system access
