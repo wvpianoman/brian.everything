@@ -85,7 +85,7 @@ essential_packages=(
 
 # kde packages
 kde_packages=(
-    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake kweather
+    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake
 )
 
 # Cinnamon packages
@@ -137,7 +137,7 @@ install_packages "Installing utilities for different file system access" "${file
 install_packages "Installing ZSH / FISH shells and Plug-ins""${shells[@]}"
 
 ## Install Packages for home only
-# install_packages "Installing packages for use at home only" "${home_only[@]}"
+install_packages "Installing packages for use at home only" "${home_only[@]}"
 
 # Install Sublime Text
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
