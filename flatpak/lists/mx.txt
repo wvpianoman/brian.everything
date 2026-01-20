@@ -1,4 +1,3 @@
-app/app.zen_browser.zen/x86_64/stable
 app/com.dec05eba.gpu_screen_recorder/x86_64/stable
 app/com.github.dynobo.normcap/x86_64/stable
 app/com.jgraph.drawio.desktop/x86_64/stable
@@ -27,3 +26,4 @@ app/org.telegram.desktop/x86_64/stable
 app/org.upscayl.Upscayl/x86_64/stable
 app/work.openpaper.Paperwork/x86_64/stable
 app/xyz.rescribe.rescribe/x86_64/stable
+app/net.waterfox.waterfox/x86_64/stable

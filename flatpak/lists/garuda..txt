@@ -3,7 +3,6 @@ app/com.github.tchx84.Flatseal/x86_64/stable
 app/com.github.tenderowl.frog/x86_64/stable
 app/com.jgraph.drawio.desktop/x86_64/stable
 app/com.logseq.Logseq/x86_64/stable
-app/com.microsoft.EdgeDev/x86_64/stable
 app/com.pot_app.pot/x86_64/stable
 app/eu.betterbird.Betterbird/x86_64/stable
 app/io.appflowy.AppFlowy/x86_64/stable
@@ -20,3 +19,4 @@ app/net.mkiol.SpeechNote/x86_64/stable
 app/org.dupot.easyflatpak/x86_64/stable
 app/org.gustavoperedo.FontDownloader/x86_64/stable
 app/org.upscayl.Upscayl/x86_64/stable
+app/net.waterfox.waterfox/x86_64/stable
