@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Brian Francisco Packages
-# Dec 3 2025
-#   《˘ ͜ʖ ˘》
 
+# Brian's Packages
+# Dec 30 2024
+#   《˘ ͜ʖ ˘》
 # Inpiration and guidance from Tolga Erok 
 
 # Assign a color variable based on the RANDOM number
@@ -33,7 +33,12 @@ echo -e "doing stuff..."
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
-#add sublime text repo and install sublime text 4
+# add Cachy Repo to BigLinux
+echo -e "This script is about to run another script."
+sh ./add-cachy.sh
+echo -e "This script has just run another script."
+
+# add sublime text repo and install sublime text 4
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 
@@ -43,39 +48,37 @@ sudo pacman -Syu sublime-text
 #wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
 
 # essantial software pckages
-essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw openssh p7zip pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 python-pyqt6 yad
-)
-
-# cinnamon packages
-cinnamon_packages=(
-    numlockx cairo-dock cairo-dock-plug-ins kitty fuse gedit xarchiver pcmanfm thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin tumbler ark thunar-vcs-plugin thunar-shares-plugin gtkhash-thunar plank-reloaded-git
-)
-
-# kde packages
-kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer packagekit print-manager
+essential=(
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw grep gum ibus iptables jq lsd make meld mpg123 nano fastfetch net-snmp nftables gum git-lfs figlet direnv un{zip,rar} openssh p7zip packagekit pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 manjaro-pacnew-checker python-pyqt6 sed yad tldr yay
 )
 
 # software packages
-software_packages=(
-    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rclone-browser rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gparted google-chrome
+software=(
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer packagekit blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gimagereader-qt hblock xournalpp gpu-screen-recorder lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork micro gparted google-chrome waveterm 
 )
 
 # utilities for file system access
-filesystem_utilities=(
-    btrfs-progs dosfstools e2fsprogs exfatprogs exfat-utils f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs
+filesystem=(
+    btrfs-progs dosfstools e2fsprogs exfatprogs f2fs-tools hfsprogs jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs
 )
 
 # utilities for file system access
 shells=(
-    zsh zsh-autosuggestions zsh-syntax-highlighting fish oh-my-posh
+    zsh zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete find-the-command bash-complete-alias fish oh-my-posh
 )
 
 # AUR specific packages
 aur_packages=(
-  tlrc boomaga fresh-editor
+    boomaga fresh-editor
 )
+
+# print formatted headers
+print_header() {
+ # clear
+  echo -e "\n\033[94m=============================\033[0m"
+  echo -e "\033[1;94m$1\033[0m"
+  echo -e "\033[94m=============================\033[0m\n"
+}
 
 # Install packages
 install_packages() {
@@ -91,30 +94,31 @@ install_aur() {
   echo -e "\033[92m$msg\033[0m"
   for package in "$@"; do
     echo -e "  - Installing \033[93m$package\033[0m from AUR..."
-    paru -S "$package"
+    yay "$package"
   done
   echo
 }
 
 # Install essential packages
-install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
+install_packages "Installing Essential Software Packages" "${essential[@]}"
 
 # Install DE packages
-# Pick Cinnamon or KDE
-# install_packages "Installing Cinnamon Packages" "${cinnamon_packages[@]}"
-install_packages "Installing KDE Packages" "${kde_packages[@]}"
+# Pick Gnome or KDE
+install_packages "Installing KDE Packages" "${kde[@]}"
 
 # Install Software Packages
-install_packages "Installing Software Packages""${software_packages[@]}"
+install_packages "Installing Software Packages""${software[@]}"
 
 # Install filesystem utilities
-install_packages "Installing utilities for different file system access" "${filesystem_utilities[@]}"
+install_packages "Installing utilities for different file system access" "${filesystem[@]}"
 
 # Install Software Packages
 install_packages "Installing shells and Plug-ins""${shells[@]}"
 
 # Install packages from the AUR
 install_aur "Installing AUR specific packages""${aur_packages[@]}"
+
+# Install some fonts
 
 # Configuration to install custom fonts
 # ----------------------------------------------------------------------------
@@ -146,18 +150,19 @@ install_aur() {
   echo -e "\033[92m$msg\033[0m"
   for package in "$@"; do
     echo -e "  - Installing \033[93m$package\033[0m from AUR..."
-    paru -S "$package"
+    yay "$package"
   done
   echo
 }
 
+# Main script
 print_header "Installing Recommended Fonts"
 install_packages "Recommended fonts for comprehensive coverage:" \
   noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
 print_header "Optional but Highly Recommended Fonts"
 install_packages "Adding optional but highly recommended fonts for broader compatibility:" \
-  ttf-liberation ttf-dejavu ttf-roboto times-newer-roman ttf-times-new-roman ttf-symbola
+  ttf-liberation ttf-dejavu ttf-roboto ttf-symbola
 
 print_header "Fonts Available on the AUR"
 install_aur "Installing fonts available on the Arch User Repository:" \
@@ -208,7 +213,6 @@ EOF
 	gum spin --spinner dot --title "Stand-by..." -- sleep 2
 }
 
-
 # Function to clear systemd journal logs
 function clear_journal_logs() {
     sudo journalctl --vacuum-time=7d
@@ -235,4 +239,3 @@ echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
 exit 0
-

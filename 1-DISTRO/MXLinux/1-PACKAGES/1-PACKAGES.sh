@@ -33,13 +33,13 @@ sudo nala  update && sudo nala install gum sublime-text
 echo -e "Installing packages in repo..."
 sleep 3
 
-sudo nala install cowsay dialog yad duf espeak espeak-ng fancontrol figlet fortune-mod fortunes fortunes-min pandoc fish aria2 hardinfo2 thefuck ocrmypdf ocrmypdf-doc pdfsandwich acl attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietool cron curl gir1.2-dbusglib-1.0 dconf-editor direnv earlyoom easyeffects mbpfan fd-find ffmpeg ffmpegthumbnailer ffmpegthumbs flatpak gdebi git gnupg2 grep
+sudo nala install cowsay dialog yad duf espeak espeak-ng fancontrol figlet fortune-mod fortunes fortunes-min pandoc  aria2 hardinfo2 thefuck ocrmypdf ocrmypdf-doc pdfsandwich acl attr autoconf automake bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietool cron curl gir1.2-dbusglib-1.0 dconf-editor direnv earlyoom easyeffects mbpfan fd-find ffmpeg ffmpegthumbnailer ffmpegthumbs flatpak gdebi git gnupg2 grep
 
 sudo nala install haveged ibus-gtk4 jq lsd make meld mpg123 nano snmpd net-tools nftables openssh-{client,server} p7zip p7zip-full p7zip-rar packagekit pandoc micro
 
-sudo apt install pipewire-{audio,doc} pkg-config plocate powertop qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv tar terminator thefuck tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety wget wget2 xclip zip systemd-zram-generator zram-tools zstd gparted
-
 sudo nala install hunspell-en-us hyphen-en-us blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot fastfetch persepolis variety vlc simplescreenrecorder uget
+
+sudo nala install fish bash-completion auxilium fizsh liquidprompt powerline-go zgen zplug zsh zsh-antidote zsh-antigen zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel9k zsh-doc bash-builtins command-not-found bashacks bashacks-doc bash-config
 
 echo -e "Package installation completed."
     sleep 3

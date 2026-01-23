@@ -1,0 +1,58 @@
+#!/bin/bash
+
+#lenovo
+
+sudo apt install thinkfan
+sudo sensors-detect
+sudo apt install gnome-firmware
+sudo apt install glances
+# preload monitors applications users run, predicts what applications users might run, fetches those binaries / dependencies into memory for faster startup times.
+sudo apt install preload -y
+
+udo apt install preload
+sudo systemctl start preload
+sudo systemctl enable preload
+
+# Setting a low swappiness value like 10, 35 or 45, will reduce the chances of the system using swap, resulting in a faster performance.
+sudo nano /etc/sysctl.conf
+vm.swappiness=10
+
+# hardware health monitoring package for Linux.
+sudo apt install lm-sensors -y
+
+# optional fancontrol:
+sudo apt install fancontrol
+sudo systemctl enable fancontrol --now
+sudo pwmconfig
+
+# if use laptop install this package :
+
+sudo apt install tlp tlp-rdw acpitool laptop-mode-tools -y
+
+# ZRAM
+# Install:
+sudo apt install zram-tools
+
+#Configure it to allow up to 60% of the RAM to be used as a zstd compressed swap space:
+
+echo -e "ALGO=zstd\nPERCENT=70" | sudo tee -a /etc/default/zramswap   # I set it to 80%
+
+# Restart the service :
+sudo service zramswap reload
+
+sudo service zramswap force-reload
+
+sudo service zramswap try-restart
+
+
+# $ sudo service zramswap reload
+# Usage: /etc/init.d/zramswap {start|stop|status|restart|try-restart|force-reload}
+# tolga@mx:~$ sudo service zramswap force-reload
+# <13>Feb 19 22:36:09 root: Stopping Zram
+# <13>Feb 19 22:36:09 root: disabling swap device: /dev/zram0
+# <13>Feb 19 22:36:09 root: Starting Zram
+# Setting up swapspace version 1, size = 19.1 GiB (20559650816 bytes)
+# no label, UUID=1b328bb9-4ab2-4bbb-b4a5-8f978ffd8bf9
+# tolga@mx:~$ sudo service zramswap try-restart
+# Trying to restart zramswap: zramswap<13>Feb 19 22:36:24 root: Stopping Zram
+# <13>Feb 19 22:36:24 root: Starting Zram

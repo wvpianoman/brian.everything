@@ -1,7 +1,10 @@
+#app/app.devsuite.Ptyxis/x86_64/stable
+app/com.axosoft.GitKraken/x86_64/stable
 app/com.dec05eba.gpu_screen_recorder/x86_64/stable
 app/com.github.dynobo.normcap/x86_64/stable
 app/com.github.tchx84.Flatseal/x86_64/stable
 app/com.github.tenderowl.frog/x86_64/stable
+app/com.github.xournalpp.xournalpp/x86_64/stable
 app/com.jgraph.drawio.desktop/x86_64/stable
 app/com.logseq.Logseq/x86_64/stable
 app/com.pot_app.pot/x86_64/stable
@@ -14,6 +17,8 @@ app/io.github.equicord.equibop/x86_64/stable
 app/io.github.flattool.Warehouse/x86_64/stable
 app/io.github.getnf.embellish/x86_64/stable
 app/io.github.ilya_zlobintsev.LACT/x86_64/stable
+app/io.github.manisandro.gImageReader/x86_64/stable
+app/io.github.mightycreak.Diffuse/x86_64/stable
 app/io.gitlab.adhami3310.Converter/x86_64/stable
 app/io.gitlab.adhami3310.Impression/x86_64/stable
 app/io.missioncenter.MissionCenter/x86_64/stable
@@ -26,6 +31,10 @@ app/org.dupot.easyflatpak/x86_64/stable
 app/org.garudalinux.firedragon/x86_64/stable
 app/org.gnome.OCRFeeder/x86_64/stable
 app/org.gustavoperedo.FontDownloader/x86_64/stable
+app/org.kde.ghostwriter/x86_64/stable
+app/org.onlyoffice.desktopeditors/x86_64/stable
+app/org.telegram.desktop/x86_64/stable
 app/org.upscayl.Upscayl/x86_64/stable
+app/work.openpaper.Paperwork/x86_64/stable
 app/xyz.rescribe.rescribe/x86_64/stable
 app/net.waterfox.waterfox/x86_64/stable
