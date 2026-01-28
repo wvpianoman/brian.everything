@@ -8,7 +8,7 @@
 
 # Install some software:
 
-sudo apt install apt -y
+sudo apt install nala -y
 
 echo "Installing packages not in repo..."
 
@@ -25,9 +25,6 @@ su -c "${__dir}/freeoffice.sh" root
 # wget -qO- https://shop.softmaker.com/repo/linux-repo-public.key | gpg --dearmor > /etc/apt/keyrings/softmaker.gpg
 # echo "deb [signed-by=/etc/apt/keyrings/softmaker.gpg] https://shop.softmaker.com/repo/apt stable non-free" > /etc/apt/sources.list.d/softmaker.list
 # pikman update && pikman install softmaker-freeoffice-2024
-
-# Megasync
-wget https://mega.nz/linux/repo/Debian_testing/amd64/megasync-Debian_testing_amd64.deb && sudo apt install "$PWD/megasync-Debian_testing_amd64.deb"
 
 #Install gum : A tool for glamorous shell scripts. https://github.com/charmbracelet/gum
 
@@ -59,7 +56,7 @@ sudo apt install -y wget apt-transport-https
 sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
 sudo apt update
-sudo apt install element-desktop
+#sudo apt install element-desktop
 
 # fish shell
 sudo add-apt-repository ppa:fish-shell/release-4
@@ -68,7 +65,7 @@ sudo apt install fish
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
 
-sudo apt update && sudo apt install onlyoffice-desktopeditors onlyoffice-desktopeditors-help gum sublime-text fonts-crosextra-caladea
+sudo apt update && sudo nala update && sudo nala install onlyoffice-desktopeditors onlyoffice-desktopeditors-help gum sublime-text fonts-crosextra-caladea
 
 #fileu
 # wget https://filelu.com/IO83v8fj9nbLQxAs/filelusync_amd64.zip
@@ -77,20 +74,16 @@ sudo apt update && sudo apt install onlyoffice-desktopeditors onlyoffice-desktop
 # chmod +x install
 # ./install
 
-sudo apt install -y yad espeak espeak-ng fancontrol figlet fortune-mod fortunes fortunes-min uget hardinfo thefuck ocrmypdf ocrmypdf-doc pdfsandwich meld acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietool cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv dnsutils duf easyeffects mbpfan fd-find ffmpeg ffmpegthumbnailer ffmpegthumbs flatpak gdebi git gnupg2 grep yaru-cinnamon-theme-{gtk,icon} sox zenity synaptic plank lolcat vnstati
+sudo apt install -y yad espeak espeak-ng fancontrol figlet fortune-mod fortunes fortunes-min uget hardinfo thefuck ocrmypdf ocrmypdf-doc pdfsandwich meld acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietool cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv dnsutils duf easyeffects mbpfan fd-find ffmpeg ffmpegthumbnailer ffmpegthumbs flatpak gdebi git gnupg2 grep yaru-cinnamon-theme-{gtk,icon} sox zenity synaptic plank lolcat vnstati cairo-dock cairo-dock-plug-ins pulseeffects pulseaudio-equalizer
 
-sudo apt install -y  haveged ibus-gtk4 jq lsd make ublock-origin-doc webext-ublock-origin-firefox mpg123 nano neofetch neovim neovim-qt snmpd net-tools nftables openssh-{client,server} ostree p7zip p7zip-full p7zip-rar packagekit pandoc pip pipewire-{audio,doc} pkg-config plocate powertop python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv tar terminator tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zram-tools zstd gparted kdeconnect meld #virt-manager
+sudo nala install -y  haveged ibus-gtk4 jq lsd make ublock-origin-doc webext-ublock-origin-firefox mpg123 nano snmpd net-tools nftables openssh-{client,server} ostree p7zip p7zip-full p7zip-rar packagekit pandoc pip pipewire-{audio,doc} pkg-config plocate powertop python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv tar terminator tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zram-tools zstd gparted kdeconnect meld #virt-manager
 
-sudo apt install
-
-sudo apt install hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot vlc simplescreenrecorder megacmd obs-studio ocrmypdf duf gum figlet kitty pandoc gum thunar thunar-gtkhash thunar-archive-plugin thunar-media-tags-plugin thunar-font-manager thunar-volman thunar-megasync thunarx-python yakuake
+sudo nala install hunspell-en-us hyphen-en-us libreoffice blender blender-data gimp gimp-help-en inkscape boomaga digikam neochat scribus scribus-template rclone rclone-browser flameshot vlc simplescreenrecorder obs-studio ocrmypdf duf gum figlet kitty pandoc gum thunar thunar-gtkhash thunar-archive-plugin thunar-media-tags-plugin thunar-font-manager thunar-volman thunarx-python yakuake micro cherrytree ghostwriter ocrfeeder xournalpp diffuse 
 
 echo "Package installation completed."
     sleep 3
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
-
-
 
 sudo apt install earlyoom
 sudo systemctl enable --now earlyoom
@@ -105,7 +98,7 @@ echo "Package installation completed."
 
 
 # Installing fonts
-sudo apt install fonts-font-awesome xfonts-100dpi fonts-noto-color-emoji fonts-crosextra-caladea fonts-crosextra-carlito fonts-firacode fonts-noto-unhinted fonts-ubuntu-classic fonts-noto-mono
+sudo nala install fonts-font-awesome xfonts-100dpi fonts-noto-color-emoji fonts-crosextra-caladea fonts-crosextra-carlito fonts-firacode fonts-noto-unhinted fonts-ubuntu-classic fonts-noto-mono
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip
 sudo unzip Meslo.zip -d /usr/share/fonts
