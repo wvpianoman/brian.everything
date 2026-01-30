@@ -30,3 +30,4 @@ app/io.github.mightycreak.Diffuse/x86_64/stable
 app/org.telegram.desktop/x86_64/stable
 app/org.dupot.easyflatpak/x86_64/stable
 app/net.waterfox.waterfox/x86_64/stable
+
