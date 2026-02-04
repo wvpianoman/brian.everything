@@ -125,7 +125,6 @@ install_packages "Installing Essential Packages" "${essential_packages[@]}"
 
 # Install DE packages
 install_packages "Installing KDE Packages" "${kde_packages[@]}"
-#install_packages "Installing CINNAMON Packages" "${cinnamon_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
