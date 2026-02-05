@@ -3,17 +3,13 @@ app/com.github.dynobo.normcap/x86_64/stable
 app/com.github.tchx84.Flatseal/x86_64/stable
 app/com.github.tenderowl.frog/x86_64/stable
 app/com.jgraph.drawio.desktop/x86_64/stable
-app/com.logseq.Logseq/x86_64/stable
 app/com.pot_app.pot/x86_64/stable
 app/eu.betterbird.Betterbird/x86_64/stable
-app/io.appflowy.AppFlowy/x86_64/stable
 app/io.github.aandrew_me.ytdn/x86_64/stable
 app/io.github.amit9838.mousam/x86_64/stable
 #app/io.github.chidiwilliams.Buzz/x86_64/stable
-app/io.github.equicord.equibop/x86_64/stable
 app/io.github.flattool.Warehouse/x86_64/stable
 app/io.github.getnf.embellish/x86_64/stable
-app/io.github.ilya_zlobintsev.LACT/x86_64/stable
 app/io.gitlab.adhami3310.Converter/x86_64/stable
 app/io.gitlab.adhami3310.Impression/x86_64/stable
 app/io.missioncenter.MissionCenter/x86_64/stable
