@@ -4,12 +4,17 @@
 
 # https://github.com/CachyOS/copr-linux-cachyos?tab=readme-ov-file
 
+# install grubby
+sudo dnf install grubby -y
+
 # check cpu architecture
 /lib64/ld-linux-x86-64.so.2 --help | grep "(supported, searched)"
+(if output is x86-64-v3 proceed
+else if output is NOT x86-64-v3  stop)
+
 
 # Next, enable the COPR repository hosting the kernels.
 sudo dnf copr enable bieszczaders/kernel-cachyos # For GCC built kernels
-# or
 #sudo dnf copr enable bieszczaders/kernel-cachyos-lto # For LLVM-ThinLTO build kernels
 
 # Now you can install the kernels
@@ -32,16 +37,9 @@ sudo setsebool -P domain_kernel_load_modules on
 # By default Fedora will use the kernel that was most recently updated by dnf which will lead to 
 # inconsistent behaviour if you have multiple kernels installed, but we can tell Fedora to always 
 # boot with the latest CachyOS kernel by running a script after kernel updates.
-sudo mkdir etc/kernel/postinst.d
-sudo nano /etc/kernel/postinst.d/99-default
+sudo mkdir /etc/kernel/postinst.d
+sudo nano cp 99-default /etc/kernel/postinst.d/
 
-# Enter the following content that will set the latest CachyOS kernel as the default kernel:
-
-#!/bin/sh
-
-set -e
-
-grubby --set-default=/boot/$(ls /boot | grep vmlinuz.*cachy | sort -V | tail -1)
 
 # Make root the owner and make the script executable:
 sudo chown root:root /etc/kernel/postinst.d/99-default ; sudo chmod u+rx /etc/kernel/postinst.d/99-default
@@ -53,8 +51,5 @@ sudo dnf copr enable bieszczaders/kernel-cachyos-addons
 sudo dnf swap zram-generator-defaults cachyos-settings
 sudo dracut -f
 
-# scx-scheds and scx-tools
-sudo dnf install scx-scheds-git scx-tools-git
-
-# scx-manager
-sudo dnf install scx-manager
+# scx-manager, scx-scheds and scx-tools
+sudo dnf install scx-scheds-git scx-tools-git scx-manager

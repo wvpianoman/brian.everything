@@ -61,10 +61,6 @@ check_ssh() {
 
 check_ssh
 
-#install yadm (yet another dotfile manager)
-sudo dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:TheLocehiliosan:yadm/Fedora_43/home:TheLocehiliosan:yadm.repo
-sudo dnf install yadm
-
 echo "Installing RPM Fusion Repositories"
 sudo dnf install -y \
   "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
@@ -84,17 +80,22 @@ fi
 
 # essantial software pckages
 essential_packages=(
-	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep  haveged hplip hplip-gui htop ibus-gtk4 iptables iptables-services jq kernel-modules-extra lsd make mbedtls meld mesa-filesystem mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ugrep unrar-free un{zip,rar} wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd bat eza dust fd tldr zoxide dua thefuck
+	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep  haveged hplip hplip-gui htop ibus-gtk4 iptables iptables-services jq kernel-modules-extra lsd make mbedtls meld mesa-filesystem mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ugrep unrar-free un{zip,rar} wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd
 )
 
 # kde packages
 kde_packages=(
-    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake elisa kamoso kcalc kolourpaint kwrite okular
+    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake
+)
+
+# Cinnamon packages
+cinnamon_packages=(
+     numlockx cairo-dock cairo-dock-plug-ins kitty fuse-libs fuse thunar gtkhash-thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman 
 )
 
 # software packages
 software_packages=(
-    blender boomaga digikam ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad helix mediawriter xournal paperwork flatseal telegram-desktop micro diffuse gimagereader-qt xournalpp xournalpp-plugins chromium fedora-chromium-config-kde
+    blender boomaga digikam ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad helix mediawriter xournal paperwork flatseal telegram-desktop micro diffuse gimagereader-qt xournalpp xournalpp-plugins 
 )
 
 # home only packages
@@ -124,6 +125,7 @@ install_packages "Installing Essential Packages" "${essential_packages[@]}"
 
 # Install DE packages
 install_packages "Installing KDE Packages" "${kde_packages[@]}"
+#install_packages "Installing CINNAMON Packages" "${cinnamon_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
@@ -133,9 +135,6 @@ install_packages "Installing utilities for different file system access" "${file
 
 # Install Software Packages
 install_packages "Installing ZSH / FISH shells and Plug-ins""${shells[@]}"
-
-#install ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ## Install Packages for home only
 install_packages "Installing packages for use at home only" "${home_only[@]}"
