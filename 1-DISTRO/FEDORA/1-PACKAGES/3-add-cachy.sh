@@ -8,9 +8,14 @@
 sudo dnf install grubby -y
 
 # check cpu architecture
-/lib64/ld-linux-x86-64.so.2 --help | grep "(supported, searched)"
-(if output is x86-64-v3 proceed
-else if output is NOT x86-64-v3  stop)
+arch_output=$(/lib64/ld-linux-x86-64.so.2 --help 2>/dev/null | grep -i "supported, searched")
+
+if echo "$arch_output" | grep -q "x86-64-v3"; then
+    echo "x86-64-v3 supported"
+else
+    echo "x86-64-v3 not supported"
+    exit 1
+fi
 
 
 # Next, enable the COPR repository hosting the kernels.
