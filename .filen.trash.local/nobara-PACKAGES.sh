@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
+
 # Brian Francisco Packages
-# 15 November 2025
+# 17 July 2025
 #   《˘ ͜ʖ ˘》
 
-# with significant help from Tolga Erok
+# Tolga Erok for Brian
 # 19/4/2024
 
 # Assign a color variable based on the RANDOM number
@@ -26,49 +27,54 @@ enabled=1
 gpgcheck=1
 gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
 
-sudo dnf install -y gum openssh
+sudo yum install gum -y
 
 display_message() {
     clear
     echo -e "\n                  UltraMarine/Fedora Updater\n"
-    echo -e "${blue}|--------------------\e[33m Currently configuring:\e[34m-------------------|"
+    echo -e "\e[34m|--------------------\e[33m Currently configuring:\e[34m-------------------|"
     echo -e "|${YELLOW}==>${NC}  $1"
-    echo -e "${blue}|--------------------------------------------------------------|\e[0m"
+    echo -e "\e[34m|--------------------------------------------------------------|\e[0m"
     echo ""
     gum spin --spinner dot --title "Stand-by..." -- sleep 1
 }
 
 # Function to check if a service is active
 is_service_active() {
-  systemctl is-active "$1" &>/dev/null
-}
-
-print_yellow() {
-  echo -e "${yellow}$1${nc}"
-}
-
-check_ssh() {
-  if is_service_active sshd && ss -tnlp | grep -q ":22 "; then
-    display_message "[${green}ok${nc}] ssh is running on port 22"
-  else
-    display_message "[${red}fail${nc}] ssh not active on port 22"
-    sleep 2
-  fi
+	systemctl is-active "$1" &>/dev/null
 }
 
 # UltraMarine Convert Script
 #bash <(curl -s https://ultramarine-linux.org/migrate.sh)
 
-check_ssh
+# Function to print text in yellow color
+print_yellow() {
+	echo -e "\e[93m$1\e[0m"
+}
+
+# Function to check port 22
+check_port22() {
+	if pgrep sshd >/dev/null; then
+		display_message "[${GREEN}✔${NC}] SSH service is running on port 22"
+		gum spin --spinner dot --title "Stand-by..." -- sleep 2
+	else
+		display_message "${RED}[✘]${NC} SSH service is not running on port 22. Install and enable SSHD service.\n"
+		gum spin --spinner dot --title "Stand-by..." -- sleep 2
+		check_error
+	fi
+}
 
 echo "Installing RPM Fusion Repositories"
-sudo dnf install -y \
-  "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
-  "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
-  rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
 
-sudo dnf --repo=rpmfusion-nonfree-tainted install -y "*-firmware"
+	# Install Apps
+	sudo dnf install -y \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf install -y \
+  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+	sudo dnf install -y rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
+#	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
+sleep 2
 
 if [ "$(rpm -qa terra-release | head -c1 | wc -c)" -eq 0 ]; then
   trace sudo dnf install -y --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt="terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc" terra-release
@@ -80,27 +86,27 @@ fi
 
 # essantial software pckages
 essential_packages=(
-	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep  haveged hplip hplip-gui htop ibus-gtk4 iptables iptables-services jq kernel-modules-extra lsd make mbedtls meld mesa-filesystem mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ugrep unrar-free un{zip,rar} wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd
+	acl aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf dnf-plugins-core dnfdragora duf earlyoom easyeffects espeak espeak-ng fancontrol-gui fastfetch fd-find ffmpegthumbnailer figlet flatpak fonts-tweak-tool fortune-mod git gnupg2 grep  haveged hplip hplip-gui htop ibus-gtk4 intel-media-driver iptables iptables-services jq kernel-modules-extra kitty  lsd make mbedtls meld mozilla-ublock-origin mpg123 nano net-snmp net-tools nftables openssh openssh-{clients,server} openssl ostree p7zip p7zip-gui p7zip-plugins pandoc pip pipewire-codec-aptx pkg-config plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat soundconverter sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw uget ugrep unrar-free un{zip,rar} vlc wget wsdd xclip zed zip zram zram-generator zram-generator-defaults zstd PackageKit yad megacmd
 )
 
 # kde packages
 kde_packages=(
-    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake
+    akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake dolphin-plugins fancontrol-{gui-kcm,gui-plasmoid} ffmpegthumbs flameshot kate kate-plugins kdegraphics-thumbnailers kdepim-addons korganizer materia-kde-yakuake plasma-discover-{flatpak,packagekit} plasma-firewall-ufw yakuake neochat 
 )
 
-# Cinnamon packages
-cinnamon_packages=(
-     numlockx cairo-dock cairo-dock-plug-ins kitty fuse-libs fuse thunar gtkhash-thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman 
+# gnome packages
+gnome_packages=(
+    breeze-icons breeze gnome-tweaks thunar-archive-plugin thunar thunar-volman thunar-docs thunar-shares-plugin numlockx spectacle kitty gnome-commander spacefm xfce4-terminal thunar-archive-plugin
 )
 
 # software packages
 software_packages=(
-    blender boomaga digikam ghostwriter gimp gimp-data-extras gimp-help gparted inkscape kitty krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus soundconverter ufw uget variety vlc yad helix mediawriter xournal paperwork flatseal telegram-desktop micro diffuse gimagereader-qt xournalpp xournalpp-plugins 
+    blender boomaga digikam discord flameshot ghostwriter gimp gimp-data-extras gimp-help gparted inkscape krita ocrmypdf ocrmypdf+watcher ocrmypdf-doc tesseract pdfarranger rclone rclone-browser scribus simplescreenrecorder telegram-desktop uget variety vlc tesseract tesseract-langpack-eng tesseract-tools gimagereader-qt
 )
 
 # home only packages
 home_only=(
-	virt-manager
+	virt-manager discord virtualbox virtualbox-guest-additions 
 )
 
 # utilities for file system access
@@ -125,39 +131,31 @@ install_packages "Installing Essential Packages" "${essential_packages[@]}"
 
 # Install DE packages
 install_packages "Installing KDE Packages" "${kde_packages[@]}"
-#install_packages "Installing CINNAMON Packages" "${cinnamon_packages[@]}"
+#install_packages "Installing Gnome Packages" "${gnome_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
 
 # Install filesystem utilities
-install_packages "Installing utilities for different file system access" "${filesystem_utilities[@]}"
+install_packages "Installing utilities for different file system access" "${shells[@]}"
 
 # Install Software Packages
-install_packages "Installing ZSH / FISH shells and Plug-ins""${shells[@]}"
+install_packages "Installing ZSH / FISH shells and Plug-ins""${filesystem_utilities[@]}"
 
 ## Install Packages for home only
 install_packages "Installing packages for use at home only" "${home_only[@]}"
 
 # Install Sublime Text
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
-
 sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
-
-sudo dnf install sublime-text
-
-#cd /var/cache/libdnf5/sublime-text-*/packages/
-
-#sudo rpm -ivh --nodigest --nofiledigest sublime-text-*.rpm
+sudo dnf install sublime-text -y
 
 # Install Klassy Global Theme plugin
 # sudo dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:paul4us/Fedora_42/home:paul4us.repo
 # sudo dnf install klassy -y
 
-# Install Yumex-NG
-sudo dnf copr enable timlau/yumex-ng
-
-sudo dnf install yumex
+# Install Megasync
+wget https://mega.nz/linux/repo/Fedora_42/x86_64/megasync-Fedora_42.x86_64.rpm && sudo dnf install "$PWD/megasync-Fedora_42.x86_64.rpm" -y
 
 # Install Softmaker FreeOffice
 sudo wget -qO /etc/yum.repos.d/softmaker.repo https://shop.softmaker.com/repo/softmaker.repo
@@ -168,11 +166,7 @@ echo "Package installation completed."
 
 sleep 2
 
-##add flatpak repos
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-
-#sudo systemctl enable --now earlyoom
+sudo systemctl enable --now earlyoom
 
 sleep 2
 
@@ -180,7 +174,7 @@ sleep 2
 	display_message "[${GREEN}✔${NC}]  Installing some font tools and fonts"
 sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig -y
 	sudo dnf install -y fontawesome-fonts powerline-fonts 'google-roboto*' 'mozilla-fira*' fira-code-fonts meslo-nerd-fonts firacode-nerd-fonts
-	sudo dnf install -y redhat-{mono,text,display}-{fonts,vf-fonts} xorg-x11-fonts-ISO8859-1-100dpi google-noto-emoji-color-fonts droidsansmono-nerd-fonts jetbrains-mono-fonts-all
+	sudo dnf install -y redhat-{mono,text,display}-{fonts,vf-fonts} xorg-x11-fonts-ISO8859-1-100dpi google-noto-emoji-color-fonts droidsansmono-nerd-fonts
     sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 	sudo mkdir -p ~/.local/share/fonts
 
@@ -263,6 +257,15 @@ function cleanup_fedora() {
 	# Remove unnecessary dependencies
 	sudo dnf autoremove -y
 
+	### Install Atuin - Shell History Replacement
+#curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+# 1st run register acct with this line
+# atuin register
+# run on another machine, use this to login
+#atuin login
+#atuin import auto
+#atuin sync
+
 	# Sort the lists of installed packages and packages to keep
 	display_message "[${GREEN}✔${NC}]  Sorting out list of installed packages and packages to keep..."
 	comm -23 <(sudo dnf repoquery --installonly --latest-limit=-1 -q | sort) <(sudo dnf list installed | awk '{print $1}' | sort) >/tmp/orphaned-pkgs
@@ -307,7 +310,7 @@ cleanup_fedora
 
 echo -e "\n\n----------------------------------------------"
 echo -e "|                                            |"
-echo -e "|               Setup Complete!              |"
+echo -e "|      Setup Complete! Enjoy Ultramarine     |"
 echo -e "|                                            |"
 echo -e "|--------------------------------------------|\n\n"
 
