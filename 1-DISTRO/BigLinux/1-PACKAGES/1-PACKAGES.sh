@@ -35,17 +35,14 @@ echo -e "doing stuff..."
 
 # add Cachy Repo to BigLinux
 echo -e "This script is about to run another script."
-sh ./add-cachy.sh
+# sh ./add-cachy.sh
 echo -e "This script has just run another script."
 
 # add sublime text repo and install sublime text 4
-curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+# curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+# echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 
 sudo pacman -Syu sublime-text
-
-# Install MegaSync
-#wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
 
 # essantial software pckages
 essential=(
@@ -54,7 +51,7 @@ essential=(
 
 # software packages
 software=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer packagekit blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gimagereader-qt hblock xournalpp gpu-screen-recorder lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork micro gparted google-chrome waveterm 
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer packagekit blender btrbk gimp krita inkscape digikam rclone rclone-browser rhythmbox shotwell simplescreenrecorder github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget vlc onlyoffice-bin masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gimagereader-qt hblock xournalpp gpu-screen-recorder lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork micro gparted google-chrome waveterm waterfox-bin firefox helix 
 )
 
 # utilities for file system access
@@ -101,10 +98,6 @@ install_aur() {
 
 # Install essential packages
 install_packages "Installing Essential Software Packages" "${essential[@]}"
-
-# Install DE packages
-# Pick Gnome or KDE
-install_packages "Installing KDE Packages" "${kde[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software[@]}"
