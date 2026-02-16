@@ -33,18 +33,21 @@ echo -e "doing stuff..."
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
+# add chaotic AUR mirrorlist & keys
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key 3056513887B78AEB
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
+
 #add sublime text repo and install sublime text 4
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 
 sudo pacman -Syu sublime-text
 
-# Install MegaSync
-#wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
-
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer flatpak git zstd gnupg lolcat fortune-mod ufw openssh p7zip pandoc pipewire kpipewire wget httpie wsdd xclip zip zram-generator variety font-manager zed plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck thermald tumbler gufw zenity hardinfo2 python-pyqt6 yad
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox cjson curl dialog duf easyeffects espeak-ng fd ffmpeg ffmpegthumbnailer findutils flatpak font-manager fortune-mod git gnupg gufw hardinfo2 httpie kpipewire libappimage lolcat nsxiv openssh p7zip pandoc perl-mozilla-ca pipewire plocate powertop python-certifi python-pyqt6 python-setproctitle python3 qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass tar terminator thefuck thermald tumbler ufw variety wget wsdd xclip yad zed zip zram-generator zstd 
 )
 
 # cinnamon packages
@@ -59,7 +62,7 @@ kde_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk gimp krita inkscape digikam gimagereader-qt rclone rclone-browser rhythmbox shotwell github-cli telegram-desktop deja-dup soundconverter obs-studio scribus uget onlyoffice-bin pdfarranger firefox-adblock-plus firefox-dark-reader hblock xournalpp gpu-screen-recorder lact diffuse impression mission-center cherrytree ocrfeeder ghostwriter paperwork masterpdfeditor-free pdfarranger firefox-adblock-plus firefox-dark-reader hblock freeoffice gitkraken gparted google-chrome
+    blender btrbk cherrytree deja-dup diffuse digikam firefox-adblock-plus firefox-adblock-plus firefox-dark-reader firefox-dark-reader freeoffice ghostwriter gimagereader-qt gimp github-cli gitkraken google-chrome gparted gpu-screen-recorder hblock hblock impression inkscape krita lact masterpdfeditor-free mission-center obs-studio ocrfeeder onlyoffice-bin paperwork pdfarranger pdfarranger rclone rclone-browser rhythmbox scribus shotwell soundconverter telegram-desktop uget xournalpp
 )
 
 # utilities for file system access
@@ -161,7 +164,7 @@ install_packages "Adding optional but highly recommended fonts for broader compa
 
 print_header "Fonts Available on the AUR"
 install_aur "Installing fonts available on the Arch User Repository:" \
-  redhat-fonts times-newer-roman ttf-times-new-roman
+  redhat-fonts times-newer-roman #ttf-times-new-roman
 
 print_header "Popular Monospaced Fonts"
 install_packages "Enhancing your experience with popular monospaced fonts:" \
