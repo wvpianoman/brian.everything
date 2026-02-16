@@ -20,10 +20,9 @@ curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 # 1st run register acct with this line
 # atuin register
 # run on another machine, use this to login
-
 echo -e "\n\n----------------------------------------------"
 echo -e "|      Open a new temrinal window and type   |"
-echo -e "|    	the following to setup Atuin         |"
+echo -e "|    	the following to setup Atuin          |"
 echo -e "|          atuin login                       |"
 echo -e "|          atuin import auto                 |"
 echo -e "|          atuin sync                        |"
