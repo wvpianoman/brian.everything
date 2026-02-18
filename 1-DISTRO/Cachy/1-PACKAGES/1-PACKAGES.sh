@@ -47,7 +47,7 @@ sudo pacman -Syu sublime-text
 
 # essantial software pckages
 essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox cjson curl dialog duf easyeffects espeak-ng fd ffmpeg ffmpegthumbnailer findutils flatpak font-manager fortune-mod git gnupg gufw hardinfo2 httpie kpipewire libappimage lolcat nsxiv openssh p7zip pandoc perl-mozilla-ca pipewire plocate powertop python-certifi python-pyqt6 python-setproctitle python3 qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass tar terminator thefuck thermald tumbler ufw variety wget wsdd xclip yad zed zip zram-generator zstd 
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox cjson curl dialog duf easyeffects espeak-ng fd ffmpeg ffmpegthumbnailer findutils flatpak font-manager fortune-mod git gnupg gufw hardinfo2 httpie kpipewire libappimage lolcat nsxiv openssh p7zip pandoc perl-mozilla-ca pipewire plocate powertop python-certifi python-pyqt6 python-setproctitle python3 qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass tar terminator thefuck thermald tumbler ufw variety wget wsdd xclip yad yay zed zip zram-generator zstd
 )
 
 # cinnamon packages
@@ -62,7 +62,7 @@ kde_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk cherrytree deja-dup diffuse digikam firefox-adblock-plus firefox-adblock-plus firefox-dark-reader firefox-dark-reader freeoffice ghostwriter gimagereader-qt gimp github-cli gitkraken google-chrome gparted gpu-screen-recorder hblock hblock impression inkscape krita lact masterpdfeditor-free mission-center obs-studio ocrfeeder onlyoffice-bin paperwork pdfarranger pdfarranger rclone rclone-browser rhythmbox scribus shotwell soundconverter telegram-desktop uget xournalpp
+    blender btrbk cherrytree deja-dup diffuse digikam firefox-adblock-plus firefox-adblock-plus firefox-dark-reader firefox-dark-reader freeoffice ghostwriter gimagereader-qt gimp github-cli gitkraken google-chrome gparted gpu-screen-recorder hblock hblock impression inkscape krita lact masterpdfeditor-free mission-center obs-studio ocrfeeder octopi onlyoffice-bin paperwork pdfarranger pdfarranger rclone rclone-browser rhythmbox scribus shotwell soundconverter telegram-desktop uget xournalpp
 )
 
 # utilities for file system access
