@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Brian Francisco Packages
-# Dec 3 2025
+# 21 Feb 2026
 #   《˘ ͜ʖ ˘》
 
 # Inpiration and guidance from Tolga Erok 
@@ -62,7 +62,7 @@ kde_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk cherrytree deja-dup diffuse digikam firefox-adblock-plus firefox-adblock-plus firefox-dark-reader firefox-dark-reader freeoffice ghostwriter gimagereader-qt gimp github-cli gitkraken google-chrome gparted gpu-screen-recorder hblock hblock impression inkscape krita lact masterpdfeditor-free mission-center obs-studio ocrfeeder octopi onlyoffice-bin paperwork pdfarranger pdfarranger rclone rclone-browser rhythmbox scribus shotwell soundconverter telegram-desktop uget xournalpp
+    blender btrbk cherrytree deja-dup diffuse digikam firefox-adblock-plus firefox-adblock-plus firefox-dark-reader firefox-dark-reader freeoffice ghostwriter gimagereader-qt gimp github-cli gitkraken google-chrome gparted gpu-screen-recorder hblock hblock impression inkscape krita lact masterpdfeditor-free mission-center obs-studio ocrfeeder octopi onlyoffice-bin paperwork pdfarranger pdfarranger rclone rclone-browser rhythmbox scribus shotwell soundconverter telegram-desktop uget xournalpp stacer helix fresh-editor bleachbit
 )
 
 # utilities for file system access
@@ -77,7 +77,7 @@ shells=(
 
 # AUR specific packages
 aur_packages=(
-  tlrc boomaga fresh-editor
+    tlrc boomaga
 )
 
 # Install packages
