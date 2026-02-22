@@ -62,7 +62,7 @@ kde_packages=(
 
 # software packages
 software_packages=(
-    blender btrbk cherrytree deja-dup diffuse digikam firefox-adblock-plus firefox-adblock-plus firefox-dark-reader firefox-dark-reader freeoffice ghostwriter gimagereader-qt gimp github-cli gitkraken google-chrome gparted gpu-screen-recorder hblock hblock impression inkscape krita lact masterpdfeditor-free mission-center obs-studio ocrfeeder octopi onlyoffice-bin paperwork pdfarranger pdfarranger rclone rclone-browser rhythmbox scribus shotwell soundconverter telegram-desktop uget xournalpp stacer helix fresh-editor bleachbit
+    blender btrbk cherrytree deja-dup diffuse digikam firefox-adblock-plus firefox-adblock-plus firefox-dark-reader firefox-dark-reader freeoffice ghostwriter gimagereader-qt gimp github-cli gitkraken google-chrome gparted gpu-screen-recorder hblock hblock impression inkscape krita lact masterpdfeditor-free mission-center obs-studio ocrfeeder octopi onlyoffice-bin paperwork pdfarranger pdfarranger rclone rclone-browser rhythmbox scribus shotwell soundconverter telegram-desktop uget xournalpp helix fresh-editor bleachbit
 )
 
 # utilities for file system access
@@ -115,6 +115,12 @@ install_packages "Installing utilities for different file system access" "${file
 
 # Install Software Packages
 install_packages "Installing shells and Plug-ins""${shells[@]}"
+
+# install fisher pluh-in manager for fish shell
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+
+# install tide prompt
+fisher install IlanCosman/tide@v6
 
 # Install packages from the AUR
 install_aur "Installing AUR specific packages""${aur_packages[@]}"
