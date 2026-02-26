@@ -1,0 +1,154 @@
+#!/usr/bin/env bash
+# =============================================================================
+# Author : Kingtolga
+# Version: 1.1.0
+# Date   : 26 Feb 25
+# Desc   : my full KDE PIM / KOrganizer / Akonadi suite on CachyOS KDE
+#          and fixes stale D-Bus lock issues
+# =============================================================================
+
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[1;33m'
+cyan='\033[0;36m'
+bold='\033[1m'
+reset='\033[0m'
+
+info()    { echo -e "${cyan}  [INFO]${reset}  $*"; }
+ok()      { echo -e "${green}    [OK]${reset}  $*"; }
+warn()    { echo -e "${yellow}  [WARN]${reset}  $*"; }
+err()     { echo -e "${red} [ERROR]${reset}  $*"; }
+section() { echo -e "\n${bold}${cyan}══════════════════════════════════════════${reset}";
+            echo -e "${bold}${cyan}  $*${reset}";
+            echo -e "${bold}${cyan}══════════════════════════════════════════${reset}"; }
+
+pkgs=(
+    # core akonadi
+    akonadi
+    akonadi-calendar
+    akonadi-calendar-tools
+    akonadi-contacts
+    akonadi-import-wizard
+    akonadi-mime
+    akonadi-search
+    akonadiconsole
+
+    # pim runtime + addons
+    kdepim-runtime
+    kdepim-addons
+    kde-pim-meta
+
+    # apps
+    korganizer
+    kaddressbook
+    kmail
+    kalarm
+    kontact
+    kontactinterface
+    akregator
+    merkuro
+    zanshin
+    itinerary
+    kleopatra
+    grantlee-editor
+
+    # support libs
+    calendarsupport
+    eventviews
+    incidenceeditor
+    libkdepim
+    pimcommon
+    messagelib
+    mailcommon
+    kidentitymanagement
+    kmailtransport
+    kmime
+    kcalutils
+    kholidays
+
+    # database backend
+    mariadb
+)
+
+# =============================================================================
+section "Installing full KDE PIM + Akonadi suite"
+# =============================================================================
+
+info "Running pacman install (skipping up-to-date packages)..."
+if sudo pacman -Syu --noconfirm --needed "${pkgs[@]}"; then
+    ok "Package installation complete"
+else
+    err "pacman encountered errors — check output above"
+    exit 1
+fi
+
+# =============================================================================
+section "MariaDB setup"
+# =============================================================================
+
+if ! systemctl is-active --quiet mariadb; then
+    info "Initialising MariaDB for Akonadi..."
+    sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+    sudo systemctl enable --now mariadb
+    ok "MariaDB started and enabled"
+else
+    ok "MariaDB already running"
+fi
+
+# akonadi must run as the real user not root found out the hard way
+if [[ "$EUID" -eq 0 ]]; then
+    real_user="${SUDO_USER:-$(logname 2>/dev/null)}"
+    if [[ -z "$real_user" ]]; then
+        err "Cannot determine real user. Run the script as your normal user, not root."
+        exit 1
+    fi
+    warn "Script was run as root — Akonadi sections will run as '${real_user}'"
+    run_as_user() { sudo -u "$real_user" --preserve-env=DBUS_SESSION_BUS_ADDRESS "$@"; }
+    user_home=$(eval echo "~${real_user}")
+else
+    real_user="$USER"
+    run_as_user() { "$@"; }
+    user_home="$HOME"
+fi
+
+# =============================================================================
+section "Clearing stale Akonadi D-Bus lock"
+# =============================================================================
+
+info "Force-killing any lingering Akonadi processes for '${real_user}'..."
+pkill -9 -u "$real_user" -f akonadi_control 2>/dev/null && warn "Killed akonadi_control" || info "akonadi_control not running"
+pkill -9 -u "$real_user" -f akonadiserver   2>/dev/null && warn "Killed akonadiserver"   || info "akonadiserver not running"
+pkill -9 -u "$real_user" -f akonadi         2>/dev/null && warn "Killed remaining akonadi procs" || info "No other akonadi processes"
+
+info "Waiting for D-Bus to release lock..."
+sleep 3
+
+if [[ -d "${user_home}/.local/share/akonadi" ]]; then
+    warn "Removing stale Akonadi data dir..."
+    rm -rf "${user_home}/.local/share/akonadi"
+    ok "Cleared ${user_home}/.local/share/akonadi"
+fi
+
+# =============================================================================
+section "Starting Akonadi"
+# =============================================================================
+
+info "Starting Akonadi as '${real_user}'..."
+run_as_user akonadictl start
+
+info "Waiting 15s for initialisation..."
+sleep 15
+
+echo ""
+run_as_user akonadictl status
+
+# --- final check -------------------------------------------------------------
+if run_as_user akonadictl status 2>&1 | grep -q "running"; then
+    echo ""
+    ok "Akonadi is running — launch KOrganizer!"
+else
+    echo ""
+    err "Akonadi still not running. Check logs:"
+    echo -e "    ${yellow}cat ${user_home}/.local/share/akonadi/akonadiserver.log${reset}"
+    echo -e "    ${yellow}journalctl --user -xe | grep -i akonadi | tail -30${reset}"
+fi

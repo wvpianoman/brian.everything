@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# ============================================================
+# my recovery script
+# ============================================================
+
+
+red='\033[0;31m'; green='\033[0;32m'; yellow='\033[1;33m'
+cyan='\033[0;36m'; bold='\033[1m'; rst='\033[0m'
+
+sep() { echo -e "${cyan}------------------------------------------------------------${rst}"; }
+info() { echo -e "${cyan}[info]${rst} $1"; }
+ok()   { echo -e "${green}[ok]${rst}   $1"; }
+warn() { echo -e "${yellow}[warn]${rst} $1"; }
+err()  { echo -e "${red}[err]${rst}  $1"; }
+
+echo -e "\n${bold}kde-tty-recovery.sh${rst} | kingtolga\n"
+sep
+
+# --- check my filesystem rw status
+info "checking filesystem mount status..."
+mnt_status=$(findmnt / -o OPTIONS -n | grep -o 'ro\|rw')
+if [[ "$mnt_status" == "ro" ]]; then
+    warn "root filesystem is READ-ONLY — remounting rw..."
+    sudo mount -o remount,rw /
+    if [[ $? -eq 0 ]]; then
+        ok "root remounted rw"
+    else
+        err "remount failed — you may need fsck from a live usb brother, its fucked"
+        exit 1
+    fi
+else
+    ok "root filesystem is rw — no remount needed brother all good"
+fi
+sep
+
+# --- fix fucking akonadi mariadb if crashed
+info "stopping akonadi and cleaning corrupted db useless fucker..."
+akonadictl stop 2>/dev/null
+sleep 2
+if [[ -d "$HOME/.local/share/akonadi/db_data" ]]; then
+    rm -rf "$HOME/.local/share/akonadi/db_data/"
+    ok "akonadi db_data nuked ... will rebuild on next login what a dumb shit"
+else
+    ok "no akonadi db_data found ... skipping"
+fi
+sep
+
+# --- fix broken systemd user session (main kde launcher fix)
+info "resetting broken systemd user session..."
+systemctl --user daemon-reload
+systemctl --user reset-failed
+if [[ -d "$HOME/.config/systemd/user" ]]; then
+    warn "removing corrupted user systemd units..."
+    rm -rf "$HOME/.config/systemd/user/"
+    ok "user systemd units cleared"
+else
+    ok "no user systemd units to clear"
+fi
+systemctl --user daemon-reload
+ok "systemd user session reset done"
+sep
+
+# --- fix partially installed packages from interrupted update as i seem to do this alot
+info "checking for broken packages..."
+broken=$(sudo pacman -Qk 2>&1 | grep -v "0 missing")
+if [[ -n "$broken" ]]; then
+    warn "broken packages found:"
+    echo "$broken"
+    info "reinstalling affected packages..."
+    sudo pacman -S $(sudo pacman -Qk 2>&1 | grep -v "0 missing" | awk '{print $1}') --noconfirm
+    ok "packages reinstalled dick face"
+else
+    ok "no broken packages found"
+fi
+sep
+
+# --- done
+echo -e "\n${green}${bold}all done — rebooting in 5 seconds...${rst}"
+echo "press ctrl+c to cancel reboot"
+sleep 5
+sudo reboot

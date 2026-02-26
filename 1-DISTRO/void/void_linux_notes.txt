@@ -1,0 +1,178 @@
+## I downloaded a void spin from sourceforge.net/projects/agarimos/files/CINNAMON
+##
+## after a successful installation, you need to run
+
+# Update the system
+
+sudo xbps-install -Su
+
+## Install OctoXBPS, void linux package manager  Similar to synaptic for Debian.
+
+sudo xbps-install -S octoxbps
+
+#OK, lets install some software
+
+sudo xbps-install -S cowsay yad duf espeak-ng figlet fortune-mod fortune-mod-anarchism fortune-mod-void pandoc aria2 thefuck pdfsandwich autoconf automake bc binutils btop busybox cifs-utils codec2 dconf-editor direnv earlyoom easyeffects mbpfan fd ffmpeg ffmpegthumbnailer ffmpegthumbs flatpak git gnupg2 grep haveged ibus-gtk4 jq lsd make meld mpg123 nano net-tools nftables p7zip pandoc bat tldr tesseract-ocr-eng tesseract-ocr tesseract-ocr-eng
+
+sudo xbps-install -S fish-shell bash-completion checkbashisms powerline-go zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting zsh-history-substring-search
+
+# using this to make sure that all of cinnamon is installed
+
+sudo xbps-install -S cinnamon-all
+
+# add extra repos to void and install some packages
+
+echo "repository=https://github.com/noid-linux/xbps-repo/releases/latest/download" | sudo tee /etc/xbps.d/noid-xbps-repo.conf
+sudo xbps-install -S void-repo-nonfree
+sudo xbps-install -Su
+
+sudo xbps-install -S hunspell-en blender gimp inkscape digikam neochat scribus rclone RcloneBrowser flameshot fastfetch persepolis variety vlc uget micro alacritty kitty libreoffice krita telegram-desktop obs vlc gparted flatpak ghostty git git-lfs helix sublime-text4 vscodium 
+
+
+sudo xbps-install -S broadcom-wl-dkms linux-headers
+sudo xbps-reconfigure -f broadcom-wl-dkms
+
+
+
+
+RcloneBrowser
+alacritty
+alsa-pipewire
+aria2
+autoconf
+automake
+base-system
+bash-completion
+bat
+bc
+binutils
+blender
+brltty
+btop
+busybox
+checkbashisms
+chrony
+cifs-utils
+codec2
+cowsay
+cryptsetup
+cups
+cups-browsed
+cups-filters
+cups-pdf
+cups-pk-helper
+dconf-editor
+dejavu-fonts-ttf
+dialog
+digikam
+direnv
+
+duf
+earlyoom
+easyeffects
+espeak
+espeak-ng
+fan2go
+fastfetch
+fd
+ffmpegthumbs
+figlet
+firefox
+fish-shell
+flameshot
+flatpak
+font-misc-misc
+foomatic-db
+foomatic-db-engine
+fortune-mod
+fortune-mod-anarchism
+fortune-mod-void
+gimp
+git
+
+gnome-keyring
+gnome-themes-standard
+gnupg2
+grub-i386-efi
+grub-x86_64-efi
+gutenprint
+gvfs-afc
+gvfs-mtp
+gvfs-smb
+haveged
+hunspell-en
+ibus-gtk4
+inkscape
+jq
+
+
+libreoffice
+libxfce4windowing
+lightdm
+lightdm-gtk-greeter
+linux
+lsd
+lvm2
+make
+mbpfan
+mdadm
+micro
+mpg123
+nano
+neochat
+nerd-fonts
+nerd-fonts-otf
+nerd-fonts-symbols-ttf
+nerd-fonts-ttf
+net-tools
+network-manager-applet
+nftables
+octoxbps
+orca
+p7zip
+pandoc
+pdfsandwich
+persepolis
+pipewire
+
+powerline-go
+print-manager
+rclone
+ripgrep-all
+scribus
+setxkbmap
+slim-void-theme
+system-config-printer
+terminator
+terminus-font
+tesseract-ocr-eng
+thefuck
+tldr
+tmux
+udisks2
+uget
+uget-integrator
+variety
+vlc
+void-docs-browse
+void-live-audio
+void-release-keys
+void-repo-multilib
+void-repo-multilib-nonfree
+void-repo-nonfree
+void-updates
+xauth
+
+xorg-input-drivers
+xorg-minimal
+xorg-video-drivers
+xtools
+yad
+yakuake
+zramen
+zsh
+zsh-autosuggestions
+zsh-completions
+zsh-history-substring-search
+zsh-syntax-highlighting
+
