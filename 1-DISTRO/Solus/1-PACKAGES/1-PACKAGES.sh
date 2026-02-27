@@ -43,22 +43,21 @@ NC='\033[0m'
 sudo eopkg it dialog zenity -y
 
 # essantial software pckages
-essential_packages=(
-    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety font-manager zed lolcat fortune-mod fan2go fan2go-dbginfo qt5ct git-lfs figlet yad hardinfo2 klassy klassy-dbginfo numbat numbat-dbginfo #starship #virt-manager
+essential=(
+    acl aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer rtl8852bu flatpak git zstd fan2go gnupg noto-sans-ttf grep gum ibus iptables jq lsd make meld libglu mpg123 nano fastfetch net-snmp nftables openssh-server openssh p7zip packagekit pandoc pip pipewire kpipewire wget httpie wsdd xclip zip zram-generator zram-generator-defaults plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass nsxiv tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} font-manager zed lolcat fortune-mod fan2go fan2go-dbginfo qt5ct git-lfs figlet yad hardinfo2 klassy klassy-dbginfo numbat numbat-dbginfo #starship #virt-manager
 )
 # kde packages
 kde_packages=(
     akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer neochat nheko
 )
 
-
 # software packages
 software_packages=(
-    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab xournalpp fonts-installer tesseract tessdata gimagereader vivaldi-snapshot paperwork ghostwriter cherrytree gimagereader gpu-screen-recorder logseq xournalpp smplayer smplayer-theme lact micro fresh vscode
+    blender btrbk gimp gimp-help gimp-docs krita inkscape inkscape-tutorials boomaga digikam rclone rclone-browser rhythmbox scribus-docs shotwell simplescreenrecorder vlc github-cli nheko telegram deja-dup soundconverter vivaldi-stable obs-studio scribus baobab xournalpp fonts-installer tesseract tessdata gimagereader vivaldi-snapshot paperwork ghostwriter cherrytree gimagereader gpu-screen-recorder logseq xournalpp smplayer smplayer-theme lact micro fresh vscode variety helix
 )
 
 # utilities for file system access
-filesystem_utilities=(
+filesystem=(
     btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype
 )
 
@@ -75,21 +74,20 @@ install_packages() {
 }
 
 # Install essential packages
-install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
+install_packages "Installing Essential Software Packages" "${essential[@]}"
 
 # Install DE packages
 # Pick Gnome or KDE
 install_packages "Installing KDE Packages" "${kde_packages[@]}"
-# install_packages "Installing Gnome Packages""${gnome_packages[@]}"
 
 # Install Software Packages
 install_packages "Installing Software Packages""${software_packages[@]}"
 
 # Install filesystem utilities
-install_packages "Installing utilities for different file system access" "${shells[@]}"
+install_packages "Installing utilities for different file system access" "${filesystem[@]}"
 
 # Install Software Packages
-install_packages "Installing ZSH / FISH shells and Plug-ins""${software_packages[@]}"
+install_packages "Installing ZSH / FISH shells and Plug-ins""${shells[@]}"
 
 # Install direnv for Visual Studio Code
 curl -sfL https://direnv.net/install.sh | sudo bash
