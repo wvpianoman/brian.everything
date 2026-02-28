@@ -37,7 +37,7 @@ sudo xbps-install -S vlc ffmpeg mpg123 ffmpegthumbnailer ffmpegthumbs easyeffect
 
 # ── graphics / office ─────────────────────────────────────────────────────────
 
-sudo xbps-install -S gimp inkscape blender krita scribus libreoffice onlyoffice flameshot xournalpp
+sudo xbps-install -S gimp inkscape blender krita scribus libreoffice onlyoffice flameshot xournalpp cherrytree diffuse ghostwriter gpu-screen-recorder
 
 # ── internet / download ───────────────────────────────────────────────────────
 
@@ -45,7 +45,7 @@ sudo xbps-install -S firefox aria2 uget uget-integrator persepolis rclone Rclone
 
 # ── misc apps ─────────────────────────────────────────────────────────────────
 
-sudo xbps-install -S digikam variety gparted dconf-editor meld hunspell-en ibus-gtk4 p7zip pdfsandwich tesseract-ocr tesseract-ocr-eng brltty orca yad bleachbit conky
+sudo xbps-install -S digikam variety gparted dconf-editor meld hunspell-en ibus-gtk4 p7zip pdfsandwich tesseract-ocr tesseract-ocr-eng brltty orca yad bleachbit conky gearlever LACT mission-center
 
 # ── system services ───────────────────────────────────────────────────────────
 

@@ -1,8 +1,6 @@
 AppFlowy	       io.appflowy.AppFlowy	0.11.2	stable	system
 Betterbird	       eu.betterbird.Betterbird	140.7.1esr-bb18	stable	system
-CherryTree	       net.giuspen.cherrytree	b'1.6.3'	stable	system
 Dev Toolbox	       me.iepure.devtoolbox	1.3.0	stable	system
-Diffuse	           io.github.mightycreak.Diffuse	0.10.0	stable	system
 draw.io	           com.jgraph.drawio.desktop	29.5.2	stable	system
 Easyflatpak	       org.dupot.easyflatpak	3.29.5	stable	system
 Embellish	       io.github.getnf.embellish	v0.6.1	stable	system
@@ -11,29 +9,20 @@ FireDragon	       org.garudalinux.firedragon	v12.8.1	stable	system
 Flatseal	       com.github.tchx84.Flatseal	2.4.0	stable	system
 Font Downloader	   org.gustavoperedo.FontDownloader	8.0.0	stable	system
 Frog	           com.github.tenderowl.frog	1.6.0	stable	system
-Gear Lever	       it.mijorus.gearlever	4.4.5	stable	system
-ghostwriter	       org.kde.ghostwriter	25.12.2	stable	system
 gImageReader	   io.github.manisandro.gImageReader	3.4.3	stable	system
 GitKraken	       com.axosoft.GitKraken	11.9.0	stable	system
-GPU Screen Recrdr  com.dec05eba.gpu_screen_recorder	5.12.2	stable	system
 Impression	       io.gitlab.adhami3310.Impression	3.6.0	stable	system
-LACT	           io.github.ilya_zlobintsev.LACT	0.8.4	stable	system
-Logseq	           com.logseq.Logseq	0.10.14	stable	system
-Mission Center	   io.missioncenter.MissionCenter	1.1.0	stable	system
 Mousam	           io.github.amit9838.mousam	1.4.2	stable	system
 NormCap	           com.github.dynobo.normcap	0.6.0	stable	system
 OCRFeeder	       org.gnome.OCRFeeder	0.8.3	stable	system
-ONLYOFFICE         org.onlyoffice.desktopeditors	9.2.1	stable	system
 Paperwork          work.openpaper.Paperwork	2.2.5	stable	system
 Pot	               com.pot_app.pot	3.0.7	stable	system
 Rescribe	       xyz.rescribe.rescribe	1.4.0	stable	system
 Speech Note        net.mkiol.SpeechNote	4.8.3	stable	system
 Switcheroo         io.gitlab.adhami3310.Converter	2.5.2	stable	system
-Telegram	       org.telegram.desktop	6.5.1	stable	system
 tessdata	       io.github.manisandro.gImageReader.tessdata		4.1.0	system
 Upscayl	           org.upscayl.Upscayl	2.15.0	stable	system
 Warehouse	       io.github.flattool.Warehouse	2.2.0	stable	system
 Waterfox	       net.waterfox.waterfox	6.6.8	stable	system
 Web Apps	       net.codelogistics.webapps	0.6.0	stable	system
-Xournal++	       com.github.xournalpp.xournalpp	1.3.2	stable	system
 ytDownloader       io.github.aandrew_me.ytdn	3.20.2	stable	system
