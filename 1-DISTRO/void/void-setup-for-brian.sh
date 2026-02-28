@@ -14,7 +14,7 @@ sudo xbps-install -Su
 
 # ── base system extras ────────────────────────────────────────────────────────
 
-sudo xbps-install -S base-system linux cryptsetup lvm2 mdadm elogind polkit dbus udisks2 upower NetworkManager network-manager-applet xorg-minimal xorg-input-drivers xorg-video-drivers xauth setxkbmap pipewire alsa-pipewire wireplumber cups cups-filters cups-browsed cups-pdf cups-pk-helper gutenprint foomatic-db foomatic-db-engine pkg-config gvfs-mtp gvfs-afc gvfs-smb lightdm lightdm-gtk-greeter xmirror xtools openssl openssl-devel flatpak fsearch ffmpeg
+sudo xbps-install -S base-system linux cryptsetup lvm2 mdadm elogind polkit dbus udisks2 upower NetworkManager network-manager-applet xorg-minimal xorg-input-drivers xorg-video-drivers xauth setxkbmap pipewire alsa-pipewire wireplumber cups cups-filters cups-browsed cups-pdf cups-pk-helper gutenprint foomatic-db foomatic-db-engine pkg-config gvfs-mtp gvfs-afc gvfs-smb lightdm lightdm-gtk-greeter xmirror xtools openssl openssl-devel flatpak fsearch
 
 sudo xbps-install -f gcc
 
@@ -55,6 +55,21 @@ sudo xbps-install -S earlyoom haveged chrony nftables net-tools cifs-utils zrame
 # ──  Plasma ─────────────────────────────────────────────────────────
 sudo xbps-install -S kde-plasma plasma-desktop plasma-workspace plasma-workspace-wallpapers plasma-nm plasma-pa plasma-firewall plasma-disks plasma-systemmonitor plasma-browser-integration plasma-activities plasma-activities-stats plasma-integration plasma-wayland-protocols plasma-thunderbolt plasma-sdk kdeplasma-addons dolphin dolphin-plugins kate konsole yakuake discover kdeconnect spectacle print-manager partionmanager okular kwrite
 
+# ──  Plasma ─────────────────────────────────────────────────────────
+    # core akonadi
+sudo xbps-install -S akonadi akonadi-calendar akonadi-calendar-tools akonadi-contacts akonadi-import-wizard akonadi-mime akonadi-search akonadiconsole
+
+    # pim runtime + addons
+sudo xbps-install -S kdepim-runtime kdepim-addons kde-pim-meta
+
+    # apps
+sudo xbps-install -S korganizer kaddressbook kmail kalarm kontact kontactinterface akregator merkuro zanshin itinerary kleopatra grantlee-editor
+
+    # support libs
+sudo xbps-install -S calendarsupport eventviews incidenceeditor libkdepim pimcommon messagelib mailcommon kidentitymanagement kmailtransport kmime kcalutils kholidays
+
+    # database backend
+sudo xbps-install -S mariadb
 
 # ── enable runit services ─────────────────────────────────────────────────────
 
