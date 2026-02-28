@@ -29,3 +29,4 @@ app/org.upscayl.Upscayl/x86_64/stable
 app/xyz.rescribe.rescribe/x86_64/stable
 app/org.dupot.easyflatpak/x86_64/stable
 app/net.waterfox.waterfox/x86_64/stable
+app/com.google.ChromeDev/x86_64/stable

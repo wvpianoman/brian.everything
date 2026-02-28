@@ -1,28 +1,29 @@
-AppFlowy	       io.appflowy.AppFlowy	0.11.2	stable	system
-Betterbird	       eu.betterbird.Betterbird	140.7.1esr-bb18	stable	system
-Dev Toolbox	       me.iepure.devtoolbox	1.3.0	stable	system
-draw.io	           com.jgraph.drawio.desktop	29.5.2	stable	system
-Easyflatpak	       org.dupot.easyflatpak	3.29.5	stable	system
-Embellish	       io.github.getnf.embellish	v0.6.1	stable	system
-Equibop	           org.equicord.equibop	3.1.9	stable	system
-FireDragon	       org.garudalinux.firedragon	v12.8.1	stable	system
-Flatseal	       com.github.tchx84.Flatseal	2.4.0	stable	system
-Font Downloader	   org.gustavoperedo.FontDownloader	8.0.0	stable	system
-Frog	           com.github.tenderowl.frog	1.6.0	stable	system
-gImageReader	   io.github.manisandro.gImageReader	3.4.3	stable	system
-GitKraken	       com.axosoft.GitKraken	11.9.0	stable	system
-Impression	       io.gitlab.adhami3310.Impression	3.6.0	stable	system
-Mousam	           io.github.amit9838.mousam	1.4.2	stable	system
-NormCap	           com.github.dynobo.normcap	0.6.0	stable	system
-OCRFeeder	       org.gnome.OCRFeeder	0.8.3	stable	system
-Paperwork          work.openpaper.Paperwork	2.2.5	stable	system
-Pot	               com.pot_app.pot	3.0.7	stable	system
-Rescribe	       xyz.rescribe.rescribe	1.4.0	stable	system
-Speech Note        net.mkiol.SpeechNote	4.8.3	stable	system
-Switcheroo         io.gitlab.adhami3310.Converter	2.5.2	stable	system
-tessdata	       io.github.manisandro.gImageReader.tessdata		4.1.0	system
-Upscayl	           org.upscayl.Upscayl	2.15.0	stable	system
-Warehouse	       io.github.flattool.Warehouse	2.2.0	stable	system
-Waterfox	       net.waterfox.waterfox	6.6.8	stable	system
-Web Apps	       net.codelogistics.webapps	0.6.0	stable	system
-ytDownloader       io.github.aandrew_me.ytdn	3.20.2	stable	system
+app/io.appflowy.AppFlowy/x86_64/stable
+app/eu.betterbird.Betterbird/x86_64/stable
+app/me.iepure.devtoolbox/x86_64/stable
+app/com.jgraph.drawio.desktop/x86_64/stable
+app/org.dupot.easyflatpak/x86_64/stable
+app/io.github.getnf.embellish/x86_64/stable
+app/io.github.equicord.equibop/x86_64/stable
+app/org.garudalinux.firedragon/x86_64/stable
+app/com.github.tchx84.Flatseal/x86_64/stable
+app/org.gustavoperedo.FontDownloader/x86_64/stable
+app/com.github.tenderowl.frog/x86_64/stable
+app/io.github.manisandro.gImageReader/x86_64/stable
+app/io.github.manisandro.gImageReader.tessdata/x86_64/stable
+app/com.axosoft.GitKraken/x86_64/stable
+app/io.gitlab.adhami3310.Impression/x86_64/stable
+app/io.github.amit9838.mousam/x86_64/stable
+app/com.github.dynobo.normcap/x86_64/stable
+app/org.gnome.OCRFeeder/x86_64/stable
+app/work.openpaper.Paperwork/x86_64/stable
+app/com.pot_app.pot/x86_64/stable
+app/xyz.rescribe.rescribe/x86_64/stable
+app/net.mkiol.SpeechNote/x86_64/stable
+app/io.gitlab.adhami3310.Converter/x86_64/stable
+app/org.upscayl.Upscayl/x86_64/stable
+app/io.github.flattool.Warehouse/x86_64/stable
+app/net.waterfox.waterfox/x86_64/stable
+app/net.codelogistics.webapps/x86_64/stable
+app/io.github.aandrew_me.ytdn/x86_64/stable
+app/com.google.ChromeDev/x86_64/stable
