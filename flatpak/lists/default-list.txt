@@ -38,3 +38,4 @@ app/org.upscayl.Upscayl/x86_64/stable
 app/work.openpaper.Paperwork/x86_64/stable
 app/xyz.rescribe.rescribe/x86_64/stable
 app/net.waterfox.waterfox/x86_64/stable
+app/io.github.giantpinkrobots.varia/x86_64/stable
