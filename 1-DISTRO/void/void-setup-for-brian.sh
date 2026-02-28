@@ -53,20 +53,12 @@ sudo xbps-install -S earlyoom haveged chrony nftables net-tools cifs-utils zrame
 
 
 # ──  Plasma ─────────────────────────────────────────────────────────
-sudo xbps-install -S kde-plasma plasma-desktop plasma-workspace plasma-workspace-wallpapers plasma-nm plasma-pa plasma-firewall plasma-disks plasma-systemmonitor plasma-browser-integration plasma-activities plasma-activities-stats plasma-integration plasma-wayland-protocols plasma-thunderbolt plasma-sdk kdeplasma-addons dolphin dolphin-plugins kate konsole yakuake discover kdeconnect spectacle print-manager partionmanager okular kwrite
+sudo xbps-install -S kde-plasma plasma-desktop plasma-workspace plasma-workspace-wallpapers plasma-nm plasma-pa plasma-firewall plasma-disks plasma-systemmonitor plasma-browser-integration plasma-activities plasma-activities-stats plasma-integration plasma-wayland-protocols plasma-thunderbolt plasma-sdk kdeplasma-addons dolphin dolphin-plugins kate konsole yakuake discover kdeconnect spectacle print-manager partionmanager okular kwrite isoimagewriter
 
 # ──  Plasma ─────────────────────────────────────────────────────────
-    # core akonadi
-sudo xbps-install -S akonadi akonadi-calendar akonadi-calendar-tools akonadi-contacts akonadi-import-wizard akonadi-mime akonadi-search akonadiconsole
 
-    # pim runtime + addons
-sudo xbps-install -S kdepim-runtime kdepim-addons kde-pim-meta
-
-    # apps
-sudo xbps-install -S korganizer kaddressbook kmail kalarm kontact kontactinterface akregator merkuro zanshin itinerary kleopatra grantlee-editor
-
-    # support libs
-sudo xbps-install -S calendarsupport eventviews incidenceeditor libkdepim pimcommon messagelib mailcommon kidentitymanagement kmailtransport kmime kcalutils kholidays
+    # calendar support
+sudo xbps-install -S kdepim-addons korganizer akonadi-import-wizard akonadi calendarsupport eventviews incidenceeditor kholidays
 
     # database backend
 sudo xbps-install -S mariadb
