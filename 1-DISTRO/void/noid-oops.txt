@@ -1,4 +1,21 @@
+when running oxidize your system from teh welcome app
+
 error: Linker 'cc' not found
   |
   = note: No ushc file or directory (os error 2)
 
+FIX:  need to install GCC
+
+after installing GCC, another error
+
+The pkg-config command could not be found.
+
+FIX: need to install pkg-config
+
+after that get the following error
+
+The system library 'openssl' required by crate 'openssl-sys' was not found.
+
+FIX  need to install openssl openssl-devel
+
+NOTE:  it would e a good idea to have git installed on the iso also

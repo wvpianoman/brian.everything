@@ -50,14 +50,9 @@ essential_packages=(
     acl aria2 attr autoconf automake bash-completion bc binutils btop busybox cjson curl dialog duf easyeffects espeak-ng fd ffmpeg ffmpegthumbnailer findutils flatpak font-manager fortune-mod git gnupg gufw hardinfo2 httpie kpipewire libappimage lolcat nsxiv openssh p7zip pandoc perl-mozilla-ca pipewire plocate powertop python-certifi python-pyqt6 python-setproctitle python3 qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass tar terminator thefuck thermald tumbler ufw variety wget wsdd xclip yad yay zed zip zram-generator zstd
 )
 
-# cinnamon packages
-cinnamon_packages=(
-    numlockx cairo-dock cairo-dock-plug-ins kitty fuse gedit xarchiver pcmanfm thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin tumbler ark thunar-vcs-plugin thunar-shares-plugin gtkhash-thunar plank-reloaded-git
-)
-
 # kde packages
 kde_packages=(
-    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer packagekit print-manager
+    akonadi-import-wizard dolphin-plugins ffmpegthumbs flameshot kate kdegraphics-thumbnailers kdepim-addons yakuake korganizer packagekit print-manager okular
 )
 
 # software packages
@@ -103,8 +98,6 @@ install_aur() {
 install_packages "Installing Essential Software Packages" "${essential_packages[@]}"
 
 # Install DE packages
-# Pick Cinnamon or KDE
-# install_packages "Installing Cinnamon Packages" "${cinnamon_packages[@]}"
 install_packages "Installing KDE Packages" "${kde_packages[@]}"
 
 # Install Software Packages

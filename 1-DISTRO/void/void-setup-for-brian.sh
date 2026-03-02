@@ -14,7 +14,7 @@ sudo xbps-install -Su
 
 # ── base system extras ────────────────────────────────────────────────────────
 
-sudo xbps-install -S base-system linux cryptsetup lvm2 mdadm elogind polkit dbus udisks2 upower NetworkManager network-manager-applet xorg-minimal xorg-input-drivers xorg-video-drivers xauth setxkbmap pipewire alsa-pipewire wireplumber cups cups-filters cups-browsed cups-pdf cups-pk-helper gutenprint foomatic-db foomatic-db-engine pkg-config gvfs-mtp gvfs-afc gvfs-smb lightdm lightdm-gtk-greeter xmirror xtools openssl openssl-devel flatpak fsearch
+sudo xbps-install -S base-system linux cryptsetup lvm2 mdadm elogind polkit dbus udisks2 upower NetworkManager network-manager-applet xorg-minimal xorg-input-drivers xorg-video-drivers xauth setxkbmap pipewire alsa-pipewire wireplumber cups cups-filters cups-browsed cups-pdf cups-pk-helper gutenprint foomatic-db foomatic-db-engine pkg-config gvfs-mtp gvfs-afc gvfs-smb lightdm lightdm-gtk-greeter xmirror xtools openssl openssl-devel flatpak fsearch gcc
 
 sudo xbps-install -f gcc
 
