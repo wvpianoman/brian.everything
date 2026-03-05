@@ -14,7 +14,7 @@ sudo xbps-install -Su
 
 # ── base system extras ────────────────────────────────────────────────────────
 
-sudo xbps-install -S base-system linux cryptsetup lvm2 mdadm elogind polkit dbus udisks2 upower NetworkManager network-manager-applet xorg-minimal xorg-input-drivers xorg-video-drivers xauth setxkbmap pipewire alsa-pipewire wireplumber cups cups-filters cups-browsed cups-pdf cups-pk-helper gutenprint foomatic-db foomatic-db-engine pkg-config gvfs-mtp gvfs-afc gvfs-smb lightdm lightdm-gtk-greeter xmirror xtools openssl openssl-devel flatpak fsearch gcc
+sudo xbps-install -S base-system linux cryptsetup lvm2 mdadm elogind polkit dbus udisks2 upower NetworkManager network-manager-applet xorg-minimal xorg-input-drivers xorg-video-drivers xauth setxkbmap pipewire alsa-pipewire wireplumber cups cups-filters cups-browsed cups-pdf cups-pk-helper gutenprint foomatic-db foomatic-db-engine pkg-config gvfs-mtp gvfs-afc gvfs-smb lightdm lightdm-gtk-greeter xmirror xtools openssl openssl-devel flatpak fsearch gcc zenity
 
 sudo xbps-install -f gcc
 
@@ -58,7 +58,7 @@ sudo xbps-install -S kde-plasma plasma-desktop plasma-workspace plasma-workspace
 # ──  Plasma ─────────────────────────────────────────────────────────
 
     # calendar support
-sudo xbps-install -S kdepim-addons korganizer akonadi-import-wizard akonadi calendarsupport eventviews incidenceeditor kholidays
+sudo xbps-install -S kdepim-addons korganizer akonadi-import-wizard kf6-akonadi calendarsupport eventviews incidenceeditor kholidays akonadi-notes akonadi-calendar
 
     # database backend
 sudo xbps-install -S mariadb

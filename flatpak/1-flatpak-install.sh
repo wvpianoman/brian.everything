@@ -40,7 +40,10 @@ detect_distro() {
         echo "debian"
     elif [ -f /etc/solus-release ]; then
         echo "solus"
-    else
+     elif [ -f /etc/xbps.d/mklive-ignore.conf ];
+     then
+        echo "void"
+     else
         echo "unknown"
     fi
 }
@@ -50,6 +53,7 @@ case "$(detect_distro)" in
     fedora) sudo dnf5 install -y yad ;;
     debian) sudo apt update && sudo apt install -y yad ;;
     solus) sudo eopkg it yad -y ;;
+    void) sudo xbps-install -S yad zenity -y ;;
     *) zenity --error --text="Unsupported distro." ; exit 1 ;;
 esac
 
