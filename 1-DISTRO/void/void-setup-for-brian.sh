@@ -25,7 +25,7 @@ sudo xbps-install -Sy dejavu-fonts-ttf nerd-fonts nerd-fonts-ttf nerd-fonts-otf 
 
 # ── shells / terminal tools ───────────────────────────────────────────────────
 
-sudo xbps-install -Sy fish-shell zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting zsh-history-substring-search bash-completion checkbashisms alacritty kitty ghostty terminator yakuake xfce4-terminal tmux micro nano btop duf lsd bat fd ripgrep-all tldr thefuck fastfetch figlet cowsay fortune-mod fortune-mod-anarchism fortune-mod-void powerline-go
+sudo xbps-install -Sy fish-shell zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting zsh-history-substring-search bash-completion checkbashisms alacritty kitty ghostty terminator xfce4-terminal tmux micro nano btop duf lsd bat fd ripgrep-all tldr thefuck fastfetch figlet cowsay fortune-mod fortune-mod-anarchism fortune-mod-void powerline-go
 
 # ── dev / build tools ────────────────────────────────────────────────────────
 
@@ -57,13 +57,25 @@ sudo xbps-install -Sy kde-plasma plasma-desktop plasma-workspace plasma-workspac
 
 # ──  Plasma ─────────────────────────────────────────────────────────
 
-sudo xbps-install -Sy ark dolphin-plugins discover kwalletmanager ksystemlog khelpcenter spectacle filelight kcalc kfind sweeper partitionmanager isoimagewriter kwrite krename krusader kdeconnect
+sudo xbps-install -Sy ark dolphin-plugins discover kwalletmanager ksystemlog khelpcenter spectacle filelight kcalc kfind sweeper partitionmanager isoimagewriter kwrite krename krusader kdeconnect yakuake
 
 
 sudo xbps-install -Sy kdepim-addons korganizer akonadi-import-wizard kf6-akonadi calendarsupport eventviews incidenceeditor kholidays akonadi-notes akonadi-calendar
 
     # database backend
 sudo xbps-install -Sy mariadb
+
+sudo xbps-install -Sy plasma5support bind
+
+sudo tee /etc/resolv.conf <<EOF
+nameserver 1.1.1.1
+nameserver 1.0.0.1
+nameserver 9.9.9.9
+EOF
+
+sudo chattr +i /etc/resolv.conf
+
+
 
 # ── enable runit services ─────────────────────────────────────────────────────
 
@@ -77,3 +89,5 @@ done
 
 echo ""
 echo "Done. Reboot, then start pipewire from your session autostart Brian."
+
+kquitapp6 plasmashell && kstart plasmashell
