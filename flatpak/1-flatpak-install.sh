@@ -40,8 +40,7 @@ detect_distro() {
         echo "debian"
     elif [ -f /etc/solus-release ]; then
         echo "solus"
-     elif [ -f /etc/xbps.d/mklive-ignore.conf ];
-     then
+    elif [ -f /etc/xbps.d/mklive-ignore.conf ]; then
         echo "void"
      else
         echo "unknown"
